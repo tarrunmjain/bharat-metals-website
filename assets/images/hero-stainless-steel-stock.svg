@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" role="img" aria-labelledby="heroVisualTitle heroVisualDesc">
+  <title id="heroVisualTitle">Stainless steel stock visual</title>
+  <desc id="heroVisualDesc">Original vector illustration of stainless steel coils, pipes, sheets and bars arranged in a clean industrial composition.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.5" stop-color="#EEF1F4"/>
+      <stop offset="1" stop-color="#C8CDD4"/>
+    </linearGradient>
+    <linearGradient id="steel" x1="0" x2="1">
+      <stop offset="0" stop-color="#9BA4AF"/>
+      <stop offset="0.18" stop-color="#F9FAFB"/>
+      <stop offset="0.42" stop-color="#BDC5CE"/>
+      <stop offset="0.7" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#7F8894"/>
+    </linearGradient>
+    <linearGradient id="darkSteel" x1="0" x2="1">
+      <stop offset="0" stop-color="#20242B"/>
+      <stop offset="0.45" stop-color="#596270"/>
+      <stop offset="1" stop-color="#11151B"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="22" flood-color="#11151B" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  <rect width="960" height="640" fill="url(#bg)"/>
+  <path fill="#D9252E" opacity="0.16" d="M0 427c116-36 230-27 340 28 94 47 191 59 291 35 121-29 229-16 329 39v111H0V427Z"/>
+  <path fill="#D9252E" opacity="0.9" d="M734 0h226v640H842c-18-115-36-212-55-291-19-80-41-195-53-349Z"/>
+  <g transform="translate(90 100)" filter="url(#shadow)">
+    <g transform="translate(446 134)">
+      <ellipse cx="150" cy="150" rx="150" ry="150" fill="url(#steel)"/>
+      <ellipse cx="150" cy="150" rx="101" ry="101" fill="#EEF1F4" stroke="#FFFFFF" stroke-width="6"/>
+      <ellipse cx="150" cy="150" rx="55" ry="55" fill="#D9252E"/>
+      <ellipse cx="150" cy="150" rx="31" ry="31" fill="#EEF1F4"/>
+      <path d="M21 120c80 29 168 30 259 3" fill="none" stroke="#FFFFFF" stroke-width="8" opacity="0.45"/>
+    </g>
+    <g transform="translate(42 326)">
+      <path fill="#20242B" opacity="0.28" d="M30 116h612l58 44H0l30-44Z"/>
+      <g transform="translate(0 0)">
+        <rect x="0" y="0" width="590" height="42" rx="21" fill="url(#steel)"/>
+        <ellipse cx="590" cy="21" rx="48" ry="21" fill="#F8FAFC" stroke="#AAB3BF" stroke-width="3"/>
+        <ellipse cx="590" cy="21" rx="28" ry="12" fill="#CDD3DB"/>
+      </g>
+      <g transform="translate(22 44)">
+        <rect x="0" y="0" width="570" height="38" rx="19" fill="url(#steel)"/>
+        <ellipse cx="570" cy="19" rx="43" ry="19" fill="#F8FAFC" stroke="#AAB3BF" stroke-width="3"/>
+        <ellipse cx="570" cy="19" rx="23" ry="10" fill="#CDD3DB"/>
+      </g>
+      <g transform="translate(44 83)">
+        <rect x="0" y="0" width="548" height="34" rx="17" fill="url(#steel)"/>
+        <ellipse cx="548" cy="17" rx="38" ry="17" fill="#F8FAFC" stroke="#AAB3BF" stroke-width="3"/>
+        <ellipse cx="548" cy="17" rx="20" ry="9" fill="#CDD3DB"/>
+      </g>
+    </g>
+    <g transform="translate(34 70)">
+      <path fill="#20242B" opacity="0.2" d="M7 173h394l-34 35H0l7-35Z"/>
+      <path fill="#EEF1F4" stroke="#8D97A4" stroke-width="4" d="M33 0h326l42 172H8L33 0Z"/>
+      <path fill="#FFFFFF" opacity="0.64" d="M55 20h126l28 133H35L55 20Z"/>
+      <path fill="#C8CDD4" d="M201 20h136l34 133H226L201 20Z"/>
+      <path fill="#D9252E" opacity="0.82" d="M251 0h108l42 172H293L251 0Z"/>
+      <g stroke="#8D97A4" stroke-width="3" opacity="0.75">
+        <path d="M49 44h317M44 76h330M39 108h343M34 141h356"/>
+      </g>
+    </g>
+    <g transform="translate(218 21)">
+      <rect x="0" y="0" width="20" height="345" rx="10" fill="url(#darkSteel)" transform="rotate(-19 10 172)"/>
+      <rect x="42" y="0" width="20" height="352" rx="10" fill="url(#steel)" transform="rotate(-15 52 176)"/>
+      <rect x="88" y="0" width="20" height="349" rx="10" fill="url(#darkSteel)" transform="rotate(-11 98 174)"/>
+      <rect x="135" y="0" width="20" height="342" rx="10" fill="url(#steel)" transform="rotate(-7 145 171)"/>
+    </g>
+  </g>
+</svg>

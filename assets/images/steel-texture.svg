@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 620" role="img" aria-labelledby="textureTitle textureDesc">
+  <title id="textureTitle">Brushed stainless steel texture</title>
+  <desc id="textureDesc">Original abstract silver brushed metal background with soft red reflections.</desc>
+  <defs>
+    <linearGradient id="base" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#F9FAFB"/>
+      <stop offset="0.18" stop-color="#D9DEE5"/>
+      <stop offset="0.42" stop-color="#F6F8FA"/>
+      <stop offset="0.67" stop-color="#B7C0CB"/>
+      <stop offset="1" stop-color="#EEF1F4"/>
+    </linearGradient>
+    <linearGradient id="redGlow" x1="0" x2="1">
+      <stop offset="0" stop-color="#D9252E" stop-opacity="0.4"/>
+      <stop offset="0.58" stop-color="#D9252E" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#D9252E" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="620" fill="url(#base)"/>
+  <rect width="1400" height="620" fill="url(#redGlow)"/>
+  <g opacity="0.48" stroke="#FFFFFF" stroke-width="1">
+    <path d="M0 58h1400M0 114h1400M0 172h1400M0 231h1400M0 294h1400M0 353h1400M0 416h1400M0 481h1400M0 548h1400"/>
+  </g>
+  <g opacity="0.35" stroke="#7B8490" stroke-width="0.8">
+    <path d="M0 80h1400M0 139h1400M0 196h1400M0 258h1400M0 319h1400M0 381h1400M0 443h1400M0 505h1400M0 568h1400"/>
+  </g>
+  <g opacity="0.18" stroke="#20242B" stroke-width="1">
+    <path d="M93 0 0 620M318 0 220 620M544 0 441 620M781 0 667 620M1018 0 899 620M1260 0 1132 620"/>
+  </g>
+</svg>

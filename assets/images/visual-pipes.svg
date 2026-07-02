@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" role="img" aria-labelledby="pipesTitle pipesDesc">
+  <title id="pipesTitle">Stainless steel pipes</title>
+  <desc id="pipesDesc">Original vector visual of polished stainless steel pipes.</desc>
+  <defs>
+    <linearGradient id="pipeSteel" x1="0" x2="1">
+      <stop offset="0" stop-color="#7E8792"/>
+      <stop offset="0.18" stop-color="#FFFFFF"/>
+      <stop offset="0.48" stop-color="#B8C0CB"/>
+      <stop offset="0.77" stop-color="#F9FAFB"/>
+      <stop offset="1" stop-color="#6F7986"/>
+    </linearGradient>
+  </defs>
+  <rect width="420" height="260" rx="24" fill="#EEF1F4"/>
+  <path fill="#D9252E" opacity="0.14" d="M0 183c64-24 132-21 204 11 63 28 135 32 216 11v55H0v-77Z"/>
+  <g transform="translate(44 58)">
+    <rect x="0" y="0" width="262" height="38" rx="19" fill="url(#pipeSteel)"/>
+    <ellipse cx="262" cy="19" rx="44" ry="19" fill="#FAFBFC" stroke="#A7B0BD" stroke-width="4"/>
+    <ellipse cx="262" cy="19" rx="24" ry="10" fill="#C8CDD4"/>
+    <rect x="28" y="51" width="267" height="34" rx="17" fill="url(#pipeSteel)"/>
+    <ellipse cx="295" cy="68" rx="40" ry="17" fill="#FAFBFC" stroke="#A7B0BD" stroke-width="4"/>
+    <ellipse cx="295" cy="68" rx="21" ry="9" fill="#C8CDD4"/>
+    <rect x="4" y="96" width="282" height="31" rx="15.5" fill="url(#pipeSteel)"/>
+    <ellipse cx="286" cy="111.5" rx="37" ry="15.5" fill="#FAFBFC" stroke="#A7B0BD" stroke-width="4"/>
+    <ellipse cx="286" cy="111.5" rx="19" ry="8" fill="#C8CDD4"/>
+  </g>
+</svg>

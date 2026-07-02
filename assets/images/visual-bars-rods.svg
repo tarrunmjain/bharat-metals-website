@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" role="img" aria-labelledby="barsTitle barsDesc">
+  <title id="barsTitle">Stainless steel rods and bars</title>
+  <desc id="barsDesc">Original vector visual of stainless steel rods, flats and bars.</desc>
+  <defs>
+    <linearGradient id="rodSteel" x1="0" x2="1">
+      <stop offset="0" stop-color="#20242B"/>
+      <stop offset="0.22" stop-color="#E8ECF1"/>
+      <stop offset="0.48" stop-color="#8F99A6"/>
+      <stop offset="0.75" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#59636F"/>
+    </linearGradient>
+  </defs>
+  <rect width="420" height="260" rx="24" fill="#F8FAFC"/>
+  <path fill="#D9252E" opacity="0.12" d="M0 204c88-30 166-22 235 23 57 37 118 43 185 19v14H0v-56Z"/>
+  <g transform="translate(62 46)">
+    <rect x="0" y="18" width="298" height="22" rx="11" fill="url(#rodSteel)" transform="rotate(-11 149 29)"/>
+    <rect x="20" y="60" width="308" height="22" rx="11" fill="url(#rodSteel)" transform="rotate(-7 174 71)"/>
+    <rect x="43" y="105" width="292" height="22" rx="11" fill="url(#rodSteel)" transform="rotate(-4 189 116)"/>
+    <rect x="22" y="143" width="289" height="18" rx="4" fill="url(#rodSteel)"/>
+    <rect x="52" y="169" width="265" height="16" rx="3" fill="#D9252E" opacity="0.9"/>
+    <path fill="#20242B" opacity="0.16" d="M22 191h298l30 24H0l22-24Z"/>
+  </g>
+</svg>

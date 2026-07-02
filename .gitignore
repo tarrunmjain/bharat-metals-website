@@ -1,0 +1,8 @@
+.DS_Store
+Thumbs.db
+qa/screenshots/
+qa/*.png
+qa/edge-profile-*/
+qa/chrome-cdp-*/
+*.log
+node_modules/

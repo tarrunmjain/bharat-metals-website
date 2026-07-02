@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 260" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">Bharat Metals logo</title>
+  <desc id="logoDesc">Modern red India map mark with BM letters inside a silver circle and Bharat Metals wordmark.</desc>
+  <defs>
+    <linearGradient id="bmRed" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#F0444D"/>
+      <stop offset="0.58" stop-color="#D9252E"/>
+      <stop offset="1" stop-color="#B71F28"/>
+    </linearGradient>
+    <linearGradient id="steelRing" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.22" stop-color="#EEF1F4"/>
+      <stop offset="0.53" stop-color="#B6BDC7"/>
+      <stop offset="0.78" stop-color="#F8FAFC"/>
+      <stop offset="1" stop-color="#9DA6B2"/>
+    </linearGradient>
+    <linearGradient id="wordSteel" x1="0" x2="1">
+      <stop offset="0" stop-color="#20242B"/>
+      <stop offset="0.55" stop-color="#414A56"/>
+      <stop offset="1" stop-color="#11151B"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="7" stdDeviation="8" flood-color="#11151B" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <g transform="translate(28 14)" filter="url(#softShadow)">
+    <path fill="url(#bmRed)" d="M94 10c13 15 22 28 26 40 4 12 1 23-6 33 15 2 25 9 29 21 5 15-2 27-18 36 15 15 20 31 14 48-6 18-19 29-39 33-13 3-27-1-38-11-9-8-14-18-17-32-3-13-10-22-22-29-11-6-16-16-15-29 2-12 9-21 22-27-7-11-6-22 4-33 7-8 18-14 33-16C67 29 76 18 94 10Z"/>
+    <path fill="#FFFFFF" opacity="0.16" d="M81 29c11 6 18 15 20 25 3 12-2 23-15 32 14 4 22 13 23 26 1 12-5 24-18 34 7 10 9 21 5 33-4 11-12 18-24 22 10 2 19 1 28-1 18-4 30-14 36-31 6-16 1-30-14-44 15-9 21-20 17-34-4-11-14-18-28-20 7-10 9-20 6-31-4-11-12-23-23-36-5 3-9 7-13 12Z"/>
+    <path fill="#8F151E" opacity="0.32" d="M107 163c-4 17-14 31-28 43 9 3 18 3 28 1 17-4 28-14 33-30 4-14 0-27-12-40-8 8-15 16-21 26Z"/>
+  </g>
+
+  <g transform="translate(83 72)" filter="url(#softShadow)">
+    <circle cx="66" cy="66" r="62" fill="url(#steelRing)" stroke="#FFFFFF" stroke-width="3"/>
+    <circle cx="66" cy="66" r="47" fill="#F8FAFC" stroke="#C8CDD4" stroke-width="2"/>
+    <text x="66" y="84" fill="#D9252E" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="800" text-anchor="middle" letter-spacing="0">BM</text>
+  </g>
+
+  <g transform="translate(254 73)">
+    <text x="0" y="59" fill="url(#wordSteel)" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="800" letter-spacing="0">BHARAT</text>
+    <text x="0" y="116" fill="#D9252E" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="800" letter-spacing="0">METALS</text>
+    <rect x="2" y="132" width="322" height="7" rx="3.5" fill="#C8CDD4"/>
+    <rect x="2" y="132" width="110" height="7" rx="3.5" fill="#D9252E"/>
+  </g>
+</svg>
