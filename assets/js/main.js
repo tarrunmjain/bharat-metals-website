@@ -1,44 +1,81 @@
 (function () {
   const navToggle = document.querySelector(".nav-toggle");
   const nav = document.querySelector("#site-nav");
+  const navGroups = Array.from(document.querySelectorAll(".nav-group"));
+
+  function closeGroups(except) {
+    navGroups.forEach(function (group) {
+      if (group !== except) {
+        group.classList.remove("is-open");
+        const button = group.querySelector(".nav-menu-button");
+        if (button) {
+          button.setAttribute("aria-expanded", "false");
+        }
+      }
+    });
+  }
 
   if (navToggle && nav) {
     navToggle.addEventListener("click", function () {
       const isOpen = nav.classList.toggle("is-open");
       navToggle.setAttribute("aria-expanded", String(isOpen));
+      if (!isOpen) {
+        closeGroups();
+      }
     });
 
     nav.addEventListener("click", function (event) {
-      if (event.target instanceof HTMLAnchorElement) {
+      const target = event.target;
+      if (target instanceof HTMLAnchorElement) {
         nav.classList.remove("is-open");
         navToggle.setAttribute("aria-expanded", "false");
+        closeGroups();
       }
     });
   }
 
+  navGroups.forEach(function (group) {
+    const button = group.querySelector(".nav-menu-button");
+    if (!button) {
+      return;
+    }
+
+    button.addEventListener("click", function () {
+      const isOpen = group.classList.toggle("is-open");
+      button.setAttribute("aria-expanded", String(isOpen));
+      closeGroups(group);
+    });
+  });
+
+  document.addEventListener("click", function (event) {
+    const target = event.target;
+    if (!(target instanceof Node)) {
+      return;
+    }
+
+    const clickedInsideNav = nav && nav.contains(target);
+    const clickedToggle = navToggle && navToggle.contains(target);
+    if (!clickedInsideNav && !clickedToggle) {
+      if (nav && navToggle) {
+        nav.classList.remove("is-open");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+      closeGroups();
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      if (nav && navToggle) {
+        nav.classList.remove("is-open");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+      closeGroups();
+    }
+  });
+
   const year = document.querySelector("#year");
   if (year) {
     year.textContent = String(new Date().getFullYear());
-  }
-
-  const quoteForm = document.querySelector("#quote-form");
-  if (quoteForm) {
-    quoteForm.addEventListener("submit", function (event) {
-      event.preventDefault();
-      const data = new FormData(quoteForm);
-      const product = String(data.get("product") || "").trim();
-      const grade = String(data.get("grade") || "").trim();
-      const details = String(data.get("details") || "").trim();
-      const city = String(data.get("city") || "").trim();
-      const message = [
-        "Hello Bharat Metals, I need a stainless steel quotation.",
-        product ? "Product: " + product : "",
-        grade ? "Grade: " + grade : "",
-        details ? "Size / Quantity: " + details : "",
-        city ? "Delivery City: " + city : ""
-      ].filter(Boolean).join("\n");
-
-      window.open("https://wa.me/919941133888?text=" + encodeURIComponent(message), "_blank", "noopener");
-    });
   }
 })();

@@ -2,15 +2,17 @@
 
 Static GitHub Pages preview project for Bharat Metals, a Chennai stainless steel dealer, stockist and supplier established in 1986.
 
-## Sprint 1 Scope
+## Sprint 1A Scope
 
 - Homepage and global website foundation
-- New Bharat Metals SVG logo
-- Original SVG product and stainless steel visual assets
+- Redesigned and polished homepage
+- Recreated Bharat Metals SVG logo
+- Original SVG hero, material, product-form and industry visual assets
+- Premium red, silver and graphite visual system
 - SEO metadata, canonical URL, robots.txt and sitemap.xml
 - Organization, LocalBusiness, FAQPage and BreadcrumbList JSON-LD schema
 - Mobile responsive layout
-- Static WhatsApp RFQ helper form
+- Static RFQ actions for call, WhatsApp and email
 
 ## Business Positioning
 
@@ -28,7 +30,7 @@ python -m http.server 8080
 
 - This project is separate from Rubinox.
 - No Rubinox branding, wording, colors, layout or assets are used.
-- No DNS, GoDaddy, hosting records or live website settings are changed in Sprint 1.
+- No DNS, GoDaddy, hosting records or live website settings are changed in Sprint 1A.
 - The future canonical domain is `https://www.stainlesssteeldealers.com/`, but the site is intended to be previewed through GitHub Pages first.
 
 ## Sprint 2 Candidates

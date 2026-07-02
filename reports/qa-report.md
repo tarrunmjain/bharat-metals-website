@@ -1,32 +1,34 @@
-# Bharat Metals Sprint 1 QA Report
+# Bharat Metals Sprint 1A QA Report
 
-Date: 2026-07-02
+Date: 2026-07-03
 
 ## Scope
 
-Homepage and global static website foundation for Bharat Metals.
+Homepage redesign and polish for the Bharat Metals GitHub Pages preview.
 
 ## Results
 
 | Check | Result | Notes |
 | --- | --- | --- |
-| Internal links and assets | PASS | 43 links/assets checked. Same-page anchors and local assets resolve. |
-| Basic accessibility | PASS | One H1, `lang="en-IN"`, image alt text, labelled RFQ inputs, skip link, focus styling and mobile menu button checked. |
-| Schema JSON-LD | PASS | Organization, LocalBusiness, FAQPage and BreadcrumbList JSON-LD parse successfully. |
-| FAQ consistency | PASS | 9 visible FAQ items match 9 FAQPage schema entries. |
-| Responsive smoke | PASS | Desktop 1366x900 and mobile 390x844 render with no horizontal overflow and no missing images. |
-| Mobile navigation | PASS | Mobile menu button resolves uniquely and opens the navigation. |
-| HTML validation | LIMITED | No dedicated local validator was available (`tidy`, `html-validate`, `vnu` not installed). Static parser and browser render checks passed. |
-| Content safety | PASS | Public homepage/assets do not contain Rubinox branding, GST number, company registration details, owner/partner name, GoDaddy or DNS instructions. README contains only project safety notes. |
-| Launch safety | PASS | No DNS, GoDaddy, nameserver, hosting or live website changes were made. |
+| Internal links and assets | PASS | 117 same-page links and local assets checked. No missing local references found. |
+| Basic accessibility | PASS | One H1, `lang="en-IN"`, image alt text, labelled contact icons, labelled mobile nav button and keyboard-friendly dropdown controls checked. |
+| Schema JSON-LD | PASS | Organization, LocalBusiness, BreadcrumbList and FAQPage JSON-LD parse successfully. |
+| FAQ consistency | PASS | 10 visible FAQ questions and answers match the FAQPage schema entries. |
+| Responsive smoke | PASS | Desktop 1440, tablet 768 and mobile 390 CSS-pixel screenshots show no horizontal overflow. |
+| Mobile navigation | PASS | Mobile menu opens and updates `aria-expanded` to `true`. |
+| Static styling guardrails | PASS | No viewport-scaled font sizing, no negative letter spacing and no broken local image references detected. |
+| Content safety | PASS | Homepage/CSS/JS do not contain Rubinox branding, GST number, company registration details, owner/partner name or manufacturer claims. |
+| Launch safety | PASS | `.nojekyll` exists, `CNAME` is absent and no DNS, GoDaddy, nameserver, hosting or live website changes were made. |
 
 ## Screenshot Artifacts
 
-- `qa/screenshots/desktop-home.png`
-- `qa/screenshots/mobile-home.png`
+- `qa/desktop-1440.png`
+- `qa/tablet-768.png`
+- `qa/mobile-390.png`
 
 ## Notes
 
-- GitHub Pages preview is the intended Sprint 1 publishing target.
-- Canonical URL is set to the future domain `https://www.stainlesssteeldealers.com/`, but the domain is not connected in Sprint 1.
-- Deeper pages for About, Products, Locations and Technical Data are planned for Sprint 2.
+- GitHub Pages preview remains the only Sprint 1A publishing target.
+- Canonical URL is still the future domain `https://www.stainlesssteeldealers.com/`; the domain is not connected.
+- IndiaMART uses a placeholder link until the final business profile URL is available.
+- Deeper About, product, location and technical pages remain planned for Sprint 2.
