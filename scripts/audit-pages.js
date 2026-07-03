@@ -179,6 +179,211 @@ function writeMissingImageReport(rows) {
   fs.writeFileSync(path.join(root, "reports", "missing-image-assets.md"), `${body.join("\n")}\n`);
 }
 
+function readUInt24LE(buffer, offset) {
+  return buffer[offset] + (buffer[offset + 1] << 8) + (buffer[offset + 2] << 16);
+}
+
+function imageDimensions(abs) {
+  const buffer = fs.readFileSync(abs);
+  if (buffer.slice(0, 8).equals(Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]))) {
+    return { width: buffer.readUInt32BE(16), height: buffer.readUInt32BE(20) };
+  }
+  if (buffer.slice(0, 4).toString("ascii") === "RIFF" && buffer.slice(8, 12).toString("ascii") === "WEBP") {
+    let offset = 12;
+    while (offset + 8 <= buffer.length) {
+      const chunk = buffer.slice(offset, offset + 4).toString("ascii");
+      const size = buffer.readUInt32LE(offset + 4);
+      const data = offset + 8;
+      if (chunk === "VP8X") return { width: readUInt24LE(buffer, data + 4) + 1, height: readUInt24LE(buffer, data + 7) + 1 };
+      if (chunk === "VP8L") {
+        const width = 1 + buffer[data + 1] + ((buffer[data + 2] & 0x3f) << 8);
+        const height = 1 + ((buffer[data + 2] & 0xc0) >> 6) + (buffer[data + 3] << 2) + ((buffer[data + 4] & 0x0f) << 10);
+        return { width, height };
+      }
+      if (chunk === "VP8 ") return { width: buffer.readUInt16LE(data + 6) & 0x3fff, height: buffer.readUInt16LE(data + 8) & 0x3fff };
+      offset += 8 + size + (size % 2);
+    }
+  }
+  return { width: "", height: "" };
+}
+
+function sectionById(html, id) {
+  const match = html.match(new RegExp(`<section[^>]+id="${id}"[\\s\\S]*?<\\/section>`, "i"));
+  return match ? match[0] : "";
+}
+
+function homepageImageRows() {
+  const file = path.join(root, "index.html");
+  const html = fs.readFileSync(file, "utf8");
+  const rows = [];
+  const push = (section, label, src, note) => {
+    const abs = path.resolve(root, src);
+    const dims = fs.existsSync(abs) ? imageDimensions(abs) : { width: "", height: "" };
+    rows.push({
+      section,
+      label,
+      src,
+      width: dims.width,
+      height: dims.height,
+      size: fs.existsSync(abs) ? fs.statSync(abs).size : 0,
+      note
+    });
+  };
+  const hero = sectionById(html, "hero-title") || html.match(/<section class="hero[\s\S]*?<\/section>/i)?.[0] || "";
+  const heroImg = hero.match(/<img\b[^>]*src="([^"]+)"/i);
+  if (heroImg) push("Hero", "Stainless steel pipes stockyard", heroImg[1], "Fresh photorealistic generated stockyard image; no text or logo visible.");
+
+  for (const [id, sectionName, defaultNote] of [
+    ["materials", "Materials", "Material card uses a realistic WebP product photo."],
+    ["product-forms", "Product forms", "Product form card uses the matched product-form WebP asset."],
+    ["industries", "Industries", "Industry card uses the matched industry WebP asset."]
+  ]) {
+    const section = sectionById(html, id);
+    for (const match of section.matchAll(/<a[^>]*>\s*<img\b[^>]*src="([^"]+)"[\s\S]*?<h3>([\s\S]*?)<\/h3>/gi)) {
+      const label = stripTags(match[2]);
+      const note = match[1].includes("stainless-steel-mixed-stock-v2")
+        ? "Fresh photorealistic mixed stainless steel material image, different from hero."
+        : defaultNote;
+      push(sectionName, label, match[1], note);
+    }
+  }
+  const counts = rows.reduce((acc, row) => {
+    acc[row.src] = (acc[row.src] || 0) + 1;
+    return acc;
+  }, {});
+  return rows.map((row) => ({ ...row, duplicate: counts[row.src] > 1 ? "yes" : "no" }));
+}
+
+function writeHomepageImageUsage() {
+  const rows = homepageImageRows();
+  const lines = [
+    "# Bharat Metals Homepage Image Usage",
+    "",
+    "Generated: 2026-07-03",
+    "",
+    "| Section | Visible label | Image file used | Dimensions | File size | Duplicate | Visual quality note |",
+    "|---|---|---|---:|---:|---|---|"
+  ];
+  rows.forEach((row) => {
+    lines.push(`| ${row.section} | ${row.label} | ${row.src} | ${row.width}x${row.height} | ${row.size} | ${row.duplicate} | ${row.note} |`);
+  });
+  fs.writeFileSync(path.join(root, "reports", "homepage-image-usage.md"), `${lines.join("\n")}\n`);
+}
+
+function contentTarget(type, livePath) {
+  if (type === "core") {
+    if (["/contact-us/", "/contacts-us/", "/request-quote/", "/mission-vision/"].includes(livePath)) return 400;
+    if (["/blog/", "/about-us/", "/locations-we-serve/"].includes(livePath)) return 600;
+  }
+  return {
+    core: 800,
+    "product form": 700,
+    grade: 700,
+    city: 600,
+    industry: 600,
+    "grade+form": 450,
+    "city+product": 450,
+    "grade+city": 450,
+    blog: 900,
+    "secondary material": 450,
+    technical: 450,
+    legacy: 300
+  }[type] || 450;
+}
+
+function writeContentQualityReport(rows) {
+  const titleCounts = rows.reduce((acc, row) => ((acc[row.Title] = (acc[row.Title] || 0) + 1), acc), {});
+  const descCounts = rows.reduce((acc, row) => ((acc[row["Meta description"]] = (acc[row["Meta description"]] || 0) + 1), acc), {});
+  const searchRequired = new Set(["grade", "product form", "city", "industry", "grade+form", "city+product", "grade+city"]);
+  const qualityRows = rows.map((row) => {
+    const html = fs.readFileSync(path.join(root, row["File path"]), "utf8");
+    const target = contentTarget(row["Page type"], row["Live URL path"]);
+    const flags = [];
+    const hasSearch = /enquiry-searches|Popular .*search|Popular .*enquir/i.test(html);
+    const hasRfq = /RFQ checklist|What to send for a quick/i.test(html);
+    const hasCta = /quote-section|Request a quote|Send your .* requirement/i.test(html);
+    if (Number(row["Word count"]) < target) flags.push(`word count below ${target}`);
+    if (searchRequired.has(row["Page type"]) && !hasSearch) flags.push("missing popular enquiry searches");
+    if (!["core", "technical", "legacy"].includes(row["Page type"]) && !hasRfq) flags.push("missing RFQ checklist");
+    if (!hasCta) flags.push("missing CTA");
+    if (row["Image status"] !== "real image") flags.push(row["Image status"]);
+    if (titleCounts[row.Title] > 1) flags.push("duplicate title");
+    if (descCounts[row["Meta description"]] > 1) flags.push("duplicate meta description");
+    if (/Bharat Metals reviews stainless steel enquiries for .* buyers from Chennai with practical product/i.test(html)) flags.push("possible generic industry intro");
+    return {
+      path: row["Live URL path"],
+      type: row["Page type"],
+      title: row.Title,
+      h1: row.H1,
+      words: row["Word count"],
+      target,
+      belowTarget: Number(row["Word count"]) < target ? "yes" : "no",
+      faq: row["FAQ count"],
+      popularSearches: hasSearch ? "yes" : "no",
+      rfq: hasRfq ? "yes" : "no",
+      cta: hasCta ? "yes" : "no",
+      image: row["Image status"],
+      flags
+    };
+  });
+  const headers = ["Path", "Type", "Title", "H1", "Word count", "Target", "Below target", "FAQ count", "Popular enquiry searches", "RFQ checklist", "CTA", "Image status", "Flags"];
+  const csvRows = [headers.join(",")];
+  qualityRows.forEach((row) => {
+    csvRows.push(
+      [
+        row.path,
+        row.type,
+        row.title,
+        row.h1,
+        row.words,
+        row.target,
+        row.belowTarget,
+        row.faq,
+        row.popularSearches,
+        row.rfq,
+        row.cta,
+        row.image,
+        row.flags.join("; ")
+      ]
+        .map(csvCell)
+        .join(",")
+    );
+  });
+  fs.writeFileSync(path.join(root, "reports", "content-quality-upgrade.csv"), `${csvRows.join("\n")}\n`);
+
+  const below = qualityRows.filter((row) => row.belowTarget === "yes");
+  const missingSearch = qualityRows.filter((row) => searchRequired.has(row.type) && row.popularSearches === "no");
+  const flagged = qualityRows.filter((row) => row.flags.length);
+  const md = [
+    "# Bharat Metals Content Quality Upgrade Report",
+    "",
+    "Generated: 2026-07-03",
+    "",
+    "## Summary",
+    "",
+    `- Pages audited: ${qualityRows.length}`,
+    `- Pages below target word count: ${below.length}`,
+    `- Pages with popular enquiry search sections: ${qualityRows.filter((row) => row.popularSearches === "yes").length}`,
+    `- Pages missing required popular enquiry searches: ${missingSearch.length}`,
+    `- Pages with RFQ checklist: ${qualityRows.filter((row) => row.rfq === "yes").length}`,
+    `- Pages with CTA: ${qualityRows.filter((row) => row.cta === "yes").length}`,
+    `- Pages with real images: ${qualityRows.filter((row) => row.image === "real image").length}`,
+    `- Pages with any audit flag: ${flagged.length}`,
+    "",
+    "## Notes",
+    "",
+    "- Targets are applied by page type. Some core, technical or legacy pages may be intentionally shorter when their role is navigation or compatibility.",
+    "- FAQ schema consistency and broken links are verified by the static QA script.",
+    "- Detailed per-page flags are in reports/content-quality-upgrade.csv."
+  ];
+  if (below.length) {
+    md.push("", "## Below Target Pages", "");
+    below.slice(0, 60).forEach((row) => md.push(`- ${row.path}: ${row.words}/${row.target} words (${row.type})`));
+    if (below.length > 60) md.push(`- Additional below-target pages: ${below.length - 60}`);
+  }
+  fs.writeFileSync(path.join(root, "reports", "content-quality-upgrade.md"), `${md.join("\n")}\n`);
+}
+
 function writeMarkdown(rows, counts) {
   const undiscoverable = rows.filter((row) => row["Reachable from homepage within 3 clicks"] === "no");
   const notParentLinked = rows.filter((row) => row["Linked from parent hub page"] === "no" && !["core", "technical", "legacy"].includes(row["Page type"]));
@@ -347,6 +552,8 @@ function run() {
   const counts = { byType, sitemap: sitemap.size };
   writeCsv(rows);
   writeMissingImageReport(rows);
+  writeHomepageImageUsage();
+  writeContentQualityReport(rows);
   writeMarkdown(rows, counts);
   console.log(
     JSON.stringify(

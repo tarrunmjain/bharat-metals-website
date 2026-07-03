@@ -505,6 +505,9 @@ p {
 
 .hero-media {
   position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  isolation: isolate;
 }
 
 .hero-media::before {
@@ -519,6 +522,8 @@ p {
 .hero-media .photo-placeholder {
   position: relative;
   width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--silver-light);
@@ -1330,16 +1335,19 @@ p {
 }
 
 .link-chip-grid,
-.page-card-grid {
+.page-card-grid,
+.search-chip-grid {
   display: grid;
   gap: 12px;
 }
 
-.link-chip-grid {
+.link-chip-grid,
+.search-chip-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .link-chip-grid a,
+.search-chip-grid span,
 .page-card {
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -1347,10 +1355,19 @@ p {
   box-shadow: 0 10px 24px rgba(17, 21, 27, 0.05);
 }
 
-.link-chip-grid a {
+.link-chip-grid a,
+.search-chip-grid span {
   padding: 10px 12px;
   color: var(--graphite);
   font-weight: 900;
+}
+
+.search-chip-grid span {
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  line-height: 1.25;
 }
 
 .page-card-grid {
@@ -1413,7 +1430,8 @@ p {
   }
 
   .page-card-grid,
-  .link-chip-grid {
+  .link-chip-grid,
+  .search-chip-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1424,7 +1442,8 @@ p {
 
 @media (max-width: 620px) {
   .page-card-grid,
-  .link-chip-grid {
+  .link-chip-grid,
+  .search-chip-grid {
     grid-template-columns: 1fr;
   }
 }
