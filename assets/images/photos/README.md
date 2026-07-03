@@ -2,7 +2,7 @@
 
 These folders are reserved for real approved photo assets. Do not fill them with SVG drawings, CSS/canvas-generated artwork, clipart, cartoon imagery, random stock images, hotlinked files, Google image downloads or Rubinox assets.
 
-Current homepage card images are temporary photo-pending placeholders. Final realistic photo assets are pending.
+Current homepage image slots remain temporary photo-pending placeholders until the site markup is intentionally switched over. Hero and material photo assets have been generated; product form and industry photo assets remain pending.
 
 ## Expected Hero Photo
 
