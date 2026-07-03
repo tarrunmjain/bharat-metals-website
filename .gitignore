@@ -2,6 +2,8 @@
 Thumbs.db
 qa/screenshots/
 qa/*.png
+qa/*.jpg
+qa/*.jpeg
 qa/edge-profile-*/
 qa/chrome-cdp-*/
 *.log

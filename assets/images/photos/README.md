@@ -2,7 +2,7 @@
 
 These folders are reserved for real approved photo assets. Do not fill them with SVG drawings, CSS/canvas-generated artwork, clipart, cartoon imagery, random stock images, hotlinked files, Google image downloads or Rubinox assets.
 
-Current homepage image slots remain temporary photo-pending placeholders until the site markup is intentionally switched over. Hero and material photo assets have been generated; product form and industry photo assets remain pending.
+Current homepage image slots remain temporary photo-pending placeholders until the site markup is intentionally switched over. The hero and stainless steel material photos are cropped/compressed from supplied approved realistic photo files. Aluminium, brass, copper, product form and most industry photos remain pending until approved source photos are supplied.
 
 ## Expected Hero Photo
 
@@ -33,6 +33,10 @@ Current homepage image slots remain temporary photo-pending placeholders until t
 - `product-forms/fasteners.webp`
 - `product-forms/wire-mesh.webp`
 - `product-forms/perforated-sheets.webp`
+
+## Additional Supplied Industry Photo
+
+- `industries/industrial-plant.webp`
 
 ## Expected Industry Photos
 
