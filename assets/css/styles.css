@@ -114,11 +114,10 @@ address {
   margin: 0;
   color: #dce1e8;
   font-size: 0.78rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.045em;
   text-transform: uppercase;
   overflow-wrap: anywhere;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.16);
 }
 
 .top-icons {
@@ -204,7 +203,7 @@ address {
 }
 
 .brand img {
-  width: 214px;
+  width: 236px;
 }
 
 .site-nav {
@@ -510,13 +509,55 @@ p {
   content: "";
 }
 
-.hero-media img {
+.hero-media img,
+.hero-media .photo-placeholder {
   position: relative;
   width: 100%;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--silver-light);
   box-shadow: var(--shadow-md);
+}
+
+.photo-placeholder {
+  position: relative;
+  display: flex;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.86), rgba(200, 205, 212, 0.42)),
+    linear-gradient(120deg, #f8fafc 0%, #dce1e8 44%, #f4f6f8 56%, #c8cdd4 100%);
+  color: #596371;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.photo-placeholder::before {
+  position: absolute;
+  inset: 12px;
+  border: 1px dashed rgba(95, 104, 116, 0.38);
+  border-radius: 6px;
+  content: "";
+}
+
+.photo-placeholder span {
+  position: relative;
+  z-index: 1;
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.68);
+}
+
+.hero-photo-placeholder {
+  aspect-ratio: 5 / 3;
+  border-bottom: 1px solid var(--border);
 }
 
 .rfq-strip,
@@ -622,7 +663,10 @@ p {
 
 .material-card img,
 .form-card img,
-.industry-grid img {
+.industry-grid img,
+.material-card .photo-placeholder,
+.form-card .photo-placeholder,
+.industry-grid .photo-placeholder {
   width: 100%;
   aspect-ratio: 16 / 10;
   object-fit: cover;
@@ -906,7 +950,7 @@ p {
   }
 
   .brand img {
-    width: 188px;
+    width: 206px;
   }
 
   .industry-grid {
@@ -1056,7 +1100,7 @@ p {
   }
 
   .brand img {
-    width: 150px;
+    width: 162px;
   }
 
   .hero.section-pad {

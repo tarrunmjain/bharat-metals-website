@@ -2,18 +2,26 @@
 
 Static GitHub Pages preview project for Bharat Metals, a Chennai stainless steel dealer, stockist and supplier established in 1986.
 
-## Sprint 1C Scope
+## Sprint 1D Scope
 
 - Homepage and global website foundation
-- Final homepage visual correction and functional QA lock pass
-- Recreated Bharat Metals SVG logo with PNG/WebP exports
-- Original hero, product-form and industry WebP visual assets
-- Original SVG material visual assets
+- Final logo correction using supplied Bharat Metals PNG logo assets
+- Generated/drawn material, product, industry, hero and logo illustration assets archived out of live use
+- Photo-ready folder structure added under `assets/images/photos/`
+- Temporary photo-pending placeholders used where real approved photo assets are not yet available
 - Premium red, silver and graphite visual system
 - SEO metadata, canonical URL, robots.txt and sitemap.xml
 - Organization, LocalBusiness, FAQPage and BreadcrumbList JSON-LD schema
 - Mobile responsive layout
 - Static RFQ actions for call, WhatsApp and email
+
+## Photo Asset Status
+
+Current generated card images are temporary. Final realistic photo assets are pending.
+
+Do not add SVG drawings, CSS/canvas-generated artwork, clipart, cartoon imagery, random stock images, hotlinked files, Google image downloads or Rubinox assets as final material/product/industry photos. Use only user-supplied approved photo files or separately approved AI-generated photorealistic image files.
+
+The expected file naming system is documented in `assets/images/photos/README.md`.
 
 ## Business Positioning
 
@@ -31,7 +39,7 @@ python -m http.server 8080
 
 - This project is separate from Rubinox.
 - No Rubinox branding, wording, colors, layout or assets are used.
-- No DNS, GoDaddy, hosting records or live website settings are changed in Sprint 1A.
+- No DNS, GoDaddy, hosting records or live website settings are changed in Sprint 1D.
 - The future canonical domain is `https://www.stainlesssteeldealers.com/`, but the site is intended to be previewed through GitHub Pages first.
 
 ## Sprint 2 Candidates
