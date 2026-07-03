@@ -109,7 +109,8 @@ async function captureViewport(cdp, viewport) {
 
   const metrics = await cdp.send("Runtime.evaluate", {
     returnByValue: true,
-    expression: `(() => {
+    awaitPromise: true,
+    expression: `(async () => {
       const rect = (selector) => {
         const node = document.querySelector(selector);
         return node ? node.getBoundingClientRect().toJSON() : null;
@@ -121,6 +122,16 @@ async function captureViewport(cdp, viewport) {
       const navToggle = document.querySelector(".nav-toggle");
       const nav = document.querySelector("#site-nav");
       const dropdownButton = document.querySelector(".nav-menu-button");
+      const portfolioButton = document.querySelector('[aria-controls="product-portfolio-menu"]');
+      const portfolioMenu = document.querySelector("#product-portfolio-menu");
+      const firstPortfolioItem = document.querySelector(".portfolio-item");
+      const firstFlyout = document.querySelector(".flyout-menu");
+      if (portfolioButton && window.innerWidth > 980) {
+        portfolioButton.click();
+        const firstToggle = document.querySelector(".flyout-toggle");
+        if (firstToggle) firstToggle.click();
+        await new Promise((resolve) => setTimeout(resolve, 260));
+      }
       return {
         viewport: { width: window.innerWidth, height: window.innerHeight },
         document: {
@@ -146,6 +157,16 @@ async function captureViewport(cdp, viewport) {
         mobileNav: {
           beforeOpenClass: nav ? nav.className : null,
           dropdownAriaExpanded: dropdownButton ? dropdownButton.getAttribute("aria-expanded") : null
+        },
+        portfolioMenu: {
+          exists: !!portfolioMenu,
+          flyoutCount: document.querySelectorAll(".flyout-menu").length,
+          productButtonExpanded: portfolioButton ? portfolioButton.getAttribute("aria-expanded") : null,
+          menuOpacity: portfolioMenu ? getComputedStyle(portfolioMenu).opacity : null,
+          flyoutOpacity: firstFlyout ? getComputedStyle(firstFlyout).opacity : null,
+          flyoutNoGap: firstPortfolioItem && firstFlyout ? firstFlyout.getBoundingClientRect().left <= firstPortfolioItem.getBoundingClientRect().right + 1 : null,
+          rodsSeparate: !!document.querySelector('a[href$="stainless-steel-rods/"]'),
+          barsSeparate: !!document.querySelector('a[href$="stainless-steel-bars/"]')
         }
       };
     })()`,
@@ -159,6 +180,9 @@ async function captureViewport(cdp, viewport) {
         const toggle = document.querySelector(".nav-toggle");
         const nav = document.querySelector("#site-nav");
         const dropdownButton = document.querySelector(".nav-menu-button");
+        const portfolioButton = document.querySelector('[aria-controls="product-portfolio-menu"]');
+        const firstFlyoutToggle = document.querySelector(".portfolio-item .flyout-toggle");
+        const firstPortfolioItem = document.querySelector(".portfolio-item");
         if (!toggle || !nav) return { skipped: true };
         toggle.click();
         const afterToggle = {
@@ -170,10 +194,19 @@ async function captureViewport(cdp, viewport) {
           ariaExpanded: dropdownButton ? dropdownButton.getAttribute("aria-expanded") : null,
           groupOpen: dropdownButton ? dropdownButton.closest(".nav-group").classList.contains("is-open") : null
         };
+        if (portfolioButton) portfolioButton.click();
+        if (firstFlyoutToggle) firstFlyoutToggle.click();
+        const afterPortfolio = {
+          ariaExpanded: portfolioButton ? portfolioButton.getAttribute("aria-expanded") : null,
+          menuOpen: portfolioButton ? portfolioButton.closest(".nav-group").classList.contains("is-open") : null,
+          flyoutExpanded: firstFlyoutToggle ? firstFlyoutToggle.getAttribute("aria-expanded") : null,
+          flyoutOpen: firstPortfolioItem ? firstPortfolioItem.classList.contains("is-open") : null
+        };
         document.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape" }));
         return {
           afterToggle,
           afterDropdown,
+          afterPortfolio,
           afterEscape: {
             navOpen: nav.classList.contains("is-open"),
             ariaExpanded: toggle.getAttribute("aria-expanded")

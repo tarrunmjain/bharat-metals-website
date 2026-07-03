@@ -49,7 +49,7 @@ function classify(slug) {
   if (slug.startsWith("blog/")) return "blog";
   if (slug.startsWith("industries/")) return "industry";
   if (/^stainless-steel-suppliers-/.test(slug)) return "city";
-  if (/^stainless-steel-(pipes|sheets|plates)-/.test(slug)) return "city+product";
+  if (/^stainless-steel-(pipes|sheets|plates|rods|bars)-/.test(slug)) return "city+product";
   if (/^ss-(202|304|316)-suppliers-/.test(slug)) return "grade+city";
   if (/^ss-[0-9a-z]+-(pipes|tubes|sheets|plates|coils|rods|bars|angles|flats|channels|flanges|fittings|circles|fasteners|wire-mesh|perforated-sheets)\/$/.test(slug)) return "grade+form";
   if (/^ss-[0-9a-z]+\/$/.test(slug)) return "grade";
@@ -241,7 +241,7 @@ function homepageImageRows() {
     const section = sectionById(html, id);
     for (const match of section.matchAll(/<a[^>]*>\s*<img\b[^>]*src="([^"]+)"[\s\S]*?<h3>([\s\S]*?)<\/h3>/gi)) {
       const label = stripTags(match[2]);
-      const note = match[1].includes("stainless-steel-mixed-stock-v2")
+      const note = match[1].includes("stainless-steel-mixed-stock-v3")
         ? "Fresh photorealistic mixed stainless steel material image, different from hero."
         : defaultNote;
       push(sectionName, label, match[1], note);

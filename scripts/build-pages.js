@@ -27,8 +27,8 @@ const materialNames = {
   copper: "Copper"
 };
 
-const heroImage = "assets/images/photos/hero/bharat-metals-stainless-steel-pipes-hero-v2.webp";
-const stainlessMaterialImage = "assets/images/photos/materials/stainless-steel-mixed-stock-v2.webp";
+const heroImage = "assets/images/photos/hero/bharat-metals-stainless-steel-pipes-hero-v3.webp";
+const stainlessMaterialImage = "assets/images/photos/materials/stainless-steel-mixed-stock-v3.webp";
 
 const materialImages = {
   aluminium: "assets/images/photos/materials/aluminium.webp",
@@ -84,9 +84,9 @@ function cardGrid(items, makeSlug, text, label = labelOf) {
   return `<div class="page-card-grid">${items
     .map(
       (item) =>
-        `<article class="page-card"><h3><a href="${makeSlug(item)}">${escapeHtml(label(item))}</a></h3><p>${escapeHtml(
+        `<a class="page-card anchor-card" href="${makeSlug(item)}"><h3>${escapeHtml(label(item))}</h3><p>${escapeHtml(
           text ? text(item) : "Share product form, grade, size, quantity and delivery location for a quotation."
-        )}</p></article>`
+        )}</p></a>`
     )
     .join("")}</div>`;
 }
@@ -146,7 +146,7 @@ function ctaBlock(subject = "stainless steel") {
 }
 
 function faqHtml(faq) {
-  return `<section class="section-pad"><div class="container faq-layout"><div><p class="eyebrow">Buyer answers</p><h2>Frequently asked questions</h2><p>Short answers for procurement teams, fabricators and project buyers.</p></div><div class="faq-list">${faq
+  return `<section class="section-pad"><div class="container faq-layout"><div><p class="eyebrow">Buyer answers</p><h2>Frequently asked questions</h2><p>Practical answers for buyers checking this specific requirement.</p></div><div class="faq-list">${faq
     .map((item) => `<details><summary>${escapeHtml(item.q)}</summary><p>${escapeHtml(item.a)}</p></details>`)
     .join("")}</div></div></section>`;
 }
@@ -417,11 +417,81 @@ const productDirection = {
   }
 };
 
+const productFinishMatrix = {
+  sheets: ["2B Finish", "No. 1 Finish", "BA Finish", "Mirror Finish", "No. 8 Finish", "Matt Finish", "Hairline Finish", "Brush Finish", "Satin Finish", "PVC Coated Sheets"],
+  plates: ["No. 1 Finish", "2B Finish where applicable", "Matt Finish", "Brush Finish", "Polished Finish where applicable", "Cut-to-size support"],
+  coils: ["2B Finish", "BA Finish", "Matt Finish", "Hairline Finish", "Brush Finish", "Slit coil enquiry support", "PVC coating where applicable"],
+  pipes: ["Mill Finish", "Polished Finish", "Matt Finish", "Mirror Polished / Decorative where applicable", "Brush Finish where applicable", "Welded / Seamless enquiry preference"],
+  tubes: ["Mill Finish", "Polished Finish", "Matt Finish", "Mirror Polished / Decorative where applicable", "Round / Square / Rectangular options"],
+  rods: ["Bright / BA Finish where applicable", "Polished Finish", "Mirror / Bright Polished where applicable", "Matt Finish", "Hairline Finish where applicable", "Brush Finish where applicable", "Ground / peeled / machined finish if applicable"],
+  bars: ["Bright / BA Finish where applicable", "Polished Finish", "Mirror / Bright Polished where applicable", "Matt Finish", "Hairline Finish where applicable", "Brush Finish where applicable", "Round / square / hex bar options"],
+  angles: ["Mill Finish", "Matt Finish", "Brush Finish", "Polished Finish where applicable"],
+  flats: ["Mill Finish", "Matt Finish", "Brush Finish", "Polished Finish where applicable", "Cut-to-size support"],
+  channels: ["Mill Finish", "Matt Finish", "Brush Finish", "Polished Finish where applicable"],
+  flanges: ["Machined Finish", "Mill Finish", "Pickled / passivated where applicable", "Polished Finish where applicable", "MTC / mill certificate discussion where applicable"],
+  fittings: ["Mill Finish", "Pickled / passivated where applicable", "Polished Finish where applicable", "Welded / seamless fitting preference where applicable"],
+  circles: ["2B / No. 1 base material finish depending on sheet/plate source", "Polished Finish where applicable", "Cut circle enquiry support"],
+  fasteners: ["Bright Finish", "Passivated Finish where applicable", "Polished Finish where applicable", "Thread/specification details"],
+  "wire-mesh": ["Woven / welded mesh style", "Aperture / wire diameter details", "Mill / bright finish depending on availability"],
+  "perforated-sheets": ["2B Finish", "No. 1 Finish", "Matt Finish", "Brush Finish", "Hole pattern / pitch / thickness", "PVC coating where applicable"]
+};
+
+const productServiceMatrix = {
+  sheets: ["Cutting", "Polishing", "PVC coating", "Bending where suitable", "Packing", "Local delivery", "Transport booking", "MTC / mill certificate discussion"],
+  plates: ["Cutting", "Drilling where suitable", "Polishing where applicable", "Packing", "Transport booking", "Door delivery discussion", "MTC / mill certificate discussion"],
+  coils: ["Slitting enquiry support", "PVC coating where applicable", "Packing", "Transport booking", "MTC / mill certificate discussion"],
+  pipes: ["Cutting to length discussion", "Polishing", "Packing", "Local delivery", "Transport booking", "Courier for small items where practical", "MTC / mill certificate discussion"],
+  tubes: ["Cutting to length discussion", "Polishing", "Packing", "Local delivery", "Transport booking", "MTC / mill certificate discussion"],
+  rods: ["Cutting to length discussion", "Polishing", "Packing", "Local delivery", "Transport booking", "Courier for small items where practical", "MTC / mill certificate discussion"],
+  bars: ["Cutting to length discussion", "Polishing", "Packing", "Local delivery", "Transport booking", "Courier for small items where practical", "MTC / mill certificate discussion"],
+  angles: ["Cutting", "Drilling where suitable", "Polishing where applicable", "Packing", "Transport booking"],
+  flats: ["Cutting", "Drilling where suitable", "Polishing where applicable", "Packing", "Transport booking"],
+  channels: ["Cutting", "Drilling where suitable", "Polishing where applicable", "Packing", "Transport booking"],
+  flanges: ["Machining details review", "Drilling pattern confirmation", "Packing", "Transport booking", "MTC / mill certificate discussion", "Third party inspection discussion"],
+  fittings: ["Matching pipe details review", "Packing", "Transport booking", "MTC / mill certificate discussion"],
+  circles: ["Cut circle enquiry support", "Polishing where applicable", "Packing", "Transport booking"],
+  fasteners: ["Thread/specification review", "Packing", "Courier for small items", "MTC / mill certificate discussion where applicable"],
+  "wire-mesh": ["Cut size discussion", "Packing", "Courier for small items where practical", "Transport booking"],
+  "perforated-sheets": ["Cutting", "PVC coating where applicable", "Packing", "Transport booking", "Hole pattern review"]
+};
+
+function finishesFor(form) {
+  return productFinishMatrix[form.formSlug] || finishes;
+}
+
+function servicesFor(form) {
+  return productServiceMatrix[form.formSlug] || services;
+}
+
+function gradeChipsForForm(form) {
+  return chips(grades, (grade) => `${grade.slug}-${form.formSlug}/`, (grade) => grade.name);
+}
+
+function finishMatrixSection(form) {
+  return pageSection(
+    "Finish, service and documentation options",
+    `${form.short} enquiries should use finish and processing terms that fit the product form. Share the expected surface, size, quantity, packing and documentation requirement before quote review.`,
+    `<h3>${escapeHtml(form.short)} finish options</h3>${list(finishesFor(form))}<h3>${escapeHtml(form.short)} service support</h3>${list(servicesFor(form))}<h3>Documentation</h3>${list(["Material Test Certificate / MTC where applicable", "Mill certificate discussion where applicable", "Third party inspection where applicable"])}`
+  );
+}
+
+function buyerSpec(form) {
+  const custom = {
+    rods: "diameter, length, machining use and tolerance expectation if any",
+    bars: "round, square or hex section, size, length and tolerance expectation if any",
+    sheets: "thickness, sheet size, finish, PVC coating need and visible-surface expectation",
+    plates: "plate thickness, width, length, cutting need and certificate requirement",
+    coils: "coil width, thickness, finish, grade and slit coil requirement",
+    circles: "circle diameter, thickness, grade, finish and edge expectation"
+  };
+  return custom[form.formSlug] || form.specs;
+}
+
 function productIntro(form) {
   if (form.formSlug === "pipes") {
     return "Stainless steel pipes are requested by fabricators, contractors, industrial maintenance teams, commercial kitchen fabricators, process equipment buyers and traders for both welded and seamless requirements. Bharat Metals supports stainless steel pipe enquiries from Chennai by reviewing grade, outside diameter, wall thickness, schedule, length, finish, quantity, make preference, certificate requirement and delivery location. Common pipe enquiries include SS 202, SS 304 and SS 316, with 304L, 316L, 310, 410, 420 and 430 reviewed where specification and availability match.";
   }
-  return `${form.name} are requested by Chennai and Tamil Nadu buyers for ${form.uses.join(", ")} and related commercial supply needs. Bharat Metals reviews ${form.short.toLowerCase()} enquiries by grade, ${form.specs}, finish, quantity, make preference, certificate requirement and delivery location. Common enquiries include SS 202, SS 304 and SS 316, with 304L, 316L, 310, 410, 420 and 430 reviewed where the specification and availability match the buyer's application.`;
+  return `${form.name} are requested by Chennai and Tamil Nadu buyers for ${form.uses.join(", ")} and related commercial supply needs. Bharat Metals reviews ${form.short.toLowerCase()} enquiries by grade, ${buyerSpec(form)}, quantity, make preference, certificate requirement and delivery location. Common enquiries include SS 202, SS 304 and SS 316, with 304L, 316L, 310, 410, 420 and 430 reviewed where the specification and availability match the buyer's application.`;
 }
 
 function productApplications(form) {
@@ -664,7 +734,7 @@ function productFaq(form) {
     },
     {
       q: `What details are needed for a ${short} quote?`,
-      a: `Send ${form.specs}, grade, quantity, finish, delivery location, certificate requirement and required date.`
+      a: `Send grade, ${buyerSpec(form)}, quantity, finish where relevant, delivery location, certificate requirement and required date.`
     },
     {
       q: `Can MTC or mill certificate be discussed for ${short}?`,
@@ -680,7 +750,7 @@ function productFaq(form) {
     },
     {
       q: `Can finish or processing requirements be included for ${short}?`,
-      a: `Yes. Include cutting, polishing, PVC coating, packing or other service needs in the RFQ so they can be reviewed with the material requirement.`
+      a: `Yes. Include relevant service needs such as ${servicesFor(form).slice(0, 5).join(", ")} in the RFQ so they can be reviewed with the material requirement.`
     }
   ];
 }
@@ -846,7 +916,7 @@ function gradeFormFaq(grade, form) {
     },
     {
       q: `What details are needed for ${subject}?`,
-      a: `Send ${form.specs}, quantity, finish, delivery location and certificate requirement.`
+      a: `Send ${buyerSpec(form)}, quantity, finish where relevant, delivery location and certificate requirement.`
     },
     {
       q: `Where is ${subject} commonly used?`,
@@ -876,7 +946,7 @@ function cityProductFaq(city, form) {
     },
     {
       q: `What details should ${city.name} buyers send?`,
-      a: `Send ${form.specs}, grade, quantity, finish, delivery location and certificate needs.`
+      a: `Send grade, ${buyerSpec(form)}, quantity, finish where relevant, delivery location and certificate needs.`
     },
     {
       q: `Can transport booking be discussed for ${city.name}?`,
@@ -1233,12 +1303,11 @@ function buildMaterialHub(material) {
 
 function buildProductPages() {
   forms.forEach((form) => {
-    const gradeRows = grades.map((grade) => [grade.name, `${form.short} enquiries can be reviewed when size, finish, quantity and application suit the grade.`]);
     addGeneratedPage({
       slug: `${form.slug}/`,
       type: "product-form",
       title: `${form.name} in Chennai | Bharat Metals`,
-      description: `${form.name} suppliers in Chennai for Tamil Nadu buyers. Share ${form.specs}, grade, quantity and delivery location.`,
+      description: `${form.name} suppliers in Chennai for Tamil Nadu buyers. Share grade, ${buyerSpec(form)}, quantity and delivery location.`,
       h1: `${form.name} Suppliers in Chennai`,
       eyebrow: "Stainless steel product",
       intro: productIntro(form),
@@ -1248,15 +1317,15 @@ function buildProductPages() {
       body:
         proseSection("Product overview", [
           productIntro(form),
-          `Bharat Metals does not manufacture material; it supports dealer, stockist, supplier and wholesaler enquiries by matching buyer requirements with available stock, sourceability, order size and dispatch feasibility from Chennai. For ${form.short.toLowerCase()}, useful RFQ details include ${form.specs}, grade, finish, quantity, certificate requirement and delivery location.`
+          `Bharat Metals does not manufacture material; it supports dealer, stockist, supplier and wholesaler enquiries by matching buyer requirements with available stock, sourceability, order size and dispatch feasibility from Chennai. For ${form.short.toLowerCase()}, useful RFQ details include grade, ${buyerSpec(form)}, quantity, certificate requirement and delivery location.`
         ]) +
         proseSection("How buyers usually specify this product", [
-          `Most ${form.short.toLowerCase()} enquiries are specified by grade, ${form.specs}, finish, quantity, length or sheet size where relevant, certificate requirement and packing or transport expectation. If a make preference such as Jindal make pipes is important, buyers can mention it clearly as a preference without treating it as a brand dealership claim.`
+          `Most ${form.short.toLowerCase()} enquiries are specified by grade, ${buyerSpec(form)}, quantity, certificate requirement and packing or transport expectation. If a make preference such as Jindal make pipes is important, buyers can mention it clearly as a preference without treating it as a brand dealership claim.`
         ]) +
         pageSection("Common applications", productApplications(form)) +
-        pageSection("Grades available for this form", `Common grades for ${form.name.toLowerCase()} include SS 202, SS 304, SS 316 and other grades based on specification.`, dataTable(["Grade", "How buyers discuss it"], gradeRows)) +
-        pageSection("Finish, service and documentation options", "Finish, processing and documentation needs should be included in the RFQ so expectations are clear before quote review.", `<h3>Common finish options</h3>${list(finishes.slice(0, 10))}<h3>Service support</h3>${list(services.slice(0, 10))}<h3>Documentation</h3>${list(["Material Test Certificate / MTC", "Mill certificate", "Third party inspection where applicable"])}`) +
-        hubSection("Grade and form pages", `Open ${form.short} by Grade`, `Direct links for ${form.short.toLowerCase()} in common stainless steel grades.`, cardGrid(grades, (grade) => `${grade.slug}-${form.formSlug}/`, (grade) => `${grade.name} ${form.short.toLowerCase()} enquiries by size, finish and quantity.`)) +
+        pageSection("Grades available for this form", "Buyers can mention the required stainless steel grade directly in the RFQ. Commonly discussed grades include the options below, subject to product form, size, finish, quantity and availability.", gradeChipsForForm(form)) +
+        finishMatrixSection(form) +
+        hubSection("Grade and form pages", `${form.short} by Grade`, `Choose a grade-specific ${form.short.toLowerCase()} page when the RFQ already mentions grade, size, finish, quantity or certificate expectations.`, cardGrid(grades, (grade) => `${grade.slug}-${form.formSlug}/`, (grade) => `${grade.name} ${form.short.toLowerCase()} supply notes for buyers specifying ${buyerSpec(form)}.`)) +
         hubSection(
           "City links",
           `Popular ${form.short} City Pages`,
@@ -1298,8 +1367,8 @@ function buildGradePages() {
         ]) +
         pageSection("Popular industries", `${grade.name} enquiries are common from fabricators, railing contractors, commercial kitchen fabricators, food processing equipment makers, pharma equipment buyers, engineering workshops, traders, interior contractors, maintenance teams and project procurement teams depending on application and specification.`) +
         pageSection("Common finishes and processing", "Surface finish, cutting, polishing, PVC coating, bending, drilling, packing, MTC, mill certificate and third-party inspection requirements should be mentioned at RFQ stage so they can be checked against the product form and order size.") +
-        hubSection("Available forms", `${grade.name} Product Forms`, `Open ${grade.name} pages by stainless steel form.`, cardGrid(forms, (form) => `${grade.slug}-${form.formSlug}/`, (form) => `${grade.name} ${form.short.toLowerCase()} enquiries by size, finish, quantity and application.`)) +
-        hubSection("Common industries", `Industries Discussing ${grade.name}`, `Common buyer groups for ${grade.name} enquiries.`, cardGrid(industries.slice(0, 12), (industry) => `industries/${industry.slug}/`, (industry) => `Products include ${industry.products.join(", ")}. Grades discussed: ${industry.grades.join(", ")}.`)) +
+        hubSection("Available forms", `${grade.name} Product Forms`, `${grade.name} enquiries can be narrowed by product form before sending size, finish, quantity and certificate details.`, cardGrid(forms, (form) => `${grade.slug}-${form.formSlug}/`, (form) => `${grade.name} ${form.short.toLowerCase()} requirements are usually specified with ${form.specs}.`)) +
+        hubSection("Industry relevance", `Industries Discussing ${grade.name}`, `${grade.name} demand changes by exposure, fabrication method, hygiene need and project specification.`, cardGrid(industries.slice(0, 12), (industry) => `industries/${industry.slug}/`, (industry) => `${industry.name} buyers often discuss ${industry.products.join(", ")} with grades such as ${industry.grades.join(", ")}.`)) +
         hubSection(
           "City links",
           `${grade.name} City Pages`,
@@ -1331,7 +1400,7 @@ function buildGradeFormPages() {
         description: `${subject} suppliers in Chennai with grade, size, finish, quantity, certificate and transport details.`,
         h1: `${subject} Suppliers in Chennai`,
         eyebrow: "Grade and product form",
-        intro: `${subject} enquiries are reviewed by Bharat Metals from Chennai for fabricators, contractors, traders and industrial buyers. Share ${form.specs} for a practical response.`,
+        intro: `${subject} enquiries are reviewed by Bharat Metals from Chennai for fabricators, contractors, traders and industrial buyers. Share ${buyerSpec(form)} for a practical response.`,
         image: formImage(form),
         imageAlt: `${subject} stock and material supply`,
         breadcrumbs: [
@@ -1341,9 +1410,10 @@ function buildGradeFormPages() {
         body:
           proseSection(`${subject} overview`, [
             `${grade.name} is ${grade.summary}. In ${form.short.toLowerCase()} form, buyers usually need clear size, finish, quantity, certificate and application details before availability can be reviewed.`,
-            `${subject} enquiries should include ${form.specs}, finish, length or sheet size where relevant, quantity, delivery location and any MTC, mill certificate or third-party inspection requirement. For make-sensitive pipe enquiries, mention make preference at RFQ stage without treating it as a brand dealership claim.`
+            `${subject} enquiries should include ${buyerSpec(form)}, quantity, delivery location and any MTC, mill certificate or third-party inspection requirement. For make-sensitive pipe enquiries, mention make preference at RFQ stage without treating it as a brand dealership claim.`
           ]) +
           pageSection("Applications and industries", `${subject} may be requested for ${form.uses.join(", ")}. Common buyer groups include fabricators, engineering companies, machine shops, contractors, traders, maintenance teams and project procurement buyers.`, `<h3>Related industries</h3>${chips(industries.slice(0, 8), (industry) => `industries/${industry.slug}/`)}`) +
+          finishMatrixSection(form) +
           pageSection("Supply note", "Bharat Metals is Chennai-based and supports Tamil Nadu and nearby South India enquiries depending on product availability, quantity, packing and transport feasibility.") +
           rfqBlock(subject) +
           searchSection(`Popular ${subject} searches`, `${subject} buyers often search by grade, form, city, finish, make preference and certificate requirement before sending an RFQ.`, gradeFormSearches(grade, form)) +
@@ -1386,7 +1456,7 @@ function buildLocationPages() {
         pageSection(`Popular stainless steel products for ${city.name}`, `For ${city.name}, Bharat Metals commonly reviews enquiries for ${city.products.join(", ")} along with related stainless steel forms such as tubes, flats, angles, channels, wire mesh, fasteners and perforated sheets where the application requires them.`, `<h3>Related products</h3>${chips(forms.filter((form) => city.products.some((product) => form.short.includes(product) || product.includes(form.short))).concat(forms.slice(0, 4)).slice(0, 8), (form) => `${form.slug}/`, (form) => form.short)}`) +
         pageSection(`Grades commonly discussed for ${city.name}`, `Grades often discussed for ${city.name} include ${city.grades.join(", ")}. Grade choice should be based on corrosion exposure, fabrication method, finish, hygiene requirement, drawing specification and buyer application.`, `<h3>Grade pages</h3>${chips(grades.slice(0, 6), (grade) => `${grade.slug}/`, (grade) => grade.name)}`) +
         pageSection("Delivery and transport guidance", exportNote) +
-        hubSection("Nearby cities", `Nearby ${city.region} Pages`, `Related city pages for buyers comparing dispatch options.`, chips(relatedCities(city), citySlug, (item) => item.name)) +
+        hubSection("Nearby cities", `Nearby ${city.region} Pages`, `Use nearby location pages when a buyer is comparing product availability, packing and Chennai-side dispatch planning.`, chips(relatedCities(city), citySlug, (item) => item.name)) +
         rfqBlock(`stainless steel for ${city.name}`) +
         searchSection(`Popular stainless steel enquiries for ${city.name}`, `These phrases reflect how ${city.name} buyers may search by product, grade, make, certificate need and dispatch location.`, citySearches(city)) +
         ctaBlock(`stainless steel for ${city.name}`),
@@ -1415,7 +1485,7 @@ function buildIndustryPages() {
         ]) +
         pageSection("Specific stainless steel product relevance", industryProductRelevance(industry), `<h3>Related product forms</h3>${chips(forms.filter((form) => industry.products.some((product) => form.short.includes(product) || product.includes(form.short))).concat(forms.slice(0, 4)).slice(0, 8), (form) => `${form.slug}/`, (form) => form.short)}`) +
         pageSection("Common grades", `Common grades for ${industry.name} include ${industry.grades.join(", ")}. Grade suitability should be confirmed by application, exposure, fabrication method, hygiene requirement, operating environment and project specification.`, `<h3>Grade pages</h3>${chips(grades.slice(0, 6), (grade) => `${grade.slug}/`, (grade) => grade.name)}`) +
-        pageSection("Finishes, services and documentation", "Finishes such as 2B, No. 1, BA, mirror, matt, hairline, brush, PVC coated sheets and polished pipes can be discussed where relevant. Cutting, polishing, bending, drilling, packing, MTC, mill certificate and inspection requirements should be shared before quotation.") +
+        pageSection("Finishes, services and documentation", `Finish and processing details for ${industry.name} should match the product form. Sheets, coils and perforated sheets may involve 2B, No. 1, BA, mirror, hairline, brush or PVC-coated options where suitable; rods and bars are normally discussed with bright, polished, machined or cut-length expectations; flanges and fittings need machined, mill, pickled/passivated or certificate-led details where applicable. Cutting, polishing, drilling, packing, MTC, mill certificate and inspection requirements should be shared before quotation.`) +
         hubSection("City relevance", "Relevant Supply Regions", "Open common city pages for Chennai-led supply discussions.", chips(["Chennai", "Ambattur", "Sriperumbudur", "Oragadam", "Coimbatore", "Hosur", "Pondicherry", "Tiruppur"].map(cityByName), citySlug, (city) => city.name)) +
         rfqBlock(industry.name) +
         searchSection(`Popular ${industry.name.toLowerCase()} stainless steel supply searches`, `Industry buyers often search by product form, grade, city, certificate need and application before sending a detailed RFQ.`, industrySearches(industry)) +
@@ -1476,9 +1546,10 @@ function buildCityProductPages() {
         body:
           proseSection(`${city.name} relevance`, [
             `${city.name} has ${city.profile}. ${form.name} may be requested by fabricators, contractors, industries, traders, workshops and project buyers depending on the application.`,
-            `Bharat Metals reviews ${form.short.toLowerCase()} enquiries for ${city.name} from Chennai by checking grade, ${form.specs}, finish, quantity, certificate needs, packing expectation and delivery location before confirming practical supply options.`
+            `Bharat Metals reviews ${form.short.toLowerCase()} enquiries for ${city.name} from Chennai by checking grade, ${buyerSpec(form)}, quantity, certificate needs, packing expectation and delivery location before confirming practical supply options.`
           ]) +
-          pageSection("Grades and RFQ notes", `Common grades discussed for ${city.name} include ${city.grades.join(", ")}. Send ${form.specs}, quantity, finish and delivery location for a practical quotation response.`) +
+          pageSection("Grades and RFQ notes", `Common grades discussed for ${city.name} include ${city.grades.join(", ")}. Send ${buyerSpec(form)}, quantity, finish where relevant and delivery location for a practical quotation response.`) +
+          finishMatrixSection(form) +
           rfqBlock(subject) +
           searchSection(`Popular ${form.short.toLowerCase()} searches for ${city.name}`, `Buyers often search city and product together before sending exact grade, size and quantity details.`, cityProductSearches(city, form)) +
           ctaBlock(subject),
@@ -1714,6 +1785,50 @@ function buildSiteMapPage(existingPages) {
   });
 }
 
+function homepagePortfolioMenuHtml() {
+  const groups = [
+    { label: "Stainless Steel", href: "stainless-steel/", items: forms.map((form) => [form.name, `${form.slug}/`]) },
+    { label: "Aluminium", href: "aluminium/", items: secondaryMaterials.aluminium.map((item) => [`Aluminium ${item}`, `aluminium-${slugify(item)}/`]) },
+    { label: "Brass", href: "brass/", items: secondaryMaterials.brass.map((item) => [`Brass ${item}`, `brass-${slugify(item)}/`]) },
+    { label: "Copper", href: "copper/", items: secondaryMaterials.copper.map((item) => [`Copper ${item}`, `copper-${slugify(item)}/`]) }
+  ];
+  return groups
+    .map((group) => {
+      const id = `portfolio-${slugify(group.label)}-flyout`;
+      return `<div class="portfolio-item has-flyout">
+                <div class="portfolio-row">
+                  <a class="portfolio-parent" href="${group.href}">${escapeHtml(group.label)}</a>
+                  <button class="flyout-toggle" type="button" aria-label="Toggle ${escapeHtml(group.label)} product links" aria-expanded="false" aria-controls="${id}"></button>
+                </div>
+                <div class="flyout-menu" id="${id}">
+                  ${group.items.map(([label, href]) => `<a href="${href}">${escapeHtml(label)}</a>`).join("")}
+                </div>
+              </div>`;
+    })
+    .join("");
+}
+
+function homepageFooterProductLinks() {
+  const links = [
+    ["Stainless Steel Pipes", "stainless-steel-pipes/"],
+    ["Stainless Steel Tubes", "stainless-steel-tubes/"],
+    ["Stainless Steel Sheets", "stainless-steel-sheets/"],
+    ["Stainless Steel Plates", "stainless-steel-plates/"],
+    ["Stainless Steel Coils", "stainless-steel-coils/"],
+    ["Stainless Steel Rods", "stainless-steel-rods/"],
+    ["Stainless Steel Bars", "stainless-steel-bars/"],
+    ["Stainless Steel Angles", "stainless-steel-angles/"],
+    ["Stainless Steel Flats", "stainless-steel-flats/"],
+    ["Stainless Steel Channels", "stainless-steel-channels/"],
+    ["Stainless Steel Flanges", "stainless-steel-flanges/"],
+    ["Stainless Steel Fittings", "stainless-steel-fittings/"],
+    ["Stainless Steel Fasteners", "stainless-steel-fasteners/"],
+    ["Wire Mesh", "stainless-steel-wire-mesh/"],
+    ["Perforated Sheets", "stainless-steel-perforated-sheets/"]
+  ];
+  return `<ul>${links.map(([label, href]) => `<li><a href="${href}">${escapeHtml(label)}</a></li>`).join("")}</ul>`;
+}
+
 function homepageMaterialCards() {
   const cards = [
     {
@@ -1818,25 +1933,34 @@ function updateHomepageLinks() {
             </div>`
   );
   html = html.replace(
-    /<div class="dropdown-menu" id="product-portfolio-menu">[\s\S]*?<\/div>/,
-    `<div class="dropdown-menu" id="product-portfolio-menu">
-              <a href="stainless-steel/">Stainless Steel</a>
-              <a href="stainless-steel-pipes/">Stainless Steel Pipes</a>
-              <a href="stainless-steel-sheets/">Stainless Steel Sheets</a>
-              <a href="stainless-steel-plates/">Stainless Steel Plates</a>
-              <a href="stainless-steel-coils/">Stainless Steel Coils</a>
-              <a href="stainless-steel-rods/">Stainless Steel Rods &amp; Bars</a>
-              <a href="stainless-steel-flanges/">Flanges &amp; Fittings</a>
-              <a href="aluminium/">Aluminium</a>
-              <a href="brass/">Brass</a>
-              <a href="copper/">Copper</a>
-            </div>`
+    /<div class="nav-group(?: portfolio-group)?">\s*<button class="nav-link nav-menu-button" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="product-portfolio-menu">PRODUCT PORTFOLIO<\/button>[\s\S]*?<\/div>\s*<a class="nav-link" href="request-quote\/">/,
+    `<div class="nav-group portfolio-group">
+            <button class="nav-link nav-menu-button" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="product-portfolio-menu">PRODUCT PORTFOLIO</button>
+            <div class="dropdown-menu portfolio-menu" id="product-portfolio-menu">
+              ${homepagePortfolioMenuHtml()}
+            </div>
+          </div>
+          <a class="nav-link" href="request-quote/">`
+  );
+  html = html.replace(
+    /<img src="assets\/images\/photos\/hero\/[^"]+" alt="Stainless steel pipes stockyard for Bharat Metals Chennai" width="[^"]+" height="[^"]+" fetchpriority="high">/,
+    `<img src="${heroImage}" alt="Stainless steel pipes stockyard for Bharat Metals Chennai" width="1586" height="992" fetchpriority="high">`
   );
   html = html.replace(
     /<ul class="grade-chips" aria-label="Popular stainless steel grades">[\s\S]*?<\/ul>/,
     `<ul class="grade-chips" aria-label="Popular stainless steel grades">
               ${grades.map((grade) => `<li><a href="${grade.slug}/">${escapeHtml(grade.name.replace(/^SS /, ""))}</a></li>`).join("\n              ")}
             </ul>`
+  );
+  html = html.replace(
+    /<div class="finish-grid">[\s\S]*?<\/div>/,
+    `<div class="finish-grid">
+            ${finishes.map((finish) => `<span>${escapeHtml(finish)}</span>`).join("")}
+          </div>`
+  );
+  html = html.replace(
+    /<div class="keyword-chips" aria-label="Relevant stainless steel search phrases">/,
+    `<div class="search-chip-grid" aria-label="Relevant stainless steel search phrases">`
   );
 
   html = html.replace(
@@ -1938,6 +2062,15 @@ function updateHomepageLinks() {
         </div>
         <div>
           <h2>Products</h2>`
+  );
+  html = html.replace(
+    /<div>\s*<h2>Products<\/h2>\s*<ul>[\s\S]*?<\/ul>\s*<\/div>\s*<div>\s*<h2>Regions<\/h2>/,
+    `<div>
+          <h2>Products</h2>
+          ${homepageFooterProductLinks()}
+        </div>
+        <div>
+          <h2>Regions</h2>`
   );
 
   fs.writeFileSync(file, html);

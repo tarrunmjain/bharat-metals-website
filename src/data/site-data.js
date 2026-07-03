@@ -51,7 +51,7 @@ const grades = [
   { id: "430", slug: "ss-430", name: "SS 430", primary: false, summary: "a ferritic stainless steel grade often discussed for decorative, appliance and selected sheet applications", notes: "Send finish, thickness and usage details for SS 430 sheet enquiries." }
 ];
 
-const finishes = ["2B Finish", "No. 1 Finish", "BA Finish", "Mirror Finish", "No. 8 Finish", "Matt Finish", "Hairline Finish", "Brush Finish", "Satin Finish", "PVC Coated Sheets", "Polished Pipes", "Polished Rods and Bars"];
+const finishes = ["2B Finish", "No. 1 Finish", "BA Finish", "Mirror Finish", "No. 8 Finish", "Matt Finish", "Hairline Finish", "Brush Finish", "Satin Finish", "PVC Coated Sheets", "Polished Pipes", "Polished Rods", "Polished Bars"];
 const services = ["Cutting", "Polishing", "PVC coating", "Bending", "Drilling", "Packing", "Local delivery", "Transport booking", "Door delivery", "Courier for small items", "Export packing", "Material Test Certificate / MTC", "Mill certificate", "Third party inspection"];
 const rfqFields = ["Product form", "Grade", "Size / thickness / schedule / diameter", "Quantity", "Finish", "Delivery location", "Certificate requirement", "Packing / transport requirement", "Required date"];
 
@@ -160,7 +160,7 @@ const blogPosts = [
 ].map(([slug, title, summary]) => ({ slug, title, summary }));
 
 const priorityCities = ["Chennai", "Coimbatore", "Hosur", "Trichy", "Madurai", "Salem", "Tiruppur", "Pondicherry", "Sricity", "Tada", "Tirupati"];
-const priorityForms = ["pipes", "sheets", "plates"];
+const priorityForms = ["pipes", "sheets", "plates", "rods", "bars"];
 const gradeCityPriority = ["Chennai", "Ambattur", "Sriperumbudur", "Oragadam", "Coimbatore", "Madurai", "Trichy", "Salem", "Hosur", "Pondicherry"];
 
 module.exports = { site, forms, grades, finishes, services, rfqFields, industries, secondaryMaterials, locations, blogPosts, priorityCities, priorityForms, gradeCityPriority };

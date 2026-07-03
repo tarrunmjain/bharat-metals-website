@@ -23,6 +23,83 @@ function localHref(prefix, slug) {
   return slug ? `${prefix}${slug}` : prefix || "./";
 }
 
+const portfolioMenu = [
+  {
+    label: "Stainless Steel",
+    href: "stainless-steel/",
+    items: [
+      ["Stainless Steel Pipes", "stainless-steel-pipes/"],
+      ["Stainless Steel Tubes", "stainless-steel-tubes/"],
+      ["Stainless Steel Sheets", "stainless-steel-sheets/"],
+      ["Stainless Steel Plates", "stainless-steel-plates/"],
+      ["Stainless Steel Coils", "stainless-steel-coils/"],
+      ["Stainless Steel Rods", "stainless-steel-rods/"],
+      ["Stainless Steel Bars", "stainless-steel-bars/"],
+      ["Stainless Steel Angles", "stainless-steel-angles/"],
+      ["Stainless Steel Flats", "stainless-steel-flats/"],
+      ["Stainless Steel Channels", "stainless-steel-channels/"],
+      ["Stainless Steel Flanges", "stainless-steel-flanges/"],
+      ["Stainless Steel Fittings", "stainless-steel-fittings/"],
+      ["Stainless Steel Circles", "stainless-steel-circles/"],
+      ["Stainless Steel Fasteners", "stainless-steel-fasteners/"],
+      ["Stainless Steel Wire Mesh", "stainless-steel-wire-mesh/"],
+      ["Stainless Steel Perforated Sheets", "stainless-steel-perforated-sheets/"]
+    ]
+  },
+  {
+    label: "Aluminium",
+    href: "aluminium/",
+    items: [
+      ["Aluminium Sheets", "aluminium-sheets/"],
+      ["Aluminium Plates", "aluminium-plates/"],
+      ["Aluminium Coils", "aluminium-coils/"],
+      ["Aluminium Pipes", "aluminium-pipes/"],
+      ["Aluminium Flats", "aluminium-flats/"],
+      ["Aluminium Rods", "aluminium-rods/"],
+      ["Aluminium Bars", "aluminium-bars/"]
+    ]
+  },
+  {
+    label: "Brass",
+    href: "brass/",
+    items: [
+      ["Brass Pipes", "brass-pipes/"],
+      ["Brass Bush Pipes", "brass-bush-pipes/"],
+      ["Brass Rods", "brass-rods/"],
+      ["Brass Bars", "brass-bars/"],
+      ["Brass Flats", "brass-flats/"]
+    ]
+  },
+  {
+    label: "Copper",
+    href: "copper/",
+    items: [
+      ["Copper Tubes", "copper-tubes/"],
+      ["Copper Flats", "copper-flats/"],
+      ["Copper Rods", "copper-rods/"],
+      ["Copper Bars", "copper-bars/"],
+      ["Copper Plates", "copper-plates/"]
+    ]
+  }
+];
+
+function portfolioMenuHtml(prefix) {
+  return portfolioMenu
+    .map((group) => {
+      const id = `portfolio-${group.href.replace(/\/$/, "")}-flyout`;
+      return `<div class="portfolio-item has-flyout">
+                <div class="portfolio-row">
+                  <a class="portfolio-parent" href="${localHref(prefix, group.href)}">${escapeHtml(group.label)}</a>
+                  <button class="flyout-toggle" type="button" aria-label="Toggle ${escapeHtml(group.label)} product links" aria-expanded="false" aria-controls="${id}"></button>
+                </div>
+                <div class="flyout-menu" id="${id}">
+                  ${group.items.map(([label, href]) => `<a href="${localHref(prefix, href)}">${escapeHtml(label)}</a>`).join("")}
+                </div>
+              </div>`;
+    })
+    .join("");
+}
+
 function nav(site, prefix) {
   return `
     <div class="top-bar" aria-label="Bharat Metals quick contact">
@@ -33,7 +110,8 @@ function nav(site, prefix) {
           <a class="top-icon icon-call" href="${site.phoneHref}" aria-label="Call Bharat Metals"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M7.2 4.2 9.9 5.6c.7.4 1 1.2.7 2L9.8 9.7c-.2.5-.1 1.1.3 1.5l2.7 2.7c.4.4 1 .5 1.5.3l2.1-.8c.8-.3 1.6 0 2 .7l1.4 2.7c.4.8.1 1.8-.7 2.2-1.1.6-2.5.9-4.1.5-5.1-1.2-9.3-5.4-10.5-10.5-.4-1.6-.1-3 .5-4.1.4-.8 1.4-1.1 2.2-.7Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           <a class="top-icon icon-whatsapp" href="${site.whatsappHref}" target="_blank" rel="noopener" aria-label="WhatsApp Bharat Metals"><svg viewBox="0 0 24 24" width="23" height="23" aria-hidden="true"><path d="M12 3.3a8.6 8.6 0 0 0-7.2 13.2L4 20.7l4.4-1a8.6 8.6 0 1 0 3.6-16.4Z" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/><path d="M8.4 8.1c.2-.5.4-.6.8-.6h.5c.2 0 .4.1.5.4l.8 1.9c.1.3.1.5-.1.7l-.4.5c-.2.2-.2.4 0 .7.4.8 1.4 1.8 2.2 2.2.3.2.5.2.7 0l.6-.6c.2-.2.4-.2.7-.1l1.8.8c.3.1.5.3.4.6-.1.8-.7 1.6-1.4 1.7-1 .1-2.7-.4-4.4-1.6-1.8-1.3-3.2-3.4-3.6-4.9-.2-.7.1-1.3.4-1.7Z" fill="currentColor"/></svg></a>
           <a class="top-icon icon-mail" href="${site.mailto.replace(/&/g, "&amp;")}" aria-label="Email Bharat Metals"><svg viewBox="0 0 24 24" width="23" height="23" aria-hidden="true"><rect x="3.5" y="5.8" width="17" height="12.4" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="m4.6 7.4 7.4 5.3 7.4-5.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <a class="top-icon icon-google" href="${site.maps}" target="_blank" rel="noopener" aria-label="Open Bharat Metals Google Profile"><svg viewBox="0 0 24 24" width="23" height="23" aria-hidden="true"><path d="M12 2.7a7.3 7.3 0 0 0-7.3 7.3c0 5.4 7.3 11.3 7.3 11.3s7.3-5.9 7.3-11.3A7.3 7.3 0 0 0 12 2.7Z" fill="#ea4335"/><path d="M12 2.7v5a2.4 2.4 0 0 1 2.4 2.4h4.9A7.3 7.3 0 0 0 12 2.7Z" fill="#4285f4"/><circle cx="12" cy="10" r="2.55" fill="#fbbc04"/></svg></a>
+          <a class="top-icon icon-google" href="${site.maps}" target="_blank" rel="noopener" aria-label="Open Bharat Metals Google Profile"><svg viewBox="0 0 24 24" width="23" height="23" aria-hidden="true"><path d="M12 2.7a7.3 7.3 0 0 0-7.3 7.3c0 5.4 7.3 11.3 7.3 11.3s7.3-5.9 7.3-11.3A7.3 7.3 0 0 0 12 2.7Z" fill="#ea4335"/><path d="M12 2.7v5a2.4 2.4 0 0 1 2.4 2.4h4.9A7.3 7.3 0 0 0 12 2.7Z" fill="#4285f4"/><path d="M4.7 10c0 2.2 1.2 4.8 2.8 7l3.2-5.2a2.5 2.5 0 0 1-1.1-2.1c0-.8.4-1.6 1-2L7.5 5.1A7.2 7.2 0 0 0 4.7 10Z" fill="#34a853"/><circle cx="12" cy="10" r="2.55" fill="#fbbc04"/></svg></a>
+          <!-- TODO: Replace this safe IndiaMART placeholder when the exact Bharat Metals IndiaMART profile URL is confirmed. -->
           <a class="top-icon icon-indiamart" href="https://www.indiamart.com/" target="_blank" rel="noopener" aria-label="Open IndiaMART placeholder"><svg viewBox="0 0 32 24" width="28" height="22" aria-hidden="true"><path d="M5 19V7l6.2 8.2L17.5 7v12h-3.4v-5.3l-2.9 3.8-2.9-3.8V19H5Z" fill="#c4212a"/><circle cx="6.5" cy="5" r="2" fill="#d9252e"/><circle cx="16.2" cy="5" r="2" fill="#d9252e"/><path d="M22 6h3.2v13H22zm4.8 0H30v13h-3.2z" fill="#f58220"/></svg></a>
         </div>
       </div>
@@ -45,7 +123,7 @@ function nav(site, prefix) {
         <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
           <a class="nav-link" href="${localHref(prefix, "")}">HOME</a>
           <div class="nav-group"><button class="nav-link nav-menu-button" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="company-profile-menu">COMPANY PROFILE</button><div class="dropdown-menu" id="company-profile-menu"><a href="${localHref(prefix, "about-us/")}">About Us</a><a href="${localHref(prefix, "mission-vision/")}">Mission and Vision</a><a href="${localHref(prefix, "industries-we-serve/")}">Industries We Serve</a><a href="${localHref(prefix, "locations-we-serve/")}">Locations We Serve</a><a href="${localHref(prefix, "site-map/")}">Sitemap</a></div></div>
-          <div class="nav-group"><button class="nav-link nav-menu-button" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="product-portfolio-menu">PRODUCT PORTFOLIO</button><div class="dropdown-menu" id="product-portfolio-menu"><a href="${localHref(prefix, "stainless-steel/")}">Stainless Steel</a><a href="${localHref(prefix, "stainless-steel-pipes/")}">Stainless Steel Pipes</a><a href="${localHref(prefix, "stainless-steel-sheets/")}">Stainless Steel Sheets</a><a href="${localHref(prefix, "stainless-steel-plates/")}">Stainless Steel Plates</a><a href="${localHref(prefix, "stainless-steel-coils/")}">Stainless Steel Coils</a><a href="${localHref(prefix, "stainless-steel-rods/")}">Stainless Steel Rods &amp; Bars</a><a href="${localHref(prefix, "stainless-steel-flanges/")}">Flanges &amp; Fittings</a><a href="${localHref(prefix, "aluminium/")}">Aluminium</a><a href="${localHref(prefix, "brass/")}">Brass</a><a href="${localHref(prefix, "copper/")}">Copper</a></div></div>
+          <div class="nav-group portfolio-group"><button class="nav-link nav-menu-button" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="product-portfolio-menu">PRODUCT PORTFOLIO</button><div class="dropdown-menu portfolio-menu" id="product-portfolio-menu">${portfolioMenuHtml(prefix)}</div></div>
           <a class="nav-link" href="${localHref(prefix, "request-quote/")}">REQUEST A QUOTE</a>
           <a class="nav-link" href="${localHref(prefix, "blog/")}">BLOG</a>
           <a class="nav-link" href="${localHref(prefix, "contact-us/")}">CONTACT US</a>
@@ -62,7 +140,7 @@ function footer(site, prefix) {
       <div class="footer-brand"><img src="${prefix}${site.logo}" alt="Bharat Metals" width="900" height="300"><p>Bharat Metals is a Chennai stainless steel stockist, supplier and wholesaler established in 1986, focused on practical stainless steel supply across Tamil Nadu and nearby South India markets.</p></div>
       <div><h2>Contact</h2><address>${site.addressLines.map(escapeHtml).join("<br>")}</address><p><a href="${site.phoneHref}">${escapeHtml(site.phone)}</a></p><p><a href="${mailto}">${escapeHtml(site.email)}</a></p><p><a href="mailto:${site.secondaryEmail}">${escapeHtml(site.secondaryEmail)}</a></p><p>Working hours: 10:00 AM to 6:00 PM</p><p>Weekly holiday: Sunday</p></div>
       <div><h2>Navigation</h2><ul><li><a href="${localHref(prefix, "")}">Home</a></li><li><a href="${localHref(prefix, "about-us/")}">Company Profile</a></li><li><a href="${localHref(prefix, "products/")}">Product Portfolio</a></li><li><a href="${localHref(prefix, "locations-we-serve/")}">Locations</a></li><li><a href="${localHref(prefix, "technical-data/")}">Technical Data</a></li><li><a href="${localHref(prefix, "request-quote/")}">Request a Quote</a></li><li><a href="${localHref(prefix, "blog/")}">Blog</a></li><li><a href="${localHref(prefix, "site-map/")}">Sitemap</a></li></ul></div>
-      <div><h2>Products</h2><ul><li><a href="${localHref(prefix, "stainless-steel-pipes/")}">Stainless Steel Pipes</a></li><li><a href="${localHref(prefix, "stainless-steel-sheets/")}">Stainless Steel Sheets</a></li><li><a href="${localHref(prefix, "stainless-steel-plates/")}">Stainless Steel Plates</a></li><li><a href="${localHref(prefix, "stainless-steel-coils/")}">Stainless Steel Coils</a></li><li><a href="${localHref(prefix, "stainless-steel-rods/")}">Stainless Steel Rods</a></li><li><a href="${localHref(prefix, "stainless-steel-flanges/")}">Flanges</a></li></ul></div>
+      <div><h2>Products</h2><ul><li><a href="${localHref(prefix, "stainless-steel-pipes/")}">Stainless Steel Pipes</a></li><li><a href="${localHref(prefix, "stainless-steel-tubes/")}">Stainless Steel Tubes</a></li><li><a href="${localHref(prefix, "stainless-steel-sheets/")}">Stainless Steel Sheets</a></li><li><a href="${localHref(prefix, "stainless-steel-plates/")}">Stainless Steel Plates</a></li><li><a href="${localHref(prefix, "stainless-steel-coils/")}">Stainless Steel Coils</a></li><li><a href="${localHref(prefix, "stainless-steel-rods/")}">Stainless Steel Rods</a></li><li><a href="${localHref(prefix, "stainless-steel-bars/")}">Stainless Steel Bars</a></li><li><a href="${localHref(prefix, "stainless-steel-angles/")}">Stainless Steel Angles</a></li><li><a href="${localHref(prefix, "stainless-steel-flats/")}">Stainless Steel Flats</a></li><li><a href="${localHref(prefix, "stainless-steel-channels/")}">Stainless Steel Channels</a></li><li><a href="${localHref(prefix, "stainless-steel-flanges/")}">Stainless Steel Flanges</a></li><li><a href="${localHref(prefix, "stainless-steel-fittings/")}">Stainless Steel Fittings</a></li><li><a href="${localHref(prefix, "stainless-steel-fasteners/")}">Stainless Steel Fasteners</a></li><li><a href="${localHref(prefix, "stainless-steel-wire-mesh/")}">Wire Mesh</a></li><li><a href="${localHref(prefix, "stainless-steel-perforated-sheets/")}">Perforated Sheets</a></li></ul></div>
       <div><h2>Regions</h2><ul><li><a href="${localHref(prefix, "stainless-steel-suppliers-chennai/")}">Chennai</a></li><li><a href="${localHref(prefix, "stainless-steel-suppliers-coimbatore/")}">Coimbatore</a></li><li><a href="${localHref(prefix, "stainless-steel-suppliers-madurai/")}">Madurai</a></li><li><a href="${localHref(prefix, "stainless-steel-suppliers-trichy/")}">Trichy</a></li><li><a href="${localHref(prefix, "stainless-steel-suppliers-salem/")}">Salem</a></li><li><a href="${localHref(prefix, "stainless-steel-suppliers-hosur/")}">Hosur</a></li><li><a href="${localHref(prefix, "stainless-steel-suppliers-pondicherry/")}">Pondicherry</a></li></ul></div>
       <div><h2>Useful Links</h2><ul><li><a href="${site.maps}" target="_blank" rel="noopener">Google Maps</a></li><li><a href="https://www.indiamart.com/" target="_blank" rel="noopener">IndiaMART</a></li></ul><h2>Payment Modes</h2><p>UPI, Bank Transfer, Cheque, Cash</p></div>
     </div>

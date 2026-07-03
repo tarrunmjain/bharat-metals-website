@@ -4,8 +4,8 @@ Generated: 2026-07-03
 
 | Section | Visible label | Image file used | Dimensions | File size | Duplicate | Visual quality note |
 |---|---|---|---:|---:|---|---|
-| Hero | Stainless steel pipes stockyard | assets/images/photos/hero/bharat-metals-stainless-steel-pipes-hero-v2.webp | 1563x1000 | 252982 | no | Fresh photorealistic generated stockyard image; no text or logo visible. |
-| Materials | Stainless Steel | assets/images/photos/materials/stainless-steel-mixed-stock-v2.webp | 1500x1000 | 226378 | no | Fresh photorealistic mixed stainless steel material image, different from hero. |
+| Hero | Stainless steel pipes stockyard | assets/images/photos/hero/bharat-metals-stainless-steel-pipes-hero-v3.webp | 1586x992 | 207224 | no | Fresh photorealistic generated stockyard image; no text or logo visible. |
+| Materials | Stainless Steel | assets/images/photos/materials/stainless-steel-mixed-stock-v3.webp | 1536x1024 | 198244 | no | Fresh photorealistic mixed stainless steel material image, different from hero. |
 | Materials | Aluminium | assets/images/photos/materials/aluminium.webp | 900x563 | 84658 | no | Material card uses a realistic WebP product photo. |
 | Materials | Brass | assets/images/photos/materials/brass.webp | 900x563 | 111298 | no | Material card uses a realistic WebP product photo. |
 | Materials | Copper | assets/images/photos/materials/copper.webp | 900x563 | 119928 | no | Material card uses a realistic WebP product photo. |

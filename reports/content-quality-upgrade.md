@@ -4,13 +4,13 @@ Generated: 2026-07-03
 
 ## Summary
 
-- Pages audited: 429
+- Pages audited: 451
 - Pages below target word count: 0
-- Pages with popular enquiry search sections: 380
+- Pages with popular enquiry search sections: 402
 - Pages missing required popular enquiry searches: 0
-- Pages with RFQ checklist: 414
-- Pages with CTA: 429
-- Pages with real images: 429
+- Pages with RFQ checklist: 436
+- Pages with CTA: 451
+- Pages with real images: 451
 - Pages with any audit flag: 0
 
 ## Notes

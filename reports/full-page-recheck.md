@@ -4,14 +4,14 @@ Generated: 2026-07-03
 
 ## Inventory
 
-- Total HTML pages: 429
-- Total pages in sitemap: 429
+- Total HTML pages: 451
+- Total pages in sitemap: 451
 - Grade pages: 9
 - City pages: 120
 - Industry pages: 25
 - Product form pages: 16
 - Grade + product pages: 144
-- City + product pages: 33
+- City + product pages: 55
 - Grade + city pages: 30
 - Blog pages: 15
 
@@ -46,12 +46,12 @@ Generated: 2026-07-03
 - City pages strengthened with profile, products, grades, RFQ, nearby cities and FAQs: yes
 - Industry pages strengthened with product relevance, grades, city links, RFQ and FAQs: yes
 - Product and grade pages strengthened with forms, grade tables/links, city links, RFQ and FAQs: yes
-- Image status counts: real image 429
+- Image status counts: real image 451
 
 ## Technical Summary
 
 - Broken internal links counted in audit: 0
-- Pages in sitemap: 429
+- Pages in sitemap: 451
 - CNAME present: no
 - .nojekyll present: yes
 - GoDaddy/DNS/domain records changed: no

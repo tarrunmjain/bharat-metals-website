@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T19:15:28.130Z",
+  "generatedAt": "2026-07-03T20:36:22.921Z",
   "fileUrl": "file:///E:/Websites/Bharat-Metals/bharat-metals-website/index.html",
   "viewports": [
     {
@@ -55,12 +55,12 @@
           },
           "media": {
             "x": 682.09375,
-            "y": 283.296875,
+            "y": 177.65625,
             "width": 647.90625,
-            "height": 404.9375,
-            "top": 283.296875,
+            "height": 616.21875,
+            "top": 177.65625,
             "right": 1330,
-            "bottom": 688.234375,
+            "bottom": 793.875,
             "left": 682.09375
           }
         },
@@ -89,6 +89,16 @@
         "mobileNav": {
           "beforeOpenClass": "site-nav",
           "dropdownAriaExpanded": "false"
+        },
+        "portfolioMenu": {
+          "exists": true,
+          "flyoutCount": 4,
+          "productButtonExpanded": "true",
+          "menuOpacity": "1",
+          "flyoutOpacity": "1",
+          "flyoutNoGap": true,
+          "rodsSeparate": true,
+          "barsSeparate": true
         }
       },
       "mobileNavCheck": null
@@ -180,6 +190,16 @@
         "mobileNav": {
           "beforeOpenClass": "site-nav",
           "dropdownAriaExpanded": "false"
+        },
+        "portfolioMenu": {
+          "exists": true,
+          "flyoutCount": 4,
+          "productButtonExpanded": "false",
+          "menuOpacity": "1",
+          "flyoutOpacity": "1",
+          "flyoutNoGap": true,
+          "rodsSeparate": true,
+          "barsSeparate": true
         }
       },
       "mobileNavCheck": null
@@ -271,6 +291,16 @@
         "mobileNav": {
           "beforeOpenClass": "site-nav",
           "dropdownAriaExpanded": "false"
+        },
+        "portfolioMenu": {
+          "exists": true,
+          "flyoutCount": 4,
+          "productButtonExpanded": "false",
+          "menuOpacity": "1",
+          "flyoutOpacity": "1",
+          "flyoutNoGap": true,
+          "rodsSeparate": true,
+          "barsSeparate": true
         }
       },
       "mobileNavCheck": {
@@ -281,6 +311,12 @@
         "afterDropdown": {
           "ariaExpanded": "true",
           "groupOpen": true
+        },
+        "afterPortfolio": {
+          "ariaExpanded": "true",
+          "menuOpen": true,
+          "flyoutExpanded": "true",
+          "flyoutOpen": true
         },
         "afterEscape": {
           "navOpen": false,
