@@ -113,12 +113,12 @@ address {
   min-width: 0;
   margin: 0;
   color: #dce1e8;
-  font-size: 0.82rem;
-  font-weight: 900;
-  letter-spacing: 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.045em;
   text-transform: uppercase;
   overflow-wrap: anywhere;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.22), 0 -1px 0 rgba(93, 100, 110, 0.5);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.16);
 }
 
 .top-icons {
@@ -149,18 +149,29 @@ address {
 }
 
 .icon-google {
+  color: #4285f4;
   filter: saturate(1.08);
 }
 
 .icon-indiamart {
-  color: #1273b9;
+  color: #c4212a;
 }
 
 .top-icon:hover,
 .top-icon:focus-visible {
   color: var(--silver-light);
   transform: translateY(-2px);
-  filter: grayscale(1) brightness(1.34);
+  filter: brightness(1.18);
+}
+
+.top-icon:hover svg *[fill]:not([fill="none"]),
+.top-icon:focus-visible svg *[fill]:not([fill="none"]) {
+  fill: currentColor;
+}
+
+.top-icon:hover svg *[stroke],
+.top-icon:focus-visible svg *[stroke] {
+  stroke: currentColor;
 }
 
 .site-header {
@@ -244,7 +255,7 @@ address {
 
 .dropdown-menu {
   position: absolute;
-  top: calc(100% + 8px);
+  top: 100%;
   left: 0;
   z-index: 20;
   display: grid;

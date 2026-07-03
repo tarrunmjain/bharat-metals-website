@@ -2,12 +2,13 @@
 
 Static GitHub Pages preview project for Bharat Metals, a Chennai stainless steel dealer, stockist and supplier established in 1986.
 
-## Sprint 1A Scope
+## Sprint 1C Scope
 
 - Homepage and global website foundation
-- Redesigned and polished homepage
-- Recreated Bharat Metals SVG logo
-- Original SVG hero, material, product-form and industry visual assets
+- Final homepage visual correction and functional QA lock pass
+- Recreated Bharat Metals SVG logo with PNG/WebP exports
+- Original hero, product-form and industry WebP visual assets
+- Original SVG material visual assets
 - Premium red, silver and graphite visual system
 - SEO metadata, canonical URL, robots.txt and sitemap.xml
 - Organization, LocalBusiness, FAQPage and BreadcrumbList JSON-LD schema
