@@ -1,0 +1,12 @@
+{
+  "name": "bharat-metals-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static GitHub Pages website for Bharat Metals.",
+  "scripts": {
+    "build": "node scripts/build-pages.js",
+    "qa": "node scripts/qa-static.js",
+    "qa:browser": "node scripts/qa-browser-cdp.js"
+  },
+  "devDependencies": {}
+}

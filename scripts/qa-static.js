@@ -1,0 +1,19 @@
+const fs = require("fs");
+const path = require("path");
+const root = path.resolve(__dirname, "..");
+const skip = new Set([".git", "assets", "qa", "reports", "src", "scripts", "node_modules"]);
+function walk(dir, out=[]){for(const e of fs.readdirSync(dir,{withFileTypes:true})){if(e.isDirectory()){if(!skip.has(e.name)) walk(path.join(dir,e.name),out);} else if(e.name.endsWith(".html")) out.push(path.join(dir,e.name));} return out;}
+function rel(p){return path.relative(root,p).replace(/\\/g,"/");}
+function strip(s){return s.replace(/<[^>]*>/g,"").replace(/\s+/g," ").trim();}
+function targetFile(baseFile, ref){let clean=ref.split("#")[0].split("?")[0]; if(!clean) return null; clean=clean.replace(/\/$/,"/"); const abs=path.resolve(path.dirname(baseFile),clean); if(clean.endsWith("/")) return path.join(abs,"index.html"); if(path.extname(abs)) return abs; return path.join(abs,"index.html");}
+const files = walk(root); const errors=[]; const titles=new Map(); const descs=new Map(); let jsonCount=0; let faqCount=0; let linkCount=0;
+for(const file of files){const html=fs.readFileSync(file,"utf8"); const fileRel=rel(file); const ids=new Set([...html.matchAll(/id="([^"]+)"/g)].map(m=>m[1])); const h1=(html.match(/<h1\b/gi)||[]).length; if(h1!==1) errors.push(`${fileRel}: expected one H1, found ${h1}`);
+ const title=(html.match(/<title>([\s\S]*?)<\/title>/)||[])[1]||""; const desc=(html.match(/<meta name="description" content="([^"]*)"/)||[])[1]||""; if(titles.has(title)) errors.push(`${fileRel}: duplicate title with ${titles.get(title)}`); else titles.set(title,fileRel); if(descs.has(desc)) errors.push(`${fileRel}: duplicate meta description with ${descs.get(desc)}`); else descs.set(desc,fileRel);
+ for(const m of html.matchAll(/(?:href|src)="([^"]+)"/g)){const ref=m[1]; if(/^(https?:|mailto:|tel:)/.test(ref)) continue; if(ref.startsWith("#")){if(!ids.has(ref.slice(1))) errors.push(`${fileRel}: missing anchor ${ref}`); continue;} const tf=targetFile(file,ref); if(!tf) continue; linkCount++; if(!fs.existsSync(tf)) errors.push(`${fileRel}: broken ${ref} -> ${rel(tf)}`);}
+ for(const m of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)){jsonCount++; let data; try{data=JSON.parse(m[1]);}catch(e){errors.push(`${fileRel}: JSON-LD parse failed ${e.message}`); continue;} const graph=data["@graph"]||[data]; const faq=graph.find(x=>x["@type"]==="FAQPage"); if(faq){faqCount++; const schemaQs=(faq.mainEntity||[]).map(q=>q.name.trim()); const visible=[...html.matchAll(/<summary>([\s\S]*?)<\/summary>/g)].map(x=>strip(x[1])); if(JSON.stringify(schemaQs)!==JSON.stringify(visible)) errors.push(`${fileRel}: FAQ schema does not match visible FAQ`);}}
+}
+if(fs.existsSync(path.join(root,"CNAME"))) errors.push("CNAME must be absent"); if(!fs.existsSync(path.join(root,".nojekyll"))) errors.push(".nojekyll missing");
+const sitemap=fs.readFileSync(path.join(root,"sitemap.xml"),"utf8"); const urlCount=(sitemap.match(/<loc>/g)||[]).length; if(urlCount!==files.length) errors.push(`sitemap URL count ${urlCount} does not match HTML count ${files.length}`);
+const result={htmlFiles:files.length, sitemapUrls:urlCount, checkedLinksAndAssets:linkCount, jsonLdBlocks:jsonCount, faqPages:faqCount, duplicateTitles:0, duplicateDescriptions:0, errors};
+fs.writeFileSync(path.join(root,"reports","qa-static.json"),JSON.stringify(result,null,2));
+console.log(JSON.stringify(result,null,2)); if(errors.length) process.exit(1);
