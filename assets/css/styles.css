@@ -423,7 +423,7 @@ p {
   margin-top: 22px;
 }
 
-.grade-chips li,
+.grade-chips a,
 .chip-grid a,
 .keyword-chips span,
 .finish-grid span,
@@ -443,8 +443,14 @@ p {
   transition: border-color var(--motion), box-shadow var(--motion), color var(--motion), transform var(--motion), background var(--motion);
 }
 
+.grade-chips li {
+  display: inline-flex;
+}
+
 .chip-grid a:hover,
 .chip-grid a:focus-visible,
+.grade-chips a:hover,
+.grade-chips a:focus-visible,
 .keyword-chips span:hover,
 .finish-grid span:hover,
 .service-chips span:hover,
@@ -639,6 +645,7 @@ p {
 .form-card,
 .why-grid article,
 .industry-grid article,
+.industry-card,
 .faq-list details {
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -648,9 +655,13 @@ p {
 }
 
 .material-card:hover,
+.material-card:focus-visible,
 .form-card:hover,
+.form-card:focus-visible,
 .why-grid article:hover,
 .industry-grid article:hover,
+.industry-card:hover,
+.industry-card:focus-visible,
 .faq-list details:hover {
   border-color: var(--silver);
   transform: translateY(-4px);
@@ -658,7 +669,17 @@ p {
 }
 
 .material-card {
+  display: block;
   overflow: hidden;
+  color: inherit;
+  text-decoration: none;
+}
+
+.form-card,
+.industry-card {
+  display: block;
+  color: inherit;
+  text-decoration: none;
 }
 
 .material-card img,
@@ -788,7 +809,8 @@ p {
   gap: 13px;
 }
 
-.industry-grid article {
+.industry-grid article,
+.industry-card {
   overflow: hidden;
 }
 

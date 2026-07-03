@@ -1,15 +1,17 @@
 {
   "generatedAt": "2026-07-03",
-  "totalPages": 428,
-  "generatedPages": 427,
+  "totalPages": 429,
+  "generatedPages": 428,
   "byType": {
-    "core": 18,
-    "product": 16,
+    "core": 10,
+    "technical": 1,
+    "secondary-material": 20,
+    "legacy": 5,
+    "product-form": 16,
     "grade": 9,
     "grade-form": 144,
-    "location": 120,
+    "city": 120,
     "industry": 25,
-    "secondary": 17,
     "city-product": 33,
     "grade-city": 30,
     "blog": 15
@@ -442,6 +444,7 @@
     "https://www.stainlesssteeldealers.com/blog/stainless-steel-material-test-certificate/",
     "https://www.stainlesssteeldealers.com/blog/stainless-steel-for-automobile-industries-tamil-nadu/",
     "https://www.stainlesssteeldealers.com/blog/stainless-steel-supply-to-sricity-tada-tirupati/",
-    "https://www.stainlesssteeldealers.com/blog/stainless-steel-for-coastal-and-marine-use/"
+    "https://www.stainlesssteeldealers.com/blog/stainless-steel-for-coastal-and-marine-use/",
+    "https://www.stainlesssteeldealers.com/site-map/"
   ]
 }

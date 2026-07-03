@@ -1,17 +1,21 @@
 # City Research Notes
 
-This sprint uses safe, high-level industrial knowledge for location pages. No city page claims a Bharat Metals branch office outside Chennai. Each location page says enquiries are supported from Chennai based on product availability, quantity and logistics feasibility.
+Generated: 2026-07-03
 
-Items to verify later before deeper local SEO expansion:
-- Exact industrial estate names for smaller Tamil Nadu towns.
-- Current logistics partners and route-specific delivery timelines.
-- Any city-specific product stock patterns from Bharat Metals sales records.
-- Exact export documentation workflow for Sri Lanka and Maldives enquiries.
+This repair sprint used the existing Bharat Metals local market brief and cautious general industrial knowledge for city page content. No live web research was used in this pass.
 
-Known context used cautiously:
-- Chennai and nearby corridors: fabrication, automobile, engineering, port, marine, construction and commercial kitchen equipment demand.
-- Coimbatore: engineering, pumps, motors, textile machinery and machine shops.
-- Hosur, Sriperumbudur, Oragadam and Sricity/Tada: manufacturing and automotive corridor procurement.
-- Trichy: fabrication, boiler, engineering and infrastructure buyer needs.
-- Tuticorin/Thoothukudi and coastal regions: port, marine, chemical, logistics and coastal corrosion considerations.
-- Pondicherry/Karaikal: pharma, food processing, hotels, engineering and coastal supply enquiries.
+Assumptions used:
+
+- Chennai: automobile, fabrication, pharma, commercial kitchen, port, marine, engineering, construction and stainless steel trading demand.
+- Ambattur, Guindy, Sriperumbudur, Oragadam and Irungattukottai: Chennai-linked industrial, engineering, fabrication and automobile/manufacturing corridor demand.
+- Coimbatore: engineering, pumps, motors, textile machinery, machine shops and food equipment demand.
+- Hosur: industrial manufacturing, automotive, fabrication and engineering demand.
+- Tiruppur and Erode: textile, processing, fabrication, utility and commercial procurement demand.
+- Salem, Trichy and Madurai: engineering, fabrication, construction, boilers, commercial kitchen and food processing demand.
+- Cuddalore and Neyveli: chemical, power, industrial processing and maintenance demand.
+- Pondicherry/Puducherry: pharma, food processing, engineering, hotels and coastal fabrication demand.
+- Sricity, Tada, Renigunta and Tirupati: Chennai-accessible industrial, manufacturing and commercial procurement demand.
+- Tuticorin: port, marine, chemical, logistics and coastal procurement demand.
+- Sri Lanka and Maldives: nearby export enquiries can be reviewed from Chennai without overstating export volume.
+
+Future Sprint 2 or local SEO work can replace these assumptions with sourced research if desired.

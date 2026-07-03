@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T15:58:21.839Z",
+  "generatedAt": "2026-07-03T17:26:22.504Z",
   "fileUrl": "file:///E:/Websites/Bharat-Metals/bharat-metals-website/index.html",
   "viewports": [
     {
@@ -55,12 +55,12 @@
           },
           "media": {
             "x": 682.09375,
-            "y": 222.40625,
+            "y": 245.328125,
             "width": 647.90625,
             "height": 405.03125,
-            "top": 222.40625,
+            "top": 245.328125,
             "right": 1330,
-            "bottom": 627.4375,
+            "bottom": 650.359375,
             "left": 682.09375
           }
         },
