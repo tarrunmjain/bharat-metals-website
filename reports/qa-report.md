@@ -1,16 +1,16 @@
-# Bharat Metals Sprint 1D QA Report
+# Bharat Metals Logo Hotfix v6 QA Report
 
 Date: 2026-07-03
 
 ## Scope
 
-Final correction round to use supplied logo assets and stop using fake/drawn product, material and industry imagery as live homepage images.
+Logo hotfix to replace all live logo usage with supplied v6 centered-left Bharat Metals logo assets while preserving the Sprint 1D homepage layout, content, CTA buttons, menu, footer and photo-pending placeholders.
 
 ## Results
 
 | Check | Result | Notes |
 | --- | --- | --- |
-| Header logo | PASS | Header and footer use `assets/brand/bharat-metals-header-logo-clean-transparent.png`. Schema and OG image use supplied brand PNG assets. |
+| Header logo | PASS | Header and footer use `assets/brand/bharat-metals-header-logo-centered-left-transparent.png` with matching `900x300` intrinsic dimensions. Schema and OG image use supplied v6 centered-left horizontal PNG assets. |
 | Generated image archive | PASS | Generated/drawn material, product, industry, hero and generated logo assets were moved to `assets/archive/generated-illustrations/`. |
 | Photo-ready structure | PASS | `assets/images/photos/hero/`, `materials/`, `product-forms/` and `industries/` exist with documented expected filenames. |
 | Temporary image slots | PASS | Homepage material, product, industry and hero image slots now use text-based photo-pending placeholders with TODO comments for real approved photos. |
@@ -22,7 +22,7 @@ Final correction round to use supplied logo assets and stop using fake/drawn pro
 | Internal links/assets | PASS | Same-page links and local assets checked. No broken internal links found. |
 | Schema JSON-LD | PASS | Organization, LocalBusiness, BreadcrumbList and FAQPage parse successfully. |
 | FAQ consistency | PASS | Visible FAQ questions and answers exactly match FAQPage schema entries. |
-| Responsive smoke | PASS | Desktop 1440, tablet 768 and mobile 390 CSS-pixel checks show no horizontal overflow. |
+| Header visual smoke | PASS | Desktop 1440 and mobile 390 screenshots show the supplied v6 logo rendering without distortion. |
 | Mobile navigation | PASS | Mobile menu opens and updates `aria-expanded` to `true`. |
 | Launch safety | PASS | `.nojekyll` exists, `CNAME` is absent and no DNS, GoDaddy, nameserver, hosting or live website changes were made. |
 
@@ -40,10 +40,11 @@ Final correction round to use supplied logo assets and stop using fake/drawn pro
 - `assets/archive/generated-illustrations/assets/images/hero-*`
 - `assets/archive/generated-illustrations/assets/images/visual-*`
 - `assets/archive/generated-illustrations/assets/logo-bharat-metals.*`
+- `assets/archive/brand-logo-revisions/` for older v4/v5 logo files no longer used live
 
 ## Notes
 
-- GitHub Pages preview remains the only Sprint 1D publishing target.
+- GitHub Pages preview remains the only publishing target for this logo hotfix.
 - The future canonical domain remains `https://www.stainlesssteeldealers.com/`; it is not connected.
 - Real photo assets are still pending for hero, material cards, product form cards and industry cards.
 - Deeper About, product, location and technical pages remain Sprint 2 work.
