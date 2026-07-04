@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-07-04",
-  "totalPages": 451,
-  "generatedPages": 450,
+  "totalPages": 452,
+  "generatedPages": 451,
   "byType": {
     "core": 10,
     "technical": 1,
@@ -11,7 +11,7 @@
     "grade": 9,
     "grade-form": 144,
     "city": 120,
-    "industry": 25,
+    "industry": 26,
     "city-product": 55,
     "grade-city": 30,
     "blog": 15
@@ -350,6 +350,7 @@
     "https://www.stainlesssteeldealers.com/industries/textile-dyeing-processing/",
     "https://www.stainlesssteeldealers.com/industries/boiler-heat-exchanger-fabricators/",
     "https://www.stainlesssteeldealers.com/industries/pump-valve-equipment-manufacturers/",
+    "https://www.stainlesssteeldealers.com/industries/hotel-commercial-kitchen-equipment/",
     "https://www.stainlesssteeldealers.com/aluminium-sheets/",
     "https://www.stainlesssteeldealers.com/aluminium-plates/",
     "https://www.stainlesssteeldealers.com/aluminium-coils/",

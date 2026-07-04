@@ -1,0 +1,646 @@
+{
+  "generatedAt": "2026-07-04T07:42:18.487Z",
+  "popularRows": [
+    {
+      "page": "/",
+      "width": 1440,
+      "height": 1050,
+      "file": "popular-search-home-desktop.png",
+      "screenshot": "qa/screenshots/popular-search-home-desktop.png",
+      "metrics": {
+        "hasSection": true,
+        "hasGrid": true,
+        "chipCount": 16,
+        "gridDisplay": "flex",
+        "gridFlexWrap": "wrap",
+        "sectionTextLength": 894,
+        "chips": [
+          {
+            "text": "Stainless steel 304 welded pipe suppliers in Chennai",
+            "width": 421,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Stainless steel 316 welded pipe dealers in Chennai",
+            "width": 408,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "SS 304 seamless pipe dealers in Chennai",
+            "width": 333,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "SS 316 seamless pipe suppliers for industrial buyers",
+            "width": 418,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "SS 202 sheet suppliers in Chennai",
+            "width": 280,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Stainless steel 304 sheet dealers in Chennai",
+            "width": 359,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Stainless steel 316 plate suppliers in Tamil Nadu",
+            "width": 392,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Jindal stainless steel pipe dealers in Chennai",
+            "width": 366,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Jindal polished pipe dealers in Chennai",
+            "width": 319,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Jindal make stainless steel pipe enquiries",
+            "width": 341,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "SS rod stockist in Chennai",
+            "width": 223,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Stainless steel angle suppliers in Pondicherry",
+            "width": 369,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "SS flat dealers in Chennai",
+            "width": 218,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Stainless steel coil suppliers in Chennai",
+            "width": 326,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "SS perforated sheet dealers in Chennai",
+            "width": 318,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Stainless steel wire mesh suppliers in Chennai",
+            "width": 376,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        ],
+        "horizontalOverflow": false
+      }
+    },
+    {
+      "page": "/",
+      "width": 390,
+      "height": 1050,
+      "file": "popular-search-home-mobile.png",
+      "screenshot": "qa/screenshots/popular-search-home-mobile.png",
+      "metrics": {
+        "hasSection": true,
+        "hasGrid": true,
+        "chipCount": 16,
+        "gridDisplay": "flex",
+        "gridFlexWrap": "wrap",
+        "sectionTextLength": 894,
+        "chips": [
+          {
+            "text": "Stainless steel 304 welded pipe suppliers in Chennai",
+            "width": 366,
+            "height": 48,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Stainless steel 316 welded pipe dealers in Chennai",
+            "width": 366,
+            "height": 48,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "SS 304 seamless pipe dealers in Chennai",
+            "width": 310,
+            "height": 34,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "SS 316 seamless pipe suppliers for industrial buyers",
+            "width": 366,
+            "height": 48,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "SS 202 sheet suppliers in Chennai",
+            "width": 261,
+            "height": 34,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Stainless steel 304 sheet dealers in Chennai",
+            "width": 334,
+            "height": 34,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Stainless steel 316 plate suppliers in Tamil Nadu",
+            "width": 364,
+            "height": 34,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Jindal stainless steel pipe dealers in Chennai",
+            "width": 340,
+            "height": 34,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Jindal polished pipe dealers in Chennai",
+            "width": 297,
+            "height": 34,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Jindal make stainless steel pipe enquiries",
+            "width": 317,
+            "height": 34,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "SS rod stockist in Chennai",
+            "width": 207,
+            "height": 34,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Stainless steel angle suppliers in Pondicherry",
+            "width": 343,
+            "height": 34,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "SS flat dealers in Chennai",
+            "width": 203,
+            "height": 34,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Stainless steel coil suppliers in Chennai",
+            "width": 303,
+            "height": 34,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "SS perforated sheet dealers in Chennai",
+            "width": 296,
+            "height": 34,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Stainless steel wire mesh suppliers in Chennai",
+            "width": 350,
+            "height": 34,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        ],
+        "horizontalOverflow": false
+      }
+    },
+    {
+      "page": "/ss-304/",
+      "width": 1440,
+      "height": 1050,
+      "file": "popular-search-ss304-desktop.png",
+      "screenshot": "qa/screenshots/popular-search-ss304-desktop.png",
+      "metrics": {
+        "hasSection": true,
+        "hasGrid": true,
+        "chipCount": 16,
+        "gridDisplay": "flex",
+        "gridFlexWrap": "wrap",
+        "sectionTextLength": 778,
+        "chips": [
+          {
+            "text": "SS 304 suppliers in Chennai",
+            "width": 234,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "SS 304 pipe dealers in Chennai",
+            "width": 258,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "SS 304 welded pipe suppliers in Chennai",
+            "width": 329,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "SS 304 seamless pipe dealers in Chennai",
+            "width": 333,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "SS 304 sheet dealers in Chennai",
+            "width": 267,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "SS 304 plate suppliers in Tamil Nadu",
+            "width": 300,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "SS 304 rod stockist in Chennai",
+            "width": 255,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "SS 304 flat dealers in Chennai",
+            "width": 250,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "SS 304 angle suppliers in Pondicherry",
+            "width": 310,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "SS 304 suppliers in Coimbatore",
+            "width": 260,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "SS 304 pipe suppliers in Hosur",
+            "width": 254,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "SS 304 sheet suppliers in Trichy",
+            "width": 266,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "SS 304 plate dealers in Madurai",
+            "width": 263,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "SS 304 polished pipe enquiries in Chennai",
+            "width": 339,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Jindal SS 304 pipe dealers in Chennai",
+            "width": 308,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Jindal make SS 304 pipe enquiries",
+            "width": 283,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        ],
+        "horizontalOverflow": false
+      }
+    },
+    {
+      "page": "/industries/commercial-kitchen-equipment/",
+      "width": 1440,
+      "height": 1050,
+      "file": "popular-search-commercial-kitchen-desktop.png",
+      "screenshot": "qa/screenshots/popular-search-commercial-kitchen-desktop.png",
+      "metrics": {
+        "hasSection": true,
+        "hasGrid": true,
+        "chipCount": 8,
+        "gridDisplay": "flex",
+        "gridFlexWrap": "wrap",
+        "sectionTextLength": 695,
+        "chips": [
+          {
+            "text": "Stainless steel suppliers for Hotel Commercial Kitchen Equipment",
+            "width": 523,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "SS 304 suppliers for Hotel Commercial Kitchen Equipment",
+            "width": 463,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "SS 316 suppliers for Hotel Commercial Kitchen Equipment",
+            "width": 463,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Sheets suppliers for Hotel Commercial Kitchen Equipment",
+            "width": 463,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Tubes enquiries Chennai",
+            "width": 209,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Stainless steel suppliers for Hotel Commercial Kitchen Equipment Tamil Nadu",
+            "width": 612,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "SS 304 material for Hotel Commercial Kitchen Equipment",
+            "width": 456,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Bharat Metals Hotel Commercial Kitchen Equipment stainless steel enquiries",
+            "width": 607,
+            "height": 36,
+            "display": "flex",
+            "borderRadius": "999px",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        ],
+        "horizontalOverflow": false
+      }
+    }
+  ],
+  "topbar": {
+    "count": 5,
+    "checks": [
+      {
+        "label": "Call Bharat Metals",
+        "pass": true,
+        "icon": {
+          "index": 0,
+          "ariaLabel": "Call Bharat Metals",
+          "href": "tel:+919941133888",
+          "target": null,
+          "rel": null,
+          "width": 22,
+          "height": 22,
+          "borderRadius": "0px",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px none rgb(43, 182, 115)",
+          "color": "rgb(43, 182, 115)",
+          "svgHidden": true
+        },
+        "hover": {
+          "index": 0,
+          "transform": "matrix(1, 0, 0, 1, 0, -2)",
+          "color": "rgb(238, 241, 244)"
+        }
+      },
+      {
+        "label": "WhatsApp Bharat Metals",
+        "pass": true,
+        "icon": {
+          "index": 1,
+          "ariaLabel": "WhatsApp Bharat Metals",
+          "href": "https://wa.me/919941133888?text=Hello%20Bharat%20Metals%2C%20I%20want%20to%20send%20a%20stainless%20steel%20requirement.",
+          "target": "_blank",
+          "rel": "noopener",
+          "width": 23,
+          "height": 23,
+          "borderRadius": "0px",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px none rgb(37, 211, 102)",
+          "color": "rgb(37, 211, 102)",
+          "svgHidden": true
+        },
+        "hover": {
+          "index": 1,
+          "transform": "matrix(1, 0, 0, 1, 0, -1.99384)",
+          "color": "rgb(237, 241, 244)"
+        }
+      },
+      {
+        "label": "Email Bharat Metals",
+        "pass": true,
+        "icon": {
+          "index": 2,
+          "ariaLabel": "Email Bharat Metals",
+          "href": "mailto:stainlesssteeldealers@gmail.com?subject=Stainless%20Steel%20Requirement%20-%20Bharat%20Metals&body=Hello%20Bharat%20Metals%2C%0A%0AProduct%20Form%3A%0AGrade%3A%0ASize%2FThickness%3A%0AQuantity%3A%0AFinish%3A%0ADelivery%20Location%3A%0ACertificate%20Requirement%3A%0A%0ARegards%2C",
+          "target": null,
+          "rel": null,
+          "width": 23,
+          "height": 23,
+          "borderRadius": "0px",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px none rgb(79, 139, 216)",
+          "color": "rgb(79, 139, 216)",
+          "svgHidden": true
+        },
+        "hover": {
+          "index": 2,
+          "transform": "matrix(1, 0, 0, 1, 0, -2)",
+          "color": "rgb(238, 241, 244)"
+        }
+      },
+      {
+        "label": "Open Bharat Metals Google Profile",
+        "pass": true,
+        "icon": {
+          "index": 3,
+          "ariaLabel": "Open Bharat Metals Google Profile",
+          "href": "https://maps.app.goo.gl/oXEYZZnMaAN2kfSV6",
+          "target": "_blank",
+          "rel": "noopener",
+          "width": 23,
+          "height": 23,
+          "borderRadius": "0px",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px none rgb(66, 133, 244)",
+          "color": "rgb(66, 133, 244)",
+          "svgHidden": true
+        },
+        "hover": {
+          "index": 3,
+          "transform": "matrix(1, 0, 0, 1, 0, -1.99392)",
+          "color": "rgb(237, 241, 244)"
+        }
+      },
+      {
+        "label": "Open IndiaMART placeholder",
+        "pass": true,
+        "icon": {
+          "index": 4,
+          "ariaLabel": "Open IndiaMART placeholder",
+          "href": "https://www.indiamart.com/",
+          "target": "_blank",
+          "rel": "noopener",
+          "width": 28,
+          "height": 22,
+          "borderRadius": "0px",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px none rgb(196, 33, 42)",
+          "color": "rgb(196, 33, 42)",
+          "svgHidden": true
+        },
+        "hover": {
+          "index": 4,
+          "transform": "matrix(1, 0, 0, 1, 0, -2)",
+          "color": "rgb(238, 241, 244)"
+        }
+      }
+    ],
+    "pass": true
+  }
+}

@@ -153,8 +153,12 @@ function breadcrumbHtml(page, prefix) {
   return `<nav class="breadcrumbs" aria-label="Breadcrumb"><ol>${crumbs.map((c, i) => `<li>${i === crumbs.length - 1 ? `<span>${escapeHtml(c.name)}</span>` : `<a href="${localHref(prefix, c.slug)}">${escapeHtml(c.name)}</a>`}</li>`).join("")}</ol></nav>`;
 }
 
+function pageCanonical(site, page) {
+  return page.canonicalUrl || joinUrl(site.finalDomain, page.canonicalSlug || page.slug);
+}
+
 function schema(site, page) {
-  const url = joinUrl(site.finalDomain, page.slug);
+  const url = pageCanonical(site, page);
   const graph = [
     { "@type": "Organization", "@id": `${site.finalDomain}#organization`, name: site.name, url: site.finalDomain, logo: joinUrl(site.finalDomain, site.ogLogo), foundingDate: "1986", telephone: site.phone, email: [site.email, site.secondaryEmail] },
     { "@type": "LocalBusiness", "@id": `${site.finalDomain}#localbusiness`, name: site.name, image: joinUrl(site.finalDomain, site.ogLogo), url: site.finalDomain, telephone: site.phone, email: site.email, foundingDate: "1986", priceRange: "$$", paymentAccepted: "UPI, Bank Transfer, Cheque, Cash", openingHours: "Mo-Sa 10:00-18:00", hasMap: site.maps, address: { "@type": "PostalAddress", streetAddress: "No. 19 (10), Shop No. G1 & S10, Majfa Towers, Mookernallamuthu Street", addressLocality: "Chennai", postalCode: "600001", addressRegion: "Tamil Nadu", addressCountry: "IN" } },
@@ -171,7 +175,8 @@ function schema(site, page) {
 
 function renderPage(site, page) {
   const prefix = relPrefix(page.slug);
-  const canonical = joinUrl(site.finalDomain, page.slug);
+  const canonical = pageCanonical(site, page);
+  const robots = page.robots || "index, follow";
   const title = page.title;
   return `<!doctype html>
 <html lang="en-IN">
@@ -180,7 +185,7 @@ function renderPage(site, page) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>${escapeHtml(title)}</title>
     <meta name="description" content="${attr(page.description)}">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="${attr(robots)}">
     <link rel="canonical" href="${canonical}">
     <link rel="icon" type="image/png" href="${prefix}${site.icon}">
     <meta property="og:title" content="${attr(page.title)}">

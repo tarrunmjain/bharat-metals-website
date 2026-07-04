@@ -135,10 +135,11 @@ function proseSection(title, paragraphs, extra = "") {
 
 function searchSection(title, intro, phrases) {
   const cleanPhrases = uniqueBy(phrases, (phrase) => phrase).slice(0, 16);
-  return `<section class="section-pad compact-section popular-searches enquiry-searches"><div class="container"><div class="section-heading tight"><p class="eyebrow">Popular enquiry searches</p><h2>${escapeHtml(
+  const titleId = `popular-${slugify(title)}-title`;
+  return `<section class="section-pad compact-section popular-searches enquiry-searches" aria-labelledby="${titleId}"><div class="container"><div class="section-heading tight"><p class="eyebrow">Popular enquiry searches</p><h2 id="${titleId}">${escapeHtml(
     title
-  )}</h2><p>${escapeHtml(intro)}</p></div><div class="search-chip-grid" aria-label="${escapeHtml(title)}">${cleanPhrases
-    .map((phrase) => `<span class="search-chip">${escapeHtml(phrase)}</span>`)
+  )}</h2><p>${escapeHtml(intro)}</p></div><div class="search-chip-grid" role="list" aria-label="${escapeHtml(title)}">${cleanPhrases
+    .map((phrase) => `<span class="search-chip" role="listitem">${escapeHtml(phrase)}</span>`)
     .join("")}</div></div></section>`;
 }
 
@@ -1161,12 +1162,15 @@ function coreFaq(slug, h1) {
   ];
 }
 
-function addGeneratedPage({ slug, type, title, description, h1, intro, eyebrow, image, imageAlt, breadcrumbs = [], body, faq }) {
+function addGeneratedPage({ slug, type, title, description, h1, intro, eyebrow, image, imageAlt, breadcrumbs = [], body, faq, canonicalSlug, canonicalUrl, robots }) {
   addPage({
     slug,
     type,
     title,
     description,
+    canonicalSlug,
+    canonicalUrl,
+    robots,
     h1,
     intro,
     eyebrow,
@@ -1608,6 +1612,30 @@ function buildIndustryPages() {
       faq: industryFaq(industry)
     });
   });
+
+  addGeneratedPage({
+    slug: "industries/hotel-commercial-kitchen-equipment/",
+    type: "industry",
+    title: "Hotel Kitchen Equipment Stainless Steel Supply Link | Bharat Metals Chennai",
+    description: "Alias page for hotel and commercial kitchen equipment stainless steel enquiries. Continue to the main Commercial Kitchen Equipment page from Bharat Metals Chennai.",
+    h1: "Hotel and Commercial Kitchen Equipment Stainless Steel Suppliers",
+    eyebrow: "Industry alias",
+    intro: "This page supports hotel commercial kitchen equipment enquiries and continues at the main Commercial Kitchen Equipment stainless steel supply page.",
+    canonicalSlug: "industries/commercial-kitchen-equipment/",
+    robots: "index,follow",
+    image: industryImage({ slug: "commercial-kitchen-equipment" }),
+    imageAlt: "Hotel and commercial kitchen equipment stainless steel supply visual",
+    breadcrumbs: [{ name: "Industries", slug: "industries-we-serve/" }],
+    body:
+      pageSection(
+        "Continue to the main commercial kitchen equipment page",
+        "Bharat Metals keeps detailed hotel and commercial kitchen equipment stainless steel guidance on the main Commercial Kitchen Equipment page. Use the link below for product forms, grades, finishes, RFQ details and enquiry support.",
+        `<div class="page-card-grid"><a class="page-card anchor-card" href="../commercial-kitchen-equipment/"><h3>Open Commercial Kitchen Equipment Page</h3><p>View stainless steel sheets, tubes, pipes, plates, SS 304, SS 316, finish notes and quotation guidance for hotel and commercial kitchen equipment buyers.</p></a></div>`
+      ) +
+      rfqBlock("hotel and commercial kitchen equipment stainless steel") +
+      ctaBlock("hotel and commercial kitchen equipment stainless steel"),
+    faq: []
+  });
 }
 
 function buildSecondaryPages() {
@@ -2043,8 +2071,8 @@ function homepageSearchSectionHtml() {
             <h2 id="seo-title">Popular stainless steel enquiries we handle</h2>
             <p>Use these search chips to describe grade, product form, make, finish and delivery city before sending a stainless steel RFQ to Bharat Metals.</p>
           </div>
-          <div class="search-chip-grid" aria-label="Relevant stainless steel search phrases">
-            ${phrases.map((phrase) => `<span class="search-chip">${escapeHtml(phrase)}</span>`).join("\n            ")}
+          <div class="search-chip-grid" role="list" aria-label="Relevant stainless steel search phrases">
+            ${phrases.map((phrase) => `<span class="search-chip" role="listitem">${escapeHtml(phrase)}</span>`).join("\n            ")}
           </div>
         </div>
       </section>`;
