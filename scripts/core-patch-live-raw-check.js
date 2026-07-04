@@ -20,7 +20,7 @@ const bannedPhrases = [
 ];
 
 const requiredByPath = {
-  "/": ["Stainless Steel Dealers in Chennai Since 1986"],
+  "/": ["STAINLESS STEEL SUPPLIERS IN CHENNAI SINCE 1986"],
   "/about-us/": ["Answers to common questions about Bharat Metals, stainless steel grades, product forms, service regions and quotation support."],
   "/industries-we-serve/": [
     "Commercial kitchen fabricators usually discuss SS 304 sheets",
