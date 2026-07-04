@@ -7,7 +7,9 @@
     "build": "node scripts/build-pages.js",
     "audit": "node scripts/audit-pages.js",
     "qa": "node scripts/qa-static.js",
-    "qa:browser": "node scripts/qa-browser-cdp.js"
+    "qa:browser": "node scripts/qa-browser-cdp.js",
+    "qa:core-patch-hard": "node scripts/core-patch-hard-check.js",
+    "qa:core-patch-live": "node scripts/core-patch-live-raw-check.js"
   },
   "devDependencies": {}
 }

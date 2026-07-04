@@ -1,0 +1,52 @@
+{
+  "checkedAt": "2026-07-04T11:12:32.678Z",
+  "buildMarker": "CORE-PATCH-HARDPASS-2026-07-04-c6aa873",
+  "totalHtmlFiles": 452,
+  "errors": [],
+  "chipRows": [
+    {
+      "page": "/",
+      "sections": 1,
+      "ulSearchChipGrid": true,
+      "liSearchChip": true
+    },
+    {
+      "page": "/about-us/",
+      "sections": 1,
+      "ulSearchChipGrid": true,
+      "liSearchChip": true
+    },
+    {
+      "page": "/request-quote/",
+      "sections": 1,
+      "ulSearchChipGrid": true,
+      "liSearchChip": true
+    },
+    {
+      "page": "/blog/",
+      "sections": 1,
+      "ulSearchChipGrid": true,
+      "liSearchChip": true
+    },
+    {
+      "page": "/stainless-steel/",
+      "sections": 1,
+      "ulSearchChipGrid": true,
+      "liSearchChip": true
+    },
+    {
+      "page": "/industries-we-serve/",
+      "sections": 1,
+      "ulSearchChipGrid": true,
+      "liSearchChip": true
+    },
+    {
+      "page": "/ss-304/",
+      "sections": 1,
+      "ulSearchChipGrid": true,
+      "liSearchChip": true
+    }
+  ],
+  "cnameAbsent": true,
+  "noJekyllPresent": true
+}

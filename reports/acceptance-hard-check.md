@@ -1,9 +1,9 @@
 # Acceptance Hard Check
 
-Checked: 2026-07-04T10:14:45.218Z
+Checked: 2026-07-04T11:12:55.582Z
 
-HTML files checked: 458
-Build markers found: ACCEPTANCE-FIX-2026-07-04-HARDPASS
+HTML files checked: 459
+Build markers found: CORE-PATCH-HARDPASS-2026-07-04-c6aa873
 Errors: 0
 
 ## Specific Checks

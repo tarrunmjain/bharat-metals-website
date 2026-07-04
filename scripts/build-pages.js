@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const { execSync } = require("child_process");
 const {
   site,
   forms,
@@ -19,7 +20,14 @@ const { renderPage, escapeHtml } = require("../src/templates/layout");
 
 const root = path.resolve(__dirname, "..");
 const generatedAt = "2026-07-04";
-const buildMarker = process.env.BHARAT_METALS_BUILD_MARKER || "ACCEPTANCE-FIX-2026-07-04-HARDPASS";
+function currentShortCommit() {
+  try {
+    return execSync("git rev-parse --short HEAD", { cwd: root, encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }).trim();
+  } catch (error) {
+    return "local";
+  }
+}
+const buildMarker = process.env.BHARAT_METALS_BUILD_MARKER || `CORE-PATCH-HARDPASS-${generatedAt}-${currentShortCommit()}`;
 const pages = [];
 
 const materialNames = {
@@ -103,35 +111,35 @@ const industryCardCopy = {
   "marine-ship-repair":
     "Marine and coastal enquiries often involve SS 316 or SS 316L pipes, plates, fasteners, fittings and flanges where corrosion exposure and packing requirements need clear discussion.",
   "railways-metro-projects":
-    "Railway and metro project enquiries may include sheets, plates, pipes, fasteners and fabricated sections for fixtures, maintenance, panels and infrastructure support. Grade, certificate and inspection expectations should be clear.",
+    "Railway and metro-related fabrication enquiries may include sheets, plates, fasteners, pipes, brackets and structural support items where grade, size, certificate and project specification need to be clear.",
   "oil-gas":
-    "Oil and gas buyers usually discuss pipes, flanges, fittings and plates for maintenance, fabrication and process-line support. Grade, class, standard, certificate and packing details matter at RFQ stage.",
+    "Oil and gas maintenance and project buyers often discuss pipes, flanges, fittings, plates and fasteners with grade, schedule, class, certificate and inspection expectations.",
   "chemical-petrochemical":
-    "Chemical and petrochemical enquiries often compare SS 304, SS 316 and SS 316L pipes, fittings, flanges and plates. Corrosion exposure, fluid contact, documentation and inspection needs should be mentioned early.",
+    "Chemical and petrochemical buyers may review SS 304, SS 316 and SS 316L pipes, plates, flanges and fittings where corrosion exposure, certificate and application details matter.",
   "textile-machinery":
-    "Textile machinery buyers may ask for rods, bars, sheets and flats for machine guards, brackets, shafts, repair work and fabrication. Size, finish and workshop machining needs help quote accurately.",
+    "Textile machinery and processing buyers often enquire for rods, bars, sheets, flats, pipes and perforated sheets for machine repair, dyeing support, guards and fabrication.",
   "water-treatment-utilities":
-    "Water treatment and utility buyers commonly discuss pipes, fittings, plates, wire mesh and fabricated supports. SS 304 and SS 316 may be reviewed based on water exposure and application.",
+    "Water treatment and utility buyers commonly discuss SS 304 and SS 316 pipes, fittings, plates, wire mesh and fasteners for maintenance, filtration, piping and equipment support.",
   "electrical-control-panel-fabrication":
-    "Electrical and control panel fabricators may enquire for sheets, angles, channels and fasteners for enclosures, frames, supports and site installation. Thickness, finish and size should be specified.",
+    "Electrical and panel fabricators may ask for sheets, flats, angles, fasteners and channels for enclosures, frames, supports and site fabrication requirements.",
   "dairy-beverage-processing":
-    "Dairy and beverage buyers often discuss SS 304 or SS 316 pipes, tubes, sheets and fittings where cleanable surfaces, polishing and certificate support are important.",
+    "Dairy and beverage equipment buyers often discuss SS 304 and SS 316 sheets, pipes, tubes and fittings with cleanable finish, certificate and hygiene expectations.",
   "sugar-mills-agro-processing":
-    "Sugar mill and agro-processing enquiries can include plates, sheets, pipes, wire mesh and perforated sheets for equipment repair, screens, guards and processing-area fabrication.",
+    "Sugar mill and agro-processing buyers may enquire for plates, sheets, pipes, wire mesh, perforated sheets and fittings for maintenance, guards and process-area fabrication.",
   "paper-mills":
-    "Paper mill buyers may ask for sheets, plates, pipes and fittings for maintenance, fabrication and process-area repairs. Grade, thickness, size and corrosion exposure should be described.",
+    "Paper mill and process plant buyers may discuss sheets, plates, pipes, fittings and fasteners for maintenance, equipment repair and fabrication support.",
   "ports-shipping-coastal-infrastructure":
-    "Ports, shipping and coastal infrastructure enquiries often involve SS 316 or SS 316L pipes, plates, fasteners and flanges. Packing, exposure and transport details are important for review.",
+    "Port, shipping and coastal infrastructure buyers often compare SS 304 and SS 316 for pipes, plates, fasteners, flanges and fittings where coastal exposure and packing are important.",
   "institutional-fabrication":
-    "Educational and institutional fabrication buyers often discuss sheets, pipes, tubes and fasteners for furniture, lab areas, railings, kitchens and maintenance work. Finish, grade and size should be clear.",
+    "Institutional projects may require sheets, pipes, tubes, fasteners and decorative stainless steel for kitchens, railings, furniture, lab areas and maintenance work.",
   "public-works-infrastructure":
-    "Public works and infrastructure contractors may enquire for angles, channels, plates, fasteners and sheets for supports, frames, site fabrication and maintenance requirements.",
+    "Infrastructure contractors may enquire for angles, channels, plates, fasteners, pipes and sheets for supports, site fabrication, public utility work and maintenance.",
   "textile-dyeing-processing":
-    "Textile dyeing and processing units often ask for pipes, fittings, perforated sheets, wire mesh and plates where moisture, chemicals and cleaning requirements affect grade discussion.",
+    "Dyeing and processing units may discuss SS 304 and SS 316 pipes, sheets, fittings, perforated sheets and wire mesh where water, chemical and cleaning exposure matters.",
   "boiler-heat-exchanger-fabricators":
-    "Boiler and heat-exchanger fabricators may discuss tubes, pipes, plates and flanges for repair, fabrication and thermal equipment support. Temperature, grade, size and certificate needs should be stated.",
+    "Boiler and heat exchanger fabricators may discuss tubes, plates, pipes, flanges and fittings with grade, temperature, certificate and specification expectations.",
   "pump-valve-equipment-manufacturers":
-    "Pump, valve and equipment manufacturers commonly enquire for rods, bars, flanges, fittings and plates for machining, components and assembly support. Section, size, grade and certificate expectations help the quote."
+    "Pump, valve and equipment buyers often ask for rods, bars, plates, flanges and fittings for machining, components, maintenance and engineering fabrication."
 };
 
 function slugify(value) {
@@ -174,7 +182,7 @@ function cardGrid(items, makeSlug, text, label = labelOf) {
     .map(
       (item) =>
         `<a class="page-card anchor-card" href="${makeSlug(item)}"><h3>${escapeHtml(label(item))}</h3><p>${escapeHtml(
-          text ? text(item) : "Share product form, grade, size, quantity and delivery location for a quotation."
+          text ? text(item) : "Send product form, grade, size, quantity and delivery details so Bharat Metals can review the enquiry."
         )}</p></a>`
     )
     .join("")}</div>`;
@@ -273,7 +281,7 @@ function searchSection(title, intro, phrases) {
   const titleId = `popular-${slugify(title)}-title`;
   return `<section class="section-pad compact-section popular-searches enquiry-searches" aria-labelledby="${titleId}"><div class="container"><div class="section-heading tight"><p class="eyebrow">Popular enquiry searches</p><h2 id="${titleId}">${escapeHtml(
     title
-  )}</h2><p>${escapeHtml(intro)}</p></div><ul class="search-chip-grid" role="list" aria-label="${escapeHtml(title)}">${cleanPhrases
+  )}</h2><p>${escapeHtml(intro)}</p></div><ul class="search-chip-grid">${cleanPhrases
     .map((phrase) => `<li class="search-chip">${escapeHtml(phrase)}</li>`)
     .join("")}</ul></div></section>`;
 }
@@ -1618,7 +1626,7 @@ function buildCorePages() {
         "stainless steel suppliers Sricity Tada Tirupati"
       ]) +
       ctaBlock(),
-    faqIntro: "Answers to common questions about stainless steel grades, product forms, finishes, city supply support and RFQ details.",
+    faqIntro: "Answers to common stainless steel questions covering grades, forms, finishes, city enquiries and RFQ details.",
     faq: coreFaq("stainless-steel/", "Stainless Steel Products")
   });
 
@@ -1657,7 +1665,7 @@ function buildCorePages() {
         "stainless steel suppliers for textile machinery"
       ]) +
       ctaBlock(),
-    faqIntro: "Answers to common questions about matching stainless steel product forms, grades and certificates to different industry applications.",
+    faqIntro: "Answers to common questions about matching stainless steel grades, product forms, finishes and documents to industry applications.",
     faq: coreFaq("industries-we-serve/", "Industries We Serve")
   });
 
@@ -2656,7 +2664,7 @@ function homepageSearchSectionHtml() {
             <h2 id="seo-title">Popular stainless steel enquiries we handle</h2>
             <p>Use these search chips to describe grade, product form, make, finish and delivery city before sending a stainless steel RFQ to Bharat Metals.</p>
           </div>
-          <ul class="search-chip-grid" role="list" aria-label="Relevant stainless steel search phrases">
+          <ul class="search-chip-grid">
             ${phrases.map((phrase) => `<li class="search-chip">${escapeHtml(phrase)}</li>`).join("\n            ")}
           </ul>
         </div>

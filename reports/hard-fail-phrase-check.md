@@ -1,6 +1,6 @@
 # Hard Fail Phrase Check
 
-Checked: 2026-07-04T10:14:45.218Z
+Checked: 2026-07-04T11:12:55.582Z
 
 Generated HTML only. Reports, docs, archive and scripts are excluded.
 
