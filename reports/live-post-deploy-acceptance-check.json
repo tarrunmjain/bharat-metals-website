@@ -1,0 +1,78 @@
+{
+  "checkedAt": "2026-07-04T06:40:21.092Z",
+  "rows": [
+    {
+      "url": "https://tarrunmjain.github.io/bharat-metals-website/",
+      "status": 200,
+      "buildMarkerFound": true,
+      "deployedBuildMarkers": [
+        "ACCEPTANCE-FIX-2026-07-04-HARDPASS"
+      ],
+      "bannedPhrasesFound": [],
+      "popularSearchChipMarkupFound": true,
+      "pass": true,
+      "error": null
+    },
+    {
+      "url": "https://tarrunmjain.github.io/bharat-metals-website/ss-304/",
+      "status": 200,
+      "buildMarkerFound": true,
+      "deployedBuildMarkers": [
+        "ACCEPTANCE-FIX-2026-07-04-HARDPASS"
+      ],
+      "bannedPhrasesFound": [],
+      "popularSearchChipMarkupFound": true,
+      "pass": true,
+      "error": null
+    },
+    {
+      "url": "https://tarrunmjain.github.io/bharat-metals-website/stainless-steel-rods/",
+      "status": 200,
+      "buildMarkerFound": true,
+      "deployedBuildMarkers": [
+        "ACCEPTANCE-FIX-2026-07-04-HARDPASS"
+      ],
+      "bannedPhrasesFound": [],
+      "popularSearchChipMarkupFound": true,
+      "pass": true,
+      "error": null
+    },
+    {
+      "url": "https://tarrunmjain.github.io/bharat-metals-website/stainless-steel-bars/",
+      "status": 200,
+      "buildMarkerFound": true,
+      "deployedBuildMarkers": [
+        "ACCEPTANCE-FIX-2026-07-04-HARDPASS"
+      ],
+      "bannedPhrasesFound": [],
+      "popularSearchChipMarkupFound": true,
+      "pass": true,
+      "error": null
+    },
+    {
+      "url": "https://tarrunmjain.github.io/bharat-metals-website/stainless-steel-suppliers-renigunta/",
+      "status": 200,
+      "buildMarkerFound": true,
+      "deployedBuildMarkers": [
+        "ACCEPTANCE-FIX-2026-07-04-HARDPASS"
+      ],
+      "bannedPhrasesFound": [],
+      "popularSearchChipMarkupFound": true,
+      "pass": true,
+      "error": null
+    },
+    {
+      "url": "https://tarrunmjain.github.io/bharat-metals-website/industries/automobile-auto-components/",
+      "status": 200,
+      "buildMarkerFound": true,
+      "deployedBuildMarkers": [
+        "ACCEPTANCE-FIX-2026-07-04-HARDPASS"
+      ],
+      "bannedPhrasesFound": [],
+      "popularSearchChipMarkupFound": true,
+      "pass": true,
+      "error": null
+    }
+  ],
+  "errors": []
+}
