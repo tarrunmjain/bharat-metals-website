@@ -1494,6 +1494,12 @@ p {
   gap: 12px;
 }
 
+.search-chip-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 .link-chip-grid,
 .search-chip-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));

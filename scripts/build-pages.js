@@ -46,6 +46,94 @@ const materialIntros = {
     "Bharat Metals also supplies copper tubes, rods, bars, flats and plates for electrical, engineering, heat-transfer, fabrication, repair and trading requirements. Buyers can share size, form, quantity and delivery location for quotation support."
 };
 
+const productCardCopy = {
+  pipes:
+    "Welded and seamless pipe enquiries for fabrication, utility lines, food/pharma equipment, commercial kitchens, marine repair and industrial maintenance. Buyers should mention OD, wall thickness or schedule, length, grade and finish.",
+  tubes:
+    "Round, square and rectangular tube enquiries for fabrication, interiors, railings, frames, equipment and decorative work. Tube profile, size, gauge, finish and quantity are important.",
+  sheets:
+    "Sheet enquiries for 2B, mirror, matt, BA, hairline, brush and PVC coated requirements used in kitchen equipment, interiors, panels, fabrication and food processing.",
+  plates:
+    "Plate enquiries for fabrication, base plates, machine parts, process equipment, industrial repair and project work. Thickness, size, cutting and certificate expectations should be mentioned.",
+  coils:
+    "Coil and slit coil enquiries for downstream sheet use, fabrication, trading and processing requirements. Buyers should mention width, thickness, finish, grade and quantity.",
+  rods:
+    "Rod enquiries for machining, fabrication, repairs, engineering work and workshop use. Diameter, length, finish, quantity and certificate expectations are important.",
+  bars:
+    "Round, square, hex or flat bar enquiries for machine shops, auto-component work, industrial maintenance and fabrication. Section, size, length and grade should be clear.",
+  angles:
+    "Angle enquiries for frames, supports, brackets, fabrication, construction and industrial structures. Buyers should mention leg size, thickness, length, grade and quantity.",
+  flats:
+    "Flat bar enquiries for bracing, frames, repair work, architectural use and general fabrication. Width, thickness, length, finish and grade help quote accurately.",
+  channels:
+    "Channel enquiries for structural supports, frames, industrial fabrication and site work. Channel size, thickness, length, grade and quantity should be included.",
+  flanges:
+    "Flange enquiries for piping, process lines, maintenance and engineering requirements. Buyers should mention grade, size, class, type, standard and quantity.",
+  fittings:
+    "Fitting enquiries such as elbows, tees, reducers and matching pipe fittings should include grade, size, type, schedule, quantity and certificate requirement.",
+  circles:
+    "Circle enquiries for vessel, equipment, fabrication and component needs should mention diameter, thickness, grade, finish and cutting tolerance where applicable.",
+  fasteners:
+    "Fastener enquiries for bolts, nuts, washers and industrial fastening should include grade, type, size, thread details, quantity and certificate requirement.",
+  "wire-mesh":
+    "Wire mesh enquiries for guards, filters, partitions, screens and industrial use should mention mesh type, aperture, wire diameter, grade, size and quantity.",
+  "perforated-sheets":
+    "Perforated sheet enquiries should include grade, thickness, sheet size, hole diameter, hole pattern, pitch, finish and quantity."
+};
+
+const industryCardCopy = {
+  "fabrication-welding":
+    "Fabricators often enquire for pipes, sheets, plates, rods, flats, angles and channels for frames, supports, repair work and custom stainless steel fabrication. SS 202, SS 304 and SS 316 may be discussed based on application and exposure.",
+  "railing-contractors":
+    "Railing buyers commonly discuss polished pipes, tubes, flats and sheets for residential, commercial and interior work. SS 202 and SS 304 are frequent enquiry grades, with finish and gauge details important for quotation.",
+  "automobile-auto-components":
+    "Auto-component and engineering buyers may ask for rods, bars, sheets, plates and fasteners for fixtures, shopfloor work, machining and maintenance. Chennai, Sriperumbudur, Oragadam, Ambattur and Hosur are important related markets.",
+  "commercial-kitchen-equipment":
+    "Commercial kitchen fabricators usually discuss SS 304 sheets, tubes, pipes, plates and polished finish requirements for counters, tables, exhaust systems, sinks, food-prep areas and hotel equipment.",
+  "food-processing":
+    "Food processing buyers often ask for SS 304 or SS 316 sheets, pipes, fittings, wire mesh and perforated sheets where cleanability, finish and certificate discussions matter.",
+  "pharma-healthcare-equipment":
+    "Pharma and healthcare equipment enquiries often involve SS 304, SS 316 or SS 316L sheets, tubes, pipes and fittings, with attention to finish, documentation and cleanable surfaces.",
+  "engineering-machine-shops":
+    "Engineering buyers commonly discuss rods, bars, plates and flats for machining, repairs, brackets, components and workshop use. Size, length, tolerance and certificate expectations should be shared early.",
+  "builders-construction":
+    "Construction and project buyers may enquire for angles, channels, plates, sheets and fasteners for frames, supports, cladding, railing and site fabrication.",
+  "interior-architectural-contractors":
+    "Interior buyers often discuss decorative stainless steel sheets, tubes, flats, polished pipes, mirror finish, hairline finish and brush finish requirements for visible applications.",
+  "marine-ship-repair":
+    "Marine and coastal enquiries often involve SS 316 or SS 316L pipes, plates, fasteners, fittings and flanges where corrosion exposure and packing requirements need clear discussion.",
+  "railways-metro-projects":
+    "Railway and metro project enquiries may include sheets, plates, pipes, fasteners and fabricated sections for fixtures, maintenance, panels and infrastructure support. Grade, certificate and inspection expectations should be clear.",
+  "oil-gas":
+    "Oil and gas buyers usually discuss pipes, flanges, fittings and plates for maintenance, fabrication and process-line support. Grade, class, standard, certificate and packing details matter at RFQ stage.",
+  "chemical-petrochemical":
+    "Chemical and petrochemical enquiries often compare SS 304, SS 316 and SS 316L pipes, fittings, flanges and plates. Corrosion exposure, fluid contact, documentation and inspection needs should be mentioned early.",
+  "textile-machinery":
+    "Textile machinery buyers may ask for rods, bars, sheets and flats for machine guards, brackets, shafts, repair work and fabrication. Size, finish and workshop machining needs help quote accurately.",
+  "water-treatment-utilities":
+    "Water treatment and utility buyers commonly discuss pipes, fittings, plates, wire mesh and fabricated supports. SS 304 and SS 316 may be reviewed based on water exposure and application.",
+  "electrical-control-panel-fabrication":
+    "Electrical and control panel fabricators may enquire for sheets, angles, channels and fasteners for enclosures, frames, supports and site installation. Thickness, finish and size should be specified.",
+  "dairy-beverage-processing":
+    "Dairy and beverage buyers often discuss SS 304 or SS 316 pipes, tubes, sheets and fittings where cleanable surfaces, polishing and certificate support are important.",
+  "sugar-mills-agro-processing":
+    "Sugar mill and agro-processing enquiries can include plates, sheets, pipes, wire mesh and perforated sheets for equipment repair, screens, guards and processing-area fabrication.",
+  "paper-mills":
+    "Paper mill buyers may ask for sheets, plates, pipes and fittings for maintenance, fabrication and process-area repairs. Grade, thickness, size and corrosion exposure should be described.",
+  "ports-shipping-coastal-infrastructure":
+    "Ports, shipping and coastal infrastructure enquiries often involve SS 316 or SS 316L pipes, plates, fasteners and flanges. Packing, exposure and transport details are important for review.",
+  "institutional-fabrication":
+    "Educational and institutional fabrication buyers often discuss sheets, pipes, tubes and fasteners for furniture, lab areas, railings, kitchens and maintenance work. Finish, grade and size should be clear.",
+  "public-works-infrastructure":
+    "Public works and infrastructure contractors may enquire for angles, channels, plates, fasteners and sheets for supports, frames, site fabrication and maintenance requirements.",
+  "textile-dyeing-processing":
+    "Textile dyeing and processing units often ask for pipes, fittings, perforated sheets, wire mesh and plates where moisture, chemicals and cleaning requirements affect grade discussion.",
+  "boiler-heat-exchanger-fabricators":
+    "Boiler and heat-exchanger fabricators may discuss tubes, pipes, plates and flanges for repair, fabrication and thermal equipment support. Temperature, grade, size and certificate needs should be stated.",
+  "pump-valve-equipment-manufacturers":
+    "Pump, valve and equipment manufacturers commonly enquire for rods, bars, flanges, fittings and plates for machining, components and assembly support. Section, size, grade and certificate expectations help the quote."
+};
+
 function slugify(value) {
   return String(value)
     .toLowerCase()
@@ -129,7 +217,7 @@ function productImageCardGrid(items = forms) {
         `<a class="form-card" href="${form.slug}/"><img src="${formImage(form)}" alt="${escapeHtml(
           form.name
         )} stainless steel stock photo" width="500" height="313" loading="lazy"><h3>${escapeHtml(form.name)}</h3><p>${escapeHtml(
-          `${form.short} enquiries by grade, size, finish, quantity and delivery location.`
+          productCardCopy[form.formSlug] || `${form.short} enquiries should include grade, size, finish, quantity and delivery location.`
         )}</p></a>`
     )
     .join("")}</div>`;
@@ -185,9 +273,9 @@ function searchSection(title, intro, phrases) {
   const titleId = `popular-${slugify(title)}-title`;
   return `<section class="section-pad compact-section popular-searches enquiry-searches" aria-labelledby="${titleId}"><div class="container"><div class="section-heading tight"><p class="eyebrow">Popular enquiry searches</p><h2 id="${titleId}">${escapeHtml(
     title
-  )}</h2><p>${escapeHtml(intro)}</p></div><div class="search-chip-grid" role="list" aria-label="${escapeHtml(title)}">${cleanPhrases
-    .map((phrase) => `<span class="search-chip" role="listitem">${escapeHtml(phrase)}</span>`)
-    .join("")}</div></div></section>`;
+  )}</h2><p>${escapeHtml(intro)}</p></div><ul class="search-chip-grid" role="list" aria-label="${escapeHtml(title)}">${cleanPhrases
+    .map((phrase) => `<li class="search-chip">${escapeHtml(phrase)}</li>`)
+    .join("")}</ul></div></section>`;
 }
 
 function rfqBlock(subject = "stainless steel") {
@@ -243,13 +331,10 @@ function industryImage(industry) {
 }
 
 function industryIndustryText(industry) {
-  const lower = industry.name.toLowerCase();
-  if (lower.includes("commercial kitchen")) return "Kitchen fabricators discuss hygienic forms, finish and polishing.";
-  if (lower.includes("food") || lower.includes("dairy") || lower.includes("pharma")) return "Process equipment buyers need cleanable forms and certificates.";
-  if (lower.includes("automobile")) return "Auto buyers ask for size, length and certificate clarity.";
-  if (lower.includes("marine") || lower.includes("ports")) return "Coastal enquiries need grade, packing and exposure details.";
-  if (lower.includes("machine") || lower.includes("pump") || lower.includes("valve")) return "Engineering buyers specify machining size, section and grade.";
-  return "Share product form, grade, size, quantity and delivery location.";
+  return (
+    industryCardCopy[industry.slug] ||
+    `${industry.name} buyers can share product form, grade, size, quantity, certificate requirement and delivery location for a clearer stainless steel quotation.`
+  );
 }
 
 function cityImage(city) {
@@ -1394,7 +1479,7 @@ function buildCorePages() {
         "Stainless steel suppliers in Coimbatore and Hosur"
       ]) +
       ctaBlock(),
-    faqIntro: "About-specific answers for buyers checking Bharat Metals' Chennai stainless steel supply focus, product coverage and quotation process.",
+    faqIntro: "Answers to common questions about Bharat Metals, stainless steel grades, product forms, service regions and quotation support.",
     faq: coreFaq("about-us/", "About Bharat Metals")
   });
 
@@ -1442,7 +1527,7 @@ function buildCorePages() {
         "Bharat Metals quotation support"
       ]) +
       ctaBlock(),
-    faqIntro: "Mission and vision answers for buyers checking how Bharat Metals handles stainless steel RFQs and business positioning.",
+    faqIntro: "Answers to common questions about Bharat Metals' mission, RFQ-first approach, stainless steel focus and practical business positioning.",
     faq: coreFaq("mission-vision/", "Mission and Vision")
   });
 
@@ -1488,7 +1573,7 @@ function buildCorePages() {
         "Jindal stainless steel pipe quotation Chennai"
       ]) +
       ctaBlock(),
-    faqIntro: "Product portfolio answers for buyers comparing stainless steel forms, grades and related aluminium, brass and copper enquiries.",
+    faqIntro: "Answers to common questions about stainless steel product forms, grades and related aluminium, brass and copper enquiries.",
     faq: coreFaq("products/", "Product Portfolio")
   });
 
@@ -1533,7 +1618,7 @@ function buildCorePages() {
         "stainless steel suppliers Sricity Tada Tirupati"
       ]) +
       ctaBlock(),
-    faqIntro: "Stainless-steel-specific answers for buyers comparing grades, forms, finishes, cities and RFQ details.",
+    faqIntro: "Answers to common questions about stainless steel grades, product forms, finishes, city supply support and RFQ details.",
     faq: coreFaq("stainless-steel/", "Stainless Steel Products")
   });
 
@@ -1572,7 +1657,7 @@ function buildCorePages() {
         "stainless steel suppliers for textile machinery"
       ]) +
       ctaBlock(),
-    faqIntro: "Industry-hub answers for buyers matching stainless steel product forms, grades and certificates to their application.",
+    faqIntro: "Answers to common questions about matching stainless steel product forms, grades and certificates to different industry applications.",
     faq: coreFaq("industries-we-serve/", "Industries We Serve")
   });
 
@@ -1614,7 +1699,7 @@ function buildCorePages() {
         "stainless steel suppliers Sri Lanka Maldives"
       ]) +
       ctaBlock(),
-    faqIntro: "Location-specific answers for buyers checking how Chennai-based Bharat Metals reviews Tamil Nadu, South India, island and nearby export enquiries.",
+    faqIntro: "Answers to common questions about Chennai-led stainless steel enquiries for Tamil Nadu, nearby South India, island and nearby export markets.",
     faq: coreFaq("locations-we-serve/", "Locations We Serve")
   });
 
@@ -1670,7 +1755,7 @@ function buildCorePages() {
       ]) +
       rfqBlock() +
       ctaBlock(),
-    faqIntro: "RFQ-specific answers for buyers preparing stainless steel, aluminium, brass or copper quotation requests.",
+    faqIntro: "Answers to common RFQ questions for buyers sending stainless steel, aluminium, brass or copper requirements.",
     faq: coreFaq("request-quote/", "Request a Stainless Steel Quote")
   });
 
@@ -1717,7 +1802,7 @@ function buildCorePages() {
         "Bharat Metals working hours"
       ]) +
       ctaBlock(),
-    faqIntro: "Contact-specific answers for buyers calling, emailing, visiting or sending RFQs to Bharat Metals.",
+    faqIntro: "Answers to common questions about calling, emailing, visiting or sending material RFQs to Bharat Metals.",
     faq: coreFaq("contact-us/", "Contact Bharat Metals")
   });
 
@@ -1764,7 +1849,7 @@ function buildCorePages() {
         "stainless steel grade selection Chennai"
       ]) +
       ctaBlock(),
-    faqIntro: "Technical-data answers for buyers checking grades, finishes, certificates and application notes before RFQ.",
+    faqIntro: "Answers to common questions about stainless steel grades, finishes, certificates and application notes before sending an RFQ.",
     faq: coreFaq("technical-data/", "Technical Data")
   });
 
@@ -1801,7 +1886,7 @@ function buildCorePages() {
         "stainless steel supply Sricity Tada Tirupati"
       ]) +
       ctaBlock(),
-    faqIntro: "Blog-index answers for buyers using Bharat Metals guides to prepare better stainless steel RFQs.",
+    faqIntro: "Answers to common questions about using Bharat Metals buyer guides before preparing a stainless steel RFQ.",
     faq: coreFaq("blog/", "Bharat Metals Blog")
   });
 
@@ -1915,7 +2000,7 @@ function buildMaterialHub(material) {
       searchSection(`Popular ${title.toLowerCase()} searches`, `Use these chips to describe ${title.toLowerCase()} form, city, application and quotation context.`, materialSearches[material]) +
       rfqBlock(title.toLowerCase()) +
       ctaBlock(title.toLowerCase()),
-    faqIntro: `${title}-specific answers for buyers preparing commercial material enquiries through Bharat Metals Chennai.`,
+    faqIntro: `Answers to common questions about ${title.toLowerCase()} product forms, RFQ details, availability checks and Chennai-led supply support.`,
     faq: materialFaq(material)
   });
 }
@@ -2571,9 +2656,9 @@ function homepageSearchSectionHtml() {
             <h2 id="seo-title">Popular stainless steel enquiries we handle</h2>
             <p>Use these search chips to describe grade, product form, make, finish and delivery city before sending a stainless steel RFQ to Bharat Metals.</p>
           </div>
-          <div class="search-chip-grid" role="list" aria-label="Relevant stainless steel search phrases">
-            ${phrases.map((phrase) => `<span class="search-chip" role="listitem">${escapeHtml(phrase)}</span>`).join("\n            ")}
-          </div>
+          <ul class="search-chip-grid" role="list" aria-label="Relevant stainless steel search phrases">
+            ${phrases.map((phrase) => `<li class="search-chip">${escapeHtml(phrase)}</li>`).join("\n            ")}
+          </ul>
         </div>
       </section>`;
 }
