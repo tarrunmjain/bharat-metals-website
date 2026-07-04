@@ -91,6 +91,22 @@ function cardGrid(items, makeSlug, text, label = labelOf) {
     .join("")}</div>`;
 }
 
+function compactCardGrid(items, makeSlug, label = labelOf) {
+  return `<div class="page-card-grid compact-card-grid">${items
+    .map((item) => `<a class="page-card anchor-card compact-card" href="${makeSlug(item)}"><h3>${escapeHtml(label(item))}</h3></a>`)
+    .join("")}</div>`;
+}
+
+function uniqueBy(items, keyFn) {
+  const seen = new Set();
+  return items.filter((item) => {
+    const key = keyFn(item);
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
 function dataTable(headers, rows) {
   return `<div class="data-table"><table><thead><tr>${headers
     .map((h) => `<th>${escapeHtml(h)}</th>`)
@@ -117,10 +133,11 @@ function proseSection(title, paragraphs, extra = "") {
 }
 
 function searchSection(title, intro, phrases) {
-  return `<section class="section-pad compact-section enquiry-searches"><div class="container"><div class="section-heading tight"><p class="eyebrow">Popular enquiry searches</p><h2>${escapeHtml(
+  const cleanPhrases = uniqueBy(phrases, (phrase) => phrase).slice(0, 16);
+  return `<section class="section-pad compact-section popular-searches enquiry-searches"><div class="container"><div class="section-heading tight"><p class="eyebrow">Popular enquiry searches</p><h2>${escapeHtml(
     title
-  )}</h2><p>${escapeHtml(intro)}</p></div><div class="search-chip-grid" aria-label="${escapeHtml(title)}">${phrases
-    .map((phrase) => `<span>${escapeHtml(phrase)}</span>`)
+  )}</h2><p>${escapeHtml(intro)}</p></div><div class="search-chip-grid" aria-label="${escapeHtml(title)}">${cleanPhrases
+    .map((phrase) => `<span class="search-chip">${escapeHtml(phrase)}</span>`)
     .join("")}</div></div></section>`;
 }
 
@@ -146,7 +163,7 @@ function ctaBlock(subject = "stainless steel") {
 }
 
 function faqHtml(faq) {
-  return `<section class="section-pad"><div class="container faq-layout"><div><p class="eyebrow">Buyer answers</p><h2>Frequently asked questions</h2><p>Practical answers for buyers checking this specific requirement.</p></div><div class="faq-list">${faq
+  return `<section class="section-pad"><div class="container faq-layout"><div><p class="eyebrow">Buyer answers</p><h2>Frequently asked questions</h2><p>Answers to common RFQ questions for this page.</p></div><div class="faq-list">${faq
     .map((item) => `<details><summary>${escapeHtml(item.q)}</summary><p>${escapeHtml(item.a)}</p></details>`)
     .join("")}</div></div></section>`;
 }
@@ -586,17 +603,114 @@ function gradeOverview(grade) {
 
 function gradeIntro(grade) {
   if (grade.id === "304") {
-    return "SS 304 is one of the most commonly requested stainless steel grades for fabrication, kitchen equipment, food handling, interiors, general engineering and industrial maintenance. Bharat Metals reviews SS 304 enquiries from Chennai for pipes, sheets, plates, coils, rods, bars, angles, flats, flanges, fittings, wire mesh and perforated sheets based on size, finish, quantity, certificate requirement and delivery location.";
+    return "SS 304 is one of the most commonly requested stainless steel grades for fabrication, commercial kitchen work, food handling, interiors, general engineering and industrial maintenance. Bharat Metals reviews SS 304 enquiries from Chennai for pipes, sheets, plates, coils, rods, bars, angles, flats, flanges, fittings, wire mesh and perforated sheets based on size, finish, quantity, certificate requirement and delivery location. Buyers across Chennai, Ambattur, Guindy, Sriperumbudur, Oragadam, Coimbatore, Hosur, Trichy and Pondicherry commonly discuss SS 304 because it offers a practical balance of corrosion resistance, fabrication suitability and commercial availability.";
+  }
+  if (grade.id === "316") {
+    return "SS 316 stainless steel is commonly discussed for coastal, chemical, marine, pharma, food processing, water treatment and port-side maintenance requirements. Bharat Metals reviews SS 316 enquiries from Chennai for buyers in Chennai, Cuddalore, Pondicherry, Tuticorin, Port Blair and nearby Sri Lanka or Maldives enquiry contexts when product form, size, quantity, packing and documentation needs are clear.";
+  }
+  if (grade.id === "202") {
+    return "SS 202 stainless steel is commonly discussed for railing, fabrication, interiors, decorative work, polished pipes, sheets and cost-conscious commercial applications where the environment and usage are suitable. Bharat Metals reviews SS 202 enquiries from Chennai by checking form, finish, thickness or diameter, quantity, delivery location and whether SS 202 is appropriate for the intended use.";
   }
   return `${grade.name} stainless steel enquiries are reviewed by Bharat Metals from Chennai for buyers who need practical guidance on product form, size, finish, quantity, certificate requirement and delivery location. ${gradeOverview(grade)}`;
 }
 
+
+function gradeFormCardText(grade, form) {
+  if (grade.id === "304") {
+    const ss304 = {
+      pipes: "Pipe enquiries usually mention welded or seamless preference, outside diameter, wall thickness or schedule, length, finish, make preference, quantity and certificate requirement.",
+      sheets: "Sheet enquiries usually mention thickness, finish such as 2B, mirror, matt, hairline or BA, sheet size, PVC coating requirement and quantity.",
+      plates: "Plate enquiries usually mention thickness, width, length, cutting requirement, quantity and certificate expectation.",
+      rods: "Rod enquiries usually mention diameter, length, machining or fabrication use, finish, quantity and certificate requirement.",
+      bars: "Bar enquiries usually mention round, square or hex section, size, length, tolerance expectation, quantity and application."
+    };
+    if (ss304[form.formSlug]) return ss304[form.formSlug];
+  }
+  const starts = {
+    pipes: "Pipe enquiries usually mention welded or seamless preference, outside diameter, wall thickness, schedule, length, finish and certificate need.",
+    tubes: "Tube enquiries usually mention round, square or rectangular profile, size, wall thickness, finish, length and grade.",
+    sheets: "Sheet enquiries usually mention thickness, sheet size, finish, PVC protection if needed, quantity and visible-side expectation.",
+    plates: "Plate enquiries usually mention thickness, width, length, cutting need, quantity and certificate expectation.",
+    coils: "Coil enquiries usually mention width, thickness, finish, slit coil requirement, packing and quantity.",
+    rods: "Rod enquiries usually mention diameter, length, machining use, finish, tolerance expectation and certificate requirement.",
+    bars: "Bar enquiries usually mention round, square or hex section, size, length, tolerance expectation and application.",
+    flanges: "Flange enquiries usually mention type, class, standard, size, grade, quantity and certificate requirement.",
+    fittings: "Fitting enquiries usually mention elbow, tee, reducer or coupling type, size, schedule, grade and matching pipe details.",
+    fasteners: "Fastener enquiries usually mention bolt, nut, washer or screw type, size, thread, grade and quantity.",
+    "wire-mesh": "Wire mesh enquiries usually mention mesh opening, wire diameter, roll or sheet size, grade and edge expectation.",
+    "perforated-sheets": "Perforated sheet enquiries usually mention hole pattern, pitch, thickness, sheet size, open area, finish and grade."
+  };
+  return starts[form.formSlug] || `${grade.name} ${form.short.toLowerCase()} enquiries should mention ${buyerSpec(form)}, quantity, finish and delivery location.`;
+}
+
+function gradeCityNames(grade) {
+  if (grade.id === "316") return ["Chennai", "Pondicherry", "Cuddalore", "Tuticorin", "Port Blair", "Coimbatore", "Hosur", "Sricity", "Tada", "Renigunta", "Sri Lanka", "Maldives"];
+  if (grade.id === "202") return ["Chennai", "Ambattur", "Guindy", "Madurai", "Trichy", "Salem", "Pondicherry", "Coimbatore", "Hosur", "Tiruppur"];
+  return ["Chennai", "Ambattur", "Sriperumbudur", "Oragadam", "Coimbatore", "Hosur", "Trichy", "Madurai", "Salem", "Pondicherry", "Sricity", "Tada", "Renigunta", "Tirupati"];
+}
+
+function gradeCityHref(grade, city) {
+  const hasGradeCityPage = ["202", "304", "316"].includes(grade.id) && gradeCityPriority.includes(city.name);
+  return hasGradeCityPage ? `${grade.slug}-suppliers-${slugify(city.name)}/` : citySlug(city);
+}
+
+function gradeCityIntro(grade) {
+  if (grade.id === "304") {
+    return "SS 304 enquiries are commonly reviewed for Chennai, Ambattur, Sriperumbudur, Oragadam, Coimbatore, Hosur, Trichy, Madurai, Salem, Pondicherry, Sricity, Tada, Renigunta and Tirupati buyers. City links below help buyers quickly open the relevant location or grade-location page.";
+  }
+  if (grade.id === "316") {
+    return "SS 316 enquiries are often reviewed for coastal, chemical, pharma, food processing, water treatment, marine and port-linked buyers. Use these city links when corrosion exposure, packing, certificate or dispatch planning is part of the RFQ.";
+  }
+  if (grade.id === "202") {
+    return "SS 202 enquiries are often reviewed for railing, interior, decorative, polished-pipe and commercial fabrication buyers. Use these city links when budget, finish, size and application suitability need to be discussed clearly.";
+  }
+  return `Use these city links when ${grade.name} buyers need to discuss form, size, finish, quantity, certificate needs and Chennai-side dispatch planning.`;
+}
+
+function formFromProductName(product) {
+  const normalized = product.toLowerCase();
+  const alias = {
+    "polished pipes": "pipes",
+    "decorative stainless steel": "sheets"
+  };
+  const target = alias[normalized];
+  if (target) return formBySlug(target);
+  return forms.find((form) => form.short.toLowerCase() === normalized || form.name.toLowerCase().includes(normalized) || normalized.includes(form.short.toLowerCase()));
+}
+
+function relatedProductForms(products, fallbackCount = 4) {
+  const direct = products.map(formFromProductName).filter(Boolean);
+  return uniqueBy([...direct, ...forms.slice(0, fallbackCount)], (form) => form.formSlug).slice(0, 8);
+}
+
+function relatedProductFormsForCity(city) {
+  if (city.name === "Renigunta") {
+    return ["pipes", "sheets", "plates", "rods", "fasteners", "fittings", "perforated-sheets"].map(formBySlug);
+  }
+  return relatedProductForms(city.products, 4);
+}
+
+function relatedProductFormsForIndustry(industry) {
+  return relatedProductForms(industry.products, 4);
+}
+
+function cityProductIntro(city) {
+  if (city.name === "Renigunta") {
+    return "Renigunta buyers commonly discuss pipes, sheets, plates, rods, fasteners, fittings and perforated sheets by grade, size, certificate expectation and dispatch plan from Chennai.";
+  }
+  return `For ${city.name}, Bharat Metals commonly reviews stainless steel enquiries for ${city.products.join(", ")} and closely related forms when grade, size, quantity and application are clear.`;
+}
+
+function nearbyCityIntro(city) {
+  if (city.name === "Renigunta") return "Nearby buyers often compare Renigunta, Tirupati, Sricity, Tada and Chittoor dispatch options when planning stainless steel procurement from Chennai.";
+  return `Nearby buyers often compare ${city.name} and surrounding ${city.region} dispatch options when planning stainless steel procurement from Chennai.`;
+}
 function cityIntro(city) {
   const special = {
     Chennai:
       "Chennai buyers include fabricators, traders, commercial kitchen fabricators, pharma equipment makers, engineering workshops, automobile suppliers, builders, marine repair teams, port-related contractors and project procurement teams. Bharat Metals supports stainless steel enquiries from its Chennai base for pipes, sheets, plates, rods, bars, coils, flanges, fittings, angles, flats, wire mesh and perforated sheets. Buyers can send grade, size, thickness, finish, quantity, certificate needs and delivery details for practical quotation support.",
     Renigunta:
-      "Renigunta is closely connected to Tirupati, Sricity, Tada and Chennai-side industrial movement, making it a practical enquiry location for buyers who need stainless steel materials dispatched from Chennai. Bharat Metals can review stainless steel requirements for Renigunta fabricators, maintenance buyers, pharma or industrial users, traders and contractors when grade, size, quantity and delivery location are clear. Common enquiries may include SS 304 and SS 316 pipes, welded pipes, sheets, plates, rods, fasteners, fittings and perforated sheets.",
+      "Renigunta is closely connected to Tirupati, Sricity, Tada and Chennai-side industrial movement, making it a practical enquiry location for buyers who need stainless steel materials dispatched from Chennai. Bharat Metals can review stainless steel requirements for Renigunta fabricators, maintenance buyers, pharma and industrial users, traders and contractors when grade, size, quantity and delivery location are clear. Common enquiries may include SS 304 and SS 316 welded pipes, seamless pipe enquiries, sheets, plates, rods, fasteners, fittings and perforated sheets.",
     Sricity:
       "Sricity buyers often represent manufacturing units, factories, contractors, utility teams, fabrication vendors and procurement teams that need stainless steel material movement from Chennai-side supply channels. Bharat Metals reviews Sricity enquiries for pipes, tubes, sheets, plates, rods, bars, fasteners and fittings, especially in SS 304 and SS 316 where the application and documentation requirement are clear.",
     Tada:
@@ -1120,7 +1234,7 @@ function buildCorePages() {
     image: stainlessMaterialImage,
     body:
       hubSection("Stainless steel forms", "Stainless Steel Product Forms", "Open product pages by form, size and quotation requirement.", cardGrid(forms, (form) => `${form.slug}/`, productIntro)) +
-      hubSection("Stainless steel grades", "Stainless Steel Grades", "Open grade pages for common stainless steel enquiries.", cardGrid(grades, (grade) => `${grade.slug}/`, (grade) => grade.summary)) +
+      hubSection("Stainless steel grades", "Stainless Steel Grades", "Browse grade pages for common stainless steel enquiries.", cardGrid(grades, (grade) => `${grade.slug}/`, (grade) => grade.summary)) +
       hubSection("Aluminium products", "Aluminium Products", "Commercial aluminium enquiries by form.", cardGrid(secondaryMaterials.aluminium, (item) => `aluminium-${slugify(item)}/`, (item) => `Aluminium ${item.toLowerCase()} enquiries by size, specification, quantity and delivery location.`)) +
       hubSection("Brass products", "Brass Products", "Commercial brass enquiries by form.", cardGrid(secondaryMaterials.brass, (item) => `brass-${slugify(item)}/`, (item) => `Brass ${item.toLowerCase()} enquiries by size, form, quantity and delivery location.`)) +
       hubSection("Copper products", "Copper Products", "Commercial copper enquiries by form.", cardGrid(secondaryMaterials.copper, (item) => `copper-${slugify(item)}/`, (item) => `Copper ${item.toLowerCase()} enquiries by size, form, quantity and delivery location.`)) +
@@ -1141,9 +1255,9 @@ function buildCorePages() {
     body:
       pageSection("Stainless steel first", "Stainless steel remains the core supply focus. Bharat Metals supports regular enquiries for SS 202, SS 304, SS 316 and other grades across forms used by Chennai and Tamil Nadu industries.") +
       hubSection("Browse by product form", "Browse by Product Form", "Open product form pages for detailed RFQ guidance.", cardGrid(forms, (form) => `${form.slug}/`, productIntro)) +
-      hubSection("Browse by grade", "Browse by Grade", "Open grade pages for common stainless steel buying questions.", cardGrid(grades, (grade) => `${grade.slug}/`, (grade) => grade.summary)) +
+      hubSection("Browse by grade", "Browse by Grade", "Browse grade pages for common stainless steel buying questions.", cardGrid(grades, (grade) => `${grade.slug}/`, (grade) => grade.summary)) +
       hubSection("Browse by city", "Browse by City", "Open location pages for Chennai, Tamil Nadu and nearby markets.", cardGrid(locations.slice(0, 24), citySlug, (city) => `${city.region}: ${city.profile}.`)) +
-      hubSection("Browse by industry", "Browse by Industry", "Open industry pages for product and grade relevance.", cardGrid(industries, (industry) => `industries/${industry.slug}/`, (industry) => `Common products: ${industry.products.join(", ")}.`)) +
+      hubSection("Browse by industry", "Browse by Industry", "Open industry pages for product and grade relevance.", cardGrid(industries, (industry) => `industries/${industry.slug}/`, (industry) => `Typical enquiries: ${industry.products.join(", ")}.`)) +
       hubSection("Popular combinations", "Browse Popular Combinations", "Useful grade-form, city-product and grade-city entry points.", chips([`${grades[1].slug}-pipes/`, `${grades[4].slug}-pipes/`, `${grades[1].slug}-sheets/`, `stainless-steel-pipes-chennai/`, `stainless-steel-sheets-coimbatore/`, `ss-304-suppliers-chennai/`, `ss-316-suppliers-hosur/`], (item) => item)) +
       ctaBlock(),
     faq: coreFaq("stainless-steel/", "Stainless Steel Products")
@@ -1158,7 +1272,7 @@ function buildCorePages() {
     intro: "Bharat Metals supports stainless steel enquiries for fabrication, engineering, kitchen equipment, pharma, food processing, marine and other industries.",
     eyebrow: "Industries",
     image: "assets/images/photos/industries/industrial-plant.webp",
-    body: hubSection("Industry pages", "Browse All Industry Pages", "Every industry card opens a detailed page with products, grades, RFQ notes and FAQs.", cardGrid(industries, (industry) => `industries/${industry.slug}/`, (industry) => `Common products: ${industry.products.join(", ")}. Common grades: ${industry.grades.join(", ")}.`)) + ctaBlock(),
+    body: hubSection("Industry pages", "Browse All Industry Pages", "Every industry card opens a detailed page with products, grades, RFQ notes and FAQs.", cardGrid(industries, (industry) => `industries/${industry.slug}/`, (industry) => `Typical enquiries: ${industry.products.join(", ")}. Common grades: ${industry.grades.join(", ")}.`)) + ctaBlock(),
     faq: coreFaq("industries-we-serve/", "Industries We Serve")
   });
 
@@ -1325,11 +1439,11 @@ function buildProductPages() {
         pageSection("Common applications", productApplications(form)) +
         pageSection("Grades available for this form", "Buyers can mention the required stainless steel grade directly in the RFQ. Commonly discussed grades include the options below, subject to product form, size, finish, quantity and availability.", gradeChipsForForm(form)) +
         finishMatrixSection(form) +
-        hubSection("Grade and form pages", `${form.short} by Grade`, `Choose a grade-specific ${form.short.toLowerCase()} page when the RFQ already mentions grade, size, finish, quantity or certificate expectations.`, cardGrid(grades, (grade) => `${grade.slug}-${form.formSlug}/`, (grade) => `${grade.name} ${form.short.toLowerCase()} supply notes for buyers specifying ${buyerSpec(form)}.`)) +
+        hubSection("Grade and form pages", `${form.short} by Grade`, `Choose a grade-specific ${form.short.toLowerCase()} page when the RFQ already mentions grade, size, finish, quantity or certificate expectations.`, compactCardGrid(grades, (grade) => `${grade.slug}-${form.formSlug}/`, (grade) => `${grade.name} ${form.short}`)) +
         hubSection(
           "City links",
           `Popular ${form.short} City Pages`,
-          "Direct city-product pages where generated, otherwise location pages for the same supply markets.",
+          "Use these city links to open product-location pages for priority supply markets, or the main location page when a product-location page is not needed.",
           chips(
             priorityCities.map(cityByName),
             (city) => (priorityForms.includes(form.formSlug) ? `${form.slug}-${slugify(city.name)}/` : citySlug(city)),
@@ -1337,7 +1451,7 @@ function buildProductPages() {
           )
         ) +
         rfqBlock(form.short.toLowerCase()) +
-        searchSection(`Popular stainless steel ${form.short.toLowerCase()} searches`, `These searches reflect how buyers usually describe ${form.short.toLowerCase()} requirements by grade, city, finish, make preference and application.`, productSearches(form)) +
+        searchSection(`Popular stainless steel ${form.short.toLowerCase()} searches`, `Use these search chips to frame ${form.short.toLowerCase()} enquiries by grade, city, finish, make preference and application before sending the RFQ.`, productSearches(form)) +
         ctaBlock(form.short.toLowerCase()),
       faq: productFaq(form)
     });
@@ -1367,15 +1481,15 @@ function buildGradePages() {
         ]) +
         pageSection("Popular industries", `${grade.name} enquiries are common from fabricators, railing contractors, commercial kitchen fabricators, food processing equipment makers, pharma equipment buyers, engineering workshops, traders, interior contractors, maintenance teams and project procurement teams depending on application and specification.`) +
         pageSection("Common finishes and processing", "Surface finish, cutting, polishing, PVC coating, bending, drilling, packing, MTC, mill certificate and third-party inspection requirements should be mentioned at RFQ stage so they can be checked against the product form and order size.") +
-        hubSection("Available forms", `${grade.name} Product Forms`, `${grade.name} enquiries can be narrowed by product form before sending size, finish, quantity and certificate details.`, cardGrid(forms, (form) => `${grade.slug}-${form.formSlug}/`, (form) => `${grade.name} ${form.short.toLowerCase()} requirements are usually specified with ${form.specs}.`)) +
+        hubSection("Available forms", `${grade.name} Product Forms`, `${grade.name} enquiries can be narrowed by product form before sending size, finish, quantity and certificate details.`, cardGrid(forms, (form) => `${grade.slug}-${form.formSlug}/`, (form) => gradeFormCardText(grade, form))) +
         hubSection("Industry relevance", `Industries Discussing ${grade.name}`, `${grade.name} demand changes by exposure, fabrication method, hygiene need and project specification.`, cardGrid(industries.slice(0, 12), (industry) => `industries/${industry.slug}/`, (industry) => `${industry.name} buyers often discuss ${industry.products.join(", ")} with grades such as ${industry.grades.join(", ")}.`)) +
         hubSection(
           "City links",
           `${grade.name} City Pages`,
-          `Open ${grade.name} grade-city pages where generated, otherwise the matching location pages.`,
+          gradeCityIntro(grade),
           chips(
-            gradeCityPriority.map(cityByName),
-            (city) => (["202", "304", "316"].includes(grade.id) ? `${grade.slug}-suppliers-${slugify(city.name)}/` : citySlug(city)),
+            gradeCityNames(grade).map(cityByName),
+            (city) => gradeCityHref(grade, city),
             (city) => city.name
           )
         ) +
@@ -1453,12 +1567,12 @@ function buildLocationPages() {
           `${city.name} has ${city.profile}. Buyers commonly ask for stainless steel by form, grade, size and finish rather than only by generic material name.`,
           `Typical enquiries may come from fabricators, traders, contractors, maintenance teams, project buyers, engineering workshops and industry users who need product availability, certificate expectations and dispatch feasibility reviewed from Chennai.`
         ]) +
-        pageSection(`Popular stainless steel products for ${city.name}`, `For ${city.name}, Bharat Metals commonly reviews enquiries for ${city.products.join(", ")} along with related stainless steel forms such as tubes, flats, angles, channels, wire mesh, fasteners and perforated sheets where the application requires them.`, `<h3>Related products</h3>${chips(forms.filter((form) => city.products.some((product) => form.short.includes(product) || product.includes(form.short))).concat(forms.slice(0, 4)).slice(0, 8), (form) => `${form.slug}/`, (form) => form.short)}`) +
+        pageSection(`Popular stainless steel products for ${city.name}`, cityProductIntro(city), `<h3>Related products</h3>${chips(relatedProductFormsForCity(city), (form) => `${form.slug}/`, (form) => form.short)}`) +
         pageSection(`Grades commonly discussed for ${city.name}`, `Grades often discussed for ${city.name} include ${city.grades.join(", ")}. Grade choice should be based on corrosion exposure, fabrication method, finish, hygiene requirement, drawing specification and buyer application.`, `<h3>Grade pages</h3>${chips(grades.slice(0, 6), (grade) => `${grade.slug}/`, (grade) => grade.name)}`) +
         pageSection("Delivery and transport guidance", exportNote) +
-        hubSection("Nearby cities", `Nearby ${city.region} Pages`, `Use nearby location pages when a buyer is comparing product availability, packing and Chennai-side dispatch planning.`, chips(relatedCities(city), citySlug, (item) => item.name)) +
+        hubSection("Nearby cities", `Nearby ${city.region} Pages`, nearbyCityIntro(city), chips(relatedCities(city), citySlug, (item) => item.name)) +
         rfqBlock(`stainless steel for ${city.name}`) +
-        searchSection(`Popular stainless steel enquiries for ${city.name}`, `These phrases reflect how ${city.name} buyers may search by product, grade, make, certificate need and dispatch location.`, citySearches(city)) +
+        searchSection(`Popular stainless steel enquiries for ${city.name}`, `Use these search chips to describe ${city.name} enquiries by product, grade, make, certificate need and dispatch location.`, citySearches(city)) +
         ctaBlock(`stainless steel for ${city.name}`),
       faq: cityFaq(city)
     });
@@ -1483,12 +1597,12 @@ function buildIndustryPages() {
           industryIntro(industry),
           "Bharat Metals helps buyers describe stainless steel requirements clearly before checking availability. Exact grade, form, size, finish, quantity, drawing or sample reference, certificate expectation and delivery location make the RFQ easier to review."
         ]) +
-        pageSection("Specific stainless steel product relevance", industryProductRelevance(industry), `<h3>Related product forms</h3>${chips(forms.filter((form) => industry.products.some((product) => form.short.includes(product) || product.includes(form.short))).concat(forms.slice(0, 4)).slice(0, 8), (form) => `${form.slug}/`, (form) => form.short)}`) +
+        pageSection("Specific stainless steel product relevance", industryProductRelevance(industry), `<h3>Related product forms</h3>${chips(relatedProductFormsForIndustry(industry), (form) => `${form.slug}/`, (form) => form.short)}`) +
         pageSection("Common grades", `Common grades for ${industry.name} include ${industry.grades.join(", ")}. Grade suitability should be confirmed by application, exposure, fabrication method, hygiene requirement, operating environment and project specification.`, `<h3>Grade pages</h3>${chips(grades.slice(0, 6), (grade) => `${grade.slug}/`, (grade) => grade.name)}`) +
         pageSection("Finishes, services and documentation", `Finish and processing details for ${industry.name} should match the product form. Sheets, coils and perforated sheets may involve 2B, No. 1, BA, mirror, hairline, brush or PVC-coated options where suitable; rods and bars are normally discussed with bright, polished, machined or cut-length expectations; flanges and fittings need machined, mill, pickled/passivated or certificate-led details where applicable. Cutting, polishing, drilling, packing, MTC, mill certificate and inspection requirements should be shared before quotation.`) +
         hubSection("City relevance", "Relevant Supply Regions", "Open common city pages for Chennai-led supply discussions.", chips(["Chennai", "Ambattur", "Sriperumbudur", "Oragadam", "Coimbatore", "Hosur", "Pondicherry", "Tiruppur"].map(cityByName), citySlug, (city) => city.name)) +
         rfqBlock(industry.name) +
-        searchSection(`Popular ${industry.name.toLowerCase()} stainless steel supply searches`, `Industry buyers often search by product form, grade, city, certificate need and application before sending a detailed RFQ.`, industrySearches(industry)) +
+        searchSection(`Popular ${industry.name.toLowerCase()} stainless steel supply searches`, `Use these search chips to describe product form, grade, city, certificate need and application before sending a detailed RFQ.`, industrySearches(industry)) +
         ctaBlock(industry.name),
       faq: industryFaq(industry)
     });
@@ -1587,7 +1701,7 @@ function buildGradeCityPages() {
           ]) +
           pageSection("Forms available", `${grade.name} enquiries can be discussed for ${forms.slice(0, 10).map((form) => form.short).join(", ")} and other forms depending on availability.`, chips(forms.slice(0, 10), (form) => `${grade.slug}-${form.formSlug}/`, (form) => form.short)) +
           rfqBlock(subject) +
-          searchSection(`Popular ${grade.name} searches for ${city.name}`, `These searches reflect grade and city combinations buyers use before sharing exact form, size, quantity and certificate needs.`, gradeCitySearches(grade, city)) +
+          searchSection(`Popular ${grade.name} searches for ${city.name}`, `Use these grade-city search chips before sharing exact form, size, quantity and certificate needs.`, gradeCitySearches(grade, city)) +
           ctaBlock(subject),
         faq: gradeCityFaq(grade, city)
       });
@@ -1904,7 +2018,7 @@ function homepageIndustryCards() {
     .slice(0, 15)
     .map(
       (industry) =>
-        `<a class="industry-card" href="industries/${industry.slug}/"><img src="${industryImage(industry)}" alt="${escapeHtml(industry.name)} stainless steel supply photo" width="500" height="313" loading="lazy"><h3>${escapeHtml(industry.name.replace(/ and /g, " & "))}</h3><p>${escapeHtml(`Common products: ${industry.products.join(", ")}.`)}</p></a>`
+        `<a class="industry-card" href="industries/${industry.slug}/"><img src="${industryImage(industry)}" alt="${escapeHtml(industry.name)} stainless steel supply photo" width="500" height="313" loading="lazy"><h3>${escapeHtml(industry.name.replace(/ and /g, " & "))}</h3><p>${escapeHtml(`Typical enquiries: ${industry.products.join(", ")}.`)}</p></a>`
     )
     .join("\n            ");
 }
@@ -1918,6 +2032,22 @@ function regionChips(names) {
     .join("");
 }
 
+
+function homepageSearchSectionHtml() {
+  const phrases = homepageSearchPhrases.slice(0, 16);
+  return `<section class="section-pad section-silver compact-section popular-searches" id="seo-searches" aria-labelledby="seo-title">
+        <div class="container seo-grid">
+          <div>
+            <p class="eyebrow">Buyer search support</p>
+            <h2 id="seo-title">Popular stainless steel enquiries we handle</h2>
+            <p>Use these search chips to describe grade, product form, make, finish and delivery city before sending a stainless steel RFQ to Bharat Metals.</p>
+          </div>
+          <div class="search-chip-grid" aria-label="Relevant stainless steel search phrases">
+            ${phrases.map((phrase) => `<span class="search-chip">${escapeHtml(phrase)}</span>`).join("\n            ")}
+          </div>
+        </div>
+      </section>`;
+}
 function updateHomepageLinks() {
   const file = path.join(root, "index.html");
   let html = fs.readFileSync(file, "utf8");
@@ -1959,8 +2089,8 @@ function updateHomepageLinks() {
           </div>`
   );
   html = html.replace(
-    /<div class="keyword-chips" aria-label="Relevant stainless steel search phrases">/,
-    `<div class="search-chip-grid" aria-label="Relevant stainless steel search phrases">`
+    /<section class="section-pad section-silver compact-section(?: popular-searches)?" id="seo-searches"[\s\S]*?<\/section>/,
+    homepageSearchSectionHtml()
   );
 
   html = html.replace(

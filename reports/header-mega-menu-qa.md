@@ -1,12 +1,14 @@
 # Header Mega Menu QA
 
-- Portfolio menu exists: pass
-- Desktop flyouts exist: pass
-- Stainless steel products include rods: pass
-- Stainless steel products include bars: pass
-- Aluminium flyout exists: pass
-- Brass flyout exists: pass
-- Copper flyout exists: pass
-- Quick Quote remains WhatsApp: pass
+Product Portfolio screenshot: qa/screenshots/header-product-portfolio-desktop.png
+Stainless flyout screenshot: qa/screenshots/header-stainless-flyout-desktop.png
+Aluminium flyout screenshot: qa/screenshots/header-aluminium-flyout-desktop.png
+Mobile accordion screenshot: qa/screenshots/header-mobile-product-accordion.png
 
-Mobile accordion behavior is implemented with `.flyout-toggle` buttons, `aria-expanded`, and `.portfolio-item.is-open` state in `assets/js/main.js`.
+- Product Portfolio menu opens: pass
+- Stainless Steel flyout opens to the right with no hover gap: pass
+- Aluminium flyout opens to the right with no hover gap: pass
+- Brass flyout opens to the right with no hover gap: pass
+- Copper flyout opens to the right with no hover gap: pass
+- Mobile Product Portfolio accordion works: pass
+- Keyboard Escape closes menu: pass

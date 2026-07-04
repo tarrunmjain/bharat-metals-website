@@ -36,7 +36,7 @@ Generated: 2026-07-03
 - Homepage city chips linked: yes
 - Homepage industry cards linked: yes
 - Human sitemap created: yes
-- Non-core pages without parent-hub link: 0
+- Non-core pages without parent-hub link: 8
 
 ## Content And Image
 

@@ -1,0 +1,66 @@
+{
+  "screenshotsDir": "qa/screenshots",
+  "header": {
+    "desktopChecks": {
+      "productOpen": true,
+      "menuVisible": true,
+      "flyouts": [
+        {
+          "index": 0,
+          "visible": true,
+          "noGap": true
+        },
+        {
+          "index": 1,
+          "visible": true,
+          "noGap": true
+        },
+        {
+          "index": 2,
+          "visible": true,
+          "noGap": true
+        },
+        {
+          "index": 3,
+          "visible": true,
+          "noGap": true
+        }
+      ],
+      "keyboardEscapeWorks": true
+    },
+    "mobileChecks": {
+      "navOpen": true,
+      "productExpanded": "true",
+      "flyoutExpanded": "true",
+      "flyoutOpen": true
+    },
+    "screenshots": [
+      "qa/screenshots/header-product-portfolio-desktop.png",
+      "qa/screenshots/header-stainless-flyout-desktop.png",
+      "qa/screenshots/header-aluminium-flyout-desktop.png",
+      "qa/screenshots/header-mobile-product-accordion.png"
+    ]
+  },
+  "heroPages": [
+    {
+      "pagePath": "/",
+      "screenshot": "qa/screenshots/home-hero-desktop.png",
+      "imageSrc": "assets/images/photos/hero/bharat-metals-stainless-steel-pipes-hero-v3.webp"
+    },
+    {
+      "pagePath": "/",
+      "screenshot": "qa/screenshots/home-hero-mobile.png",
+      "imageSrc": "assets/images/photos/hero/bharat-metals-stainless-steel-pipes-hero-v3.webp"
+    },
+    {
+      "pagePath": "/ss-304/",
+      "screenshot": "qa/screenshots/ss304-hero-desktop.png",
+      "imageSrc": "../assets/images/photos/materials/stainless-steel-mixed-stock-v3.webp"
+    },
+    {
+      "pagePath": "/stainless-steel-suppliers-renigunta/",
+      "screenshot": "qa/screenshots/renigunta-hero-desktop.png",
+      "imageSrc": "../assets/images/photos/locations/south-india-logistics.webp"
+    }
+  ]
+}
