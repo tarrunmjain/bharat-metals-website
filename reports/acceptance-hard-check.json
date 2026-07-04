@@ -1,0 +1,182 @@
+{
+  "checkedAt": "2026-07-04T06:37:40.363Z",
+  "htmlFiles": 451,
+  "buildMarkers": [
+    "ACCEPTANCE-FIX-2026-07-04-HARDPASS"
+  ],
+  "bannedPhrases": [
+    {
+      "phrase": "Open SS",
+      "count": 0,
+      "sampleFiles": []
+    },
+    {
+      "phrase": "where generated",
+      "count": 0,
+      "sampleFiles": []
+    },
+    {
+      "phrase": "supply notes for buyers specifying",
+      "count": 0,
+      "sampleFiles": []
+    },
+    {
+      "phrase": "Direct city-product pages",
+      "count": 0,
+      "sampleFiles": []
+    },
+    {
+      "phrase": "Short answers for procurement teams",
+      "count": 0,
+      "sampleFiles": []
+    },
+    {
+      "phrase": "Common buyer groups for",
+      "count": 0,
+      "sampleFiles": []
+    },
+    {
+      "phrase": "Related city pages for buyers comparing dispatch options",
+      "count": 0,
+      "sampleFiles": []
+    },
+    {
+      "phrase": "Use nearby location pages when a buyer is comparing",
+      "count": 0,
+      "sampleFiles": []
+    },
+    {
+      "phrase": "Practical answers for buyers checking this specific requirement",
+      "count": 0,
+      "sampleFiles": []
+    },
+    {
+      "phrase": "These searches reflect how buyers usually describe",
+      "count": 0,
+      "sampleFiles": []
+    }
+  ],
+  "popularSearch": {
+    "sectionsChecked": 400,
+    "failures": []
+  },
+  "specificChecks": [
+    {
+      "name": "index.html has build marker",
+      "pass": true
+    },
+    {
+      "name": "ss-304/index.html has build marker",
+      "pass": true
+    },
+    {
+      "name": "stainless-steel-rods/index.html has build marker",
+      "pass": true
+    },
+    {
+      "name": "stainless-steel-bars/index.html has build marker",
+      "pass": true
+    },
+    {
+      "name": "stainless-steel-suppliers-renigunta/index.html has build marker",
+      "pass": true
+    },
+    {
+      "name": "industries/automobile-auto-components/index.html has build marker",
+      "pass": true
+    },
+    {
+      "name": "SS 304 exact city paragraph present",
+      "pass": true
+    },
+    {
+      "name": "SS 304 no Open SS 304",
+      "pass": true
+    },
+    {
+      "name": "Rods no supply notes phrase",
+      "pass": true
+    },
+    {
+      "name": "Rods no Direct city-product pages",
+      "pass": true
+    },
+    {
+      "name": "Bars no supply notes phrase",
+      "pass": true
+    },
+    {
+      "name": "Renigunta exact paragraph present",
+      "pass": true
+    },
+    {
+      "name": "Renigunta related products no duplicate hrefs",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "Footer has Sitemap only once",
+      "pass": true,
+      "details": {
+        "sitemapFooterCount": 1
+      }
+    },
+    {
+      "name": "Automobile page contains Chennai",
+      "pass": true
+    },
+    {
+      "name": "Automobile page contains Ambattur",
+      "pass": true
+    },
+    {
+      "name": "Automobile page contains Sriperumbudur",
+      "pass": true
+    },
+    {
+      "name": "Automobile page contains Oragadam",
+      "pass": true
+    },
+    {
+      "name": "Automobile page contains Irungattukottai",
+      "pass": true
+    },
+    {
+      "name": "Automobile page contains Hosur",
+      "pass": true
+    },
+    {
+      "name": "Automobile page contains rods",
+      "pass": true
+    },
+    {
+      "name": "Automobile page contains bars",
+      "pass": true
+    },
+    {
+      "name": "Automobile page contains sheets",
+      "pass": true
+    },
+    {
+      "name": "Automobile page contains plates",
+      "pass": true
+    },
+    {
+      "name": "Automobile page contains fasteners",
+      "pass": true
+    },
+    {
+      "name": "Automobile page contains fixtures",
+      "pass": true
+    },
+    {
+      "name": "Automobile page contains auto-component suppliers",
+      "pass": true
+    },
+    {
+      "name": "CNAME absent",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

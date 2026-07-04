@@ -18,7 +18,8 @@ const {
 const { renderPage, escapeHtml } = require("../src/templates/layout");
 
 const root = path.resolve(__dirname, "..");
-const generatedAt = "2026-07-03";
+const generatedAt = "2026-07-04";
+const buildMarker = process.env.BHARAT_METALS_BUILD_MARKER || "ACCEPTANCE-FIX-2026-07-04-HARDPASS";
 const pages = [];
 
 const materialNames = {
@@ -656,7 +657,7 @@ function gradeCityHref(grade, city) {
 
 function gradeCityIntro(grade) {
   if (grade.id === "304") {
-    return "SS 304 enquiries are commonly reviewed for Chennai, Ambattur, Sriperumbudur, Oragadam, Coimbatore, Hosur, Trichy, Madurai, Salem, Pondicherry, Sricity, Tada, Renigunta and Tirupati buyers. City links below help buyers quickly open the relevant location or grade-location page.";
+    return "SS 304 enquiries are commonly reviewed for Chennai, Ambattur, Sriperumbudur, Oragadam, Coimbatore, Hosur, Trichy, Madurai, Salem, Pondicherry, Sricity, Tada, Renigunta and Tirupati buyers. The links below help buyers open relevant city or grade-location pages before sending product form, size, finish, quantity and delivery details.";
   }
   if (grade.id === "316") {
     return "SS 316 enquiries are often reviewed for coastal, chemical, pharma, food processing, water treatment, marine and port-linked buyers. Use these city links when corrosion exposure, packing, certificate or dispatch planning is part of the RFQ.";
@@ -2206,6 +2207,39 @@ function updateHomepageLinks() {
   fs.writeFileSync(file, html);
 }
 
+function applyBuildMarker(html) {
+  const escaped = escapeHtml(buildMarker);
+  const meta = `    <meta name="bharat-metals-build" content="${escaped}">`;
+  let next = html.replace(/\n\s*<meta name="bharat-metals-build" content="[^"]*">/g, "");
+  next = next.replace(/\n\s*<!-- Bharat Metals build: [\s\S]*? -->/g, "");
+  if (next.includes("</head>")) {
+    next = next.replace("</head>", `${meta}\n  </head>`);
+  }
+  const comment = `    <!-- Bharat Metals build: ${escaped} -->`;
+  if (next.includes("</body>")) {
+    next = next.replace("</body>", `${comment}\n  </body>`);
+  } else {
+    next += `\n<!-- Bharat Metals build: ${escaped} -->\n`;
+  }
+  return next;
+}
+
+function applyBuildMarkersToFiles() {
+  const htmlFiles = [];
+  function walk(dir) {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      if (entry.name === ".git" || entry.name === "reports" || entry.name === "scripts" || entry.name === "archive" || entry.name === "docs") continue;
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) walk(full);
+      if (entry.isFile() && entry.name.toLowerCase() === "index.html") htmlFiles.push(full);
+    }
+  }
+  walk(root);
+  for (const file of htmlFiles) {
+    fs.writeFileSync(file, applyBuildMarker(fs.readFileSync(file, "utf8")));
+  }
+  return htmlFiles.length;
+}
 function writeSitemap(uniquePages) {
   const urls = [{ slug: "", priority: "1.0" }, ...uniquePages.map((page) => ({ slug: page.slug, priority: page.type === "core" ? "0.9" : page.type === "city" ? "0.7" : "0.8" }))];
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls
@@ -2270,9 +2304,10 @@ function generate() {
     fs.writeFileSync(target, html);
   });
   updateHomepageLinks();
+  const markedFiles = applyBuildMarkersToFiles();
   const urls = writeSitemap(unique);
   const byType = writeGenerationReport(unique, urls);
-  console.log(`Generated ${unique.length} pages plus homepage. Sitemap URLs: ${urls.length}`);
+  console.log(`Generated ${unique.length} pages plus homepage. Sitemap URLs: ${urls.length}. Build markers applied: ${markedFiles}`);
   console.log(JSON.stringify(byType, null, 2));
 }
 
