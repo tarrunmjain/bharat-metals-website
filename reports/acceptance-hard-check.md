@@ -1,8 +1,8 @@
 # Acceptance Hard Check
 
-Checked: 2026-07-04T07:42:16.626Z
+Checked: 2026-07-04T10:14:45.218Z
 
-HTML files checked: 456
+HTML files checked: 458
 Build markers found: ACCEPTANCE-FIX-2026-07-04-HARDPASS
 Errors: 0
 
@@ -56,5 +56,5 @@ Errors: 0
 
 ## Popular Search DOM
 
-Sections checked: 400
+Sections checked: 413
 Failures: 0

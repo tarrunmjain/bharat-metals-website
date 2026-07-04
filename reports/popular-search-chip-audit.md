@@ -1,11 +1,17 @@
 # Popular Search Chip Audit
 
-Pages with popular-search sections: 400
-Popular-search sections checked: 400
+Pages with popular-search sections: 413
+Popular-search sections checked: 413
 Failures: 0
 
 | Page | Section | .search-chip count | Bare span run | Long plain run | Status |
 | --- | ---: | ---: | --- | --- | --- |
+| about-us/index.html | 1 | 11 | no | no | pass |
+| aluminium/index.html | 1 | 11 | no | no | pass |
+| blog/index.html | 1 | 11 | no | no | pass |
+| brass/index.html | 1 | 11 | no | no | pass |
+| contact-us/index.html | 1 | 11 | no | no | pass |
+| copper/index.html | 1 | 11 | no | no | pass |
 | index.html | 1 | 17 | no | no | pass |
 | industries/automobile-auto-components/index.html | 1 | 9 | no | no | pass |
 | industries/boiler-heat-exchanger-fabricators/index.html | 1 | 9 | no | no | pass |
@@ -32,6 +38,11 @@ Failures: 0
 | industries/textile-dyeing-processing/index.html | 1 | 9 | no | no | pass |
 | industries/textile-machinery/index.html | 1 | 9 | no | no | pass |
 | industries/water-treatment-utilities/index.html | 1 | 9 | no | no | pass |
+| industries-we-serve/index.html | 1 | 11 | no | no | pass |
+| locations-we-serve/index.html | 1 | 11 | no | no | pass |
+| mission-vision/index.html | 1 | 11 | no | no | pass |
+| products/index.html | 1 | 11 | no | no | pass |
+| request-quote/index.html | 1 | 11 | no | no | pass |
 | ss-202/index.html | 1 | 10 | no | no | pass |
 | ss-202-angles/index.html | 1 | 7 | no | no | pass |
 | ss-202-bars/index.html | 1 | 7 | no | no | pass |
@@ -215,6 +226,7 @@ Failures: 0
 | ss-430-sheets/index.html | 1 | 7 | no | no | pass |
 | ss-430-tubes/index.html | 1 | 7 | no | no | pass |
 | ss-430-wire-mesh/index.html | 1 | 7 | no | no | pass |
+| stainless-steel/index.html | 1 | 11 | no | no | pass |
 | stainless-steel-angles/index.html | 1 | 6 | no | no | pass |
 | stainless-steel-bars/index.html | 1 | 7 | no | no | pass |
 | stainless-steel-bars-chennai/index.html | 1 | 7 | no | no | pass |
@@ -406,3 +418,4 @@ Failures: 0
 | stainless-steel-suppliers-visakhapatnam/index.html | 1 | 7 | no | no | pass |
 | stainless-steel-tubes/index.html | 1 | 6 | no | no | pass |
 | stainless-steel-wire-mesh/index.html | 1 | 6 | no | no | pass |
+| technical-data/index.html | 1 | 11 | no | no | pass |

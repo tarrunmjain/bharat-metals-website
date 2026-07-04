@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-07-04T07:42:16.626Z",
-  "htmlFiles": 456,
+  "checkedAt": "2026-07-04T10:14:45.218Z",
+  "htmlFiles": 458,
   "buildMarkers": [
     "ACCEPTANCE-FIX-2026-07-04-HARDPASS"
   ],
@@ -57,7 +57,7 @@
     }
   ],
   "popularSearch": {
-    "sectionsChecked": 400,
+    "sectionsChecked": 413,
     "failures": []
   },
   "specificChecks": [

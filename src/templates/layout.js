@@ -178,6 +178,9 @@ function renderPage(site, page) {
   const canonical = pageCanonical(site, page);
   const robots = page.robots || "index, follow";
   const title = page.title;
+  const bodyHtml = page.body
+    .replace(/href="(?!https?:|mailto:|tel:|#|\/|\.\/|\.\.\/)([^"]+)"/g, `href="${prefix}$1"`)
+    .replace(/src="assets\//g, `src="${prefix}assets/`);
   return `<!doctype html>
 <html lang="en-IN">
   <head>
@@ -212,7 +215,7 @@ function renderPage(site, page) {
           <div class="page-hero-media">${page.image ? `<img src="${prefix}${page.image}" alt="${attr(page.imageAlt || page.h1)}" width="500" height="312" loading="eager">` : `<div class="photo-placeholder"><span>Photo pending</span></div>`}</div>
         </div>
       </section>
-      ${page.body.replace(/href="(?!https?:|mailto:|tel:|#|\/|\.\/|\.\.\/)([^"]+)"/g, `href="${prefix}$1"`)}
+      ${bodyHtml}
     </main>
     ${footer(site, prefix)}
     <script src="${prefix}assets/js/main.js" defer></script>
