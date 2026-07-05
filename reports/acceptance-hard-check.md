@@ -1,9 +1,9 @@
 # Acceptance Hard Check
 
-Checked: 2026-07-04T11:12:55.582Z
+Checked: 2026-07-05T10:23:19.756Z
 
-HTML files checked: 459
-Build markers found: CORE-PATCH-HARDPASS-2026-07-04-c6aa873
+HTML files checked: 573
+Build markers found: CORE-PATCH-HARDPASS-2026-07-04-567d436
 Errors: 0
 
 ## Specific Checks
@@ -56,5 +56,5 @@ Errors: 0
 
 ## Popular Search DOM
 
-Sections checked: 413
+Sections checked: 484
 Failures: 0

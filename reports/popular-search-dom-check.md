@@ -1,19 +1,24 @@
 # Popular Search DOM Check
 
-Checked: 2026-07-04T11:12:55.582Z
+Checked: 2026-07-05T10:23:19.756Z
 
-Popular search sections checked: 413
+Popular search sections checked: 484
 Failures: 0
 
 | File | Section | Grid found | Search chips | Flat paragraph risk | Result |
 |---|---:|---|---:|---|---|
+| 2b-finish-stainless-steel-sheets-chennai/index.html | 1 | yes | 8 | no | PASS |
 | about-us/index.html | 1 | yes | 11 | no | PASS |
 | aluminium/index.html | 1 | yes | 11 | no | PASS |
+| ba-finish-stainless-steel-sheets-chennai/index.html | 1 | yes | 8 | no | PASS |
 | blog/index.html | 1 | yes | 11 | no | PASS |
 | brass/index.html | 1 | yes | 11 | no | PASS |
 | contact-us/index.html | 1 | yes | 11 | no | PASS |
 | copper/index.html | 1 | yes | 11 | no | PASS |
-| index.html | 1 | yes | 17 | no | PASS |
+| decorative-stainless-steel-sheets-chennai/index.html | 1 | yes | 8 | no | PASS |
+| hairline-finish-stainless-steel-sheets-chennai/index.html | 1 | yes | 8 | no | PASS |
+| hairline-stainless-steel-sheets-tamil-nadu/index.html | 1 | yes | 8 | no | PASS |
+| index.html | 1 | yes | 25 | no | PASS |
 | industries/automobile-auto-components/index.html | 1 | yes | 9 | no | PASS |
 | industries/boiler-heat-exchanger-fabricators/index.html | 1 | yes | 9 | no | PASS |
 | industries/builders-construction/index.html | 1 | yes | 9 | no | PASS |
@@ -40,9 +45,35 @@ Failures: 0
 | industries/textile-machinery/index.html | 1 | yes | 9 | no | PASS |
 | industries/water-treatment-utilities/index.html | 1 | yes | 9 | no | PASS |
 | industries-we-serve/index.html | 1 | yes | 11 | no | PASS |
+| jindal-polished-pipes-chennai/index.html | 1 | yes | 9 | no | PASS |
+| jindal-polished-pipes-tamil-nadu/index.html | 1 | yes | 9 | no | PASS |
+| jindal-ss-304-pipes-chennai/index.html | 1 | yes | 9 | no | PASS |
+| jindal-ss-304-sheet-ambattur/index.html | 1 | yes | 9 | no | PASS |
+| jindal-ss-304-sheet-chennai/index.html | 1 | yes | 9 | no | PASS |
+| jindal-ss-304-sheet-guindy/index.html | 1 | yes | 9 | no | PASS |
+| jindal-ss-304-sheet-parrys-chennai/index.html | 1 | yes | 9 | no | PASS |
+| jindal-ss-304-sheet-price-chennai/index.html | 1 | yes | 9 | no | PASS |
+| jindal-ss-316-pipes-chennai/index.html | 1 | yes | 9 | no | PASS |
+| jindal-ss-316-sheet-chennai/index.html | 1 | yes | 9 | no | PASS |
+| jindal-ss-coils-chennai/index.html | 1 | yes | 8 | no | PASS |
+| jindal-ss-sheet-price-chennai/index.html | 1 | yes | 9 | no | PASS |
+| jindal-stainless-steel-coils-chennai/index.html | 1 | yes | 9 | no | PASS |
+| jindal-stainless-steel-pipes-ambattur/index.html | 1 | yes | 9 | no | PASS |
+| jindal-stainless-steel-pipes-chennai/index.html | 1 | yes | 9 | no | PASS |
+| jindal-stainless-steel-plates-chennai/index.html | 1 | yes | 9 | no | PASS |
+| jindal-stainless-steel-sheet-pipe-enquiry-guide/index.html | 1 | yes | 9 | no | PASS |
+| jindal-stainless-steel-sheets-chennai/index.html | 1 | yes | 9 | no | PASS |
+| jindal-stainless-steel-supplier-tamil-nadu/index.html | 1 | yes | 9 | no | PASS |
 | locations-we-serve/index.html | 1 | yes | 11 | no | PASS |
+| mirror-finish-stainless-steel-sheets-chennai/index.html | 1 | yes | 8 | no | PASS |
+| mirror-polished-ss-pipes-chennai/index.html | 1 | yes | 8 | no | PASS |
 | mission-vision/index.html | 1 | yes | 11 | no | PASS |
+| polished-ss-pipe-price-chennai/index.html | 1 | yes | 9 | no | PASS |
+| polished-ss-pipes-ambattur/index.html | 1 | yes | 8 | no | PASS |
+| polished-ss-pipes-chennai/index.html | 1 | yes | 8 | no | PASS |
+| polished-stainless-steel-pipes-chennai/index.html | 1 | yes | 8 | no | PASS |
 | products/index.html | 1 | yes | 11 | no | PASS |
+| pvc-coated-ss-sheets-chennai/index.html | 1 | yes | 8 | no | PASS |
 | request-quote/index.html | 1 | yes | 11 | no | PASS |
 | ss-202/index.html | 1 | yes | 10 | no | PASS |
 | ss-202-angles/index.html | 1 | yes | 7 | no | PASS |
@@ -58,6 +89,7 @@ Failures: 0
 | ss-202-pipes/index.html | 1 | yes | 7 | no | PASS |
 | ss-202-plates/index.html | 1 | yes | 7 | no | PASS |
 | ss-202-rods/index.html | 1 | yes | 7 | no | PASS |
+| ss-202-sheet-price-chennai/index.html | 1 | yes | 9 | no | PASS |
 | ss-202-sheets/index.html | 1 | yes | 7 | no | PASS |
 | ss-202-suppliers-ambattur/index.html | 1 | yes | 7 | no | PASS |
 | ss-202-suppliers-chennai/index.html | 1 | yes | 7 | no | PASS |
@@ -73,19 +105,36 @@ Failures: 0
 | ss-202-wire-mesh/index.html | 1 | yes | 7 | no | PASS |
 | ss-304/index.html | 1 | yes | 17 | no | PASS |
 | ss-304-angles/index.html | 1 | yes | 7 | no | PASS |
+| ss-304-angles-chennai/index.html | 1 | yes | 8 | no | PASS |
 | ss-304-bars/index.html | 1 | yes | 7 | no | PASS |
 | ss-304-channels/index.html | 1 | yes | 7 | no | PASS |
 | ss-304-circles/index.html | 1 | yes | 7 | no | PASS |
 | ss-304-coils/index.html | 1 | yes | 7 | no | PASS |
+| ss-304-coils-chennai/index.html | 1 | yes | 8 | no | PASS |
 | ss-304-fasteners/index.html | 1 | yes | 7 | no | PASS |
 | ss-304-fittings/index.html | 1 | yes | 7 | no | PASS |
 | ss-304-flanges/index.html | 1 | yes | 7 | no | PASS |
+| ss-304-flat-bars-chennai/index.html | 1 | yes | 8 | no | PASS |
 | ss-304-flats/index.html | 1 | yes | 7 | no | PASS |
 | ss-304-perforated-sheets/index.html | 1 | yes | 7 | no | PASS |
+| ss-304-perforated-sheets-chennai/index.html | 1 | yes | 8 | no | PASS |
+| ss-304-pipe-price-chennai/index.html | 1 | yes | 9 | no | PASS |
 | ss-304-pipes/index.html | 1 | yes | 7 | no | PASS |
+| ss-304-pipes-ambattur/index.html | 1 | yes | 8 | no | PASS |
+| ss-304-pipes-oragadam/index.html | 1 | yes | 8 | no | PASS |
+| ss-304-pipes-sricity/index.html | 1 | yes | 8 | no | PASS |
 | ss-304-plates/index.html | 1 | yes | 7 | no | PASS |
 | ss-304-rods/index.html | 1 | yes | 7 | no | PASS |
+| ss-304-round-bars-chennai/index.html | 1 | yes | 8 | no | PASS |
+| ss-304-sheet-price-chennai/index.html | 1 | yes | 9 | no | PASS |
 | ss-304-sheets/index.html | 1 | yes | 7 | no | PASS |
+| ss-304-sheets-ambattur/index.html | 1 | yes | 8 | no | PASS |
+| ss-304-sheets-chennai/index.html | 1 | yes | 8 | no | PASS |
+| ss-304-sheets-coimbatore/index.html | 1 | yes | 8 | no | PASS |
+| ss-304-sheets-george-town-chennai/index.html | 1 | yes | 8 | no | PASS |
+| ss-304-sheets-guindy/index.html | 1 | yes | 8 | no | PASS |
+| ss-304-sheets-parrys-chennai/index.html | 1 | yes | 8 | no | PASS |
+| ss-304-sheets-renigunta/index.html | 1 | yes | 8 | no | PASS |
 | ss-304-suppliers-ambattur/index.html | 1 | yes | 7 | no | PASS |
 | ss-304-suppliers-chennai/index.html | 1 | yes | 7 | no | PASS |
 | ss-304-suppliers-coimbatore/index.html | 1 | yes | 7 | no | PASS |
@@ -144,9 +193,17 @@ Failures: 0
 | ss-316-flats/index.html | 1 | yes | 7 | no | PASS |
 | ss-316-perforated-sheets/index.html | 1 | yes | 7 | no | PASS |
 | ss-316-pipes/index.html | 1 | yes | 7 | no | PASS |
+| ss-316-pipes-pondicherry/index.html | 1 | yes | 8 | no | PASS |
+| ss-316-pipes-sriperumbudur/index.html | 1 | yes | 8 | no | PASS |
+| ss-316-pipes-tada/index.html | 1 | yes | 8 | no | PASS |
+| ss-316-pipes-tirupati/index.html | 1 | yes | 8 | no | PASS |
 | ss-316-plates/index.html | 1 | yes | 7 | no | PASS |
 | ss-316-rods/index.html | 1 | yes | 7 | no | PASS |
+| ss-316-round-bars-chennai/index.html | 1 | yes | 8 | no | PASS |
+| ss-316-sheet-price-chennai/index.html | 1 | yes | 9 | no | PASS |
 | ss-316-sheets/index.html | 1 | yes | 7 | no | PASS |
+| ss-316-sheets-chennai/index.html | 1 | yes | 8 | no | PASS |
+| ss-316-sheets-hosur/index.html | 1 | yes | 8 | no | PASS |
 | ss-316-suppliers-ambattur/index.html | 1 | yes | 7 | no | PASS |
 | ss-316-suppliers-chennai/index.html | 1 | yes | 7 | no | PASS |
 | ss-316-suppliers-coimbatore/index.html | 1 | yes | 7 | no | PASS |
@@ -227,6 +284,8 @@ Failures: 0
 | ss-430-sheets/index.html | 1 | yes | 7 | no | PASS |
 | ss-430-tubes/index.html | 1 | yes | 7 | no | PASS |
 | ss-430-wire-mesh/index.html | 1 | yes | 7 | no | PASS |
+| ss-railing-pipes-chennai/index.html | 1 | yes | 8 | no | PASS |
+| ss-wire-mesh-chennai/index.html | 1 | yes | 8 | no | PASS |
 | stainless-steel/index.html | 1 | yes | 11 | no | PASS |
 | stainless-steel-angles/index.html | 1 | yes | 6 | no | PASS |
 | stainless-steel-bars/index.html | 1 | yes | 7 | no | PASS |
@@ -243,12 +302,15 @@ Failures: 0
 | stainless-steel-bars-trichy/index.html | 1 | yes | 7 | no | PASS |
 | stainless-steel-channels/index.html | 1 | yes | 6 | no | PASS |
 | stainless-steel-circles/index.html | 1 | yes | 6 | no | PASS |
+| stainless-steel-coil-price-chennai/index.html | 1 | yes | 9 | no | PASS |
 | stainless-steel-coils/index.html | 1 | yes | 6 | no | PASS |
+| stainless-steel-dealers-george-town-chennai/index.html | 1 | yes | 8 | no | PASS |
 | stainless-steel-fasteners/index.html | 1 | yes | 6 | no | PASS |
 | stainless-steel-fittings/index.html | 1 | yes | 6 | no | PASS |
 | stainless-steel-flanges/index.html | 1 | yes | 6 | no | PASS |
 | stainless-steel-flats/index.html | 1 | yes | 6 | no | PASS |
 | stainless-steel-perforated-sheets/index.html | 1 | yes | 6 | no | PASS |
+| stainless-steel-pipe-price-chennai/index.html | 1 | yes | 9 | no | PASS |
 | stainless-steel-pipes/index.html | 1 | yes | 16 | no | PASS |
 | stainless-steel-pipes-chennai/index.html | 1 | yes | 7 | no | PASS |
 | stainless-steel-pipes-coimbatore/index.html | 1 | yes | 7 | no | PASS |
@@ -261,6 +323,7 @@ Failures: 0
 | stainless-steel-pipes-tirupati/index.html | 1 | yes | 7 | no | PASS |
 | stainless-steel-pipes-tiruppur/index.html | 1 | yes | 7 | no | PASS |
 | stainless-steel-pipes-trichy/index.html | 1 | yes | 7 | no | PASS |
+| stainless-steel-plate-price-chennai/index.html | 1 | yes | 9 | no | PASS |
 | stainless-steel-plates/index.html | 1 | yes | 8 | no | PASS |
 | stainless-steel-plates-chennai/index.html | 1 | yes | 7 | no | PASS |
 | stainless-steel-plates-coimbatore/index.html | 1 | yes | 7 | no | PASS |
@@ -273,6 +336,7 @@ Failures: 0
 | stainless-steel-plates-tirupati/index.html | 1 | yes | 7 | no | PASS |
 | stainless-steel-plates-tiruppur/index.html | 1 | yes | 7 | no | PASS |
 | stainless-steel-plates-trichy/index.html | 1 | yes | 7 | no | PASS |
+| stainless-steel-rod-price-chennai/index.html | 1 | yes | 9 | no | PASS |
 | stainless-steel-rods/index.html | 1 | yes | 7 | no | PASS |
 | stainless-steel-rods-chennai/index.html | 1 | yes | 7 | no | PASS |
 | stainless-steel-rods-coimbatore/index.html | 1 | yes | 7 | no | PASS |
@@ -285,6 +349,7 @@ Failures: 0
 | stainless-steel-rods-tirupati/index.html | 1 | yes | 7 | no | PASS |
 | stainless-steel-rods-tiruppur/index.html | 1 | yes | 7 | no | PASS |
 | stainless-steel-rods-trichy/index.html | 1 | yes | 7 | no | PASS |
+| stainless-steel-sheet-price-chennai/index.html | 1 | yes | 9 | no | PASS |
 | stainless-steel-sheets/index.html | 1 | yes | 12 | no | PASS |
 | stainless-steel-sheets-chennai/index.html | 1 | yes | 7 | no | PASS |
 | stainless-steel-sheets-coimbatore/index.html | 1 | yes | 7 | no | PASS |
@@ -299,8 +364,10 @@ Failures: 0
 | stainless-steel-sheets-trichy/index.html | 1 | yes | 7 | no | PASS |
 | stainless-steel-suppliers-alappuzha/index.html | 1 | yes | 7 | no | PASS |
 | stainless-steel-suppliers-ambattur/index.html | 1 | yes | 7 | no | PASS |
+| stainless-steel-suppliers-ambattur-industrial-estate/index.html | 1 | yes | 8 | no | PASS |
 | stainless-steel-suppliers-anantapur/index.html | 1 | yes | 7 | no | PASS |
 | stainless-steel-suppliers-andaman-and-nicobar-islands/index.html | 1 | yes | 7 | no | PASS |
+| stainless-steel-suppliers-anna-nagar/index.html | 1 | yes | 8 | no | PASS |
 | stainless-steel-suppliers-arakkonam/index.html | 1 | yes | 7 | no | PASS |
 | stainless-steel-suppliers-arcot/index.html | 1 | yes | 7 | no | PASS |
 | stainless-steel-suppliers-ariyalur/index.html | 1 | yes | 7 | no | PASS |
@@ -328,6 +395,7 @@ Failures: 0
 | stainless-steel-suppliers-george-town-chennai/index.html | 1 | yes | 7 | no | PASS |
 | stainless-steel-suppliers-gudur/index.html | 1 | yes | 7 | no | PASS |
 | stainless-steel-suppliers-guindy/index.html | 1 | yes | 7 | no | PASS |
+| stainless-steel-suppliers-guindy-industrial-estate/index.html | 1 | yes | 8 | no | PASS |
 | stainless-steel-suppliers-gummidipoondi/index.html | 1 | yes | 7 | no | PASS |
 | stainless-steel-suppliers-hassan/index.html | 1 | yes | 7 | no | PASS |
 | stainless-steel-suppliers-hosur/index.html | 1 | yes | 7 | no | PASS |
@@ -358,6 +426,8 @@ Failures: 0
 | stainless-steel-suppliers-maraimalai-nagar/index.html | 1 | yes | 7 | no | PASS |
 | stainless-steel-suppliers-mayiladuthurai/index.html | 1 | yes | 7 | no | PASS |
 | stainless-steel-suppliers-mettupalayam/index.html | 1 | yes | 7 | no | PASS |
+| stainless-steel-suppliers-mogappair/index.html | 1 | yes | 8 | no | PASS |
+| stainless-steel-suppliers-mookernallamuthu-street/index.html | 1 | yes | 8 | no | PASS |
 | stainless-steel-suppliers-mookernallamuthu-street-chennai/index.html | 1 | yes | 7 | no | PASS |
 | stainless-steel-suppliers-mysuru/index.html | 1 | yes | 7 | no | PASS |
 | stainless-steel-suppliers-nagapattinam/index.html | 1 | yes | 7 | no | PASS |
@@ -368,6 +438,7 @@ Failures: 0
 | stainless-steel-suppliers-neyveli/index.html | 1 | yes | 6 | no | PASS |
 | stainless-steel-suppliers-ooty-udhagamandalam/index.html | 1 | yes | 7 | no | PASS |
 | stainless-steel-suppliers-oragadam/index.html | 1 | yes | 7 | no | PASS |
+| stainless-steel-suppliers-padi/index.html | 1 | yes | 8 | no | PASS |
 | stainless-steel-suppliers-palakkad/index.html | 1 | yes | 7 | no | PASS |
 | stainless-steel-suppliers-palladam/index.html | 1 | yes | 7 | no | PASS |
 | stainless-steel-suppliers-parrys-chennai/index.html | 1 | yes | 7 | no | PASS |

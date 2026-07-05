@@ -4,16 +4,16 @@ Generated: 2026-07-03
 
 ## Inventory
 
-- Total HTML pages: 452
-- Total pages in sitemap: 452
-- Grade pages: 9
-- City pages: 120
+- Total HTML pages: 564
+- Total pages in sitemap: 564
+- Grade pages: 23
+- City pages: 126
 - Industry pages: 26
 - Product form pages: 16
 - Grade + product pages: 144
 - City + product pages: 55
 - Grade + city pages: 30
-- Blog pages: 15
+- Blog pages: 23
 
 ## Direct Answers
 
@@ -36,7 +36,7 @@ Generated: 2026-07-03
 - Homepage city chips linked: yes
 - Homepage industry cards linked: yes
 - Human sitemap created: yes
-- Non-core pages without parent-hub link: 9
+- Non-core pages without parent-hub link: 29
 
 ## Content And Image
 
@@ -46,12 +46,12 @@ Generated: 2026-07-03
 - City pages strengthened with profile, products, grades, RFQ, nearby cities and FAQs: yes
 - Industry pages strengthened with product relevance, grades, city links, RFQ and FAQs: yes
 - Product and grade pages strengthened with forms, grade tables/links, city links, RFQ and FAQs: yes
-- Image status counts: real image 452
+- Image status counts: real image 564
 
 ## Technical Summary
 
 - Broken internal links counted in audit: 0
-- Pages in sitemap: 452
+- Pages in sitemap: 564
 - CNAME present: no
 - .nojekyll present: yes
 - GoDaddy/DNS/domain records changed: no

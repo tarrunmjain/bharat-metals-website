@@ -1,8 +1,8 @@
 {
-  "checkedAt": "2026-07-04T11:12:55.582Z",
-  "htmlFiles": 459,
+  "checkedAt": "2026-07-05T10:23:19.756Z",
+  "htmlFiles": 573,
   "buildMarkers": [
-    "CORE-PATCH-HARDPASS-2026-07-04-c6aa873"
+    "CORE-PATCH-HARDPASS-2026-07-04-567d436"
   ],
   "bannedPhrases": [
     {
@@ -57,7 +57,7 @@
     }
   ],
   "popularSearch": {
-    "sectionsChecked": 413,
+    "sectionsChecked": 484,
     "failures": []
   },
   "specificChecks": [

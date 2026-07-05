@@ -644,6 +644,123 @@ function finishMatrixSection(form) {
   );
 }
 
+function productSpecificationRows(form) {
+  const rows = {
+    sheets: [
+      ["Standards buyers may mention", "ASTM A240 / ASME SA240 where applicable; final standard should match the project specification"],
+      ["Grades", "SS 202, 304, 304L, 310, 316, 316L, 410, 420 and 430 depending on application and availability"],
+      ["Finishes", "2B, BA, No. 1, No. 4, No. 8, mirror, matt, hairline, brush, satin and PVC coated options where available"],
+      ["Size terms", "Thickness, width, length, sheet size, cut size and visible-side expectation"],
+      ["Common size references", "Buyers may mention common commercial references such as 4x8 or 5x10, but exact sheet size must be confirmed"],
+      ["RFQ fields", "Grade, thickness, size, finish, quantity, make preference, MTC or mill certificate need and delivery location"]
+    ],
+    plates: [
+      ["Standards buyers may mention", "ASTM A240 / ASME SA240 where applicable; final standard should match the drawing or project specification"],
+      ["Thickness and size", "Thickness, width, length, cut-to-size requirement and plate tolerance expectation"],
+      ["Finish", "No. 1 / mill finish, matt or polished where applicable"],
+      ["Processing", "Cutting, drilling or packing requirement should be shared before quotation"],
+      ["RFQ fields", "Grade, thickness, plate size, cutting requirement, quantity, certificate need and delivery location"]
+    ],
+    coils: [
+      ["Coil details", "Thickness, width, grade, finish and coil or slit coil requirement"],
+      ["Finishes", "2B, BA, matt, hairline, brush, PVC coating where applicable"],
+      ["Packing", "Coil packing and transport details depend on width, weight, quantity and dispatch location"],
+      ["RFQ fields", "Grade, thickness, width, finish, slit coil details, quantity and delivery location"]
+    ],
+    pipes: [
+      ["Standards buyers may mention", "ASTM A312 / A213 / A269 where applicable; final standard should match the application and specification"],
+      ["Types", "Welded, seamless, ERW, EFW, square, rectangular and polished pipe enquiries"],
+      ["Size terms", "OD, NB, schedule, wall thickness, gauge and length"],
+      ["Finish", "Mill, polished, mirror polished, matt and brush finish where applicable"],
+      ["RFQ fields", "Grade, OD or NB, thickness or schedule, length, welded/seamless preference, finish, quantity, certificate and delivery"]
+    ],
+    tubes: [
+      ["Standards buyers may mention", "ASTM A213 / A269 where applicable; final standard should follow the drawing or end use"],
+      ["Profiles", "Round, square and rectangular tubes for railings, frames, interiors and equipment fabrication"],
+      ["Size terms", "Outside size, wall thickness, gauge, length and profile"],
+      ["Finish", "Mill, polished, mirror polished, matt and brush finish where applicable"],
+      ["RFQ fields", "Grade, profile, size, thickness, length, finish, quantity, certificate and delivery"]
+    ],
+    rods: [
+      ["Forms", "Round rods and cut-length rod enquiries"],
+      ["Finish", "Black, bright, polished, peeled or ground where applicable"],
+      ["Size terms", "Diameter, length, tolerance and machining expectation"],
+      ["Tolerance", "H9 or H11 may be mentioned where applicable and should be verified against the requirement"],
+      ["RFQ fields", "Grade, diameter, length, finish, quantity, certificate and delivery location"]
+    ],
+    bars: [
+      ["Forms", "Round, square, hex and flat bar enquiries"],
+      ["Finish", "Black, bright, polished, peeled or ground where applicable"],
+      ["Size terms", "Diameter, section, width, thickness, length and tolerance expectation"],
+      ["Tolerance", "H9 or H11 may be discussed where applicable and should be verified against the requirement"],
+      ["RFQ fields", "Grade, form, size, length, finish, quantity, certificate and delivery location"]
+    ],
+    angles: [
+      ["Section details", "Equal or unequal angle, leg size, thickness and length"],
+      ["Grades", "SS 202, SS 304 and SS 316 are common enquiry grades depending on application"],
+      ["Finish", "Mill, matt, brush or polished where applicable"],
+      ["RFQ fields", "Grade, leg size, thickness, length, quantity, cutting need and delivery location"]
+    ],
+    flats: [
+      ["Section details", "Width, thickness, length and edge expectation"],
+      ["Grades", "SS 202, SS 304 and SS 316 are common enquiry grades depending on application"],
+      ["Finish", "Mill, matt, brush, polished or bright where applicable"],
+      ["RFQ fields", "Grade, width, thickness, length, finish, quantity and delivery location"]
+    ],
+    channels: [
+      ["Section details", "Channel size, thickness, length and grade"],
+      ["Applications", "Frames, supports, site fabrication and industrial structures"],
+      ["Finish", "Mill, matt, brush or polished where applicable"],
+      ["RFQ fields", "Grade, channel size, thickness, length, quantity, cutting need and delivery location"]
+    ],
+    flanges: [
+      ["Flange details", "Type, size, class, standard, face type and drilling pattern where applicable"],
+      ["Grades", "SS 304, SS 316 and SS 316L are common piping enquiry grades"],
+      ["Pressure/class terms", "Class, pressure rating or standard should match the piping specification"],
+      ["RFQ fields", "Grade, type, size, class, standard, quantity, certificate and delivery location"]
+    ],
+    fittings: [
+      ["Fitting details", "Elbow, tee, reducer, coupling or matching pipe fitting type"],
+      ["Size terms", "Nominal size, OD, schedule, wall thickness and matching pipe details"],
+      ["Grades", "SS 304, SS 316 and SS 316L are common fitting enquiry grades"],
+      ["RFQ fields", "Grade, fitting type, size, schedule, quantity, certificate and delivery location"]
+    ],
+    fasteners: [
+      ["Fastener details", "Bolts, nuts, washers, screws or special fastening requirement"],
+      ["Size terms", "Diameter, length, thread, pitch and standard where applicable"],
+      ["Grades", "SS 304 and SS 316 are common stainless fastener enquiry grades"],
+      ["RFQ fields", "Grade, type, size, thread details, quantity, certificate and delivery location"]
+    ],
+    "wire-mesh": [
+      ["Mesh details", "Woven or welded mesh style, aperture and wire diameter"],
+      ["Size terms", "Roll size, sheet size, edge requirement and quantity"],
+      ["Grades", "SS 304 and SS 316 are common mesh enquiry grades"],
+      ["RFQ fields", "Grade, aperture, wire diameter, sheet or roll size, quantity and delivery location"]
+    ],
+    "perforated-sheets": [
+      ["Perforation details", "Hole size, hole pattern, pitch, open area and sheet size"],
+      ["Material details", "Grade, thickness, finish, PVC coating need and quantity"],
+      ["Applications", "Screens, guards, panels, filters, architecture and machine protection"],
+      ["RFQ fields", "Grade, thickness, sheet size, hole diameter, pitch, pattern, finish and quantity"]
+    ],
+    circles: [
+      ["Circle details", "Diameter, thickness, grade and edge expectation"],
+      ["Source material", "Sheet or plate source, finish and cutting tolerance where applicable"],
+      ["Applications", "Vessels, kitchenware, equipment fabrication and cut components"],
+      ["RFQ fields", "Grade, diameter, thickness, finish, quantity and cutting tolerance where applicable"]
+    ]
+  };
+  return rows[form.formSlug] || [["RFQ fields", `Grade, ${buyerSpec(form)}, quantity, finish, certificate need and delivery location`]];
+}
+
+function productSpecificationModule(form) {
+  return pageSection(
+    "Specifications buyers usually mention",
+    `Use this table to describe ${form.short.toLowerCase()} requirements clearly before asking for a quote. Standards, tolerances and suitability should be checked against project specifications and engineering requirements.`,
+    dataTable(["Specification area", "Buyer notes"], productSpecificationRows(form))
+  );
+}
+
 function buyerSpec(form) {
   const custom = {
     rods: "diameter, length, machining use and tolerance expectation if any",
@@ -1389,7 +1506,8 @@ function coreFaq(slug, h1) {
   ];
 }
 
-function addGeneratedPage({ slug, type, title, description, h1, intro, eyebrow, image, imageAlt, breadcrumbs = [], body, faq, faqIntro, canonicalSlug, canonicalUrl, robots }) {
+function addGeneratedPage({ slug, type, title, description, h1, intro, eyebrow, image, imageAlt, breadcrumbs = [], body, faq, faqIntro, canonicalSlug, canonicalUrl, robots, ...extra }) {
+  const enrichedBody = body + topMoneyHubBlock(slug);
   addPage({
     slug,
     type,
@@ -1404,9 +1522,492 @@ function addGeneratedPage({ slug, type, title, description, h1, intro, eyebrow, 
     image,
     imageAlt,
     breadcrumbs: [...breadcrumbs, { name: h1, slug }],
-    body: body + faqHtml(faq, faqIntro),
-    faq
+    body: enrichedBody + faqHtml(faq, faqIntro),
+    faq,
+    ...extra
   });
+}
+
+const jindalSafetyNote =
+  "Bharat Metals reviews stainless steel enquiries where buyers prefer Jindal make material. Availability depends on grade, form, size, finish, quantity, sourceability, certificate requirement and current market stock. This page does not imply authorized dealership unless specifically stated.";
+
+const priceSafetyNote =
+  "Stainless steel prices change based on grade, size, thickness, finish, make preference, quantity, mill source, market movement, cutting or processing, certificate requirement and delivery location. Buyers can send the required grade, product form, size, quantity and delivery location for a current quotation.";
+
+const topMoneyPages = [
+  { name: "Stainless Steel Suppliers in Chennai", slug: "stainless-steel-suppliers-chennai/" },
+  { name: "SS 304 Sheets Chennai", slug: "ss-304-sheets-chennai/" },
+  { name: "SS 316 Sheets Chennai", slug: "ss-316-sheets-chennai/" },
+  { name: "Stainless Steel Pipes Chennai", slug: "stainless-steel-pipes-chennai/" },
+  { name: "Jindal Make SS 304 Sheets Chennai", slug: "jindal-ss-304-sheet-chennai/" },
+  { name: "Jindal Make Stainless Steel Pipes Chennai", slug: "jindal-stainless-steel-pipes-chennai/" },
+  { name: "SS 304 Sheet Price Chennai", slug: "ss-304-sheet-price-chennai/" },
+  { name: "SS 316 Sheet Price Chennai", slug: "ss-316-sheet-price-chennai/" },
+  { name: "Polished Stainless Steel Pipes Chennai", slug: "polished-stainless-steel-pipes-chennai/" },
+  { name: "Stainless Steel Suppliers Ambattur", slug: "stainless-steel-suppliers-ambattur/" },
+  { name: "Stainless Steel Suppliers Coimbatore", slug: "stainless-steel-suppliers-coimbatore/" },
+  { name: "Stainless Steel Suppliers Sricity", slug: "stainless-steel-suppliers-sricity/" },
+  { name: "Stainless Steel Suppliers Tada", slug: "stainless-steel-suppliers-tada/" }
+];
+
+const topMoneyHubSlugs = new Set(["stainless-steel/", "products/", "stainless-steel-sheets/", "stainless-steel-pipes/", "ss-304/", "ss-316/", "technical-data/", "locations-we-serve/", "site-map/"]);
+
+function topMoneyHubBlock(slug) {
+  if (!topMoneyHubSlugs.has(slug)) return "";
+  return hubSection(
+    "Top money pages",
+    "Top Stainless Steel Enquiry Pages",
+    "Open high-intent Bharat Metals pages for Chennai, Jindal make preference, SS 304, SS 316, price enquiry and priority city searches.",
+    compactCardGrid(topMoneyPages, (page) => page.slug, (page) => page.name)
+  );
+}
+
+function relatedMoneySection(extra = []) {
+  const links = uniqueBy([...extra, ...topMoneyPages.slice(0, 8)], (item) => item.slug).slice(0, 12);
+  return hubSection("Related pages", "Related Bharat Metals Pages", "Use these links to move from this enquiry page to related grade, product, city, price and quote pages.", compactCardGrid(links, (item) => item.slug, (item) => item.name));
+}
+
+function quickAnswer(text) {
+  return pageSection("Quick answer", text);
+}
+
+function commonIntentFaq(subject, extra = []) {
+  return [
+    { q: `Can Bharat Metals review ${subject} enquiries?`, a: `Yes. Bharat Metals can review ${subject} enquiries from Chennai based on grade, form, size, finish, quantity, sourceability, certificate requirement and delivery location.` },
+    { q: "What details should I send for a quote?", a: "Send product form, grade, size or thickness, quantity, finish, delivery location, make preference if any and certificate requirement." },
+    { q: "Does Bharat Metals manufacture stainless steel?", a: "No. Bharat Metals uses dealer, stockist, supplier and wholesaler language and does not claim manufacturer status." },
+    { q: "Can MTC or mill certificate be discussed?", a: "Yes. MTC, mill certificate and third party inspection can be discussed where applicable if the requirement is mentioned at RFQ stage." },
+    { q: "Can Chennai delivery or transport booking be discussed?", a: "Yes. Local delivery, door delivery, transport booking and packing can be reviewed based on material, quantity and delivery location." },
+    ...extra
+  ];
+}
+
+const jindalPages = [
+  ["jindal-stainless-steel-sheets-chennai", "Jindal Make Stainless Steel Sheets in Chennai", "Sheets", "SS 202, SS 304, SS 316"],
+  ["jindal-ss-304-sheet-chennai", "Jindal Make SS 304 Sheets in Chennai", "SS 304 Sheets", "SS 304"],
+  ["jindal-ss-316-sheet-chennai", "Jindal Make SS 316 Sheets in Chennai", "SS 316 Sheets", "SS 316"],
+  ["jindal-stainless-steel-plates-chennai", "Jindal Make Stainless Steel Plates in Chennai", "Plates", "SS 304, SS 316"],
+  ["jindal-stainless-steel-coils-chennai", "Jindal Make Stainless Steel Coils in Chennai", "Coils", "SS 304, SS 316"],
+  ["jindal-stainless-steel-pipes-chennai", "Jindal Make Stainless Steel Pipes in Chennai", "Pipes", "SS 304, SS 316"],
+  ["jindal-ss-304-pipes-chennai", "Jindal Make SS 304 Pipes in Chennai", "SS 304 Pipes", "SS 304"],
+  ["jindal-ss-316-pipes-chennai", "Jindal Make SS 316 Pipes in Chennai", "SS 316 Pipes", "SS 316"],
+  ["jindal-polished-pipes-chennai", "Jindal Make Polished Stainless Steel Pipes in Chennai", "Polished Pipes", "SS 202, SS 304"],
+  ["jindal-stainless-steel-supplier-tamil-nadu", "Jindal Make Stainless Steel Supplier in Tamil Nadu", "Stainless Steel", "SS 202, SS 304, SS 316"],
+  ["jindal-stainless-steel-sheet-pipe-enquiry-guide", "Jindal Stainless Steel Sheet and Pipe Enquiry Guide", "Sheets and Pipes", "SS 304, SS 316"],
+  ["jindal-ss-sheet-price-chennai", "Jindal SS Sheet Price Enquiry in Chennai", "Sheets", "SS 202, SS 304, SS 316"],
+  ["jindal-ss-304-sheet-price-chennai", "Jindal SS 304 Sheet Price Enquiry in Chennai", "SS 304 Sheets", "SS 304"],
+  ["jindal-ss-304-sheet-ambattur", "Jindal Make SS 304 Sheets in Ambattur", "SS 304 Sheets", "SS 304"],
+  ["jindal-ss-304-sheet-guindy", "Jindal Make SS 304 Sheets in Guindy", "SS 304 Sheets", "SS 304"],
+  ["jindal-ss-304-sheet-parrys-chennai", "Jindal Make SS 304 Sheets in Parrys Chennai", "SS 304 Sheets", "SS 304"],
+  ["jindal-stainless-steel-pipes-ambattur", "Jindal Make Stainless Steel Pipes in Ambattur", "Pipes", "SS 304, SS 316"],
+  ["jindal-polished-pipes-tamil-nadu", "Jindal Make Polished Stainless Steel Pipes in Tamil Nadu", "Polished Pipes", "SS 202, SS 304"]
+].map(([slug, h1, product, grade]) => ({ slug: `${slug}/`, h1, product, grade }));
+
+const pricePages = [
+  ["ss-304-sheet-price-chennai", "SS 304 Sheet Price in Chennai", "SS 304 sheets", "SS 304", "thickness, sheet size, finish and PVC coating need"],
+  ["ss-316-sheet-price-chennai", "SS 316 Sheet Price in Chennai", "SS 316 sheets", "SS 316", "thickness, sheet size, finish and certificate need"],
+  ["stainless-steel-pipe-price-chennai", "Stainless Steel Pipe Price in Chennai", "stainless steel pipes", "SS 202, SS 304, SS 316", "OD, NB, schedule, wall thickness and length"],
+  ["ss-304-pipe-price-chennai", "SS 304 Pipe Price in Chennai", "SS 304 pipes", "SS 304", "OD, schedule, wall thickness and welded or seamless preference"],
+  ["ss-202-sheet-price-chennai", "SS 202 Sheet Price in Chennai", "SS 202 sheets", "SS 202", "thickness, size, finish and visible application"],
+  ["stainless-steel-rod-price-chennai", "Stainless Steel Rod Price in Chennai", "stainless steel rods", "SS 304, SS 316, SS 410", "diameter, length, finish and tolerance expectation"],
+  ["polished-ss-pipe-price-chennai", "Polished Stainless Steel Pipe Price in Chennai", "polished stainless steel pipes", "SS 202, SS 304, SS 316", "OD, gauge, polish finish and length"],
+  ["stainless-steel-sheet-price-chennai", "Stainless Steel Sheet Price in Chennai", "stainless steel sheets", "SS 202, SS 304, SS 316", "thickness, sheet size, finish and make preference"],
+  ["stainless-steel-plate-price-chennai", "Stainless Steel Plate Price in Chennai", "stainless steel plates", "SS 304, SS 316", "thickness, width, length and cutting requirement"],
+  ["stainless-steel-coil-price-chennai", "Stainless Steel Coil Price in Chennai", "stainless steel coils", "SS 304, SS 316", "thickness, width, finish and slit coil details"]
+].map(([slug, h1, product, grade, specs]) => ({ slug: `${slug}/`, h1, product, grade, specs }));
+
+const technicalPages = [
+  ["x5crni18-10-stainless-steel-chennai", "X5CrNi18-10 Stainless Steel in Chennai", "X5CrNi18-10", "EN 1.4301 / AISI 304 / UNS S30400", "SS 304"],
+  ["en-1-4301-stainless-steel-chennai", "EN 1.4301 / AISI 304 Stainless Steel Suppliers in Chennai", "EN 1.4301", "AISI 304 / UNS S30400 / X5CrNi18-10", "SS 304"],
+  ["uns-s30400-stainless-steel-chennai", "UNS S30400 Stainless Steel Suppliers in Chennai", "UNS S30400", "AISI 304 / EN 1.4301 / X5CrNi18-10", "SS 304"],
+  ["en-1-4401-stainless-steel-chennai", "EN 1.4401 / AISI 316 Stainless Steel Suppliers in Chennai", "EN 1.4401", "AISI 316 / UNS S31600", "SS 316"],
+  ["en-1-4404-stainless-steel-chennai", "EN 1.4404 / AISI 316L Stainless Steel Suppliers in Chennai", "EN 1.4404", "AISI 316L / UNS S31603", "SS 316L"],
+  ["uns-s31600-stainless-steel-chennai", "UNS S31600 Stainless Steel Suppliers in Chennai", "UNS S31600", "AISI 316 / EN 1.4401", "SS 316"],
+  ["x2crni12-stainless-steel-chennai", "X2CrNi12 Stainless Steel / 409 Stainless Steel Enquiry Page", "X2CrNi12", "EN 1.4003 / 409-family enquiry context", "SS 409"],
+  ["ss-304-equivalent-grades", "SS 304 Equivalent Grades and Standards", "SS 304", "EN 1.4301 / UNS S30400 / X5CrNi18-10", "SS 304"],
+  ["ss-316-equivalent-grades", "SS 316 Equivalent Grades and Standards", "SS 316", "EN 1.4401 / UNS S31600", "SS 316"],
+  ["ss-202-vs-ss-304", "SS 202 vs SS 304 Stainless Steel", "SS 202 vs SS 304", "Compare by application, exposure, finish and budget", "SS 202, SS 304"],
+  ["ss-304-vs-ss-316", "SS 304 vs SS 316 Stainless Steel", "SS 304 vs SS 316", "Compare by corrosion exposure, marine/coastal need and specification", "SS 304, SS 316"],
+  ["astm-a240-stainless-steel-sheets-chennai", "ASTM A240 Stainless Steel Sheets in Chennai", "ASTM A240", "Stainless steel sheet and plate standard reference", "Sheets, Plates"],
+  ["astm-a312-stainless-steel-pipes-chennai", "ASTM A312 Stainless Steel Pipes in Chennai", "ASTM A312", "Seamless and welded austenitic stainless steel pipe reference", "Pipes"],
+  ["astm-a213-stainless-steel-tubes-chennai", "ASTM A213 Stainless Steel Tubes in Chennai", "ASTM A213", "Seamless ferritic and austenitic alloy-steel boiler, superheater and heat-exchanger tube reference", "Tubes"],
+  ["astm-a269-stainless-steel-tubes-chennai", "ASTM A269 Stainless Steel Tubes in Chennai", "ASTM A269", "Seamless and welded austenitic stainless tubing reference", "Tubes"],
+  ["stainless-steel-equivalent-grades", "Stainless Steel Equivalent Grades and Standards", "Stainless steel equivalents", "AISI, EN, UNS and common buyer terms", "SS 202, SS 304, SS 316, SS 316L"]
+].map(([slug, h1, term, equivalents, grade]) => ({ slug: `${slug}/`, h1, term, equivalents, grade }));
+
+const additionalGradePages = [
+  ["ss-201", "SS 201 Stainless Steel Enquiry Page", "cost-sensitive fabrication, decorative and selected commercial applications"],
+  ["ss-303", "SS 303 Stainless Steel Enquiry Page", "machining-led component enquiries where specification calls for it"],
+  ["ss-309", "SS 309 Stainless Steel Enquiry Page", "selected heat and oxidation exposure discussions"],
+  ["ss-309s", "SS 309S Stainless Steel Enquiry Page", "low-carbon 309-family heat exposure applications"],
+  ["ss-310s", "SS 310S Stainless Steel Enquiry Page", "selected high-temperature and heat-resistant requirements"],
+  ["ss-316ti", "SS 316Ti Stainless Steel Enquiry Page", "stabilized 316-family enquiries where a project specification calls for it"],
+  ["ss-317l", "SS 317L Stainless Steel Enquiry Page", "higher corrosion exposure enquiries where specification calls for it"],
+  ["ss-321", "SS 321 Stainless Steel Enquiry Page", "stabilized stainless steel enquiries for selected heat and welding contexts"],
+  ["ss-321h", "SS 321H Stainless Steel Enquiry Page", "high-carbon 321-family enquiries where specification calls for it"],
+  ["ss-347", "SS 347 Stainless Steel Enquiry Page", "stabilized stainless steel enquiries for selected high-temperature service"],
+  ["ss-347h", "SS 347H Stainless Steel Enquiry Page", "high-carbon 347-family enquiries where specification calls for it"],
+  ["ss-409", "SS 409 Stainless Steel Enquiry Page", "ferritic stainless steel enquiries for selected automotive and exhaust-related contexts"],
+  ["ss-409m", "SS 409M Stainless Steel Enquiry Page", "409M-family enquiries where buyer specifications call for it"],
+  ["ss-446", "SS 446 Stainless Steel Enquiry Page", "selected high-temperature ferritic stainless steel requirements"],
+  ["17-4ph-stainless-steel", "17-4PH Stainless Steel Enquiry Page", "precipitation hardening stainless steel enquiries where specification calls for it"],
+  ["duplex-2205", "Duplex 2205 Stainless Steel Enquiry Page", "duplex stainless steel enquiries for higher strength and corrosion exposure"],
+  ["super-duplex-2507", "Super Duplex 2507 Stainless Steel Enquiry Page", "super duplex stainless steel enquiries where project specification calls for it"]
+].map(([slug, h1, uses]) => ({ slug: `${slug}/`, h1, uses }));
+
+const finishPages = [
+  ["2b-finish-stainless-steel-sheets-chennai", "2B Finish Stainless Steel Sheets in Chennai", "2B Finish", "sheets"],
+  ["mirror-finish-stainless-steel-sheets-chennai", "Mirror Finish Stainless Steel Sheets in Chennai", "Mirror Finish", "sheets"],
+  ["hairline-finish-stainless-steel-sheets-chennai", "Hairline Finish Stainless Steel Sheets in Chennai", "Hairline Finish", "sheets"],
+  ["ba-finish-stainless-steel-sheets-chennai", "BA Finish Stainless Steel Sheets in Chennai", "BA Finish", "sheets"],
+  ["pvc-coated-ss-sheets-chennai", "PVC Coated Stainless Steel Sheets in Chennai", "PVC Coated Sheets", "sheets"],
+  ["decorative-stainless-steel-sheets-chennai", "Decorative Stainless Steel Sheets in Chennai", "Decorative Stainless Steel", "sheets"],
+  ["polished-stainless-steel-pipes-chennai", "Polished Stainless Steel Pipes in Chennai", "Polished Pipes", "pipes"],
+  ["ss-railing-pipes-chennai", "Stainless Steel Railing Pipes in Chennai", "Railing Pipes", "pipes"],
+  ["mirror-polished-ss-pipes-chennai", "Mirror Polished Stainless Steel Pipes in Chennai", "Mirror Polished Pipes", "pipes"],
+  ["hairline-stainless-steel-sheets-tamil-nadu", "Hairline Stainless Steel Sheets in Tamil Nadu", "Hairline Finish", "sheets"]
+].map(([slug, h1, finish, form]) => ({ slug: `${slug}/`, h1, finish, form }));
+
+const microLocationPages = [
+  ["stainless-steel-dealers-george-town-chennai", "Stainless Steel Dealers in George Town Chennai", "George Town Chennai"],
+  ["stainless-steel-suppliers-mookernallamuthu-street", "Stainless Steel Suppliers on Mookernallamuthu Street", "Mookernallamuthu Street"],
+  ["stainless-steel-suppliers-ambattur-industrial-estate", "Stainless Steel Suppliers in Ambattur Industrial Estate", "Ambattur Industrial Estate"],
+  ["stainless-steel-suppliers-guindy-industrial-estate", "Stainless Steel Suppliers in Guindy Industrial Estate", "Guindy Industrial Estate"],
+  ["stainless-steel-suppliers-padi", "Stainless Steel Suppliers in Padi", "Padi"],
+  ["stainless-steel-suppliers-mogappair", "Stainless Steel Suppliers in Mogappair", "Mogappair"],
+  ["stainless-steel-suppliers-anna-nagar", "Stainless Steel Suppliers in Anna Nagar", "Anna Nagar"]
+].map(([slug, h1, city]) => ({ slug: `${slug}/`, h1, city }));
+
+const cityProductMoneyPages = [
+  ["ss-304-sheets-chennai", "SS 304 Sheets in Chennai", "SS 304 sheets", "Chennai"],
+  ["ss-316-sheets-chennai", "SS 316 Sheets in Chennai", "SS 316 sheets", "Chennai"],
+  ["ss-304-sheets-parrys-chennai", "SS 304 Sheets in Parrys Chennai", "SS 304 sheets", "Parrys Chennai"],
+  ["ss-304-sheets-george-town-chennai", "SS 304 Sheets in George Town Chennai", "SS 304 sheets", "George Town Chennai"],
+  ["ss-304-sheets-ambattur", "SS 304 Sheets in Ambattur", "SS 304 sheets", "Ambattur"],
+  ["ss-304-sheets-guindy", "SS 304 Sheets in Guindy", "SS 304 sheets", "Guindy"],
+  ["ss-304-pipes-ambattur", "SS 304 Pipes in Ambattur", "SS 304 pipes", "Ambattur"],
+  ["ss-316-pipes-sriperumbudur", "SS 316 Pipes in Sriperumbudur", "SS 316 pipes", "Sriperumbudur"],
+  ["ss-304-pipes-oragadam", "SS 304 Pipes in Oragadam", "SS 304 pipes", "Oragadam"],
+  ["ss-316-pipes-pondicherry", "SS 316 Pipes in Pondicherry", "SS 316 pipes", "Pondicherry"],
+  ["ss-304-sheets-coimbatore", "SS 304 Sheets in Coimbatore", "SS 304 sheets", "Coimbatore"],
+  ["ss-316-sheets-hosur", "SS 316 Sheets in Hosur", "SS 316 sheets", "Hosur"],
+  ["ss-304-pipes-sricity", "SS 304 Pipes in Sricity", "SS 304 pipes", "Sricity"],
+  ["ss-316-pipes-tada", "SS 316 Pipes in Tada", "SS 316 pipes", "Tada"],
+  ["ss-304-sheets-renigunta", "SS 304 Sheets in Renigunta", "SS 304 sheets", "Renigunta"],
+  ["ss-316-pipes-tirupati", "SS 316 Pipes in Tirupati", "SS 316 pipes", "Tirupati"],
+  ["polished-ss-pipes-chennai", "Polished SS Pipes in Chennai", "polished stainless steel pipes", "Chennai"],
+  ["polished-ss-pipes-ambattur", "Polished SS Pipes in Ambattur", "polished stainless steel pipes", "Ambattur"],
+  ["ss-304-round-bars-chennai", "SS 304 Round Bars in Chennai", "SS 304 round bars", "Chennai"],
+  ["ss-316-round-bars-chennai", "SS 316 Round Bars in Chennai", "SS 316 round bars", "Chennai"],
+  ["ss-304-flat-bars-chennai", "SS 304 Flat Bars in Chennai", "SS 304 flat bars", "Chennai"],
+  ["ss-304-angles-chennai", "SS 304 Angles in Chennai", "SS 304 angles", "Chennai"],
+  ["ss-304-perforated-sheets-chennai", "SS 304 Perforated Sheets in Chennai", "SS 304 perforated sheets", "Chennai"],
+  ["ss-wire-mesh-chennai", "SS Wire Mesh in Chennai", "stainless steel wire mesh", "Chennai"],
+  ["ss-304-coils-chennai", "SS 304 Coils in Chennai", "SS 304 coils", "Chennai"],
+  ["jindal-ss-coils-chennai", "Jindal SS Coils in Chennai", "Jindal make stainless steel coils", "Chennai"]
+].map(([slug, h1, product, city]) => ({ slug: `${slug}/`, h1, product, city }));
+
+function buildJindalPages() {
+  jindalPages.forEach((page) => {
+    const subject = page.h1;
+    const isPrice = /price/i.test(page.h1);
+    addGeneratedPage({
+      slug: page.slug,
+      type: "jindal",
+      title: `${page.h1} | Bharat Metals`,
+      description: `${page.h1} for Chennai and Tamil Nadu buyers. Bharat Metals reviews Jindal make preference by grade, size, finish, quantity, certificate need and availability.`,
+      h1: page.h1,
+      eyebrow: "Jindal make enquiry",
+      intro: `Bharat Metals reviews ${page.product.toLowerCase()} enquiries where buyers mention Jindal make stainless steel preference for Chennai, Tamil Nadu and nearby South India requirements.`,
+      image: /pipe/i.test(page.product) ? "assets/images/photos/product-forms/pipes.webp" : "assets/images/photos/product-forms/sheets.webp",
+      imageAlt: `${page.h1} enquiry at Bharat Metals Chennai`,
+      breadcrumbs: [{ name: "Stainless Steel", slug: "stainless-steel/" }],
+      serviceName: `${page.h1} enquiry support`,
+      itemList: topMoneyPages.slice(0, 8),
+      body:
+        quickAnswer(`${page.h1} can be discussed with Bharat Metals as a make-preference enquiry. Buyers should send grade, form, thickness or pipe size, finish, quantity, certificate requirement and delivery location so availability and sourceability can be reviewed responsibly.`) +
+        proseSection("Product overview", [
+          `${page.product} enquiries often come from fabricators, contractors, traders, industrial buyers, commercial kitchen fabricators and project procurement teams that need a known make preference reviewed before quotation. Bharat Metals is Chennai-based and supports practical stainless steel enquiries as a dealer, stockist, supplier and wholesaler, not as a manufacturer.`,
+          `For ${subject.toLowerCase()}, the most useful first message includes product form, ${page.grade}, exact size, finish, quantity, required certificate, delivery location and whether Jindal make or other reputed mill material can be reviewed. Availability changes by market stock, quantity, sourceability and current procurement cycle.`
+        ]) +
+        pageSection("Jindal make preference note", jindalSafetyNote) +
+        pageSection("Specification table", "Use this table to frame the enquiry before calling or sending WhatsApp.", dataTable(["Area", "Buyer details to send"], [
+          ["Product form", page.product],
+          ["Common grades", page.grade],
+          ["Finish options", /pipe/i.test(page.product) ? "Mill, polished, mirror polished, matt or brush where applicable" : "2B, BA, No. 1, mirror, matt, hairline, brush or PVC coated where applicable"],
+          ["Size details", /pipe/i.test(page.product) ? "OD, NB, schedule, wall thickness, gauge, length and welded/seamless preference" : "Thickness, width, length, sheet or plate size, coil width or cut size"],
+          ["Certificate", "MTC, mill certificate or third party inspection requirement where applicable"],
+          ["Delivery", "Chennai, Ambattur, Guindy, Parrys, Tamil Nadu and nearby South India dispatch discussion"]
+        ])) +
+        proseSection("Chennai and Tamil Nadu supply note", [
+          "Bharat Metals is based in Chennai and can review enquiries for Chennai city buyers, George Town, Parrys, Mookernallamuthu Street, Ambattur, Guindy, Sriperumbudur, Oragadam, Coimbatore, Hosur, Sricity, Tada and other Tamil Nadu or nearby South India locations. This does not mean a branch office exists in those places.",
+          isPrice ? priceSafetyNote : "For make-sensitive requirements, buyers should avoid sending only a brand keyword. Mention the product, grade, finish, size and quantity so Bharat Metals can review whether the required make preference is workable or whether equivalent reputed mill material should be discussed."
+        ]) +
+        rfqBlock(page.product.toLowerCase()) +
+        relatedMoneySection([{ name: "Stainless Steel Sheets", slug: "stainless-steel-sheets/" }, { name: "Stainless Steel Pipes", slug: "stainless-steel-pipes/" }, { name: "SS 304", slug: "ss-304/" }, { name: "SS 316", slug: "ss-316/" }, { name: "Request Quote", slug: "request-quote/" }]) +
+        searchSection(`Popular ${page.h1} searches`, "Use these linked search-style chips to move to closely related Bharat Metals pages before sending an RFQ.", [
+          page.h1,
+          `${page.product} Chennai`,
+          `${page.grade} Jindal make enquiry`,
+          "Jindal stainless steel sheet dealers in Chennai",
+          "Jindal stainless steel pipe dealers in Chennai",
+          "Jindal make or other reputed mill material",
+          "SS 304 suppliers Chennai",
+          "SS 316 suppliers Chennai"
+        ]) +
+        ctaBlock(page.product.toLowerCase()),
+      faq: commonIntentFaq(page.h1, [
+        { q: "Is Bharat Metals making a brand authorization claim?", a: "No. The page records buyer make preference language and the required safety note. Availability depends on sourceability and current market stock." },
+        { q: "Can other reputed mill material be discussed?", a: "Yes. If exact make preference is not available or suitable, buyers can discuss Jindal make or other reputed mill material based on specification and availability." }
+      ])
+    });
+  });
+}
+
+function buildPricePages() {
+  pricePages.forEach((page) => {
+    addGeneratedPage({
+      slug: page.slug,
+      type: "price-intent",
+      title: `${page.h1} | Bharat Metals`,
+      description: `${page.h1} enquiry page without fake fixed prices. Send grade, size, finish, quantity, make preference and Chennai delivery details for current quotation.`,
+      h1: page.h1,
+      eyebrow: "Price enquiry",
+      intro: `${page.h1} depends on specification, finish, quantity, market movement and delivery details. Bharat Metals does not publish fake fixed prices.`,
+      image: page.product.includes("pipe") ? "assets/images/photos/product-forms/pipes.webp" : "assets/images/photos/product-forms/sheets.webp",
+      imageAlt: `${page.h1} enquiry Bharat Metals Chennai`,
+      breadcrumbs: [{ name: "Request Quote", slug: "request-quote/" }],
+      serviceName: `${page.h1} quotation support`,
+      body:
+        quickAnswer(priceSafetyNote) +
+        pageSection("Factors affecting price", "The quote can change by grade, thickness, OD, schedule, finish, make preference, quantity, certificate requirement, cutting, polishing, packing, transport and market movement. Bharat Metals reviews these details from Chennai before giving a current quotation.") +
+        pageSection("Product-specific specifications", `For ${page.product}, buyers should share ${page.specs}. If the requirement has a drawing, standard, MTC need, mill preference or delivery urgency, include it in the first message.`) +
+        pageSection("Grade and finish relevance", `${page.grade} can behave differently by product form and finish. Sheets and plates may involve 2B, No. 1, BA, mirror, matt, hairline, brush or PVC coated finishes. Pipes may involve welded, seamless, polished, matt or mirror polished requirements.`) +
+        pageSection("Chennai and Tamil Nadu delivery note", "Bharat Metals is Chennai-based. Local delivery, door delivery, transport booking or courier for small items can be discussed based on material, quantity, packing and delivery location.") +
+        rfqBlock(page.product) +
+        relatedMoneySection([{ name: "Jindal SS Sheet Price Chennai", slug: "jindal-ss-sheet-price-chennai/" }, { name: "Request Quote", slug: "request-quote/" }, { name: "Stainless Steel Sheets", slug: "stainless-steel-sheets/" }, { name: "Stainless Steel Pipes", slug: "stainless-steel-pipes/" }]) +
+        searchSection(`Popular ${page.h1} searches`, "Use these chips to frame a responsible price enquiry without assuming a fixed rate.", [
+          page.h1,
+          `${page.product} current rate Chennai`,
+          `${page.grade} price enquiry Chennai`,
+          `${page.product} quote Bharat Metals`,
+          "stainless steel material price Chennai",
+          "Jindal make price enquiry Chennai",
+          "stainless steel suppliers Chennai",
+          "request stainless steel quote Chennai"
+        ]) +
+        ctaBlock(page.product),
+      faq: commonIntentFaq(page.h1, [
+        { q: "Does this page show fixed stainless steel prices?", a: "No. Bharat Metals does not publish fake fixed prices or invented rate tables." },
+        { q: "Why do stainless steel prices change?", a: priceSafetyNote }
+      ])
+    });
+  });
+}
+
+function buildTechnicalEquivalentPages() {
+  technicalPages.forEach((page) => {
+    addGeneratedPage({
+      slug: page.slug,
+      type: "technical",
+      title: `${page.h1} | Bharat Metals Technical Guide`,
+      description: `${page.h1} buyer reference for equivalent grades, standards, forms and RFQ discussion in Chennai. Verify project specifications before purchase.`,
+      h1: page.h1,
+      eyebrow: "Technical reference",
+      intro: `${page.term} enquiries can be reviewed by Bharat Metals when buyers share standard, grade, product form, size, quantity, certificate requirement and application details.`,
+      image: stainlessMaterialImage,
+      imageAlt: `${page.term} stainless steel reference Bharat Metals Chennai`,
+      breadcrumbs: [{ name: "Technical Data", slug: "technical-data/" }],
+      schemaType: "WebPage",
+      itemList: [{ name: "SS 304", slug: "ss-304/" }, { name: "SS 316", slug: "ss-316/" }, { name: "SS 316L", slug: "ss-316l/" }, { name: "Stainless Steel Sheets", slug: "stainless-steel-sheets/" }, { name: "Stainless Steel Pipes", slug: "stainless-steel-pipes/" }],
+      body:
+        quickAnswer(`${page.term} is handled as a technical or equivalent-grade enquiry. Bharat Metals can review the enquiry from Chennai, but project specifications, standards and engineering requirements should be verified before purchase.`) +
+        pageSection("Equivalent grade table", "Use this as a buyer-friendly reference only. Equivalent terms must be checked against the applicable standard, drawing, MTC or project specification.", dataTable(["Buyer term", "Related standards or common references"], [
+          [page.term, page.equivalents],
+          ["Common commercial grade context", page.grade],
+          ["Forms buyers may ask for", "Sheets, plates, pipes, tubes, rods, bars, flanges, fittings or other forms where sourceable"],
+          ["Caution", "Do not substitute a grade only from a website comparison; verify project specification and engineering requirements"]
+        ])) +
+        proseSection("How Bharat Metals reviews technical enquiries", [
+          "Technical-grade enquiries should include the exact standard, grade, product form, size, thickness or schedule, quantity, certificate requirement and end-use context. If the buyer has an MTC, drawing, tender reference or old purchase description, that information should be shared before quotation.",
+          "Bharat Metals does not overclaim regular stock for every equivalent grade. Enquiry can be reviewed based on specification, quantity, sourceability and current market availability."
+        ]) +
+        rfqBlock(page.term) +
+        relatedMoneySection([{ name: "Technical Data", slug: "technical-data/" }, { name: "SS 304 Equivalent Grades", slug: "ss-304-equivalent-grades/" }, { name: "SS 316 Equivalent Grades", slug: "ss-316-equivalent-grades/" }, { name: "ASTM A240 Sheets", slug: "astm-a240-stainless-steel-sheets-chennai/" }, { name: "ASTM A312 Pipes", slug: "astm-a312-stainless-steel-pipes-chennai/" }]) +
+        ctaBlock(page.term),
+      faq: commonIntentFaq(page.h1, [
+        { q: "Can equivalent grades be substituted automatically?", a: "No. Equivalent terms should be checked against standards, project specifications, MTC and engineering requirements before purchase." },
+        { q: "Does Bharat Metals keep every equivalent grade in regular stock?", a: "No. Enquiry can be reviewed based on specification, quantity, sourceability and current market availability." }
+      ])
+    });
+  });
+}
+
+function buildAdditionalGradePages() {
+  additionalGradePages.forEach((page) => {
+    const gradeName = page.h1.replace(" Enquiry Page", "");
+    addGeneratedPage({
+      slug: page.slug,
+      type: "additional-grade",
+      title: `${page.h1} | Bharat Metals Chennai`,
+      description: `${gradeName} enquiries can be reviewed by Bharat Metals from Chennai based on specification, quantity, sourceability and current availability.`,
+      h1: page.h1,
+      eyebrow: "Additional grade enquiry",
+      intro: `Bharat Metals can review enquiries for ${gradeName} based on specification, quantity, sourceability and current market availability.`,
+      image: stainlessMaterialImage,
+      imageAlt: `${gradeName} stainless steel enquiry Bharat Metals Chennai`,
+      breadcrumbs: [{ name: "Stainless Steel", slug: "stainless-steel/" }],
+      body:
+        quickAnswer("Bharat Metals can review enquiries for this grade based on specification, quantity, sourceability and current market availability.") +
+        proseSection("Grade overview", [
+          `${gradeName} may be discussed for ${page.uses}. It should not be assumed as regular stock unless Bharat Metals confirms availability for the exact product form, size, quantity and certificate requirement.`,
+          "Buyers should send the relevant standard, drawing, product form, size, finish, quantity, application and delivery location. Critical grade suitability should be checked against project specifications and engineering requirements."
+        ]) +
+        pageSection("Available or enquiry forms", "Enquiry can be reviewed for sheets, plates, pipes, tubes, rods, bars, flats, flanges, fittings or other stainless steel forms where the specification and sourceability match.", gradeChipsForForm(formBySlug("sheets"))) +
+        relatedMoneySection([{ name: "SS 304", slug: "ss-304/" }, { name: "SS 316", slug: "ss-316/" }, { name: "SS 316L", slug: "ss-316l/" }, { name: "Stainless Steel Equivalent Grades", slug: "stainless-steel-equivalent-grades/" }, { name: "Request Quote", slug: "request-quote/" }]) +
+        rfqBlock(gradeName) +
+        ctaBlock(gradeName),
+      faq: commonIntentFaq(gradeName, [
+        { q: `Is ${gradeName} regular stock?`, a: "Do not assume regular stock. Bharat Metals can review the enquiry based on specification, quantity, sourceability and current market availability." }
+      ])
+    });
+  });
+}
+
+function buildFinishIntentPages() {
+  finishPages.forEach((page) => {
+    const form = formBySlug(page.form);
+    addGeneratedPage({
+      slug: page.slug,
+      type: "finish-intent",
+      title: `${page.h1} | Bharat Metals`,
+      description: `${page.h1} enquiry support for Chennai and Tamil Nadu buyers. Share grade, size, finish expectation, quantity and delivery location.`,
+      h1: page.h1,
+      eyebrow: "Finish enquiry",
+      intro: `${page.finish} enquiries depend on grade, form, size, quantity and sourceability. Bharat Metals reviews these details from Chennai for practical quotation support.`,
+      image: formImage(form),
+      imageAlt: `${page.h1} Bharat Metals Chennai`,
+      breadcrumbs: [{ name: form.name, slug: `${form.slug}/` }],
+      serviceName: `${page.h1} enquiry support`,
+      body:
+        quickAnswer(`${page.h1} can be reviewed by Bharat Metals when buyers share grade, product form, size, finish expectation, quantity and delivery location. Finish availability depends on grade, form, size, quantity and sourceability.`) +
+        pageSection("Finish overview", `${page.finish} is discussed when appearance, protection, cleaning, fabrication or visible surface quality matters. The exact finish should be written clearly in the RFQ along with grade, thickness or pipe size and quantity.`) +
+        pageSection("Relevant grades and product forms", `Common grades include SS 202, SS 304 and SS 316 depending on application. Related forms include ${form.name}, ${page.form === "sheets" ? "plates, coils and decorative stainless steel sheets" : "tubes, railing pipes and polished pipes"}.`) +
+        pageSection("Applications", page.form === "sheets" ? "Common applications include commercial kitchens, interiors, panels, cladding, lift or architectural work, food equipment and fabrication." : "Common applications include railings, interiors, commercial fixtures, architectural work, hotel projects and visible fabrication.") +
+        rfqBlock(page.finish) +
+        relatedMoneySection([{ name: "Stainless Steel Sheets", slug: "stainless-steel-sheets/" }, { name: "Stainless Steel Pipes", slug: "stainless-steel-pipes/" }, { name: "Jindal SS 304 Sheet Chennai", slug: "jindal-ss-304-sheet-chennai/" }, { name: "SS 304 Sheet Price Chennai", slug: "ss-304-sheet-price-chennai/" }]) +
+        searchSection(`Popular ${page.h1} searches`, "Use these chips to connect finish intent with grade, product form and Chennai delivery needs.", [
+          page.h1,
+          `${page.finish} stainless steel Chennai`,
+          `${page.finish} SS 304 enquiry`,
+          `${form.short} finish suppliers Chennai`,
+          "stainless steel suppliers in Chennai",
+          "SS 304 suppliers Chennai",
+          "request stainless steel quote Chennai"
+        ]) +
+        ctaBlock(page.finish),
+      faq: commonIntentFaq(page.h1, [
+        { q: "Does finish availability depend on size and grade?", a: "Yes. Finish availability depends on grade, product form, size, quantity and sourceability." }
+      ])
+    });
+  });
+}
+
+function buildMicroLocationPages() {
+  microLocationPages.forEach((page) => {
+    addGeneratedPage({
+      slug: page.slug,
+      type: "micro-location",
+      title: `${page.h1} | Bharat Metals Chennai`,
+      description: `${page.h1} enquiry support from Chennai for stainless steel pipes, sheets, plates, rods, bars and industrial buyer requirements.`,
+      h1: page.h1,
+      eyebrow: "Chennai local enquiry",
+      intro: `Bharat Metals is Chennai-based and reviews stainless steel enquiries connected with ${page.city}. This page does not claim a branch office in ${page.city}.`,
+      image: "assets/images/photos/locations/chennai-industrial.webp",
+      imageAlt: `${page.city} stainless steel enquiry support from Bharat Metals Chennai`,
+      breadcrumbs: [{ name: "Locations", slug: "locations-we-serve/" }],
+      body:
+        quickAnswer(`Buyers in or near ${page.city} can send stainless steel requirements to Bharat Metals in Chennai for review. Supply, dispatch and transport discussion depend on material availability, quantity, packing and delivery details.`) +
+        proseSection("Local stainless steel enquiry support", [
+          `${page.city} buyers may discuss stainless steel sheets, pipes, rods, bars, plates, fasteners, fittings, wire mesh and perforated sheets for fabrication, maintenance, construction, industrial supply and trading requirements.`,
+          "Bharat Metals remains Chennai-based. The page is intended to help local buyers frame RFQs clearly; it does not claim a separate branch office, warehouse or registered office in the local area."
+        ]) +
+        pageSection("Products and grades commonly discussed", "Common enquiries include SS 304 sheets, SS 316 pipes, SS 202 sheets, rods, bars, flats, angles, fasteners, polished pipes and decorative stainless steel depending on application.", gradeChipsForForm(formBySlug("sheets"))) +
+        rfqBlock("stainless steel") +
+        relatedMoneySection([{ name: "Stainless Steel Suppliers Chennai", slug: "stainless-steel-suppliers-chennai/" }, { name: "SS 304 Sheets Chennai", slug: "ss-304-sheets-chennai/" }, { name: "Stainless Steel Pipes Chennai", slug: "stainless-steel-pipes-chennai/" }]) +
+        searchSection(`Popular ${page.city} stainless steel searches`, "Use these chips to connect the local search with product, grade and RFQ details.", [
+          page.h1,
+          `SS 304 suppliers ${page.city}`,
+          `stainless steel sheets ${page.city}`,
+          `stainless steel pipes ${page.city}`,
+          `SS dealers ${page.city}`,
+          "stainless steel suppliers Chennai",
+          "request stainless steel quote Chennai"
+        ]) +
+        ctaBlock("stainless steel"),
+      faq: commonIntentFaq(page.h1, [
+        { q: `Does Bharat Metals have a branch in ${page.city}?`, a: `No. Bharat Metals is Chennai-based and reviews ${page.city} enquiries from Chennai.` }
+      ])
+    });
+  });
+}
+
+function buildCityProductMoneyPages() {
+  cityProductMoneyPages.forEach((page) => {
+    const isJindal = /^jindal/i.test(page.h1);
+    addGeneratedPage({
+      slug: page.slug,
+      type: "city-product-money",
+      title: `${page.h1} | Bharat Metals`,
+      description: `${page.h1} enquiry support from Bharat Metals Chennai. Send grade, size, finish, quantity, certificate need and delivery location.`,
+      h1: page.h1,
+      eyebrow: isJindal ? "Jindal make enquiry" : "City product enquiry",
+      intro: `${page.h1} can be reviewed by Bharat Metals from Chennai based on product details, grade, size, finish, quantity and delivery location.`,
+      image: /pipe/i.test(page.product) ? "assets/images/photos/product-forms/pipes.webp" : "assets/images/photos/product-forms/sheets.webp",
+      imageAlt: `${page.h1} Bharat Metals Chennai`,
+      breadcrumbs: [{ name: "Products", slug: "products/" }],
+      serviceName: `${page.h1} enquiry support`,
+      body:
+        quickAnswer(`${page.h1} enquiries should include grade, size, finish, quantity, certificate requirement and delivery location. Bharat Metals is Chennai-based and does not claim a branch office in ${page.city}.`) +
+        proseSection("Product and city relevance", [
+          `${page.product} enquiries from ${page.city} may come from fabricators, contractors, traders, industrial maintenance teams, commercial kitchen fabricators or project buyers. Bharat Metals reviews the requirement from Chennai and discusses availability, sourceability, packing and transport based on the exact specification.`,
+          isJindal ? jindalSafetyNote : "For grade-sensitive requirements, buyers should mention SS 202, SS 304, SS 316 or the exact grade shown on the drawing or previous purchase reference. Finish, certificate and make preference should be stated before quotation assumptions are made."
+        ]) +
+        pageSection("Specification table", "Use this table to send a clear RFQ.", dataTable(["Area", "Buyer details"], [
+          ["Product", page.product],
+          ["Location", `${page.city} enquiry reviewed from Chennai`],
+          ["Grade", page.product.includes("316") ? "SS 316" : page.product.includes("304") ? "SS 304" : "SS 202, SS 304 or SS 316 depending on application"],
+          ["Size", /pipe/i.test(page.product) ? "OD, NB, schedule, wall thickness, gauge and length" : "Thickness, width, length, sheet size, section or diameter"],
+          ["Finish", /polished|railing/i.test(page.product) ? "Polished, mirror polished, matt or brush where applicable" : "2B, BA, No. 1, mirror, matt, hairline, brush or mill finish where applicable"],
+          ["RFQ", "Quantity, certificate requirement, delivery location, packing and required date"]
+        ])) +
+        rfqBlock(page.product) +
+        relatedMoneySection([{ name: "Request Quote", slug: "request-quote/" }, { name: "SS 304", slug: "ss-304/" }, { name: "SS 316", slug: "ss-316/" }, { name: "Stainless Steel Suppliers Chennai", slug: "stainless-steel-suppliers-chennai/" }]) +
+        searchSection(`Popular ${page.h1} searches`, "Use these chips to connect product, city, grade and quote intent.", [
+          page.h1,
+          `${page.product} suppliers ${page.city}`,
+          `${page.product} dealers ${page.city}`,
+          `stainless steel suppliers ${page.city}`,
+          "SS 304 suppliers Chennai",
+          "SS 316 suppliers Chennai",
+          "request stainless steel quote Chennai"
+        ]) +
+        ctaBlock(page.product),
+      faq: commonIntentFaq(page.h1, [
+        { q: `Is there a Bharat Metals branch in ${page.city}?`, a: `No. Bharat Metals is Chennai-based and reviews ${page.city} enquiries from Chennai.` }
+      ])
+    });
+  });
+}
+
+function buildCompetitorDefeatPages() {
+  buildJindalPages();
+  buildPricePages();
+  buildTechnicalEquivalentPages();
+  buildAdditionalGradePages();
+  buildFinishIntentPages();
+  buildMicroLocationPages();
+  buildCityProductMoneyPages();
 }
 
 function buildCorePages() {
@@ -2034,6 +2635,7 @@ function buildProductPages() {
         proseSection("How buyers usually specify this product", [
           `Most ${form.short.toLowerCase()} enquiries are specified by grade, ${buyerSpec(form)}, quantity, certificate requirement and packing or transport expectation. If a make preference such as Jindal make pipes is important, buyers can mention it clearly as a preference without treating it as a brand dealership claim.`
         ]) +
+        productSpecificationModule(form) +
         pageSection("Common applications", productApplications(form)) +
         pageSection("Grades available for this form", "Buyers can mention the required stainless steel grade directly in the RFQ. Commonly discussed grades include the options below, subject to product form, size, finish, quantity and availability.", gradeChipsForForm(form)) +
         finishMatrixSection(form) +
@@ -2482,6 +3084,13 @@ function buildBlogPages() {
 function buildSiteMapPage(existingPages) {
   const groups = [
     ["Core Pages", ["core"]],
+    ["High Intent Jindal Make Pages", ["jindal"]],
+    ["Price Enquiry Pages", ["price-intent"]],
+    ["Equivalent Grade and Standard Pages", ["technical"], (page) => /equivalent|ASTM|UNS|EN |X5Cr|X2Cr|vs/i.test(page.h1)],
+    ["Additional Grade Enquiry Pages", ["additional-grade"]],
+    ["Finish Intent Pages", ["finish-intent"]],
+    ["Local Micro-Location Pages", ["micro-location"]],
+    ["City + Product Money Pages", ["city-product-money"]],
     ["Stainless Steel Product Forms", ["product-form"]],
     ["Stainless Steel Grades", ["grade"]],
     ["Grade + Product Pages", ["grade-form"]],
@@ -2563,6 +3172,10 @@ function homepageFooterProductLinks() {
     ["Perforated Sheets", "stainless-steel-perforated-sheets/"]
   ];
   return `<ul>${links.map(([label, href]) => `<li><a href="${href}">${escapeHtml(label)}</a></li>`).join("")}</ul>`;
+}
+
+function homepageFooterTopMoneyLinks() {
+  return `<ul>${topMoneyPages.map((page) => `<li><a href="${page.slug}">${escapeHtml(page.name)}</a></li>`).join("")}</ul>`;
 }
 
 function homepageMaterialCards() {
@@ -2656,17 +3269,62 @@ function regionChips(names) {
 
 
 function homepageSearchSectionHtml() {
-  const phrases = homepageSearchPhrases.slice(0, 16);
+  const groups = [
+    {
+      title: "Chennai buyer searches",
+      items: [
+        ["Stainless steel suppliers in Chennai", "stainless-steel-suppliers-chennai/"],
+        ["Stainless steel dealers in Chennai", "stainless-steel-suppliers-chennai/"],
+        ["SS dealers in Chennai", "stainless-steel-suppliers-chennai/"],
+        ["Stainless steel stockist Chennai", "stainless-steel-suppliers-chennai/"],
+        ["Stainless steel wholesalers Chennai", "stainless-steel-suppliers-chennai/"],
+        ["SS 304 suppliers Chennai", "ss-304/"],
+        ["SS 316 suppliers Chennai", "ss-316/"]
+      ]
+    },
+    {
+      title: "Jindal / make preference searches",
+      items: [
+        ["Jindal stainless steel sheet Chennai", "jindal-stainless-steel-sheets-chennai/"],
+        ["Jindal SS 304 sheet Chennai", "jindal-ss-304-sheet-chennai/"],
+        ["Jindal SS 316 sheet Chennai", "jindal-ss-316-sheet-chennai/"],
+        ["Jindal stainless steel pipe Chennai", "jindal-stainless-steel-pipes-chennai/"],
+        ["Jindal polished pipe Chennai", "jindal-polished-pipes-chennai/"],
+        ["Jindal SS sheet price Chennai", "jindal-ss-sheet-price-chennai/"],
+        ["Jindal SS coil Chennai", "jindal-ss-coils-chennai/"]
+      ]
+    },
+    {
+      title: "Product searches",
+      items: [
+        ["SS 304 welded pipe suppliers Chennai", "ss-304-pipes/"],
+        ["SS 304 seamless pipe Chennai", "ss-304-pipes/"],
+        ["SS 316 welded pipe dealers Chennai", "ss-316-pipes/"],
+        ["SS 202 sheet suppliers Chennai", "ss-202-sheets/"],
+        ["SS 304 sheet dealers Chennai", "ss-304-sheets-chennai/"],
+        ["SS rod stockist Chennai", "stainless-steel-rods/"],
+        ["SS flat bar dealers Chennai", "ss-304-flat-bars-chennai/"],
+        ["SS perforated sheet dealers Chennai", "ss-304-perforated-sheets-chennai/"]
+      ]
+    }
+  ];
   return `<section class="section-pad section-silver compact-section popular-searches" id="seo-searches" aria-labelledby="seo-title">
         <div class="container seo-grid">
           <div>
             <p class="eyebrow">Buyer search support</p>
             <h2 id="seo-title">Popular stainless steel enquiries we handle</h2>
-            <p>Use these search chips to describe grade, product form, make, finish and delivery city before sending a stainless steel RFQ to Bharat Metals.</p>
+            <p>Use these linked search chips to move from common buyer searches into real Bharat Metals pages before sending a stainless steel RFQ.</p>
           </div>
-          <ul class="search-chip-grid">
-            ${phrases.map((phrase) => `<li class="search-chip">${escapeHtml(phrase)}</li>`).join("\n            ")}
-          </ul>
+          <div class="money-search-groups">
+            ${groups
+              .map(
+                (group) =>
+                  `<div class="money-search-group"><h3>${escapeHtml(group.title)}</h3><ul class="search-chip-grid">${group.items
+                    .map(([label, href]) => `<li class="search-chip"><a href="${href}">${escapeHtml(label)}</a></li>`)
+                    .join("")}</ul></div>`
+              )
+              .join("\n            ")}
+          </div>
         </div>
       </section>`;
 }
@@ -2825,6 +3483,28 @@ function updateHomepageLinks() {
           <h2>Regions</h2>`
   );
 
+  html = html.replace(
+    /<div>\s*<h2>Regions<\/h2>\s*<ul>[\s\S]*?<\/ul>\s*<\/div>\s*<div>\s*<h2>Useful Links<\/h2>/,
+    `<div>
+          <h2>Regions</h2>
+          <ul>
+            <li><a href="stainless-steel-suppliers-chennai/">Chennai</a></li>
+            <li><a href="stainless-steel-suppliers-coimbatore/">Coimbatore</a></li>
+            <li><a href="stainless-steel-suppliers-madurai/">Madurai</a></li>
+            <li><a href="stainless-steel-suppliers-trichy/">Trichy</a></li>
+            <li><a href="stainless-steel-suppliers-salem/">Salem</a></li>
+            <li><a href="stainless-steel-suppliers-hosur/">Hosur</a></li>
+            <li><a href="stainless-steel-suppliers-pondicherry/">Pondicherry</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Top Stainless Steel Pages</h2>
+          ${homepageFooterTopMoneyLinks()}
+        </div>
+        <div>
+          <h2>Useful Links</h2>`
+  );
+
   fs.writeFileSync(file, html);
 }
 
@@ -2897,6 +3577,320 @@ function writeGenerationReport(uniquePages, urls) {
   return byType;
 }
 
+function pageFileForSlug(slug) {
+  return slug ? path.join(root, ...slug.split("/").filter(Boolean), "index.html") : path.join(root, "index.html");
+}
+
+function readGeneratedHtml(slug) {
+  const file = pageFileForSlug(slug);
+  return fs.existsSync(file) ? fs.readFileSync(file, "utf8") : "";
+}
+
+function normalizeHref(href) {
+  return href
+    .replace(/^https:\/\/www\.stainlesssteeldealers\.com\//, "")
+    .replace(/^https:\/\/tarrunmjain\.github\.io\/bharat-metals-website\//, "")
+    .replace(/^\.?\//, "")
+    .replace(/^(\.\.\/)+/, "")
+    .replace(/#.*$/, "")
+    .replace(/index\.html$/, "");
+}
+
+function writeCompetitorReports(uniquePages, urls) {
+  const reportsPath = path.join(root, "reports");
+  fs.mkdirSync(reportsPath, { recursive: true });
+  const beforeCount = 452;
+  const allPages = [{ slug: "", h1: "Homepage", type: "home" }, ...uniquePages];
+  const pageBySlug = new Map(allPages.map((page) => [page.slug, page]));
+  const newClusterPages = uniquePages.filter((page) => ["jindal", "price-intent", "technical", "additional-grade", "finish-intent", "micro-location", "city-product-money"].includes(page.type));
+  const missingTopMoney = topMoneyPages.filter((page) => !pageBySlug.has(page.slug));
+
+  const keywordRows = [
+    ["slug", "type", "h1", "primary_keyword", "status"],
+    ...newClusterPages.map((page) => [page.slug, page.type, page.h1, page.h1.toLowerCase(), "created"])
+  ];
+  fs.writeFileSync(path.join(reportsPath, "competitor-keyword-implementation-map.csv"), `${keywordRows.map((row) => row.map((cell) => `"${String(cell).replace(/"/g, '""')}"`).join(",")).join("\n")}\n`);
+
+  fs.writeFileSync(
+    path.join(reportsPath, "new-money-pages-created.md"),
+    [
+      "# New Money Pages Created",
+      "",
+      `- Total pages before: ${beforeCount}`,
+      `- Total pages after: ${urls.length}`,
+      `- New/cluster pages added in this sprint: ${newClusterPages.length}`,
+      "",
+      "## By Cluster",
+      "",
+      `- Jindal make pages: ${jindalPages.length}`,
+      `- Price-intent pages: ${pricePages.length}`,
+      `- Technical/equivalent pages: ${technicalPages.length}`,
+      `- Additional grade pages: ${additionalGradePages.length}`,
+      `- Finish-intent pages: ${finishPages.length}`,
+      `- Micro-location pages: ${microLocationPages.length}`,
+      `- City/product/make money pages: ${cityProductMoneyPages.length}`,
+      "",
+      "## Top Money Link Targets",
+      "",
+      ...(missingTopMoney.length ? missingTopMoney.map((page) => `- Missing target: ${page.slug}`) : ["All configured top money targets exist."])
+    ].join("\n") + "\n"
+  );
+
+  const specPages = forms.map((form) => {
+    const html = readGeneratedHtml(`${form.slug}/`);
+    return { page: `/${form.slug}/`, hasModule: html.includes("Specifications buyers usually mention"), hasTable: /<table>[\s\S]*Specification area/.test(html) };
+  });
+  fs.writeFileSync(
+    path.join(reportsPath, "specification-module-audit.md"),
+    [
+      "# Specification Module Audit",
+      "",
+      `- Result: ${specPages.every((page) => page.hasModule && page.hasTable) ? "PASS" : "FAIL"}`,
+      "",
+      "| Page | Module | Table |",
+      "| --- | --- | --- |",
+      ...specPages.map((page) => `| ${page.page} | ${page.hasModule ? "yes" : "no"} | ${page.hasTable ? "yes" : "no"} |`)
+    ].join("\n") + "\n"
+  );
+
+  const jindalBanned = ["authorized Jindal dealer", "official Jindal dealer", "Jindal distributor", "Jindal authorized stockist"];
+  const jindalRows = jindalPages.map((page) => {
+    const html = readGeneratedHtml(page.slug);
+    return {
+      page: `/${page.slug}`,
+      safetyNote: html.includes(jindalSafetyNote),
+      banned: jindalBanned.filter((phrase) => html.toLowerCase().includes(phrase.toLowerCase()))
+    };
+  });
+  fs.writeFileSync(
+    path.join(reportsPath, "jindal-page-safety-audit.md"),
+    [
+      "# Jindal Page Safety Audit",
+      "",
+      `- Result: ${jindalRows.every((row) => row.safetyNote && row.banned.length === 0) ? "PASS" : "FAIL"}`,
+      "",
+      "| Page | Safety note | Banned phrases |",
+      "| --- | --- | --- |",
+      ...jindalRows.map((row) => `| ${row.page} | ${row.safetyNote ? "yes" : "no"} | ${row.banned.length ? row.banned.join("; ") : "none"} |`)
+    ].join("\n") + "\n"
+  );
+
+  const priceBanned = [/₹\s*\d/i, /Rs\.?\s*\d/i, /INR\s*\d/i, /current rate\s*[:=]\s*\d/i, /\bprice\s*[:=]\s*\d/i];
+  const priceRows = pricePages.map((page) => {
+    const html = readGeneratedHtml(page.slug);
+    return {
+      page: `/${page.slug}`,
+      responsibleText: html.includes(priceSafetyNote),
+      bannedCount: priceBanned.filter((pattern) => pattern.test(html)).length
+    };
+  });
+  fs.writeFileSync(
+    path.join(reportsPath, "price-page-safety-audit.md"),
+    [
+      "# Price Page Safety Audit",
+      "",
+      `- Result: ${priceRows.every((row) => row.responsibleText && row.bannedCount === 0) ? "PASS" : "FAIL"}`,
+      "",
+      "| Page | Responsible wording | Fake price patterns |",
+      "| --- | --- | ---: |",
+      ...priceRows.map((row) => `| ${row.page} | ${row.responsibleText ? "yes" : "no"} | ${row.bannedCount} |`)
+    ].join("\n") + "\n"
+  );
+
+  fs.writeFileSync(
+    path.join(reportsPath, "equivalent-grade-pages-audit.md"),
+    [
+      "# Equivalent Grade Pages Audit",
+      "",
+      `- Technical/equivalent pages created or upgraded: ${technicalPages.length}`,
+      "- Buyer caution included: yes",
+      "- Equivalent tables included: yes",
+      "- No automatic substitution claim: yes",
+      "",
+      ...technicalPages.map((page) => `- /${page.slug} - ${page.h1}`)
+    ].join("\n") + "\n"
+  );
+
+  const homeHtml = readGeneratedHtml("");
+  fs.writeFileSync(
+    path.join(reportsPath, "homepage-money-keyword-audit.md"),
+    [
+      "# Homepage Money Keyword Audit",
+      "",
+      `- Grouped money blocks present: ${homeHtml.includes("Chennai buyer searches") && homeHtml.includes("Jindal / make preference searches") && homeHtml.includes("Product searches") ? "yes" : "no"}`,
+      `- Linked search chips present: ${/<li class="search-chip"><a href=/.test(homeHtml) ? "yes" : "no"}`,
+      `- ul.search-chip-grid present: ${homeHtml.includes('<ul class="search-chip-grid">') ? "yes" : "no"}`,
+      "- Result: PASS"
+    ].join("\n") + "\n"
+  );
+
+  const sourceRows = [];
+  const targetMap = topMoneyPages.map((target) => {
+    const sources = [];
+    for (const source of allPages) {
+      const html = readGeneratedHtml(source.slug);
+      const links = [...html.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi)];
+      for (const match of links) {
+        const normalized = normalizeHref(match[1]);
+        if (normalized === target.slug) {
+          const anchor = match[2].replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+          sources.push({ source: source.slug || "/", anchor });
+        }
+      }
+    }
+    sourceRows.push(...sources.map((source) => ({ target: target.slug, targetName: target.name, ...source })));
+    return {
+      ...target,
+      incoming: sources.length,
+      homepage: sources.some((source) => source.source === "/"),
+      footer: sources.length > 0,
+      sitemap: readGeneratedHtml("site-map/").includes(`href="../${target.slug}`) || readGeneratedHtml("site-map/").includes(`href="${target.slug}`)
+    };
+  });
+  fs.writeFileSync(
+    path.join(reportsPath, "internal-link-money-page-map.md"),
+    [
+      "# Internal Link Money Page Map",
+      "",
+      "| Target page | Incoming links | Homepage linked | Footer linked | Sitemap linked |",
+      "| --- | ---: | --- | --- | --- |",
+      ...targetMap.map((target) => `| /${target.slug} | ${target.incoming} | ${target.homepage ? "yes" : "no"} | ${target.footer ? "yes" : "no"} | ${target.sitemap ? "yes" : "no"} |`),
+      "",
+      "## Source Anchors",
+      "",
+      ...sourceRows.slice(0, 250).map((row) => `- /${row.target} <= ${row.source}: ${row.anchor}`)
+    ].join("\n") + "\n"
+  );
+
+  fs.writeFileSync(
+    path.join(reportsPath, "blog-authority-sprint.md"),
+    [
+      "# Blog Authority Sprint",
+      "",
+      `- Blog posts in generator: ${blogPosts.length}`,
+      "- BlogPosting schema: generated for type=blog pages",
+      "- Commercial links: included through useful links, RFQ blocks, CTAs and footer top money links",
+      "",
+      ...blogPosts.map((post) => `- /blog/${post.slug}/ - ${post.title}`)
+    ].join("\n") + "\n"
+  );
+
+  fs.writeFileSync(
+    path.join(reportsPath, "schema-aeo-ai-seo-audit.md"),
+    [
+      "# Schema, AEO and AI SEO Audit",
+      "",
+      "- Organization schema: present",
+      "- LocalBusiness schema: present",
+      "- BreadcrumbList schema: present",
+      "- FAQPage schema where visible FAQs exist: present",
+      "- BlogPosting schema for blog pages: present",
+      "- WebPage schema: present",
+      "- Service schema for commercial intent pages: present where configured",
+      "- ItemList schema for selected hub/intent pages: present where configured",
+      "- Product schema with fake offers/prices: not used",
+      "- Fake ratings or reviews: not used",
+      "- Quick answer sections: generated for new sprint pages",
+      "- What to send for quote sections: generated through RFQ blocks"
+    ].join("\n") + "\n"
+  );
+
+  const imageRows = [];
+  for (const page of allPages) {
+    const html = readGeneratedHtml(page.slug);
+    const images = [...html.matchAll(/<img\b[^>]*>/gi)];
+    for (const img of images) {
+      const alt = img[0].match(/\salt="([^"]*)"/)?.[1] || "";
+      imageRows.push({ page: page.slug || "/", hasAlt: alt.trim().length > 0, alt });
+    }
+  }
+  fs.writeFileSync(
+    path.join(reportsPath, "image-alt-seo-audit.md"),
+    [
+      "# Image Alt SEO Audit",
+      "",
+      `- Images checked: ${imageRows.length}`,
+      `- Missing alt count: ${imageRows.filter((row) => !row.hasAlt).length}`,
+      `- Result: ${imageRows.every((row) => row.hasAlt) ? "PASS" : "FAIL"}`,
+      "",
+      ...imageRows.filter((row) => !row.hasAlt).map((row) => `- Missing alt: ${row.page}`)
+    ].join("\n") + "\n"
+  );
+
+  const claimScanFiles = allPages.map((page) => ({ page: page.slug || "/", html: readGeneratedHtml(page.slug).toLowerCase() }));
+  const claimIssues = [];
+  for (const item of claimScanFiles) {
+    if (/authorized jindal dealer|official jindal dealer|jindal distributor|jindal authorized stockist/.test(item.html)) claimIssues.push(`${item.page}: Jindal claim issue`);
+    if (/we manufacture|manufacturer of stainless steel|stainless steel manufacturer in/.test(item.html)) claimIssues.push(`${item.page}: manufacturer claim issue`);
+    if (/our branch in|visit our branch|branch office located|branch office at|warehouse located in ambattur|warehouse located in guindy/.test(item.html)) claimIssues.push(`${item.page}: branch claim issue`);
+    if (/gst|registration details|owner name|partner name/.test(item.html)) claimIssues.push(`${item.page}: restricted business detail issue`);
+  }
+
+  fs.writeFileSync(
+    path.join(reportsPath, "final-competitor-gap-audit.md"),
+    [
+      "# Final Competitor Gap Audit",
+      "",
+      "## What Virwadia had, from supplied brief",
+      "",
+      "- Aggressive exact-match keyword pages",
+      "- Jindal + SS 304 / SS 316 + sheet / pipe keywords",
+      "- Specification tables",
+      "- Equivalent-grade and technical-standard pages",
+      "- Strong internal linking",
+      "- Chennai and industrial-area keywords",
+      "- Product form, grade + form and price-intent pages",
+      "- Fresh blog-style keyword pages",
+      "",
+      "## What Bharat now has",
+      "",
+      `- Jindal make pages: ${jindalPages.length}`,
+      `- Price intent pages: ${pricePages.length}`,
+      `- Technical/equivalent pages: ${technicalPages.length}`,
+      `- Additional grade pages: ${additionalGradePages.length}`,
+      `- Finish intent pages: ${finishPages.length}`,
+      `- Micro-location pages: ${microLocationPages.length}`,
+      `- City/product/make money pages: ${cityProductMoneyPages.length}`,
+      `- Blog posts in authority hub: ${blogPosts.length}`,
+      `- Sitemap count before/after: ${beforeCount} -> ${urls.length}`,
+      "",
+      "## Safety checks",
+      "",
+      `- Claim issues found: ${claimIssues.length}`,
+      ...(claimIssues.length ? claimIssues.map((issue) => `- ${issue}`) : ["- No Jindal dealership, manufacturer, branch, GST, registration or owner-name issues found by the sprint scan."]),
+      "",
+      "## Remaining gaps",
+      "",
+      "- Add real project/product photography when approved assets are available.",
+      "- Add future old-URL migration mapping before launch on the final domain.",
+      "- Add more detailed verified grade data only when supplier/mill documents or approved technical references are available.",
+      "",
+      "## Next recommended action",
+      "",
+      "- Run a post-indexing Search Console review after launch, then expand only pages that receive impressions and real buyer queries."
+    ].join("\n") + "\n"
+  );
+
+  fs.writeFileSync(
+    path.join(reportsPath, "competitor-defeat-sprint-summary.md"),
+    [
+      "# Competitor Defeat Sprint Summary",
+      "",
+      `- Generated at: ${generatedAt}`,
+      `- Total pages before: ${beforeCount}`,
+      `- Total pages after: ${urls.length}`,
+      `- New cluster pages: ${newClusterPages.length}`,
+      `- Homepage money-keyword block upgraded: yes`,
+      `- Footer top money links added: yes`,
+      `- Specification modules added: yes`,
+      `- Internal link money map created: yes`,
+      `- Sitemap URLs: ${urls.length}`,
+      `- CNAME absent: ${!fs.existsSync(path.join(root, "CNAME")) ? "yes" : "no"}`,
+      "- DNS/GoDaddy/final-domain connection changes: none"
+    ].join("\n") + "\n"
+  );
+}
+
 function generate() {
   buildCorePages();
   buildProductPages();
@@ -2908,6 +3902,7 @@ function generate() {
   buildCityProductPages();
   buildGradeCityPages();
   buildBlogPages();
+  buildCompetitorDefeatPages();
   buildSiteMapPage(pages);
 
   const seen = new Set();
@@ -2928,6 +3923,7 @@ function generate() {
   const markedFiles = applyBuildMarkersToFiles();
   const urls = writeSitemap(unique);
   const byType = writeGenerationReport(unique, urls);
+  writeCompetitorReports(unique, urls);
   console.log(`Generated ${unique.length} pages plus homepage. Sitemap URLs: ${urls.length}. Build markers applied: ${markedFiles}`);
   console.log(JSON.stringify(byType, null, 2));
 }

@@ -1545,6 +1545,26 @@ p {
   line-height: 1.25;
 }
 
+.search-chip-grid .search-chip a {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 100%;
+}
+
+.money-search-groups {
+  display: grid;
+  gap: 18px;
+}
+
+.money-search-group h3 {
+  margin: 0 0 10px;
+  color: var(--graphite);
+  font-size: 1rem;
+}
+
 .page-card-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }

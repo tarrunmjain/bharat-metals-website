@@ -135,6 +135,21 @@ function nav(site, prefix) {
 
 function footer(site, prefix) {
   const mailto = site.mailto.replace(/&/g, "&amp;");
+  const topMoneyLinks = [
+    ["Stainless Steel Suppliers in Chennai", "stainless-steel-suppliers-chennai/"],
+    ["SS 304 Sheets Chennai", "ss-304-sheets-chennai/"],
+    ["SS 316 Sheets Chennai", "ss-316-sheets-chennai/"],
+    ["Stainless Steel Pipes Chennai", "stainless-steel-pipes-chennai/"],
+    ["Jindal Make SS 304 Sheets Chennai", "jindal-ss-304-sheet-chennai/"],
+    ["Jindal Make Stainless Steel Pipes Chennai", "jindal-stainless-steel-pipes-chennai/"],
+    ["SS 304 Sheet Price Chennai", "ss-304-sheet-price-chennai/"],
+    ["SS 316 Sheet Price Chennai", "ss-316-sheet-price-chennai/"],
+    ["Polished Stainless Steel Pipes Chennai", "polished-stainless-steel-pipes-chennai/"],
+    ["Stainless Steel Suppliers Ambattur", "stainless-steel-suppliers-ambattur/"],
+    ["Stainless Steel Suppliers Coimbatore", "stainless-steel-suppliers-coimbatore/"],
+    ["Stainless Steel Suppliers Sricity", "stainless-steel-suppliers-sricity/"],
+    ["Stainless Steel Suppliers Tada", "stainless-steel-suppliers-tada/"]
+  ];
   return `<footer class="site-footer" id="contact">
     <div class="container footer-grid">
       <div class="footer-brand"><img src="${prefix}${site.logo}" alt="Bharat Metals" width="900" height="300"><p>Bharat Metals is a Chennai stainless steel stockist, supplier and wholesaler established in 1986, focused on practical stainless steel supply across Tamil Nadu and nearby South India markets.</p></div>
@@ -142,6 +157,7 @@ function footer(site, prefix) {
       <div><h2>Navigation</h2><ul><li><a href="${localHref(prefix, "")}">Home</a></li><li><a href="${localHref(prefix, "about-us/")}">Company Profile</a></li><li><a href="${localHref(prefix, "products/")}">Product Portfolio</a></li><li><a href="${localHref(prefix, "locations-we-serve/")}">Locations</a></li><li><a href="${localHref(prefix, "technical-data/")}">Technical Data</a></li><li><a href="${localHref(prefix, "request-quote/")}">Request a Quote</a></li><li><a href="${localHref(prefix, "blog/")}">Blog</a></li><li><a href="${localHref(prefix, "site-map/")}">Sitemap</a></li></ul></div>
       <div><h2>Products</h2><ul><li><a href="${localHref(prefix, "stainless-steel-pipes/")}">Stainless Steel Pipes</a></li><li><a href="${localHref(prefix, "stainless-steel-tubes/")}">Stainless Steel Tubes</a></li><li><a href="${localHref(prefix, "stainless-steel-sheets/")}">Stainless Steel Sheets</a></li><li><a href="${localHref(prefix, "stainless-steel-plates/")}">Stainless Steel Plates</a></li><li><a href="${localHref(prefix, "stainless-steel-coils/")}">Stainless Steel Coils</a></li><li><a href="${localHref(prefix, "stainless-steel-rods/")}">Stainless Steel Rods</a></li><li><a href="${localHref(prefix, "stainless-steel-bars/")}">Stainless Steel Bars</a></li><li><a href="${localHref(prefix, "stainless-steel-angles/")}">Stainless Steel Angles</a></li><li><a href="${localHref(prefix, "stainless-steel-flats/")}">Stainless Steel Flats</a></li><li><a href="${localHref(prefix, "stainless-steel-channels/")}">Stainless Steel Channels</a></li><li><a href="${localHref(prefix, "stainless-steel-flanges/")}">Stainless Steel Flanges</a></li><li><a href="${localHref(prefix, "stainless-steel-fittings/")}">Stainless Steel Fittings</a></li><li><a href="${localHref(prefix, "stainless-steel-fasteners/")}">Stainless Steel Fasteners</a></li><li><a href="${localHref(prefix, "stainless-steel-wire-mesh/")}">Wire Mesh</a></li><li><a href="${localHref(prefix, "stainless-steel-perforated-sheets/")}">Perforated Sheets</a></li></ul></div>
       <div><h2>Regions</h2><ul><li><a href="${localHref(prefix, "stainless-steel-suppliers-chennai/")}">Chennai</a></li><li><a href="${localHref(prefix, "stainless-steel-suppliers-coimbatore/")}">Coimbatore</a></li><li><a href="${localHref(prefix, "stainless-steel-suppliers-madurai/")}">Madurai</a></li><li><a href="${localHref(prefix, "stainless-steel-suppliers-trichy/")}">Trichy</a></li><li><a href="${localHref(prefix, "stainless-steel-suppliers-salem/")}">Salem</a></li><li><a href="${localHref(prefix, "stainless-steel-suppliers-hosur/")}">Hosur</a></li><li><a href="${localHref(prefix, "stainless-steel-suppliers-pondicherry/")}">Pondicherry</a></li></ul></div>
+      <div><h2>Top Stainless Steel Pages</h2><ul>${topMoneyLinks.map(([label, href]) => `<li><a href="${localHref(prefix, href)}">${escapeHtml(label)}</a></li>`).join("")}</ul></div>
       <div><h2>Useful Links</h2><ul><li><a href="${site.maps}" target="_blank" rel="noopener">Google Maps</a></li><li><a href="https://www.indiamart.com/" target="_blank" rel="noopener">IndiaMART</a></li></ul><h2>Payment Modes</h2><p>UPI, Bank Transfer, Cheque, Cash</p></div>
     </div>
     <div class="container footer-bottom"><p>&copy; <span id="year">2026</span> Bharat Metals. All rights reserved.</p><a href="#top">Back to top</a></div>
@@ -162,6 +178,7 @@ function schema(site, page) {
   const graph = [
     { "@type": "Organization", "@id": `${site.finalDomain}#organization`, name: site.name, url: site.finalDomain, logo: joinUrl(site.finalDomain, site.ogLogo), foundingDate: "1986", telephone: site.phone, email: [site.email, site.secondaryEmail] },
     { "@type": "LocalBusiness", "@id": `${site.finalDomain}#localbusiness`, name: site.name, image: joinUrl(site.finalDomain, site.ogLogo), url: site.finalDomain, telephone: site.phone, email: site.email, foundingDate: "1986", priceRange: "$$", paymentAccepted: "UPI, Bank Transfer, Cheque, Cash", openingHours: "Mo-Sa 10:00-18:00", hasMap: site.maps, address: { "@type": "PostalAddress", streetAddress: "No. 19 (10), Shop No. G1 & S10, Majfa Towers, Mookernallamuthu Street", addressLocality: "Chennai", postalCode: "600001", addressRegion: "Tamil Nadu", addressCountry: "IN" } },
+    { "@type": page.schemaType || "WebPage", "@id": `${url}#webpage`, name: page.h1, description: page.description, url, isPartOf: { "@id": site.finalDomain }, about: "Stainless steel supply, RFQ guidance and buyer enquiry support in Chennai" },
     { "@type": "BreadcrumbList", "@id": `${url}#breadcrumb`, itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: site.finalDomain }, ...(page.breadcrumbs || []).map((c, i) => ({ "@type": "ListItem", position: i + 2, name: c.name, item: joinUrl(site.finalDomain, c.slug) }))] }
   ];
   if (page.faq && page.faq.length) {
@@ -169,6 +186,30 @@ function schema(site, page) {
   }
   if (page.type === "blog") {
     graph.push({ "@type": "BlogPosting", headline: page.h1, description: page.description, image: joinUrl(site.finalDomain, page.image || "assets/images/photos/materials/stainless-steel.webp"), author: { "@type": "Organization", name: site.name }, publisher: { "@type": "Organization", name: site.name, logo: { "@type": "ImageObject", url: joinUrl(site.finalDomain, site.ogLogo) } }, datePublished: "2026-07-03", dateModified: "2026-07-03", mainEntityOfPage: url });
+  }
+  if (page.serviceName) {
+    graph.push({
+      "@type": "Service",
+      "@id": `${url}#service`,
+      name: page.serviceName,
+      description: page.description,
+      areaServed: page.areaServed || "Chennai, Tamil Nadu and nearby South India markets",
+      provider: { "@id": `${site.finalDomain}#localbusiness` },
+      serviceType: "Stainless steel stockist, supplier, dealer and wholesaler enquiry support"
+    });
+  }
+  if (page.itemList && page.itemList.length) {
+    graph.push({
+      "@type": "ItemList",
+      "@id": `${url}#itemlist`,
+      name: page.itemListName || `${page.h1} related pages`,
+      itemListElement: page.itemList.map((item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: item.name,
+        url: joinUrl(site.finalDomain, item.slug)
+      }))
+    });
   }
   return JSON.stringify({ "@context": "https://schema.org", "@graph": graph }, null, 2);
 }

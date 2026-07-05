@@ -4,14 +4,14 @@ Generated: 2026-07-03
 
 ## Summary
 
-- Pages audited: 452
+- Pages audited: 564
 - Pages below target word count: 1
-- Pages with popular enquiry search sections: 413
-- Pages missing required popular enquiry searches: 1
-- Pages with RFQ checklist: 437
-- Pages with CTA: 452
-- Pages with real images: 452
-- Pages with any audit flag: 1
+- Pages with popular enquiry search sections: 484
+- Pages missing required popular enquiry searches: 15
+- Pages with RFQ checklist: 549
+- Pages with CTA: 564
+- Pages with real images: 564
+- Pages with any audit flag: 15
 
 ## Notes
 
@@ -21,4 +21,4 @@ Generated: 2026-07-03
 
 ## Below Target Pages
 
-- /industries/hotel-commercial-kitchen-equipment/: 507/600 words (industry)
+- /industries/hotel-commercial-kitchen-equipment/: 571/600 words (industry)
