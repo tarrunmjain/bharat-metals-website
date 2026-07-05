@@ -1,8 +1,8 @@
 {
-  "checkedAt": "2026-07-05T12:14:43.734Z",
-  "htmlFiles": 574,
+  "checkedAt": "2026-07-05T12:51:39.596Z",
+  "htmlFiles": 579,
   "buildMarkers": [
-    "CORE-PATCH-HARDPASS-2026-07-04-a6d210b"
+    "CORE-PATCH-HARDPASS-2026-07-04-1cee3bc"
   ],
   "bannedPhrases": [
     {

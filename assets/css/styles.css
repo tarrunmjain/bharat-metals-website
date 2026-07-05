@@ -137,9 +137,20 @@ address {
   transition: color var(--motion), transform var(--motion), filter var(--motion);
 }
 
-.top-icon svg {
+.top-icon svg,
+.top-icon img {
+  display: block;
   width: auto;
   max-height: 24px;
+}
+
+.top-icon img {
+  object-fit: contain;
+}
+
+.icon-indiamart img {
+  max-height: 22px;
+  max-width: 34px;
 }
 
 .icon-call {
@@ -1081,15 +1092,27 @@ p {
   font-weight: 800;
 }
 
-.footer-utility-links svg {
-  width: auto;
+.footer-utility-links svg,
+.footer-utility-links img {
+  width: 21px;
   height: 21px;
-  flex: 0 0 auto;
+  flex: 0 0 21px;
+}
+
+.footer-utility-links img {
+  object-fit: contain;
 }
 
 .footer-utility-links a:hover svg *[fill]:not([fill="none"]),
 .footer-utility-links a:focus-visible svg *[fill]:not([fill="none"]) {
   fill: currentColor;
+}
+
+.top-icon:hover img,
+.top-icon:focus-visible img,
+.footer-utility-links a:hover img,
+.footer-utility-links a:focus-visible img {
+  filter: saturate(0.7) brightness(1.18) contrast(0.95);
 }
 
 .footer-column li,

@@ -5,7 +5,7 @@ Generated: 2026-07-05
 ## Result
 
 - Footer compacted: yes
-- Payment Modes section removed: yes
+- Old payment block removed: yes
 - Dated copyright line removed: yes
 - Replacement footer bottom line added: `Bharat Metals. Stainless steel stockist, supplier and wholesaler in Chennai since 1986.`
 - Useful Links moved into the primary footer column near contact details: yes
@@ -23,5 +23,5 @@ Generated: 2026-07-05
 
 - Static QA found no broken internal links or assets.
 - Footer duplicate Sitemap check passed.
-- `Payment Modes`, `UPI, Bank Transfer, Cheque, Cash`, `Future technical pages`, `paymentAccepted` and `2026` footer markup scans passed.
+- Legacy payment wording, old technical teaser text, old payment schema and old footer-year markup scans passed.
 - `CNAME` is absent and `.nojekyll` is present.

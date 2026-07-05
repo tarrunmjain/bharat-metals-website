@@ -1,4 +1,4 @@
-﻿const { spawn } = require('node:child_process');
+const { spawn } = require('node:child_process');
 const fs = require('node:fs');
 const net = require('node:net');
 const path = require('node:path');
@@ -140,8 +140,8 @@ async function topbarCheck(cdp) {
       { label: 'Call Bharat Metals', href: 'tel:+919941133888' },
       { label: 'WhatsApp Bharat Metals', href: 'https://wa.me/919941133888?text=Hello%20Bharat%20Metals%2C%20I%20want%20to%20send%20a%20stainless%20steel%20requirement.' },
       { label: 'Email Bharat Metals', hrefStarts: 'mailto:stainlesssteeldealers@gmail.com' },
-      { label: 'Open Bharat Metals Google Profile', href: 'https://maps.app.goo.gl/oXEYZZnMaAN2kfSV6' },
-      { label: 'Open IndiaMART placeholder', href: 'https://www.indiamart.com/' }
+      { label: 'Open Bharat Metals Google Business Profile', href: 'https://share.google/VGih9aoStMPaRMMyz' },
+      { label: 'Open Bharat Metals IndiaMART profile', href: 'https://www.indiamart.com/bharatmetals-chennai/profile.html?srsltid=AfmBOoojZ-XWsb5imrtauCfOghab2gJsCDru3QvurY4SkTxle4LpoSsN' }
     ];
     const icons = [...document.querySelectorAll('.top-icon')].map((node, index) => {
       const r = node.getBoundingClientRect();

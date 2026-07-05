@@ -16,7 +16,7 @@ const {
   priorityForms,
   gradeCityPriority
 } = require("../src/data/site-data");
-const { renderPage, escapeHtml, googleMapsIcon, indiaMartIcon, footerUtilityLinks, indiaMartHref } = require("../src/templates/layout");
+const { renderPage, escapeHtml, googleBusinessProfileIcon, googleMapsIcon, indiaMartIcon, footerUtilityLinks, googleBusinessProfileHref, googleMapsHref, indiaMartHref } = require("../src/templates/layout");
 
 const root = path.resolve(__dirname, "..");
 const generatedAt = "2026-07-04";
@@ -3191,7 +3191,7 @@ function homepageCompactFooter() {
             <p>10:00 AM to 6:00 PM, Sunday holiday</p>
           </div>
           <h2>Useful Links</h2>
-          ${footerUtilityLinks(site)}
+          ${footerUtilityLinks(site, "")}
         </div>
         <nav class="footer-column" aria-label="Footer navigation">
           <h2>Navigation</h2>
@@ -3397,14 +3397,13 @@ function updateHomepageLinks() {
   );
   html = html.replace(
     /<a class="top-icon icon-google"[\s\S]*?<\/a>/,
-    `<a class="top-icon icon-google" href="${site.maps}" target="_blank" rel="noopener" aria-label="Open Bharat Metals on Google Maps">${googleMapsIcon()}</a>`
+    `<a class="top-icon icon-google" href="${googleBusinessProfileHref}" target="_blank" rel="noopener" aria-label="Open Bharat Metals Google Business Profile">${googleBusinessProfileIcon("")}</a>`
   );
   html = html.replace(new RegExp(`\\n\\s*"${["payment", "Accepted"].join("")}": "[^"]+",`, "g"), "");
+  html = html.replace(/\s*<!--[^>]*IndiaMART[^>]*-->\s*/g, "\n          ");
   html = html.replace(
-    /\s*<!-- TODO:[\s\S]*?IndiaMART[\s\S]*?-->\s*<a class="top-icon icon-indiamart"[\s\S]*?<\/a>/,
-    `
-          <!-- TODO: Replace with final Bharat Metals IndiaMART profile URL. -->
-          <a class="top-icon icon-indiamart" href="${indiaMartHref}" target="_blank" rel="noopener" aria-label="Open Bharat Metals IndiaMART placeholder">${indiaMartIcon()}</a>`
+    /<a class="top-icon icon-indiamart"[\s\S]*?<\/a>/,
+    `<a class="top-icon icon-indiamart" href="${indiaMartHref}" target="_blank" rel="noopener" aria-label="Open Bharat Metals IndiaMART profile">${indiaMartIcon("")}</a>`
   );
   html = html.replace(
     /<ul class="grade-chips" aria-label="Popular stainless steel grades">[\s\S]*?<\/ul>/,

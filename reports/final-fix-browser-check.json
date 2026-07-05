@@ -595,11 +595,11 @@
         }
       },
       {
-        "label": "Open Bharat Metals Google Profile",
+        "label": "Open Bharat Metals Google Business Profile",
         "pass": true,
         "icon": {
           "index": 3,
-          "ariaLabel": "Open Bharat Metals Google Profile",
+          "ariaLabel": "Open Bharat Metals Google Business Profile",
           "href": "https://maps.app.goo.gl/oXEYZZnMaAN2kfSV6",
           "target": "_blank",
           "rel": "noopener",
@@ -618,12 +618,12 @@
         }
       },
       {
-        "label": "Open IndiaMART placeholder",
+        "label": "Open Bharat Metals IndiaMART profile",
         "pass": true,
         "icon": {
           "index": 4,
-          "ariaLabel": "Open IndiaMART placeholder",
-          "href": "https://www.indiamart.com/",
+          "ariaLabel": "Open Bharat Metals IndiaMART profile",
+          "href": "https://www.indiamart.com/bharatmetals-chennai/profile.html?srsltid=AfmBOoojZ-XWsb5imrtauCfOghab2gJsCDru3QvurY4SkTxle4LpoSsN",
           "target": "_blank",
           "rel": "noopener",
           "width": 28,
