@@ -1,7 +1,7 @@
 # Core Patch Hard Check
 
-- Checked at: 2026-07-05T10:54:13.770Z
-- Build marker: CORE-PATCH-HARDPASS-2026-07-04-c30ffe7
+- Checked at: 2026-07-05T12:14:46.302Z
+- Build marker: CORE-PATCH-HARDPASS-2026-07-04-a6d210b
 - HTML files checked: 564
 - CNAME absent: yes
 - .nojekyll present: yes

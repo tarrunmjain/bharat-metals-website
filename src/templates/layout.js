@@ -23,6 +23,34 @@ function localHref(prefix, slug) {
   return slug ? `${prefix}${slug}` : prefix || "./";
 }
 
+const indiaMartHref = "https://www.indiamart.com/";
+
+function googleMapsIcon() {
+  return `<svg viewBox="0 0 28 28" width="24" height="24" aria-hidden="true" focusable="false">
+    <path d="M3.8 6.1 10 3.7l6.1 2.2L24.2 3v19l-8.1 3-6.1-2.2-6.2 2.4V6.1Z" fill="#eef1f4"/>
+    <path d="M10 3.7v19.1l-6.2 2.4V6.1L10 3.7Z" fill="#34a853"/>
+    <path d="M10 3.7 16.1 6v19L10 22.8V3.7Z" fill="#fbbc04"/>
+    <path d="m16.1 6 8.1-3v19l-8.1 3V6Z" fill="#4285f4"/>
+    <path d="M15.3 4.6a6.3 6.3 0 0 0-6.3 6.3c0 4.8 6.3 11.1 6.3 11.1s6.3-6.3 6.3-11.1a6.3 6.3 0 0 0-6.3-6.3Z" fill="#ea4335"/>
+    <circle cx="15.3" cy="10.9" r="2.25" fill="#ffffff"/>
+  </svg>`;
+}
+
+function indiaMartIcon() {
+  return `<svg viewBox="0 0 42 24" width="30" height="22" aria-hidden="true" focusable="false">
+    <path d="M3.2 18.7V5.3h4v13.4h-4Zm5.2 0 3.7-13.4h4.2l2.9 7.2 2.9-7.2h4.2L30 18.7h-4.1l-1.7-7-3 7h-3.9l-3-7-1.7 7H8.4Z" fill="#2f5ea8"/>
+    <path d="M32.1 18.7V5.3h3.6l3.1 5.5V5.3h3.8v13.4h-3.5L36 13.4v5.3h-3.9Z" fill="#f58220"/>
+  </svg>`;
+}
+
+function footerUtilityLinks(site) {
+  return `<div class="footer-utility-links" aria-label="External useful links">
+    <a href="${site.maps}" target="_blank" rel="noopener" aria-label="Open Bharat Metals on Google Maps">${googleMapsIcon()}<span>Google Maps</span></a>
+    <!-- TODO: Replace with final Bharat Metals IndiaMART profile URL. -->
+    <a href="${indiaMartHref}" target="_blank" rel="noopener" aria-label="Open Bharat Metals IndiaMART placeholder">${indiaMartIcon()}<span>IndiaMART</span></a>
+  </div>`;
+}
+
 const portfolioMenu = [
   {
     label: "Stainless Steel",
@@ -110,9 +138,9 @@ function nav(site, prefix) {
           <a class="top-icon icon-call" href="${site.phoneHref}" aria-label="Call Bharat Metals"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M7.2 4.2 9.9 5.6c.7.4 1 1.2.7 2L9.8 9.7c-.2.5-.1 1.1.3 1.5l2.7 2.7c.4.4 1 .5 1.5.3l2.1-.8c.8-.3 1.6 0 2 .7l1.4 2.7c.4.8.1 1.8-.7 2.2-1.1.6-2.5.9-4.1.5-5.1-1.2-9.3-5.4-10.5-10.5-.4-1.6-.1-3 .5-4.1.4-.8 1.4-1.1 2.2-.7Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           <a class="top-icon icon-whatsapp" href="${site.whatsappHref}" target="_blank" rel="noopener" aria-label="WhatsApp Bharat Metals"><svg viewBox="0 0 24 24" width="23" height="23" aria-hidden="true"><path d="M12 3.3a8.6 8.6 0 0 0-7.2 13.2L4 20.7l4.4-1a8.6 8.6 0 1 0 3.6-16.4Z" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/><path d="M8.4 8.1c.2-.5.4-.6.8-.6h.5c.2 0 .4.1.5.4l.8 1.9c.1.3.1.5-.1.7l-.4.5c-.2.2-.2.4 0 .7.4.8 1.4 1.8 2.2 2.2.3.2.5.2.7 0l.6-.6c.2-.2.4-.2.7-.1l1.8.8c.3.1.5.3.4.6-.1.8-.7 1.6-1.4 1.7-1 .1-2.7-.4-4.4-1.6-1.8-1.3-3.2-3.4-3.6-4.9-.2-.7.1-1.3.4-1.7Z" fill="currentColor"/></svg></a>
           <a class="top-icon icon-mail" href="${site.mailto.replace(/&/g, "&amp;")}" aria-label="Email Bharat Metals"><svg viewBox="0 0 24 24" width="23" height="23" aria-hidden="true"><rect x="3.5" y="5.8" width="17" height="12.4" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="m4.6 7.4 7.4 5.3 7.4-5.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <a class="top-icon icon-google" href="${site.maps}" target="_blank" rel="noopener" aria-label="Open Bharat Metals Google Profile"><svg viewBox="0 0 24 24" width="23" height="23" aria-hidden="true"><path d="M12 2.7a7.3 7.3 0 0 0-7.3 7.3c0 5.4 7.3 11.3 7.3 11.3s7.3-5.9 7.3-11.3A7.3 7.3 0 0 0 12 2.7Z" fill="#ea4335"/><path d="M12 2.7v5a2.4 2.4 0 0 1 2.4 2.4h4.9A7.3 7.3 0 0 0 12 2.7Z" fill="#4285f4"/><path d="M4.7 10c0 2.2 1.2 4.8 2.8 7l3.2-5.2a2.5 2.5 0 0 1-1.1-2.1c0-.8.4-1.6 1-2L7.5 5.1A7.2 7.2 0 0 0 4.7 10Z" fill="#34a853"/><circle cx="12" cy="10" r="2.55" fill="#fbbc04"/></svg></a>
-          <!-- TODO: Replace this safe IndiaMART placeholder when the exact Bharat Metals IndiaMART profile URL is confirmed. -->
-          <a class="top-icon icon-indiamart" href="https://www.indiamart.com/" target="_blank" rel="noopener" aria-label="Open IndiaMART placeholder"><svg viewBox="0 0 32 24" width="28" height="22" aria-hidden="true"><path d="M5 19V7l6.2 8.2L17.5 7v12h-3.4v-5.3l-2.9 3.8-2.9-3.8V19H5Z" fill="#c4212a"/><circle cx="6.5" cy="5" r="2" fill="#d9252e"/><circle cx="16.2" cy="5" r="2" fill="#d9252e"/><path d="M22 6h3.2v13H22zm4.8 0H30v13h-3.2z" fill="#f58220"/></svg></a>
+          <a class="top-icon icon-google" href="${site.maps}" target="_blank" rel="noopener" aria-label="Open Bharat Metals on Google Maps">${googleMapsIcon()}</a>
+          <!-- TODO: Replace with final Bharat Metals IndiaMART profile URL. -->
+          <a class="top-icon icon-indiamart" href="${indiaMartHref}" target="_blank" rel="noopener" aria-label="Open Bharat Metals IndiaMART placeholder">${indiaMartIcon()}</a>
         </div>
       </div>
     </div>
@@ -135,6 +163,7 @@ function nav(site, prefix) {
 
 function footer(site, prefix) {
   const mailto = site.mailto.replace(/&/g, "&amp;");
+  const secondaryMailto = `mailto:${site.secondaryEmail}`;
   const topMoneyLinks = [
     ["Stainless Steel Suppliers in Chennai", "stainless-steel-suppliers-chennai/"],
     ["SS 304 Sheets Chennai", "ss-304-sheets-chennai/"],
@@ -154,16 +183,26 @@ function footer(site, prefix) {
     ["Stainless Steel Suppliers Tada", "stainless-steel-suppliers-tada/"]
   ];
   return `<footer class="site-footer" id="contact">
-    <div class="container footer-grid">
-      <div class="footer-brand"><img src="${prefix}${site.logo}" alt="Bharat Metals" width="900" height="300"><p>Bharat Metals is a Chennai stainless steel stockist, supplier and wholesaler established in 1986, focused on practical stainless steel supply across Tamil Nadu and nearby South India markets.</p></div>
-      <div><h2>Contact</h2><address>${site.addressLines.map(escapeHtml).join("<br>")}</address><p><a href="${site.phoneHref}">${escapeHtml(site.phone)}</a></p><p><a href="${mailto}">${escapeHtml(site.email)}</a></p><p><a href="mailto:${site.secondaryEmail}">${escapeHtml(site.secondaryEmail)}</a></p><p>Working hours: 10:00 AM to 6:00 PM</p><p>Weekly holiday: Sunday</p></div>
-      <div><h2>Navigation</h2><ul><li><a href="${localHref(prefix, "")}">Home</a></li><li><a href="${localHref(prefix, "about-us/")}">Company Profile</a></li><li><a href="${localHref(prefix, "products/")}">Product Portfolio</a></li><li><a href="${localHref(prefix, "locations-we-serve/")}">Locations</a></li><li><a href="${localHref(prefix, "technical-data/")}">Technical Data</a></li><li><a href="${localHref(prefix, "request-quote/")}">Request a Quote</a></li><li><a href="${localHref(prefix, "blog/")}">Blog</a></li><li><a href="${localHref(prefix, "site-map/")}">Sitemap</a></li></ul></div>
-      <div><h2>Products</h2><ul><li><a href="${localHref(prefix, "stainless-steel-pipes/")}">Stainless Steel Pipes</a></li><li><a href="${localHref(prefix, "stainless-steel-tubes/")}">Stainless Steel Tubes</a></li><li><a href="${localHref(prefix, "stainless-steel-sheets/")}">Stainless Steel Sheets</a></li><li><a href="${localHref(prefix, "stainless-steel-plates/")}">Stainless Steel Plates</a></li><li><a href="${localHref(prefix, "stainless-steel-coils/")}">Stainless Steel Coils</a></li><li><a href="${localHref(prefix, "stainless-steel-rods/")}">Stainless Steel Rods</a></li><li><a href="${localHref(prefix, "stainless-steel-bars/")}">Stainless Steel Bars</a></li><li><a href="${localHref(prefix, "stainless-steel-angles/")}">Stainless Steel Angles</a></li><li><a href="${localHref(prefix, "stainless-steel-flats/")}">Stainless Steel Flats</a></li><li><a href="${localHref(prefix, "stainless-steel-channels/")}">Stainless Steel Channels</a></li><li><a href="${localHref(prefix, "stainless-steel-flanges/")}">Stainless Steel Flanges</a></li><li><a href="${localHref(prefix, "stainless-steel-fittings/")}">Stainless Steel Fittings</a></li><li><a href="${localHref(prefix, "stainless-steel-fasteners/")}">Stainless Steel Fasteners</a></li><li><a href="${localHref(prefix, "stainless-steel-wire-mesh/")}">Wire Mesh</a></li><li><a href="${localHref(prefix, "stainless-steel-perforated-sheets/")}">Perforated Sheets</a></li></ul></div>
-      <div><h2>Regions</h2><ul><li><a href="${localHref(prefix, "stainless-steel-suppliers-chennai/")}">Chennai</a></li><li><a href="${localHref(prefix, "stainless-steel-suppliers-coimbatore/")}">Coimbatore</a></li><li><a href="${localHref(prefix, "stainless-steel-suppliers-madurai/")}">Madurai</a></li><li><a href="${localHref(prefix, "stainless-steel-suppliers-trichy/")}">Trichy</a></li><li><a href="${localHref(prefix, "stainless-steel-suppliers-salem/")}">Salem</a></li><li><a href="${localHref(prefix, "stainless-steel-suppliers-hosur/")}">Hosur</a></li><li><a href="${localHref(prefix, "stainless-steel-suppliers-pondicherry/")}">Pondicherry</a></li></ul></div>
-      <div><h2>Top Stainless Steel Pages</h2><ul>${topMoneyLinks.map(([label, href]) => `<li><a href="${localHref(prefix, href)}">${escapeHtml(label)}</a></li>`).join("")}</ul></div>
-      <div><h2>Useful Links</h2><ul><li><a href="${site.maps}" target="_blank" rel="noopener">Google Maps</a></li><li><a href="https://www.indiamart.com/" target="_blank" rel="noopener">IndiaMART</a></li></ul><h2>Payment Modes</h2><p>UPI, Bank Transfer, Cheque, Cash</p></div>
+    <div class="container footer-grid footer-grid-compact">
+      <div class="footer-brand footer-main">
+        <img src="${prefix}${site.logo}" alt="Bharat Metals" width="900" height="300">
+        <p>Bharat Metals is a Chennai stainless steel stockist, supplier and wholesaler established in 1986, focused on practical stainless steel supply across Tamil Nadu and nearby South India markets.</p>
+        <div class="footer-contact">
+          <p><a href="${site.phoneHref}">${escapeHtml(site.phone)}</a> / <a href="${site.whatsappHref}" target="_blank" rel="noopener">WhatsApp</a></p>
+          <p><a href="${mailto}">${escapeHtml(site.email)}</a></p>
+          <p><a href="${secondaryMailto}">${escapeHtml(site.secondaryEmail)}</a></p>
+          <address>${site.addressLines.map(escapeHtml).join("<br>")}</address>
+          <p>10:00 AM to 6:00 PM, Sunday holiday</p>
+        </div>
+        <h2>Useful Links</h2>
+        ${footerUtilityLinks(site)}
+      </div>
+      <nav class="footer-column" aria-label="Footer navigation"><h2>Navigation</h2><ul><li><a href="${localHref(prefix, "")}">Home</a></li><li><a href="${localHref(prefix, "about-us/")}">About Us</a></li><li><a href="${localHref(prefix, "products/")}">Products</a></li><li><a href="${localHref(prefix, "stainless-steel/")}">Stainless Steel</a></li><li><a href="${localHref(prefix, "locations-we-serve/")}">Locations</a></li><li><a href="${localHref(prefix, "request-quote/")}">Request Quote</a></li><li><a href="${localHref(prefix, "contact-us/")}">Contact Us</a></li><li><a href="${localHref(prefix, "site-map/")}">Sitemap</a></li></ul></nav>
+      <nav class="footer-column" aria-label="Footer product links"><h2>Products</h2><ul><li><a href="${localHref(prefix, "stainless-steel-pipes/")}">Stainless Steel Pipes</a></li><li><a href="${localHref(prefix, "stainless-steel-sheets/")}">Stainless Steel Sheets</a></li><li><a href="${localHref(prefix, "stainless-steel-plates/")}">Stainless Steel Plates</a></li><li><a href="${localHref(prefix, "stainless-steel-coils/")}">Stainless Steel Coils</a></li><li><a href="${localHref(prefix, "stainless-steel-rods/")}">Stainless Steel Rods</a></li><li><a href="${localHref(prefix, "stainless-steel-bars/")}">Stainless Steel Bars</a></li><li><a href="${localHref(prefix, "stainless-steel-flanges/")}">Flanges &amp; Fittings</a></li><li><a href="${localHref(prefix, "stainless-steel-wire-mesh/")}">Wire Mesh / Perforated Sheets</a></li></ul></nav>
+      <nav class="footer-column" aria-label="Footer service regions"><h2>Service Regions</h2><ul><li><a href="${localHref(prefix, "stainless-steel-suppliers-chennai/")}">Chennai</a></li><li><a href="${localHref(prefix, "stainless-steel-suppliers-ambattur/")}">Ambattur</a></li><li><a href="${localHref(prefix, "stainless-steel-suppliers-coimbatore/")}">Coimbatore</a></li><li><a href="${localHref(prefix, "stainless-steel-suppliers-hosur/")}">Hosur</a></li><li><a href="${localHref(prefix, "stainless-steel-suppliers-pondicherry/")}">Pondicherry</a></li><li><a href="${localHref(prefix, "stainless-steel-suppliers-sricity/")}">Sricity</a></li><li><a href="${localHref(prefix, "stainless-steel-suppliers-tada/")}">Tada</a></li><li><a href="${localHref(prefix, "locations-we-serve/")}">Sri Lanka / Maldives</a></li></ul></nav>
+      <nav class="footer-top-pages" aria-label="Top stainless steel pages"><h2>Top Stainless Steel Pages</h2><ul>${topMoneyLinks.map(([label, href]) => `<li><a href="${localHref(prefix, href)}">${escapeHtml(label)}</a></li>`).join("")}</ul></nav>
     </div>
-    <div class="container footer-bottom"><p>&copy; <span id="year">2026</span> Bharat Metals. All rights reserved.</p><a href="#top">Back to top</a></div>
+    <div class="container footer-bottom"><p>Bharat Metals. Stainless steel stockist, supplier and wholesaler in Chennai since 1986.</p><a href="#top">Back to top</a></div>
   </footer>`;
 }
 
@@ -180,7 +219,7 @@ function schema(site, page) {
   const url = pageCanonical(site, page);
   const graph = [
     { "@type": "Organization", "@id": `${site.finalDomain}#organization`, name: site.name, url: site.finalDomain, logo: joinUrl(site.finalDomain, site.ogLogo), foundingDate: "1986", telephone: site.phone, email: [site.email, site.secondaryEmail] },
-    { "@type": "LocalBusiness", "@id": `${site.finalDomain}#localbusiness`, name: site.name, image: joinUrl(site.finalDomain, site.ogLogo), url: site.finalDomain, telephone: site.phone, email: site.email, foundingDate: "1986", priceRange: "$$", paymentAccepted: "UPI, Bank Transfer, Cheque, Cash", openingHours: "Mo-Sa 10:00-18:00", hasMap: site.maps, address: { "@type": "PostalAddress", streetAddress: "No. 19 (10), Shop No. G1 & S10, Majfa Towers, Mookernallamuthu Street", addressLocality: "Chennai", postalCode: "600001", addressRegion: "Tamil Nadu", addressCountry: "IN" } },
+    { "@type": "LocalBusiness", "@id": `${site.finalDomain}#localbusiness`, name: site.name, image: joinUrl(site.finalDomain, site.ogLogo), url: site.finalDomain, telephone: site.phone, email: site.email, foundingDate: "1986", priceRange: "$$", openingHours: "Mo-Sa 10:00-18:00", hasMap: site.maps, address: { "@type": "PostalAddress", streetAddress: "No. 19 (10), Shop No. G1 & S10, Majfa Towers, Mookernallamuthu Street", addressLocality: "Chennai", postalCode: "600001", addressRegion: "Tamil Nadu", addressCountry: "IN" } },
     { "@type": page.schemaType || "WebPage", "@id": `${url}#webpage`, name: page.h1, description: page.description, url, isPartOf: { "@id": site.finalDomain }, about: "Stainless steel supply, RFQ guidance and buyer enquiry support in Chennai" },
     { "@type": "BreadcrumbList", "@id": `${url}#breadcrumb`, itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: site.finalDomain }, ...(page.breadcrumbs || []).map((c, i) => ({ "@type": "ListItem", position: i + 2, name: c.name, item: joinUrl(site.finalDomain, c.slug) }))] }
   ];
@@ -267,4 +306,4 @@ function renderPage(site, page) {
 </html>`;
 }
 
-module.exports = { renderPage, escapeHtml, localHref, relPrefix };
+module.exports = { renderPage, escapeHtml, localHref, relPrefix, googleMapsIcon, indiaMartIcon, footerUtilityLinks, indiaMartHref };

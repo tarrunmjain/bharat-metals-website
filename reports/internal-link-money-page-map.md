@@ -14,10 +14,10 @@
 | /ss-304-sheet-price-chennai/ | 584 | yes | yes | yes |
 | /ss-316-sheet-price-chennai/ | 574 | yes | yes | yes |
 | /polished-stainless-steel-pipes-chennai/ | 574 | yes | yes | yes |
-| /stainless-steel-suppliers-ambattur/ | 690 | yes | yes | yes |
+| /stainless-steel-suppliers-ambattur/ | 1254 | yes | yes | yes |
 | /stainless-steel-suppliers-coimbatore/ | 1194 | yes | yes | yes |
-| /stainless-steel-suppliers-sricity/ | 615 | yes | yes | yes |
-| /stainless-steel-suppliers-tada/ | 612 | yes | yes | yes |
+| /stainless-steel-suppliers-sricity/ | 1179 | yes | yes | yes |
+| /stainless-steel-suppliers-tada/ | 1176 | yes | yes | yes |
 
 ## Source Anchors
 

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-05T10:54:50.622Z",
+  "generatedAt": "2026-07-05T12:20:19.594Z",
   "fileUrl": "file:///E:/Websites/Bharat-Metals/bharat-metals-website/index.html",
   "viewports": [
     {
@@ -76,14 +76,14 @@
             "left": 110
           },
           "icons": {
-            "x": 1155,
-            "y": 8.5,
-            "width": 175,
-            "height": 23,
-            "top": 8.5,
+            "x": 1124,
+            "y": 8,
+            "width": 206,
+            "height": 24,
+            "top": 8,
             "right": 1330,
-            "bottom": 31.5,
-            "left": 1155
+            "bottom": 32,
+            "left": 1124
           }
         },
         "mobileNav": {
@@ -169,22 +169,22 @@
           "line": {
             "x": 16,
             "y": 10.328125,
-            "width": 543,
+            "width": 512,
             "height": 19.34375,
             "top": 10.328125,
-            "right": 559,
+            "right": 528,
             "bottom": 29.671875,
             "left": 16
           },
           "icons": {
-            "x": 577,
-            "y": 8.5,
-            "width": 175,
-            "height": 23,
-            "top": 8.5,
+            "x": 546,
+            "y": 8,
+            "width": 206,
+            "height": 24,
+            "top": 8,
             "right": 752,
-            "bottom": 31.5,
-            "left": 577
+            "bottom": 32,
+            "left": 546
           }
         },
         "mobileNav": {
@@ -223,22 +223,22 @@
         "header": {
           "logo": {
             "x": 0,
-            "y": 69,
+            "y": 70,
             "width": 162,
             "height": 54,
-            "top": 69,
+            "top": 70,
             "right": 162,
-            "bottom": 123,
+            "bottom": 124,
             "left": 0
           },
           "navToggle": {
             "x": 346,
-            "y": 74,
+            "y": 75,
             "width": 44,
             "height": 44,
-            "top": 74,
+            "top": 75,
             "right": 390,
-            "bottom": 118,
+            "bottom": 119,
             "left": 346
           },
           "navToggleDisplay": "flex",
@@ -247,22 +247,22 @@
         "hero": {
           "h1": {
             "x": 12,
-            "y": 215.796875,
+            "y": 216.796875,
             "width": 366,
             "height": 87.09375,
-            "top": 215.796875,
+            "top": 216.796875,
             "right": 378,
-            "bottom": 302.890625,
+            "bottom": 303.890625,
             "left": 12
           },
           "media": {
             "x": 12,
-            "y": 861.515625,
+            "y": 862.515625,
             "width": 366,
             "height": 228.75,
-            "top": 861.515625,
+            "top": 862.515625,
             "right": 378,
-            "bottom": 1090.265625,
+            "bottom": 1091.265625,
             "left": 12
           }
         },
@@ -281,10 +281,10 @@
             "x": 12,
             "y": 30,
             "width": 366,
-            "height": 23,
+            "height": 24,
             "top": 30,
             "right": 378,
-            "bottom": 53,
+            "bottom": 54,
             "left": 12
           }
         },

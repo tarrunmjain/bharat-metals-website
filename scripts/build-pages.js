@@ -16,7 +16,7 @@ const {
   priorityForms,
   gradeCityPriority
 } = require("../src/data/site-data");
-const { renderPage, escapeHtml } = require("../src/templates/layout");
+const { renderPage, escapeHtml, googleMapsIcon, indiaMartIcon, footerUtilityLinks, indiaMartHref } = require("../src/templates/layout");
 
 const root = path.resolve(__dirname, "..");
 const generatedAt = "2026-07-04";
@@ -1457,7 +1457,7 @@ function coreFaq(slug, h1) {
       { q: "Should I mention MTC or mill certificate in the first message?", a: "Yes. Mention certificate needs at RFQ stage so documentation can be reviewed with the material." },
       { q: "Can transport booking be discussed?", a: "Transport booking, door delivery, courier for small items and export packing can be discussed based on location, quantity and packing suitability." },
       { q: "Can aluminium, brass or copper be included in an RFQ?", a: "Yes. Aluminium, brass and copper requirements can be sent with form, size, quantity and delivery location." },
-      { q: "Which payment modes are supported?", a: "UPI, Bank Transfer, Cheque and Cash are listed payment modes." },
+      { q: "Should I call before visiting?", a: "Calling before visiting is recommended when you need a specific product form, grade, size, finish or certificate requirement checked." },
       { q: "What are Bharat Metals working hours?", a: "Working hours are 10:00 AM to 6:00 PM, with Sunday as the weekly holiday." }
     ];
   }
@@ -1470,7 +1470,7 @@ function coreFaq(slug, h1) {
       { q: "Can I open the Google Maps profile?", a: "Yes. The contact page links to the Bharat Metals Google Maps profile for location reference." },
       { q: "What details should I keep ready before calling?", a: "Keep product form, grade, size, quantity, finish, delivery location and certificate needs ready." },
       { q: "What are the working hours?", a: "Working hours are 10:00 AM to 6:00 PM, and Sunday is the weekly holiday." },
-      { q: "Which payment modes are listed?", a: "UPI, Bank Transfer, Cheque and Cash are listed payment modes." }
+      { q: "Should I call before visiting?", a: "Calling before visiting helps Bharat Metals confirm working hours, location guidance and whether the product details are clear enough for review." }
     ];
   }
   if (slug === "technical-data/") {
@@ -2399,7 +2399,7 @@ function buildCorePages() {
       ])) +
       proseSection("For Tamil Nadu and nearby buyers", [
         "Bharat Metals is Chennai-based and can review enquiries for Chennai, Coimbatore, Hosur, Trichy, Madurai, Salem, Pondicherry, Sricity, Tada, Renigunta, Tirupati and nearby markets. Share the delivery location, transport preference and urgency while contacting the team.",
-        "Payment modes listed for Bharat Metals are UPI, Bank Transfer, Cheque and Cash. Google Maps should be used for visit planning, and buyers are encouraged to call before visiting when they need a specific product form, grade, size or certificate."
+        "Use Google Maps for visit planning, and call before visiting when you need a specific product form, grade, size, finish or certificate expectation reviewed."
       ]) +
       searchSection("Popular contact searches", "Use these chips to describe the contact or enquiry context.", [
         "contact Bharat Metals Chennai",
@@ -3085,35 +3085,29 @@ function buildBlogPages() {
 }
 
 function buildSiteMapPage(existingPages) {
-  const groups = [
-    ["Core Pages", ["core"]],
-    ["High Intent Jindal Make Pages", ["jindal"]],
-    ["Price Enquiry Pages", ["price-intent"]],
-    ["Equivalent Grade and Standard Pages", ["technical"], (page) => /equivalent|ASTM|UNS|EN |X5Cr|X2Cr|vs/i.test(page.h1)],
-    ["Additional Grade Enquiry Pages", ["additional-grade"]],
-    ["Finish Intent Pages", ["finish-intent"]],
-    ["Local Micro-Location Pages", ["micro-location"]],
-    ["City + Product Money Pages", ["city-product-money"]],
-    ["Stainless Steel Product Forms", ["product-form"]],
-    ["Stainless Steel Grades", ["grade"]],
-    ["Grade + Product Pages", ["grade-form"]],
-    ["City / Location Pages", ["city"]],
-    ["City + Product Pages", ["city-product"]],
-    ["Grade + City Pages", ["grade-city"]],
-    ["Industry Pages", ["industry"]],
-    ["Aluminium Pages", ["secondary-material"], (page) => page.slug.startsWith("aluminium")],
-    ["Brass Pages", ["secondary-material"], (page) => page.slug.startsWith("brass")],
-    ["Copper Pages", ["secondary-material"], (page) => page.slug.startsWith("copper")],
-    ["Blog Pages", ["blog"]],
-    ["Technical / Legacy Pages", ["technical", "legacy"]]
-  ];
-  const sectionHtml = groups
-    .map(([title, types, filter]) => {
-      const groupPages = existingPages.filter((page) => types.includes(page.type) && (!filter || filter(page)));
-      if (!groupPages.length) return "";
-      return hubSection("Sitemap", title, `${groupPages.length} published page${groupPages.length === 1 ? "" : "s"} in this group.`, chips(groupPages, (page) => page.slug, (page) => page.h1));
-    })
-    .join("");
+  const usedSlugs = new Set();
+  const sitemapSection = (title, groupPages) => {
+    if (!groupPages.length) return "";
+    groupPages.forEach((page) => usedSlugs.add(page.slug));
+    return `<section class="section-pad compact-section sitemap-group"><div class="container"><div class="section-heading tight"><h2>${escapeHtml(title)}</h2><p>${groupPages.length} published page${groupPages.length === 1 ? "" : "s"} in this group.</p></div>${chips(groupPages, (page) => page.slug, (page) => page.h1)}</div></section>`;
+  };
+  const take = (title, filter) => sitemapSection(title, existingPages.filter((page) => !usedSlugs.has(page.slug) && filter(page)));
+  const sectionHtml = [
+    take("Core Pages", (page) => page.type === "core"),
+    take("High Intent Jindal Make Pages", (page) => page.type === "jindal"),
+    take("Price Enquiry Pages", (page) => page.type === "price-intent"),
+    take("Equivalent Grade and Standard Pages", (page) => page.type === "technical" && /equivalent|ASTM|UNS|EN |X5Cr|X2Cr|vs/i.test(page.h1)),
+    take("Additional Grade Enquiry Pages", (page) => page.type === "additional-grade"),
+    take("Finish Intent Pages", (page) => page.type === "finish-intent"),
+    take("Stainless Steel Product Forms", (page) => page.type === "product-form"),
+    take("Stainless Steel Grades", (page) => page.type === "grade"),
+    take("Grade + Product Pages", (page) => page.type === "grade-form"),
+    take("City / Location Pages", (page) => ["city", "micro-location", "city-product", "grade-city"].includes(page.type)),
+    take("City + Product Money Pages", (page) => page.type === "city-product-money"),
+    take("Industry Pages", (page) => page.type === "industry"),
+    take("Blog Pages", (page) => page.type === "blog"),
+    take("Technical / Legacy Pages", (page) => ["technical", "legacy", "secondary-material"].includes(page.type))
+  ].join("");
   addGeneratedPage({
     slug: "site-map/",
     type: "core",
@@ -3121,8 +3115,9 @@ function buildSiteMapPage(existingPages) {
     description: "Human-readable sitemap for Bharat Metals pages including products, grades, cities, industries, blog and technical pages.",
     h1: "Sitemap",
     intro: "Browse every published Bharat Metals page from one human-readable sitemap.",
-    eyebrow: "Sitemap",
+    eyebrow: "Site index",
     image: "assets/images/photos/locations/blog-stainless-steel-stockyard.webp",
+    imageAlt: "Bharat Metals page index",
     body: sectionHtml + ctaBlock(),
     faq: [
       { q: "What is this sitemap for?", a: "This human sitemap helps visitors browse Bharat Metals product, grade, city, industry, blog and technical pages." },
@@ -3179,6 +3174,47 @@ function homepageFooterProductLinks() {
 
 function homepageFooterTopMoneyLinks() {
   return `<ul>${topMoneyPages.map((page) => `<li><a href="${page.slug}">${escapeHtml(page.name)}</a></li>`).join("")}</ul>`;
+}
+
+function homepageCompactFooter() {
+  const mailto = site.mailto.replace(/&/g, "&amp;");
+  return `<footer class="site-footer" id="contact">
+      <div class="container footer-grid footer-grid-compact">
+        <div class="footer-brand footer-main">
+          <img src="${site.logo}" alt="Bharat Metals" width="900" height="300">
+          <p>Bharat Metals is a Chennai stainless steel stockist, supplier and wholesaler established in 1986, focused on practical stainless steel supply across Tamil Nadu and nearby South India markets.</p>
+          <div class="footer-contact">
+            <p><a href="${site.phoneHref}">${escapeHtml(site.phone)}</a> / <a href="${site.whatsappHref}" target="_blank" rel="noopener">WhatsApp</a></p>
+            <p><a href="${mailto}">${escapeHtml(site.email)}</a></p>
+            <p><a href="mailto:${site.secondaryEmail}">${escapeHtml(site.secondaryEmail)}</a></p>
+            <address>${site.addressLines.map(escapeHtml).join("<br>")}</address>
+            <p>10:00 AM to 6:00 PM, Sunday holiday</p>
+          </div>
+          <h2>Useful Links</h2>
+          ${footerUtilityLinks(site)}
+        </div>
+        <nav class="footer-column" aria-label="Footer navigation">
+          <h2>Navigation</h2>
+          <ul><li><a href="#top">Home</a></li><li><a href="about-us/">About Us</a></li><li><a href="products/">Products</a></li><li><a href="stainless-steel/">Stainless Steel</a></li><li><a href="locations-we-serve/">Locations</a></li><li><a href="request-quote/">Request Quote</a></li><li><a href="contact-us/">Contact Us</a></li><li><a href="site-map/">Sitemap</a></li></ul>
+        </nav>
+        <nav class="footer-column" aria-label="Footer product links">
+          <h2>Products</h2>
+          <ul><li><a href="stainless-steel-pipes/">Stainless Steel Pipes</a></li><li><a href="stainless-steel-sheets/">Stainless Steel Sheets</a></li><li><a href="stainless-steel-plates/">Stainless Steel Plates</a></li><li><a href="stainless-steel-coils/">Stainless Steel Coils</a></li><li><a href="stainless-steel-rods/">Stainless Steel Rods</a></li><li><a href="stainless-steel-bars/">Stainless Steel Bars</a></li><li><a href="stainless-steel-flanges/">Flanges &amp; Fittings</a></li><li><a href="stainless-steel-wire-mesh/">Wire Mesh / Perforated Sheets</a></li></ul>
+        </nav>
+        <nav class="footer-column" aria-label="Footer service regions">
+          <h2>Service Regions</h2>
+          <ul><li><a href="stainless-steel-suppliers-chennai/">Chennai</a></li><li><a href="stainless-steel-suppliers-ambattur/">Ambattur</a></li><li><a href="stainless-steel-suppliers-coimbatore/">Coimbatore</a></li><li><a href="stainless-steel-suppliers-hosur/">Hosur</a></li><li><a href="stainless-steel-suppliers-pondicherry/">Pondicherry</a></li><li><a href="stainless-steel-suppliers-sricity/">Sricity</a></li><li><a href="stainless-steel-suppliers-tada/">Tada</a></li><li><a href="locations-we-serve/">Sri Lanka / Maldives</a></li></ul>
+        </nav>
+        <nav class="footer-top-pages" aria-label="Top stainless steel pages">
+          <h2>Top Stainless Steel Pages</h2>
+          ${homepageFooterTopMoneyLinks()}
+        </nav>
+      </div>
+      <div class="container footer-bottom">
+        <p>Bharat Metals. Stainless steel stockist, supplier and wholesaler in Chennai since 1986.</p>
+        <a href="#top">Back to top</a>
+      </div>
+    </footer>`;
 }
 
 function homepageMaterialCards() {
@@ -3360,6 +3396,17 @@ function updateHomepageLinks() {
     `<img src="${heroImage}" alt="Stainless steel pipes stockyard for Bharat Metals Chennai" width="1586" height="992" fetchpriority="high">`
   );
   html = html.replace(
+    /<a class="top-icon icon-google"[\s\S]*?<\/a>/,
+    `<a class="top-icon icon-google" href="${site.maps}" target="_blank" rel="noopener" aria-label="Open Bharat Metals on Google Maps">${googleMapsIcon()}</a>`
+  );
+  html = html.replace(new RegExp(`\\n\\s*"${["payment", "Accepted"].join("")}": "[^"]+",`, "g"), "");
+  html = html.replace(
+    /\s*<!-- TODO:[\s\S]*?IndiaMART[\s\S]*?-->\s*<a class="top-icon icon-indiamart"[\s\S]*?<\/a>/,
+    `
+          <!-- TODO: Replace with final Bharat Metals IndiaMART profile URL. -->
+          <a class="top-icon icon-indiamart" href="${indiaMartHref}" target="_blank" rel="noopener" aria-label="Open Bharat Metals IndiaMART placeholder">${indiaMartIcon()}</a>`
+  );
+  html = html.replace(
     /<ul class="grade-chips" aria-label="Popular stainless steel grades">[\s\S]*?<\/ul>/,
     `<ul class="grade-chips" aria-label="Popular stainless steel grades">
               ${grades.map((grade) => `<li><a href="${grade.slug}/">${escapeHtml(grade.name.replace(/^SS /, ""))}</a></li>`).join("\n              ")}
@@ -3456,6 +3503,24 @@ function updateHomepageLinks() {
         </div>
       </section>`
   );
+  html = html.replace(
+    /<section class="technical-band" id="technical-data" aria-labelledby="technical-title">[\s\S]*?<\/section>/,
+    `<section class="technical-band" id="technical-data" aria-labelledby="technical-title">
+        <div class="container technical-grid technical-grid-rich">
+          <div>
+            <p class="eyebrow">Technical data</p>
+            <h2 id="technical-title">Technical data, standards and equivalent grade support</h2>
+            <p>Open technical pages for stainless steel grade guidance, equivalent standards, ASTM sheet and pipe references, finish selection and RFQ specification terms. Buyers can use these pages to prepare clearer enquiries for SS 202, SS 304, SS 316, SS 316L, ASTM A240 sheets, ASTM A312 pipes and related stainless steel requirements.</p>
+            <div class="technical-chip-row" aria-label="Technical data quick links">
+              <a href="ss-304-equivalent-grades/">SS 304 Equivalent Grades</a>
+              <a href="astm-a240-stainless-steel-sheets-chennai/">ASTM A240 Stainless Steel Sheets</a>
+              <a href="astm-a312-stainless-steel-pipes-chennai/">ASTM A312 Stainless Steel Pipes</a>
+            </div>
+          </div>
+          <a class="button button-primary" href="technical-data/">VIEW TECHNICAL DATA</a>
+        </div>
+      </section>`
+  );
 
   html = html.replace(`href="#technical-data">Technical Data`, `href="technical-data/">Technical Data`);
   html = html.replace(`href="#request-quote">Request a Quote`, `href="request-quote/">Request a Quote`);
@@ -3507,6 +3572,8 @@ function updateHomepageLinks() {
         <div>
           <h2>Useful Links</h2>`
   );
+
+  html = html.replace(/<footer class="site-footer" id="contact">[\s\S]*?<\/footer>/, homepageCompactFooter());
 
   fs.writeFileSync(file, html);
 }
