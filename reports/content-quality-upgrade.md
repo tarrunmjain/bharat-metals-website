@@ -21,4 +21,4 @@ Generated: 2026-07-03
 
 ## Below Target Pages
 
-- /industries/hotel-commercial-kitchen-equipment/: 571/600 words (industry)
+- /industries/hotel-commercial-kitchen-equipment/: 588/600 words (industry)

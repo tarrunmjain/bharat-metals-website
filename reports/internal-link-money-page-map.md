@@ -6,10 +6,13 @@
 | /ss-304-sheets-chennai/ | 679 | yes | yes | yes |
 | /ss-316-sheets-chennai/ | 678 | yes | yes | yes |
 | /stainless-steel-pipes-chennai/ | 679 | yes | yes | yes |
+| /jindal-stainless-steel-sheets-chennai/ | 679 | yes | yes | yes |
 | /jindal-ss-304-sheet-chennai/ | 679 | yes | yes | yes |
-| /jindal-stainless-steel-pipes-chennai/ | 679 | yes | yes | yes |
-| /ss-304-sheet-price-chennai/ | 678 | yes | yes | yes |
-| /ss-316-sheet-price-chennai/ | 627 | yes | yes | yes |
+| /jindal-ss-316-sheet-chennai/ | 679 | yes | yes | yes |
+| /jindal-stainless-steel-pipes-chennai/ | 628 | yes | yes | yes |
+| /jindal-polished-pipes-chennai/ | 575 | yes | yes | yes |
+| /ss-304-sheet-price-chennai/ | 584 | yes | yes | yes |
+| /ss-316-sheet-price-chennai/ | 574 | yes | yes | yes |
 | /polished-stainless-steel-pipes-chennai/ | 574 | yes | yes | yes |
 | /stainless-steel-suppliers-ambattur/ | 690 | yes | yes | yes |
 | /stainless-steel-suppliers-coimbatore/ | 1194 | yes | yes | yes |

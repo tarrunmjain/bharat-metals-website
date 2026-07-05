@@ -186,7 +186,7 @@ fs.writeFileSync(
     "",
     "Pages upgraded: about-us, mission-vision, industries-we-serve, locations-we-serve, products, stainless-steel, request-quote, contact-us, technical-data, blog, aluminium, brass and copper.",
     "",
-    "Claim safety: no manufacturer claim, no authorized Jindal dealer claim, no branch-office claim outside Chennai, no GST, no registration details and no owner or partner name were added."
+    "Claim safety: no manufacturer claim, no unsafe brand-dealer authorization claim, no branch-office claim outside Chennai, no GST, no registration details and no owner or partner name were added."
   ].join("\n") + "\n"
 );
 

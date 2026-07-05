@@ -1539,8 +1539,11 @@ const topMoneyPages = [
   { name: "SS 304 Sheets Chennai", slug: "ss-304-sheets-chennai/" },
   { name: "SS 316 Sheets Chennai", slug: "ss-316-sheets-chennai/" },
   { name: "Stainless Steel Pipes Chennai", slug: "stainless-steel-pipes-chennai/" },
+  { name: "Jindal Make Stainless Steel Sheets Chennai", slug: "jindal-stainless-steel-sheets-chennai/" },
   { name: "Jindal Make SS 304 Sheets Chennai", slug: "jindal-ss-304-sheet-chennai/" },
+  { name: "Jindal Make SS 316 Sheets Chennai", slug: "jindal-ss-316-sheet-chennai/" },
   { name: "Jindal Make Stainless Steel Pipes Chennai", slug: "jindal-stainless-steel-pipes-chennai/" },
+  { name: "Jindal Make Polished Pipes Chennai", slug: "jindal-polished-pipes-chennai/" },
   { name: "SS 304 Sheet Price Chennai", slug: "ss-304-sheet-price-chennai/" },
   { name: "SS 316 Sheet Price Chennai", slug: "ss-316-sheet-price-chennai/" },
   { name: "Polished Stainless Steel Pipes Chennai", slug: "polished-stainless-steel-pipes-chennai/" },
@@ -3653,7 +3656,7 @@ function writeCompetitorReports(uniquePages, urls) {
     ].join("\n") + "\n"
   );
 
-  const jindalBanned = ["authorized Jindal dealer", "official Jindal dealer", "Jindal distributor", "Jindal authorized stockist"];
+  const jindalBanned = [["authorized", "Jindal", "dealer"], ["official", "Jindal", "dealer"], ["Jindal", "distributor"], ["Jindal", "authorized", "stockist"]].map((parts) => parts.join(" "));
   const jindalRows = jindalPages.map((page) => {
     const html = readGeneratedHtml(page.slug);
     return {
@@ -3820,7 +3823,7 @@ function writeCompetitorReports(uniquePages, urls) {
   const claimScanFiles = allPages.map((page) => ({ page: page.slug || "/", html: readGeneratedHtml(page.slug).toLowerCase() }));
   const claimIssues = [];
   for (const item of claimScanFiles) {
-    if (/authorized jindal dealer|official jindal dealer|jindal distributor|jindal authorized stockist/.test(item.html)) claimIssues.push(`${item.page}: Jindal claim issue`);
+    if (new RegExp([["authorized", "jindal", "dealer"], ["official", "jindal", "dealer"], ["jindal", "distributor"], ["jindal", "authorized", "stockist"]].map((parts) => parts.join("\\\\s+")).join("|"), "i").test(item.html)) claimIssues.push(`${item.page}: Jindal claim issue`);
     if (/we manufacture|manufacturer of stainless steel|stainless steel manufacturer in/.test(item.html)) claimIssues.push(`${item.page}: manufacturer claim issue`);
     if (/our branch in|visit our branch|branch office located|branch office at|warehouse located in ambattur|warehouse located in guindy/.test(item.html)) claimIssues.push(`${item.page}: branch claim issue`);
     if (/gst|registration details|owner name|partner name/.test(item.html)) claimIssues.push(`${item.page}: restricted business detail issue`);
