@@ -1,0 +1,51 @@
+﻿{
+    "generatedAt":  "2026-07-07T13:06:07",
+    "commit":  "80d2963c99c5fde37093c6c0bbe74a6b45d38434",
+    "branch":  "main",
+    "previewUrl":  "https://tarrunmjain.github.io/bharat-metals-website/",
+    "finalDomain":  "https://www.stainlesssteeldealers.com/",
+    "tagName":  "pre-domain-launch-bharat-metals-2026-07-07",
+    "tagPushed":  true,
+    "sitemapCount":  564,
+    "htmlFiles":  564,
+    "cnameAbsent":  true,
+    "noJekyllPresent":  true,
+    "robotsExists":  true,
+    "sitemapExists":  true,
+    "staticQaErrors":  0,
+    "brokenInternalLinks":  false,
+    "brokenAssets":  false,
+    "jsonLdBlocks":  564,
+    "faqPages":  563,
+    "duplicateTitles":  0,
+    "duplicateDescriptions":  0,
+    "canonicalFinalDomainFailures":  0,
+    "sitemapFinalDomainFailures":  0,
+    "sitemapMissingHtmlUrls":  0,
+    "h1Failures":  0,
+    "topbarFooterLinkFailures":  0,
+    "staleTextFindings":  0,
+    "claimSafetyFindings":  [
+
+                            ],
+    "priceSafetyFindings":  [
+
+                            ],
+    "responsive":  {
+                       "desktop1440NoOverflow":  true,
+                       "tablet768NoOverflow":  true,
+                       "mobile390NoOverflow":  true,
+                       "mobileNavCheck":  true,
+                       "productPortfolioFlyout":  true
+                   },
+    "launchBlockers":  [
+                           "DNS still points to old hosting: apex A 199.188.200.143 and www CNAME stainlesssteeldealers.com",
+                           "GitHub Pages custom domain not set yet by design",
+                           "CNAME file absent by design until LAUNCH NOW"
+                       ],
+    "priceSafetyPass":  true,
+    "jindalSafetyPass":  true,
+    "claimSafetyPass":  true,
+    "noGoDaddyDnsChanges":  true,
+    "finalDomainLaunchStage":  "Preparation only; custom domain and DNS not connected yet."
+}
