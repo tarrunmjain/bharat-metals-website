@@ -1,6 +1,6 @@
 ﻿# GoDaddy DNS After Nameserver Takeover
 
-Captured: 2026-07-08 12:51:21 +05:30
+Captured: 2026-07-08 13:18:09 +05:30
 
 ## Current DNS State
 
@@ -13,23 +13,11 @@ Captured: 2026-07-08 12:51:21 +05:30
 | A `@` | `185.199.111.153` | Present | PASS |
 | CNAME `www` | `tarrunmjain.github.io` | Present | PASS |
 | MX `@` | `mail.stainlesssteeldealers.com`, priority `0` | Present | PASS |
-| A `mail` | `199.188.200.143` | Missing / NXDOMAIN | FAIL |
+| A `mail` | `199.188.200.143` | Present | PASS |
 
-## Required Mail Fix
+## Safety Confirmation
 
-Add this record in GoDaddy DNS:
-
-- Type: `A`
-- Host/Name: `mail`
-- Value: `199.188.200.143`
-- TTL: default or 1 hour
-
-This is needed because the preserved MX points to `mail.stainlesssteeldealers.com`. Without the `mail` A record, domain mail delivery may fail.
-
-## Do Not Change
-
-- Do not remove the MX record.
-- Do not touch TXT/SPF/DKIM/DMARC/email records unless specifically required.
-- Do not create wildcard DNS.
-- Do not use forwarding/masking.
-- Do not change `www` away from `tarrunmjain.github.io`.
+- No wildcard DNS observed.
+- `www` points to `tarrunmjain.github.io`, not a repository URL.
+- Mail preservation is now complete from public DNS.
+- HTTPS certificate provisioning remains pending in GitHub Pages.
