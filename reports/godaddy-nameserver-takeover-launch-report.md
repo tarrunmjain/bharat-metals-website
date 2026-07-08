@@ -1,56 +1,62 @@
 ﻿# GoDaddy Nameserver Takeover Launch Report
 
-Captured: 2026-07-07 17:28:29 +05:30
+Captured: 2026-07-08 12:51:21 +05:30
 
-## Summary
+## Launch Status
 
-Launch is **partially prepared but not fully live**.
+Website DNS launch is mostly complete. The final domain now resolves through GoDaddy/domaincontrol nameservers and serves the Bharat Metals GitHub Pages site over HTTP. HTTPS and one mail-preservation record remain open.
 
-GitHub Pages custom domain has been added:
+## DNS Results
 
-`www.stainlesssteeldealers.com`
+| Item | Result | Status |
+| --- | --- | --- |
+| Nameservers | `ns53.domaincontrol.com`, `ns54.domaincontrol.com` | PASS |
+| Apex/root A records | `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` | PASS |
+| `www` CNAME | `tarrunmjain.github.io` | PASS |
+| MX | `mail.stainlesssteeldealers.com`, priority `0` | PASS |
+| A `mail` | Missing / NXDOMAIN | FAIL - add `mail -> 199.188.200.143` |
 
-The root `CNAME` file has been created with exactly:
+## GitHub Pages
 
-`www.stainlesssteeldealers.com`
-
-GoDaddy nameserver takeover and DNS record changes are still pending because authenticated GoDaddy UI automation is unavailable in this Codex session.
-
-## Current Status
-
-| Item | Status |
+| Item | Result |
 | --- | --- |
-| Pre-launch commit | `51c951375e302f26df3409fd97b81e984f8eafbc` |
-| GitHub custom domain added | Yes |
-| CNAME file status | Present, exact hostname only |
-| Nameservers before | `dns1.namecheaphosting.com`, `dns2.namecheaphosting.com` |
-| Nameservers after | Pending GoDaddy action |
-| Website DNS records applied | Pending GoDaddy action |
-| MX/TXT preservation | User confirmed preserve mail records; records documented |
-| HTTPS status | Pending DNS propagation and GitHub certificate |
-| Enforce HTTPS | Pending |
-| Live homepage | Still old WordPress/LiteSpeed site until DNS changes |
-| Sitemap/robots on final domain | Pending DNS changes |
-| Sample money pages | Pending DNS changes |
-| Canonical check | Pending live GitHub final-domain resolution |
-| Search Console | Pending final live launch |
-| Rollback | Not needed yet; no GoDaddy nameserver/DNS changes applied by Codex |
+| Custom domain | `www.stainlesssteeldealers.com` |
+| CNAME file | Present and correct |
+| Pages status | `built` |
+| HTTPS enforced | `false` |
+| HTTPS attempt | Failed: `The certificate does not exist yet` |
 
-## Required Manual GoDaddy Records
+## Live URL Checks
 
-Website:
+HTTP versions of requested URLs return 200 OK from GitHub Pages:
 
-- A `@` -> `185.199.108.153`
-- A `@` -> `185.199.109.153`
-- A `@` -> `185.199.110.153`
-- A `@` -> `185.199.111.153`
-- CNAME `www` -> `tarrunmjain.github.io`
+- `/`
+- `/sitemap.xml`
+- `/robots.txt`
+- `/jindal-stainless-steel-sheets-chennai/`
+- `/ss-304-sheet-price-chennai/`
+- `/stainless-steel-pipes/`
 
-Mail preservation:
+HTTPS versions currently fail certificate trust until GitHub Pages certificate provisioning completes.
 
-- MX `@` -> `mail.stainlesssteeldealers.com`, priority `0`
-- A `mail` -> `199.188.200.143`
+## Canonical And Sitemap
 
-## Open Issue
+- Sample canonicals point to `https://www.stainlesssteeldealers.com/`.
+- Sitemap has 564 final-domain URLs.
+- Sitemap does not contain GitHub preview URLs.
 
-Complete GoDaddy/default nameserver takeover and DNS records in the GoDaddy account UI. Then rerun verification and enable HTTPS in GitHub Pages.
+## Open Issues
+
+1. Add missing GoDaddy DNS record: A `mail` -> `199.188.200.143`.
+2. Wait for GitHub Pages certificate provisioning.
+3. Enable Enforce HTTPS once available.
+4. Re-run HTTPS URL checks.
+5. Then proceed with Search Console property/sitemap submission.
+
+## Search Console Pending Tasks
+
+- Add URL-prefix property: `https://www.stainlesssteeldealers.com/`.
+- Add Domain property if possible: `stainlesssteeldealers.com`.
+- Verify ownership.
+- Submit `https://www.stainlesssteeldealers.com/sitemap.xml` after HTTPS is live.
+- Request indexing for priority URLs.

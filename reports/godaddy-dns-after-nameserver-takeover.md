@@ -1,36 +1,35 @@
 ﻿# GoDaddy DNS After Nameserver Takeover
 
-Captured: 2026-07-07 17:28:29 +05:30
+Captured: 2026-07-08 12:51:21 +05:30
 
-Status: **Pending manual GoDaddy DNS setup**
+## Current DNS State
 
-After switching to GoDaddy/default nameservers, add or edit only these DNS records.
-
-## Website Records
-
-| Type | Host | Value | TTL |
+| Record | Expected | Current result | Status |
 | --- | --- | --- | --- |
-| A | `@` | `185.199.108.153` | Default or 1 hour |
-| A | `@` | `185.199.109.153` | Default or 1 hour |
-| A | `@` | `185.199.110.153` | Default or 1 hour |
-| A | `@` | `185.199.111.153` | Default or 1 hour |
-| CNAME | `www` | `tarrunmjain.github.io` | Default or 1 hour |
+| NS | GoDaddy/domaincontrol nameservers | `ns53.domaincontrol.com`, `ns54.domaincontrol.com` | PASS |
+| A `@` | `185.199.108.153` | Present | PASS |
+| A `@` | `185.199.109.153` | Present | PASS |
+| A `@` | `185.199.110.153` | Present | PASS |
+| A `@` | `185.199.111.153` | Present | PASS |
+| CNAME `www` | `tarrunmjain.github.io` | Present | PASS |
+| MX `@` | `mail.stainlesssteeldealers.com`, priority `0` | Present | PASS |
+| A `mail` | `199.188.200.143` | Missing / NXDOMAIN | FAIL |
 
-## Mail Records To Preserve
+## Required Mail Fix
 
-| Type | Host | Value | Priority | TTL |
-| --- | --- | --- | --- | --- |
-| MX | `@` | `mail.stainlesssteeldealers.com` | `0` | Default or 1 hour |
-| A | `mail` | `199.188.200.143` | n/a | Default or 1 hour |
+Add this record in GoDaddy DNS:
 
-## Do Not Add
+- Type: `A`
+- Host/Name: `mail`
+- Value: `199.188.200.143`
+- TTL: default or 1 hour
 
-- No wildcard DNS.
-- No forwarding or masking.
-- No `www` target containing `https://`.
-- No `www` target containing `/bharat-metals-website`.
-- No `www` pointing to `www.stainlesssteeldealers.com` or `stainlesssteeldealers.com`.
+This is needed because the preserved MX points to `mail.stainlesssteeldealers.com`. Without the `mail` A record, domain mail delivery may fail.
 
-Correct `www` CNAME target is exactly:
+## Do Not Change
 
-`tarrunmjain.github.io`
+- Do not remove the MX record.
+- Do not touch TXT/SPF/DKIM/DMARC/email records unless specifically required.
+- Do not create wildcard DNS.
+- Do not use forwarding/masking.
+- Do not change `www` away from `tarrunmjain.github.io`.

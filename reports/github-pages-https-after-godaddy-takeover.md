@@ -1,21 +1,27 @@
 ﻿# GitHub Pages HTTPS After GoDaddy Takeover
 
-Captured: 2026-07-07 17:28:29 +05:30
+Captured: 2026-07-08 12:51:21 +05:30
 
-Status: **Pending DNS propagation**
+## Current GitHub Pages State
 
-GitHub Pages custom domain is set to:
+| Item | Current result |
+| --- | --- |
+| Custom domain | `www.stainlesssteeldealers.com` |
+| Pages source | `main` branch, root `/` |
+| Pages status | `built` |
+| HTTPS enforced | `false` |
+| HTTPS enable attempt | Failed because GitHub certificate does not exist yet |
+| GitHub API message | `The certificate does not exist yet` |
 
-`www.stainlesssteeldealers.com`
+## HTTPS URL Status
 
-Current Pages state has HTTPS enforcement disabled because DNS does not yet point to GitHub Pages.
+The requested HTTPS URLs currently fail certificate trust because the GitHub Pages certificate is not ready yet.
 
-After DNS resolves correctly:
+This is expected shortly after DNS cutover. Wait for GitHub Pages certificate provisioning, then enable Enforce HTTPS.
 
-1. Open GitHub repo Settings -> Pages.
-2. Confirm custom domain is `www.stainlesssteeldealers.com`.
-3. Wait for DNS check to pass.
-4. Enable Enforce HTTPS.
-5. Recheck `https://www.stainlesssteeldealers.com/`.
+## Action Needed
 
-If Enforce HTTPS is not available immediately, wait and retry. Certificate generation can take time.
+1. Fix the missing `mail` A record in GoDaddy DNS.
+2. Wait and recheck GitHub Pages Settings -> Pages.
+3. When the certificate is available, enable Enforce HTTPS.
+4. Recheck `https://www.stainlesssteeldealers.com/` and sample pages.
