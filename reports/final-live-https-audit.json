@@ -1,0 +1,156 @@
+{
+  "generatedAt": "2026-07-09T09:27:23.849Z",
+  "finalDomain": "https://www.stainlesssteeldealers.com/",
+  "pageResults": [
+    {
+      "url": "https://www.stainlesssteeldealers.com/",
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.stainlesssteeldealers.com/",
+      "httpsWorking": true,
+      "noCertificateWarning": true,
+      "contentType": "text/html; charset=utf-8",
+      "server": "GitHub.com",
+      "canonical": "https://www.stainlesssteeldealers.com/",
+      "canonicalOk": true,
+      "error": ""
+    },
+    {
+      "url": "https://www.stainlesssteeldealers.com/sitemap.xml",
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.stainlesssteeldealers.com/sitemap.xml",
+      "httpsWorking": true,
+      "noCertificateWarning": true,
+      "contentType": "application/xml",
+      "server": "GitHub.com",
+      "canonical": "",
+      "canonicalOk": null,
+      "error": ""
+    },
+    {
+      "url": "https://www.stainlesssteeldealers.com/robots.txt",
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.stainlesssteeldealers.com/robots.txt",
+      "httpsWorking": true,
+      "noCertificateWarning": true,
+      "contentType": "text/plain; charset=utf-8",
+      "server": "GitHub.com",
+      "canonical": "",
+      "canonicalOk": null,
+      "error": ""
+    },
+    {
+      "url": "https://www.stainlesssteeldealers.com/site-map/",
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.stainlesssteeldealers.com/site-map/",
+      "httpsWorking": true,
+      "noCertificateWarning": true,
+      "contentType": "text/html; charset=utf-8",
+      "server": "GitHub.com",
+      "canonical": "https://www.stainlesssteeldealers.com/site-map/",
+      "canonicalOk": true,
+      "error": ""
+    },
+    {
+      "url": "https://www.stainlesssteeldealers.com/ss-304/",
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.stainlesssteeldealers.com/ss-304/",
+      "httpsWorking": true,
+      "noCertificateWarning": true,
+      "contentType": "text/html; charset=utf-8",
+      "server": "GitHub.com",
+      "canonical": "https://www.stainlesssteeldealers.com/ss-304/",
+      "canonicalOk": true,
+      "error": ""
+    },
+    {
+      "url": "https://www.stainlesssteeldealers.com/ss-316/",
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.stainlesssteeldealers.com/ss-316/",
+      "httpsWorking": true,
+      "noCertificateWarning": true,
+      "contentType": "text/html; charset=utf-8",
+      "server": "GitHub.com",
+      "canonical": "https://www.stainlesssteeldealers.com/ss-316/",
+      "canonicalOk": true,
+      "error": ""
+    },
+    {
+      "url": "https://www.stainlesssteeldealers.com/stainless-steel-pipes/",
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.stainlesssteeldealers.com/stainless-steel-pipes/",
+      "httpsWorking": true,
+      "noCertificateWarning": true,
+      "contentType": "text/html; charset=utf-8",
+      "server": "GitHub.com",
+      "canonical": "https://www.stainlesssteeldealers.com/stainless-steel-pipes/",
+      "canonicalOk": true,
+      "error": ""
+    },
+    {
+      "url": "https://www.stainlesssteeldealers.com/stainless-steel-sheets/",
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.stainlesssteeldealers.com/stainless-steel-sheets/",
+      "httpsWorking": true,
+      "noCertificateWarning": true,
+      "contentType": "text/html; charset=utf-8",
+      "server": "GitHub.com",
+      "canonical": "https://www.stainlesssteeldealers.com/stainless-steel-sheets/",
+      "canonicalOk": true,
+      "error": ""
+    },
+    {
+      "url": "https://www.stainlesssteeldealers.com/jindal-stainless-steel-sheets-chennai/",
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.stainlesssteeldealers.com/jindal-stainless-steel-sheets-chennai/",
+      "httpsWorking": true,
+      "noCertificateWarning": true,
+      "contentType": "text/html; charset=utf-8",
+      "server": "GitHub.com",
+      "canonical": "https://www.stainlesssteeldealers.com/jindal-stainless-steel-sheets-chennai/",
+      "canonicalOk": true,
+      "error": ""
+    },
+    {
+      "url": "https://www.stainlesssteeldealers.com/ss-304-sheet-price-chennai/",
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://www.stainlesssteeldealers.com/ss-304-sheet-price-chennai/",
+      "httpsWorking": true,
+      "noCertificateWarning": true,
+      "contentType": "text/html; charset=utf-8",
+      "server": "GitHub.com",
+      "canonical": "https://www.stainlesssteeldealers.com/ss-304-sheet-price-chennai/",
+      "canonicalOk": true,
+      "error": ""
+    }
+  ],
+  "sitemap": {
+    "status": 200,
+    "ok": true,
+    "urlCount": 564,
+    "allFinalDomain": true,
+    "containsGithub": false
+  },
+  "robots": {
+    "status": 200,
+    "ok": true,
+    "allowsSite": true
+  },
+  "assets": {
+    "total": 42,
+    "css": 1,
+    "images": 41,
+    "failures": []
+  },
+  "technicalChipsFixed": true,
+  "searchConsoleRows": 75
+}
