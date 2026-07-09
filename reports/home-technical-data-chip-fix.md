@@ -52,3 +52,20 @@ Computed chip styles showed visible text for all three chips:
 - No DNS changes were made.
 - No GoDaddy changes were made.
 - GitHub Pages `CNAME` was not changed.
+
+## Live Verification After Push
+
+Checked: 2026-07-09 14:46:19 +05:30
+
+| Check | Result |
+| --- | --- |
+| `https://www.stainlesssteeldealers.com/` | 200 OK, GitHub.com |
+| `/ss-304-equivalent-grades/` | 200 OK, GitHub.com |
+| `/astm-a240-stainless-steel-sheets-chennai/` | 200 OK, GitHub.com |
+| `/astm-a312-stainless-steel-pipes-chennai/` | 200 OK, GitHub.com |
+| Live homepage contains all three chip labels | PASS |
+| Live CSS contains graphite chip color and pill radius rules | PASS |
+| CNAME content | `www.stainlesssteeldealers.com` unchanged |
+| GitHub Pages | built, HTTPS enforced |
+
+No DNS, GoDaddy, CNAME, or GitHub Pages settings were changed during this CSS fix.
