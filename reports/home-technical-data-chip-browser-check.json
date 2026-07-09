@@ -1,0 +1,85 @@
+{
+  "generatedAt": "2026-07-09T09:13:22.964Z",
+  "desktop": {
+    "screenshot": "qa/screenshots/fix-home-technical-chips-desktop.png",
+    "clip": {
+      "x": 0,
+      "y": 6683,
+      "width": 1440,
+      "height": 504
+    },
+    "chips": [
+      {
+        "text": "SS 304 Equivalent Grades",
+        "href": "ss-304-equivalent-grades/",
+        "color": "rgb(32, 36, 43)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderColor": "rgba(32, 36, 43, 0.16)",
+        "width": 233,
+        "height": 38,
+        "visible": true
+      },
+      {
+        "text": "ASTM A240 Stainless Steel Sheets",
+        "href": "astm-a240-stainless-steel-sheets-chennai/",
+        "color": "rgb(32, 36, 43)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderColor": "rgba(32, 36, 43, 0.16)",
+        "width": 303,
+        "height": 38,
+        "visible": true
+      },
+      {
+        "text": "ASTM A312 Stainless Steel Pipes",
+        "href": "astm-a312-stainless-steel-pipes-chennai/",
+        "color": "rgb(32, 36, 43)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderColor": "rgba(32, 36, 43, 0.16)",
+        "width": 292,
+        "height": 38,
+        "visible": true
+      }
+    ]
+  },
+  "mobile": {
+    "screenshot": "qa/screenshots/fix-home-technical-chips-mobile.png",
+    "clip": {
+      "x": 0,
+      "y": 20138,
+      "width": 390,
+      "height": 760
+    },
+    "chips": [
+      {
+        "text": "SS 304 Equivalent Grades",
+        "href": "ss-304-equivalent-grades/",
+        "color": "rgb(32, 36, 43)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderColor": "rgba(32, 36, 43, 0.16)",
+        "width": 366,
+        "height": 40,
+        "visible": true
+      },
+      {
+        "text": "ASTM A240 Stainless Steel Sheets",
+        "href": "astm-a240-stainless-steel-sheets-chennai/",
+        "color": "rgb(32, 36, 43)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderColor": "rgba(32, 36, 43, 0.16)",
+        "width": 366,
+        "height": 40,
+        "visible": true
+      },
+      {
+        "text": "ASTM A312 Stainless Steel Pipes",
+        "href": "astm-a312-stainless-steel-pipes-chennai/",
+        "color": "rgb(32, 36, 43)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderColor": "rgba(32, 36, 43, 0.16)",
+        "width": 366,
+        "height": 40,
+        "visible": true
+      }
+    ]
+  }
+}
