@@ -1,4 +1,4 @@
-const fs = require("fs");
+﻿const fs = require("fs");
 const path = require("path");
 const { execSync } = require("child_process");
 const {
@@ -3370,6 +3370,10 @@ function homepageSearchSectionHtml() {
 function updateHomepageLinks() {
   const file = path.join(root, "index.html");
   let html = fs.readFileSync(file, "utf8");
+  html = html
+    .replace(/tel:\+91\d{10}/g, site.phoneHref)
+    .replace(/https:\/\/wa\.me\/91\d{10}\?text=Hello%20Bharat%20Metals%2C%20I%20want%20to%20send%20a%20stainless%20steel%20requirement\./g, site.whatsappHref)
+    .replace(/\+91[- ]\d{5}\s\d{5}/g, site.phone);
 
   html = html.replace(
     /<div class="dropdown-menu" id="company-profile-menu">[\s\S]*?<\/div>/,
@@ -3744,7 +3748,7 @@ function writeCompetitorReports(uniquePages, urls) {
     ].join("\n") + "\n"
   );
 
-  const priceBanned = [/₹\s*\d/i, /Rs\.?\s*\d/i, /INR\s*\d/i, /current rate\s*[:=]\s*\d/i, /\bprice\s*[:=]\s*\d/i];
+  const priceBanned = [/â‚¹\s*\d/i, /Rs\.?\s*\d/i, /INR\s*\d/i, /current rate\s*[:=]\s*\d/i, /\bprice\s*[:=]\s*\d/i];
   const priceRows = pricePages.map((page) => {
     const html = readGeneratedHtml(page.slug);
     return {

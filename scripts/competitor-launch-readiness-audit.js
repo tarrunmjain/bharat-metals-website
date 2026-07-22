@@ -1,4 +1,4 @@
-const fs = require("fs");
+﻿const fs = require("fs");
 const path = require("path");
 
 const root = process.cwd();
@@ -382,7 +382,7 @@ function hasChips(input) {
 }
 
 function hasCtas(input) {
-  return input.includes("tel:+919941133888") && input.includes("wa.me/919941133888") && input.includes("mailto:stainlesssteeldealers@gmail.com");
+  return input.includes("tel:+919941233888") && input.includes("wa.me/919941233888") && input.includes("mailto:stainlesssteeldealers@gmail.com");
 }
 
 function allHtmlFiles() {
@@ -572,7 +572,7 @@ function buildJindalSafetyReport() {
 
 function buildPriceReport() {
   const required = ["grade", "size", "thickness", "finish", "make preference", "quantity", "market", "processing", "certificate", "delivery location"];
-  const unsafe = [/₹\s*\d/i, /â‚¹\s*\d/i, /Rs\.?\s*\d/i, /INR\s*\d/i, /\bbest price\b/i, /\blowest price\b/i, /guaranteed price/i, /price\s*[:=]\s*\d/i, /rate\s*[:=]\s*\d/i];
+  const unsafe = [/â‚¹\s*\d/i, /Ã¢â€šÂ¹\s*\d/i, /Rs\.?\s*\d/i, /INR\s*\d/i, /\bbest price\b/i, /\blowest price\b/i, /guaranteed price/i, /price\s*[:=]\s*\d/i, /rate\s*[:=]\s*\d/i];
   const rows = pricePages.map((slug) => {
     const body = html(slug);
     const text = stripTags(body).toLowerCase();

@@ -1,4 +1,4 @@
-const fs = require("fs");
+﻿const fs = require("fs");
 const path = require("path");
 
 const root = path.resolve(__dirname, "..");
@@ -85,7 +85,7 @@ function writeHeaderMenuQa() {
     ["Aluminium flyout exists", /portfolio-aluminium-flyout/.test(menu)],
     ["Brass flyout exists", /portfolio-brass-flyout/.test(menu)],
     ["Copper flyout exists", /portfolio-copper-flyout/.test(menu)],
-    ["Quick Quote remains WhatsApp", /class="button button-primary nav-quick" href="https:\/\/wa\.me\/919941133888/.test(html)]
+    ["Quick Quote remains WhatsApp", /class="button button-primary nav-quick" href="https:\/\/wa\.me\/919941233888/.test(html)]
   ];
   write("header-mega-menu-qa.md", [
     "# Header Mega Menu QA",
@@ -113,8 +113,8 @@ function writeTopbarQa() {
   const html = read("/");
   const top = html.match(/<div class="top-icons"[\s\S]*?<\/div>/i)?.[0] || "";
   const expected = [
-    ["Call", "tel:+919941133888"],
-    ["WhatsApp", "https://wa.me/919941133888"],
+    ["Call", "tel:+919941233888"],
+    ["WhatsApp", "https://wa.me/919941233888"],
     ["Email", "mailto:stainlesssteeldealers@gmail.com"],
     ["Google", "https://maps.app.goo.gl/oXEYZZnMaAN2kfSV6"],
     ["IndiaMART", "https://www.indiamart.com/"]

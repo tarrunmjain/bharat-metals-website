@@ -1,11 +1,11 @@
-const site = {
+﻿const site = {
   name: "Bharat Metals",
   established: "1986",
   finalDomain: "https://www.stainlesssteeldealers.com/",
   preview: "https://tarrunmjain.github.io/bharat-metals-website/",
-  phone: "+91 99411 33888",
-  phoneHref: "tel:+919941133888",
-  whatsappHref: "https://wa.me/919941133888?text=Hello%20Bharat%20Metals%2C%20I%20want%20to%20send%20a%20stainless%20steel%20requirement.",
+  phone: "+91 99412 33888",
+  phoneHref: "tel:+919941233888",
+  whatsappHref: "https://wa.me/919941233888?text=Hello%20Bharat%20Metals%2C%20I%20want%20to%20send%20a%20stainless%20steel%20requirement.",
   email: "stainlesssteeldealers@gmail.com",
   secondaryEmail: "manohar.bharat@yahoo.com",
   mailto: "mailto:stainlesssteeldealers@gmail.com?subject=Stainless%20Steel%20Requirement%20-%20Bharat%20Metals&body=Hello%20Bharat%20Metals%2C%0A%0AProduct%20Form%3A%0AGrade%3A%0ASize%2FThickness%3A%0AQuantity%3A%0AFinish%3A%0ADelivery%20Location%3A%0ACertificate%20Requirement%3A%0A%0ARegards%2C",
