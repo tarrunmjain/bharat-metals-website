@@ -2,10 +2,10 @@
 
 | Target page | Incoming links | Homepage linked | Footer linked | Sitemap linked |
 | --- | ---: | --- | --- | --- |
-| /stainless-steel-suppliers-chennai/ | 1382 | yes | yes | yes |
+| /stainless-steel-suppliers-chennai/ | 1383 | yes | yes | yes |
 | /ss-304-sheets-chennai/ | 679 | yes | yes | yes |
 | /ss-316-sheets-chennai/ | 678 | yes | yes | yes |
-| /stainless-steel-pipes-chennai/ | 679 | yes | yes | yes |
+| /stainless-steel-pipes-chennai/ | 680 | yes | yes | yes |
 | /jindal-stainless-steel-sheets-chennai/ | 679 | yes | yes | yes |
 | /jindal-ss-304-sheet-chennai/ | 679 | yes | yes | yes |
 | /jindal-ss-316-sheet-chennai/ | 679 | yes | yes | yes |
@@ -21,6 +21,7 @@
 
 ## Source Anchors
 
+- /stainless-steel-suppliers-chennai/ <= /: Stainless Steel Dealers Chennai
 - /stainless-steel-suppliers-chennai/ <= /: Chennai
 - /stainless-steel-suppliers-chennai/ <= /: Stainless steel suppliers in Chennai
 - /stainless-steel-suppliers-chennai/ <= /: Stainless steel dealers in Chennai
@@ -270,4 +271,3 @@
 - /stainless-steel-suppliers-chennai/ <= ss-310-circles/: Stainless Steel Suppliers in Chennai
 - /stainless-steel-suppliers-chennai/ <= ss-310-fasteners/: Chennai
 - /stainless-steel-suppliers-chennai/ <= ss-310-fasteners/: Stainless Steel Suppliers in Chennai
-- /stainless-steel-suppliers-chennai/ <= ss-310-wire-mesh/: Chennai
