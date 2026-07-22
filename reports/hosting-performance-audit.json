@@ -1,0 +1,293 @@
+{
+  "audit": "Bharat Metals hosting performance and migration decision audit",
+  "checkedAtLocal": "2026-07-23T00:59:18+05:30",
+  "liveDomain": "https://www.stainlesssteeldealers.com/",
+  "scope": {
+    "dnsChanged": false,
+    "godaddyChanged": false,
+    "githubPagesSettingsChanged": false,
+    "hostingMigrated": false,
+    "pagesCreated": false,
+    "siteContentChanged": false,
+    "reportsOnly": true
+  },
+  "currentHostingStatus": {
+    "provider": "GitHub Pages",
+    "repository": "https://github.com/tarrunmjain/bharat-metals-website",
+    "sourceBranch": "main",
+    "sourcePath": "/",
+    "customDomain": "www.stainlesssteeldealers.com",
+    "pagesStatus": "built",
+    "httpsEnforced": true,
+    "htmlUrl": "https://www.stainlesssteeldealers.com/"
+  },
+  "toolAvailability": {
+    "localLighthouseCliAvailable": false,
+    "googlePageSpeedInsights": {
+      "attempted": true,
+      "result": "unavailable",
+      "error": "HTTP 429 Too Many Requests"
+    },
+    "labMetricsTool": "Headless Microsoft Edge via Chrome DevTools Protocol, unthrottled network"
+  },
+  "topMoneyPageChecks": [
+    {
+      "url": "https://www.stainlesssteeldealers.com/",
+      "status": 200,
+      "bytes": 58680,
+      "responseMsSamples": [603, 78, 99],
+      "responseMsMedian": 99,
+      "canonical": "https://www.stainlesssteeldealers.com/"
+    },
+    {
+      "url": "https://www.stainlesssteeldealers.com/stainless-steel/",
+      "status": 200,
+      "bytes": 50347,
+      "responseMsSamples": [84, 88, 70],
+      "responseMsMedian": 84,
+      "canonical": "https://www.stainlesssteeldealers.com/stainless-steel/"
+    },
+    {
+      "url": "https://www.stainlesssteeldealers.com/stainless-steel-pipes/",
+      "status": 200,
+      "bytes": 38910,
+      "responseMsSamples": [67, 76, 67],
+      "responseMsMedian": 67,
+      "canonical": "https://www.stainlesssteeldealers.com/stainless-steel-pipes/"
+    },
+    {
+      "url": "https://www.stainlesssteeldealers.com/stainless-steel-sheets/",
+      "status": 200,
+      "bytes": 38754,
+      "responseMsSamples": [75, 55, 56],
+      "responseMsMedian": 56,
+      "canonical": "https://www.stainlesssteeldealers.com/stainless-steel-sheets/"
+    },
+    {
+      "url": "https://www.stainlesssteeldealers.com/ss-304/",
+      "status": 200,
+      "bytes": 42806,
+      "responseMsSamples": [55, 71, 58],
+      "responseMsMedian": 58,
+      "canonical": "https://www.stainlesssteeldealers.com/ss-304/"
+    },
+    {
+      "url": "https://www.stainlesssteeldealers.com/ss-316/",
+      "status": 200,
+      "bytes": 42091,
+      "responseMsSamples": [37, 52, 51],
+      "responseMsMedian": 51,
+      "canonical": "https://www.stainlesssteeldealers.com/ss-316/"
+    },
+    {
+      "url": "https://www.stainlesssteeldealers.com/jindal-stainless-steel-sheets-chennai/",
+      "status": 200,
+      "bytes": 36189,
+      "responseMsSamples": [51, 54, 66],
+      "responseMsMedian": 54,
+      "canonical": "https://www.stainlesssteeldealers.com/jindal-stainless-steel-sheets-chennai/"
+    },
+    {
+      "url": "https://www.stainlesssteeldealers.com/ss-304-sheet-price-chennai/",
+      "status": 200,
+      "bytes": 32525,
+      "responseMsSamples": [51, 43, 31],
+      "responseMsMedian": 43,
+      "canonical": "https://www.stainlesssteeldealers.com/ss-304-sheet-price-chennai/"
+    },
+    {
+      "url": "https://www.stainlesssteeldealers.com/stainless-steel-suppliers-chennai/",
+      "status": 200,
+      "bytes": 36006,
+      "responseMsSamples": [58, 43, 42],
+      "responseMsMedian": 43,
+      "canonical": "https://www.stainlesssteeldealers.com/stainless-steel-suppliers-chennai/"
+    },
+    {
+      "url": "https://www.stainlesssteeldealers.com/stainless-steel-suppliers-coimbatore/",
+      "status": 200,
+      "bytes": 30821,
+      "responseMsSamples": [32, 33, 45],
+      "responseMsMedian": 33,
+      "canonical": "https://www.stainlesssteeldealers.com/stainless-steel-suppliers-coimbatore/"
+    }
+  ],
+  "systemFileChecks": [
+    {
+      "url": "https://www.stainlesssteeldealers.com/sitemap.xml",
+      "status": 200,
+      "bytes": 110814,
+      "responseMsSamples": [168, 160, 242],
+      "responseMsMedian": 168
+    },
+    {
+      "url": "https://www.stainlesssteeldealers.com/robots.txt",
+      "status": 200,
+      "bytes": 83,
+      "responseMsSamples": [32, 30, 26],
+      "responseMsMedian": 30
+    }
+  ],
+  "homepageAssetChecks": {
+    "allDiscoveredAssetsReturned200": true,
+    "largestAssets": [
+      {
+        "url": "https://www.stainlesssteeldealers.com/assets/images/photos/hero/bharat-metals-stainless-steel-pipes-hero-v3.webp",
+        "type": "image/webp",
+        "bytes": 207224,
+        "responseMs": 511
+      },
+      {
+        "url": "https://www.stainlesssteeldealers.com/assets/images/photos/materials/stainless-steel-mixed-stock-v3.webp",
+        "type": "image/webp",
+        "bytes": 198244,
+        "responseMs": 555
+      },
+      {
+        "url": "https://www.stainlesssteeldealers.com/assets/images/photos/materials/copper.webp",
+        "type": "image/webp",
+        "bytes": 119928,
+        "responseMs": 419
+      },
+      {
+        "url": "https://www.stainlesssteeldealers.com/assets/images/photos/materials/brass.webp",
+        "type": "image/webp",
+        "bytes": 111298,
+        "responseMs": 393
+      },
+      {
+        "url": "https://www.stainlesssteeldealers.com/assets/images/photos/materials/aluminium.webp",
+        "type": "image/webp",
+        "bytes": 84658,
+        "responseMs": 377
+      },
+      {
+        "url": "https://www.stainlesssteeldealers.com/assets/brand/bharat-metals-bm-map-icon-centered-left-transparent.png",
+        "type": "image/png",
+        "bytes": 60412,
+        "responseMs": 340
+      },
+      {
+        "url": "https://www.stainlesssteeldealers.com/assets/css/styles.css",
+        "type": "text/css",
+        "bytes": 33950,
+        "responseMs": 309
+      },
+      {
+        "url": "https://www.stainlesssteeldealers.com/assets/brand/bharat-metals-header-logo-centered-left-transparent.png",
+        "type": "image/png",
+        "bytes": 32634,
+        "responseMs": 287
+      },
+      {
+        "url": "https://www.stainlesssteeldealers.com/assets/js/main.js",
+        "type": "application/javascript",
+        "bytes": 3298,
+        "responseMs": 239
+      }
+    ]
+  },
+  "localAssetInventory": {
+    "imageFileCount": 61,
+    "totalImageBytes": 4254694,
+    "averageImageBytes": 69749,
+    "largestImageBytes": 252982
+  },
+  "homepageMarkup": {
+    "htmlBytesOnDisk": 58679,
+    "imageTags": 42,
+    "imagesWithoutWidth": 0,
+    "imagesWithoutHeight": 0,
+    "preloadTags": 0,
+    "fetchPriorityTags": 1,
+    "heroImageHasFetchPriorityHigh": true
+  },
+  "labMetrics": {
+    "desktop1440": {
+      "ttfbMs": 220,
+      "domContentLoadedMs": 1105,
+      "loadMs": 1129,
+      "firstContentfulPaintMs": 1256,
+      "largestContentfulPaintMs": 1440,
+      "cumulativeLayoutShift": 0,
+      "lcpElement": {
+        "tag": "IMG",
+        "url": "https://www.stainlesssteeldealers.com/assets/images/photos/hero/bharat-metals-stainless-steel-pipes-hero-v3.webp",
+        "altText": "Stainless steel pipes stockyard for Bharat Metals Chennai",
+        "renderedWidth": 648,
+        "renderedHeight": 643
+      },
+      "totalResources": 16,
+      "totalTransferBytes": 990872,
+      "imageTransferBytes": 922258,
+      "cssTransferBytes": 6858,
+      "jsTransferBytes": 1044,
+      "horizontalOverflow": false,
+      "imagesWithoutWidthHeight": 0,
+      "headerPresent": true,
+      "footerPresent": true,
+      "heroImageComplete": true
+    },
+    "mobile390": {
+      "ttfbMs": 5,
+      "domContentLoadedMs": 109,
+      "loadMs": 149,
+      "firstContentfulPaintMs": 216,
+      "largestContentfulPaintMs": 248,
+      "cumulativeLayoutShift": 0,
+      "lcpElement": {
+        "tag": "IMG",
+        "url": "https://www.stainlesssteeldealers.com/assets/images/photos/hero/bharat-metals-stainless-steel-pipes-hero-v3.webp",
+        "altText": "Stainless steel pipes stockyard for Bharat Metals Chennai",
+        "renderedWidth": 366,
+        "renderedHeight": 229
+      },
+      "totalResources": 8,
+      "totalTransferBytes": 347640,
+      "imageTransferBytes": 279026,
+      "cssTransferBytes": 6858,
+      "jsTransferBytes": 1044,
+      "horizontalOverflow": false,
+      "imagesWithoutWidthHeight": 0,
+      "headerPresent": true,
+      "footerPresent": true,
+      "heroImageComplete": true
+    }
+  },
+  "riskAssessment": {
+    "githubPagesRisks": [
+      "Limited custom HTTP header control compared with Cloudflare Pages or Netlify",
+      "No built-in image optimization pipeline",
+      "No edge functions or advanced redirect management",
+      "Performance depends on GitHub Pages CDN behavior and cache headers"
+    ],
+    "cloudflarePagesPros": [
+      "Strong global edge network, HTTP/3, cache/header controls and analytics",
+      "Good long-term option if Core Web Vitals or traffic volume require more control",
+      "Can support redirects, headers and deployment previews"
+    ],
+    "cloudflarePagesCons": [
+      "Migration usually touches DNS/nameserver or records, creating email-record risk if rushed",
+      "Requires careful preservation of MX, mail A, SPF, DKIM and DMARC records",
+      "Adds migration complexity while indexing is just starting"
+    ],
+    "netlifyPros": [
+      "Simple static hosting with deploy previews, redirects and headers",
+      "Good operational controls for static SEO sites",
+      "Can be adopted later without redesigning the site"
+    ],
+    "netlifyCons": [
+      "May require DNS changes or custom-domain reconfiguration",
+      "Free-tier bandwidth/build limits should be watched as traffic grows",
+      "Less compelling than Cloudflare Pages if the main future need is edge caching and DNS integration"
+    ],
+    "dnsEmailRisksIfMigrating": [
+      "Mail can break if MX, mail A, SPF, DKIM or DMARC records are missed during DNS/provider changes",
+      "A rushed nameserver move can temporarily affect both website and email resolution",
+      "Migration should use a written DNS inventory, low TTL window and rollback plan"
+    ],
+    "currentSetupAcceptableForIndexingPhase": true,
+    "recommendation": "stay short-term; migrate later only if field Core Web Vitals, traffic, redirects/header needs or operational needs justify it",
+    "urgency": "not urgent"
+  }
+}
