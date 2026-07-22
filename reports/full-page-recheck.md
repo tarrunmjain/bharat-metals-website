@@ -52,7 +52,7 @@ Generated: 2026-07-03
 
 - Broken internal links counted in audit: 0
 - Pages in sitemap: 564
-- CNAME present: no
+- CNAME present: yes
 - .nojekyll present: yes
 - GoDaddy/DNS/domain records changed: no
 

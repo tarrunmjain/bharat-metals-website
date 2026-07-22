@@ -1,10 +1,12 @@
 {
   "htmlFiles": 564,
   "sitemapUrls": 564,
-  "checkedLinksAndAssets": 63981,
+  "checkedLinksAndAssets": 64017,
   "jsonLdBlocks": 564,
   "faqPages": 563,
   "duplicateTitles": 0,
   "duplicateDescriptions": 0,
-  "errors": []
+  "errors": [
+    "CNAME must be absent"
+  ]
 }

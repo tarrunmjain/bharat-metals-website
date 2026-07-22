@@ -1,0 +1,47 @@
+{
+  "auditedAt": "2026-07-22 Asia/Calcutta",
+  "localHeadBeforeThisWork": "accdf853a6622389d178bade4fa8260582ad65f3",
+  "remoteMainAtAudit": "accdf853a6622389d178bade4fa8260582ad65f3",
+  "reportedCommit": "b402325d7b0ccdbe3437f7cffdd2a68d823c2089",
+  "reportedCommitReachableFromCurrentHead": true,
+  "pr1": {
+    "number": 1,
+    "state": "MERGED",
+    "mergedAt": "2026-07-22T17:13:10Z",
+    "mergeCommit": "803ad99770cc810c00334deff13b418c03859012",
+    "title": "Strengthen Chennai stainless steel competitor SEO",
+    "url": "https://github.com/tarrunmjain/bharat-metals-website/pull/1",
+    "files": [
+      ".github/workflows/chennai-seo-build.yml",
+      "package.json",
+      "reports/chennai-competitor-seo-research-2026-07-22.md",
+      "scripts/seo-chennai-competitor-patch.js"
+    ],
+    "commits": [
+      "9726d6c13264ccfb7a1b859a6fbe3a9624a5672d",
+      "66df9b400c01b81287e7c0d54f586708432d4888",
+      "2358332ac4b23a38c8f7a726707d3dcc99bbcf40",
+      "6dd6e5f187af54b7daac23c1ba3284cd88d731ea",
+      "e02f37b7ff259c207413c2142560f3571a447548",
+      "803ad99770cc810c00334deff13b418c03859012"
+    ]
+  },
+  "staticImplementation": true,
+  "runtimeSeoPatchPresentAfterFix": false,
+  "runtimeFindings": {
+    "documentTitleWrites": false,
+    "metaDescriptionWrites": false,
+    "jsonLdMutation": false,
+    "insertAdjacentHtml": false,
+    "seoPageMap": false,
+    "navigationStillPresent": true
+  },
+  "sitemapChennaiExists": true,
+  "robotsIncludesChennaiSitemap": true,
+  "sevenPagePass": true,
+  "schemaParsePass": true,
+  "notes": [
+    "No DNS, GoDaddy, CNAME, phone, email, address, Google Maps, or IndiaMART values were changed by this audit/fix.",
+    "The browser runtime SEO mutation was removed; page SEO is now present in raw static HTML for the seven priority Chennai pages."
+  ]
+}
