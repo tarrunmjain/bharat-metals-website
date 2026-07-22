@@ -3,6 +3,7 @@ name: Build and validate Chennai competitor SEO
 on:
   push:
     branches:
+      - main
       - agent/chennai-competitor-seo-2026-07-22
     paths:
       - package.json
