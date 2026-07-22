@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.stainlesssteeldealers.com/sitemap.xml
+Sitemap: https://www.stainlesssteeldealers.com/sitemap-chennai.xml
