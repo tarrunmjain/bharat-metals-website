@@ -12,5 +12,8 @@
 - claimSafetyPass: true
 - indexingPriorityListCreated: true
 - domainLaunchReadinessReportCreated: true
-- cnameAbsent: true
+- cnamePresent: true
+- cnameValue: www.stainlesssteeldealers.com
+- cnameExpected: www.stainlesssteeldealers.com
+- cnameCorrect: true
 - noJekyllPresent: true

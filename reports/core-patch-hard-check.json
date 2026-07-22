@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-07-05T12:51:11.455Z",
-  "buildMarker": "CORE-PATCH-HARDPASS-2026-07-04-1cee3bc",
+  "checkedAt": "2026-07-22T19:13:08.297Z",
+  "buildMarker": "CORE-PATCH-HARDPASS-2026-07-04-accdf85",
   "totalHtmlFiles": 564,
   "errors": [],
   "chipRows": [
@@ -47,6 +47,9 @@
       "liSearchChip": true
     }
   ],
-  "cnameAbsent": true,
+  "cnamePresent": true,
+  "cnameValue": "www.stainlesssteeldealers.com",
+  "cnameExpected": "www.stainlesssteeldealers.com",
+  "cnameCorrect": true,
   "noJekyllPresent": true
 }

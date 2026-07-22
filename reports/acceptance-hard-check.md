@@ -1,9 +1,9 @@
 # Acceptance Hard Check
 
-Checked: 2026-07-05T12:51:39.596Z
+Checked: 2026-07-22T18:52:52.703Z
 
-HTML files checked: 579
-Build markers found: CORE-PATCH-HARDPASS-2026-07-04-1cee3bc
+HTML files checked: 583
+Build markers found: CORE-PATCH-HARDPASS-2026-07-04-accdf85, CORE-PATCH-HARDPASS-2026-07-04-b7c9575
 Errors: 0
 
 ## Specific Checks
@@ -37,7 +37,7 @@ Errors: 0
 | Automobile page contains fasteners | PASS | - |
 | Automobile page contains fixtures | PASS | - |
 | Automobile page contains auto-component suppliers | PASS | - |
-| CNAME absent | PASS | - |
+| CNAME present and correct | PASS | {"present":true,"value":"www.stainlesssteeldealers.com","expected":"www.stainlesssteeldealers.com","correct":true} |
 
 ## Banned Phrase Counts
 

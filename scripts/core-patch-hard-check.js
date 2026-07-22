@@ -133,8 +133,13 @@ function run() {
     });
   }
 
+  const expectedCname = "www.stainlesssteeldealers.com";
   const cnamePath = path.join(root, "CNAME");
-  if (fs.existsSync(cnamePath)) addError(errors, "/CNAME", "CNAME exists");
+  const cnamePresent = fs.existsSync(cnamePath);
+  const cnameValue = cnamePresent ? fs.readFileSync(cnamePath, "utf8").trim() : "";
+  const cnameCorrect = cnamePresent && cnameValue === expectedCname;
+  if (!cnamePresent) addError(errors, "/CNAME", "CNAME missing");
+  else if (!cnameCorrect) addError(errors, "/CNAME", "CNAME must equal " + expectedCname + ", found " + (cnameValue || "(empty)"));
 
   const result = {
     checkedAt: new Date().toISOString(),
@@ -142,7 +147,10 @@ function run() {
     totalHtmlFiles: htmlFiles().length,
     errors,
     chipRows,
-    cnameAbsent: !fs.existsSync(cnamePath),
+    cnamePresent,
+    cnameValue,
+    cnameExpected: expectedCname,
+    cnameCorrect,
     noJekyllPresent: fs.existsSync(path.join(root, ".nojekyll"))
   };
 
@@ -154,7 +162,9 @@ function run() {
     `- Checked at: ${result.checkedAt}`,
     `- Build marker: ${result.buildMarker || "missing"}`,
     `- HTML files checked: ${result.totalHtmlFiles}`,
-    `- CNAME absent: ${result.cnameAbsent ? "yes" : "no"}`,
+    `- CNAME present: ${result.cnamePresent ? "yes" : "no"}`,
+    `- CNAME value: ${result.cnameValue || "missing"}`,
+    `- CNAME correct: ${result.cnameCorrect ? "yes" : "no"}`,
     `- .nojekyll present: ${result.noJekyllPresent ? "yes" : "no"}`,
     `- Result: ${errors.length ? "FAIL" : "PASS"}`,
     "",

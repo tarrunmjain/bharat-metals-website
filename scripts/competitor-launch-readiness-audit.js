@@ -510,7 +510,7 @@ function textFilesForSafetyScan() {
     for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
       const full = path.join(dir, entry.name);
       if (entry.isDirectory()) {
-        if (![".git", "node_modules", "assets", "qa"].includes(entry.name)) walk(full);
+        if (![".git", "node_modules", "assets", "qa", "reports"].includes(entry.name)) walk(full);
       } else if (allowed.has(path.extname(entry.name).toLowerCase())) {
         files.push(full);
       }
@@ -865,7 +865,11 @@ function buildIndexingReports() {
 }
 
 function buildDomainReport(context) {
-  const cnamePresent = fs.existsSync(path.join(root, "CNAME"));
+  const expectedCname = "www.stainlesssteeldealers.com";
+  const cnamePath = path.join(root, "CNAME");
+  const cnamePresent = fs.existsSync(cnamePath);
+  const cnameValue = cnamePresent ? fs.readFileSync(cnamePath, "utf8").trim() : "";
+  const cnameCorrect = cnamePresent && cnameValue === expectedCname;
   const noJekyllPresent = fs.existsSync(path.join(root, ".nojekyll"));
   const robots = read(path.join(root, "robots.txt"));
   const robotsReady = robots.includes("Sitemap: https://www.stainlesssteeldealers.com/sitemap.xml");
@@ -873,35 +877,35 @@ function buildDomainReport(context) {
     .filter((file) => !path.relative(root, file).replace(/\\/g, "/").startsWith("reports/"))
     .map((file) => ({ file: path.relative(root, file).replace(/\\/g, "/"), canonical: canonical(read(file)) }))
     .filter((row) => row.canonical && !row.canonical.startsWith(`${futureBase}/`));
-  const filesReady = context.inventory.totalPages === context.sitemapCount && !cnamePresent && noJekyllPresent;
+  const filesReady = context.inventory.totalPages === context.sitemapCount && cnameCorrect && noJekyllPresent;
   write(
     "domain-launch-readiness.md",
     [
       "# Domain Launch Readiness",
       "",
       `- Final domain target: ${futureBase}/`,
-      `- Current CNAME status: ${cnamePresent ? "present - BLOCKER" : "absent"}`,
-      "- GitHub Pages custom domain status: not connected in repository files; verify GitHub Pages settings at launch time before any DNS change.",
+      `- Current CNAME status: ${cnameCorrect ? "present and correct" : cnamePresent ? "present but incorrect" : "missing"}`,
+      `- CNAME expected value: ${expectedCname}`,
+      `- CNAME actual value: ${cnameValue || "missing"}`,
+      "- GitHub Pages custom domain status: post-launch custom domain should remain www.stainlesssteeldealers.com.",
       `- Files ready: ${yes(filesReady)}`,
       `- Sitemap ready: ${yes(context.sitemapCount === context.inventory.totalPages)}`,
       `- Robots ready: ${yes(robotsReady)}`,
       `- Canonical ready: ${yes(canonicalIssues.length === 0)}`,
       "- Google Search Console tasks pending: verify final domain property, submit sitemap, inspect homepage, request indexing for priority pages.",
-      "- GoDaddy DNS tasks pending: later add the required GitHub Pages DNS records only when launch is approved; do not change now.",
+      "- GoDaddy DNS tasks: report-only from QA; do not change DNS from this script.",
       "- IndiaMART final link pending: yes, exact Bharat Metals IndiaMART profile URL still pending.",
-      `- Launch blockers: ${cnamePresent ? "CNAME exists unexpectedly" : "none for static files; DNS/domain connection intentionally pending"}`,
+      `- Launch blockers: ${cnameCorrect ? "none for static files" : "CNAME post-launch baseline mismatch"}`,
       "",
-      "## Later Launch Steps",
-      "1. Confirm final approval to launch on stainlesssteeldealers.com.",
-      "2. Configure the GitHub Pages custom domain for www.stainlesssteeldealers.com.",
-      "3. Add only the required GitHub Pages DNS records in GoDaddy after approval.",
-      "4. Wait for DNS propagation and HTTPS certificate provisioning.",
-      "5. Verify https://www.stainlesssteeldealers.com/ returns HTTP 200.",
-      "6. Submit sitemap.xml in Google Search Console.",
-      "7. Submit the priority indexing list after the canonical domain is live."
+      "## Post-Launch Checks",
+      "1. Keep CNAME set to www.stainlesssteeldealers.com.",
+      "2. Verify GitHub Pages HTTPS remains enforced.",
+      "3. Verify https://www.stainlesssteeldealers.com/ returns HTTP 200.",
+      "4. Submit sitemap.xml in Google Search Console.",
+      "5. Submit the priority indexing list after the canonical domain is live."
     ].join("\n")
   );
-  return { filesReady, cnameAbsent: !cnamePresent, noJekyllPresent, canonicalReady: canonicalIssues.length === 0, robotsReady };
+  return { filesReady, cnamePresent, cnameValue, cnameExpected: expectedCname, cnameCorrect, noJekyllPresent, canonicalReady: canonicalIssues.length === 0, robotsReady };
 }
 
 async function buildLiveReport() {
@@ -982,7 +986,10 @@ async function main() {
     claimSafetyPass: claims.pass,
     indexingPriorityListCreated: indexing.count === 75,
     domainLaunchReadinessReportCreated: true,
-    cnameAbsent: domain.cnameAbsent,
+    cnamePresent: domain.cnamePresent,
+    cnameValue: domain.cnameValue,
+    cnameExpected: domain.cnameExpected,
+    cnameCorrect: domain.cnameCorrect,
     noJekyllPresent: domain.noJekyllPresent
   };
   write(

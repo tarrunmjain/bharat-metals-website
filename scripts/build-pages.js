@@ -3958,7 +3958,10 @@ function writeCompetitorReports(uniquePages, urls) {
       `- Specification modules added: yes`,
       `- Internal link money map created: yes`,
       `- Sitemap URLs: ${urls.length}`,
-      `- CNAME absent: ${!fs.existsSync(path.join(root, "CNAME")) ? "yes" : "no"}`,
+      `- CNAME present: ${fs.existsSync(path.join(root, "CNAME")) ? "yes" : "no"}`,
+      `- CNAME value: ${fs.existsSync(path.join(root, "CNAME")) ? fs.readFileSync(path.join(root, "CNAME"), "utf8").trim() : "missing"}`,
+      "- CNAME expected: www.stainlesssteeldealers.com",
+      `- CNAME correct: ${fs.existsSync(path.join(root, "CNAME")) && fs.readFileSync(path.join(root, "CNAME"), "utf8").trim() === "www.stainlesssteeldealers.com" ? "yes" : "no"}`,
       "- DNS/GoDaddy/final-domain connection changes: none"
     ].join("\n") + "\n"
   );

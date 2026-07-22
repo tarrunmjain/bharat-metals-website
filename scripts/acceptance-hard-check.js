@@ -8,6 +8,14 @@ const mode = process.argv.includes("--snapshot-before") ? "before" : process.arg
 const checkedAt = new Date().toISOString();
 const samplePaths = ["", "ss-304/", "stainless-steel-rods/", "stainless-steel-bars/", "stainless-steel-suppliers-renigunta/", "industries/automobile-auto-components/"];
 const previewBase = "https://tarrunmjain.github.io/bharat-metals-website/";
+const expectedCname = "www.stainlesssteeldealers.com";
+
+function cnameStatus() {
+  const cnamePath = path.join(root, "CNAME");
+  const present = fs.existsSync(cnamePath);
+  const value = present ? fs.readFileSync(cnamePath, "utf8").trim() : "";
+  return { present, value, expected: expectedCname, correct: present && value === expectedCname };
+}
 
 const bannedPhrases = [
   "Open SS",
@@ -212,7 +220,8 @@ function localSpecificChecks() {
   for (const term of automobileTerms) {
     checks.push({ name: `Automobile page contains ${term}`, pass: stripVisibleText(automobile).includes(term) });
   }
-  checks.push({ name: "CNAME absent", pass: !fs.existsSync(path.join(root, "CNAME")) });
+  const cname = cnameStatus();
+  checks.push({ name: "CNAME present and correct", pass: cname.correct, details: cname });
   return checks;
 }
 

@@ -1,8 +1,9 @@
 {
-  "checkedAt": "2026-07-05T12:51:39.596Z",
-  "htmlFiles": 579,
+  "checkedAt": "2026-07-22T18:52:52.703Z",
+  "htmlFiles": 583,
   "buildMarkers": [
-    "CORE-PATCH-HARDPASS-2026-07-04-1cee3bc"
+    "CORE-PATCH-HARDPASS-2026-07-04-accdf85",
+    "CORE-PATCH-HARDPASS-2026-07-04-b7c9575"
   ],
   "bannedPhrases": [
     {
@@ -174,8 +175,14 @@
       "pass": true
     },
     {
-      "name": "CNAME absent",
-      "pass": true
+      "name": "CNAME present and correct",
+      "pass": true,
+      "details": {
+        "present": true,
+        "value": "www.stainlesssteeldealers.com",
+        "expected": "www.stainlesssteeldealers.com",
+        "correct": true
+      }
     }
   ],
   "errors": []

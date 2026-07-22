@@ -211,7 +211,9 @@ function duplicateRelatedLinkAudit(files) {
   const failures = [];
   for (const file of files) {
     const html = fs.readFileSync(file, 'utf8');
-    const sections = [...html.matchAll(/<section\b[\s\S]*?(?:Related products|Related product forms)[\s\S]*?<\/section>/gi)].map((m) => m[0]);
+    const sections = [...html.matchAll(/<section\b[\s\S]*?<\/section>/gi)]
+      .map((m) => m[0])
+      .filter((section) => /(?:Related products|Related product forms)/i.test(section));
     sections.forEach((section, index) => {
       const duplicates = duplicateLinks(section);
       const row = { page: rel(file), section: index + 1, duplicates };
@@ -251,7 +253,12 @@ function finalAcceptanceChecks(files) {
   const footer = (readPage('/').match(/<footer[\s\S]*?<\/footer>/i) || [''])[0];
   const sitemapLinks = (footer.match(/href="site-map\/"/g) || []).length;
   if (sitemapLinks > 1) errors.push('Footer has duplicate Sitemap links');
-  if (fs.existsSync(path.join(root, 'CNAME'))) errors.push('CNAME exists');
+  const expectedCname = 'www.stainlesssteeldealers.com';
+  const cnamePath = path.join(root, 'CNAME');
+  const cnamePresent = fs.existsSync(cnamePath);
+  const cnameValue = cnamePresent ? fs.readFileSync(cnamePath, 'utf8').trim() : '';
+  if (!cnamePresent) errors.push('CNAME missing');
+  else if (cnameValue !== expectedCname) errors.push('CNAME must equal ' + expectedCname + ', found ' + (cnameValue || '(empty)'));
   if (!fs.existsSync(path.join(root, '.nojekyll'))) errors.push('.nojekyll missing');
   return errors;
 }
@@ -273,7 +280,10 @@ function main() {
     sitemapUrls: (sitemap.match(/<loc>/g) || []).length,
     siteMapPageExists: fs.existsSync(pageFile('/site-map/')),
     noJekyllPresent: fs.existsSync(path.join(root, '.nojekyll')),
-    cnameAbsent: !fs.existsSync(path.join(root, 'CNAME')),
+    cnamePresent: fs.existsSync(path.join(root, 'CNAME')),
+    cnameValue: fs.existsSync(path.join(root, 'CNAME')) ? fs.readFileSync(path.join(root, 'CNAME'), 'utf8').trim() : '',
+    cnameExpected: 'www.stainlesssteeldealers.com',
+    cnameCorrect: fs.existsSync(path.join(root, 'CNAME')) && fs.readFileSync(path.join(root, 'CNAME'), 'utf8').trim() === 'www.stainlesssteeldealers.com',
     errors
   };
   fs.writeFileSync(path.join(reportsDir, 'acceptance-qa-summary.json'), JSON.stringify(summary, null, 2));

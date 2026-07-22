@@ -1,9 +1,11 @@
 # Core Patch Hard Check
 
-- Checked at: 2026-07-05T12:51:11.455Z
-- Build marker: CORE-PATCH-HARDPASS-2026-07-04-1cee3bc
+- Checked at: 2026-07-22T19:13:08.297Z
+- Build marker: CORE-PATCH-HARDPASS-2026-07-04-accdf85
 - HTML files checked: 564
-- CNAME absent: yes
+- CNAME present: yes
+- CNAME value: www.stainlesssteeldealers.com
+- CNAME correct: yes
 - .nojekyll present: yes
 - Result: PASS
 

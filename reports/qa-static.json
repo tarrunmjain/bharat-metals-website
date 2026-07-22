@@ -6,7 +6,9 @@
   "faqPages": 563,
   "duplicateTitles": 0,
   "duplicateDescriptions": 0,
-  "errors": [
-    "CNAME must be absent"
-  ]
+  "cnamePresent": true,
+  "cnameValue": "www.stainlesssteeldealers.com",
+  "cnameExpected": "www.stainlesssteeldealers.com",
+  "cnameCorrect": true,
+  "errors": []
 }

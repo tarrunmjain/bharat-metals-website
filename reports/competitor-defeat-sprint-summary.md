@@ -9,5 +9,8 @@
 - Specification modules added: yes
 - Internal link money map created: yes
 - Sitemap URLs: 564
-- CNAME absent: yes
+- CNAME present: yes
+- CNAME value: www.stainlesssteeldealers.com
+- CNAME expected: www.stainlesssteeldealers.com
+- CNAME correct: yes
 - DNS/GoDaddy/final-domain connection changes: none
