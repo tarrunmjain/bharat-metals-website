@@ -11,6 +11,9 @@ on:
       - scripts/seo-chennai-competitor-patch.js
       - src/**
       - .github/workflows/chennai-seo-build.yml
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -44,6 +47,7 @@ jobs:
         run: git diff --check
 
       - name: Commit generated output and reports
+        if: github.event_name == 'push'
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
