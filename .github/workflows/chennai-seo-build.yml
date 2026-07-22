@@ -1,5 +1,6 @@
 name: Build and validate Chennai competitor SEO
 
+# Main-branch trigger: 2026-07-22
 on:
   push:
     branches:
