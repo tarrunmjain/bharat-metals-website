@@ -2,7 +2,8 @@
 
 **Date:** 22 July 2026  
 **Repository:** `tarrunmjain/bharat-metals-website`  
-**Primary commit:** `b402325d7b0ccdbe3437f7cffdd2a68d823c2089`
+**Primary commit:** `b402325d7b0ccdbe3437f7cffdd2a68d823c2089`  
+**Verified JavaScript blob:** `f35aa6b14349d61dbd7c65e6568e84d5fac03098`
 
 ## Implemented routes
 
@@ -42,7 +43,8 @@ A focused `sitemap-chennai.xml` was added with a `2026-07-22` last-modified date
 
 ## QA performed
 
-- `node --check` passed for the intended updated JavaScript.
+- The exact committed JavaScript blob was reconstructed and matched against GitHub's blob SHA.
+- `node --check` passed on that exact committed JavaScript.
 - A mocked DOM execution test passed for all seven canonical routes.
 - Every tested route updated title, meta description, Open Graph metadata, H1, hero introduction, visible content section and page-specific Service structured data.
 - Structured data remained valid JSON after modification.
