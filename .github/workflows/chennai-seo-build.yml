@@ -1,0 +1,56 @@
+name: Build and validate Chennai competitor SEO
+
+on:
+  push:
+    branches:
+      - agent/chennai-competitor-seo-2026-07-22
+    paths:
+      - package.json
+      - scripts/build-pages.js
+      - scripts/seo-chennai-competitor-patch.js
+      - src/**
+      - .github/workflows/chennai-seo-build.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-commit:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build generated pages
+        run: npm run build
+
+      - name: Run content audit
+        run: npm run audit
+
+      - name: Run static QA
+        run: npm run qa
+
+      - name: Check whitespace errors
+        run: git diff --check
+
+      - name: Commit generated output and reports
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No generated changes to commit."
+          else
+            git commit -m "Build Chennai competitor SEO pages"
+            git push origin HEAD:${GITHUB_REF_NAME}
+          fi
