@@ -109,6 +109,33 @@
     }
   });
 
+  document.addEventListener("click", function (event) {
+    const clickedElement = event.target instanceof Element ? event.target : null;
+    const target = clickedElement ? clickedElement.closest("[data-ga-event]") : null;
+    if (!target || typeof window.gtag !== "function") {
+      return;
+    }
+
+    const url = target.getAttribute("href") || "";
+    let outboundDomain = "";
+
+    try {
+      if (/^https?:/i.test(url)) {
+        outboundDomain = new URL(url, window.location.href).hostname;
+      }
+    } catch (error) {
+      outboundDomain = "";
+    }
+
+    window.gtag("event", target.dataset.gaEvent, {
+      link_location: target.dataset.gaLocation || "unknown",
+      action_label: target.dataset.gaLabel || "unknown",
+      page_path: window.location.pathname,
+      page_title: document.title,
+      outbound_domain: outboundDomain
+    });
+  });
+
   const year = document.querySelector("#year");
   if (year) {
     year.textContent = String(new Date().getFullYear());

@@ -6,6 +6,8 @@ function escapeHtml(value) {
     .replace(/"/g, "&quot;");
 }
 
+const { annotateAnalyticsLinks, googleTagMarkup } = require("./analytics");
+
 function attr(value) {
   return escapeHtml(value).replace(/'/g, "&#39;");
 }
@@ -262,9 +264,10 @@ function renderPage(site, page) {
   const bodyHtml = page.body
     .replace(/href="(?!https?:|mailto:|tel:|#|\/|\.\/|\.\.\/)([^"]+)"/g, `href="${prefix}$1"`)
     .replace(/src="assets\//g, `src="${prefix}assets/`);
-  return `<!doctype html>
+  const html = `<!doctype html>
 <html lang="en-IN">
   <head>
+${googleTagMarkup}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>${escapeHtml(title)}</title>
@@ -302,6 +305,7 @@ function renderPage(site, page) {
     <script src="${prefix}assets/js/main.js" defer></script>
   </body>
 </html>`;
+  return annotateAnalyticsLinks(html);
 }
 
 module.exports = { renderPage, escapeHtml, localHref, relPrefix, googleBusinessProfileIcon, googleMapsIcon, indiaMartIcon, footerUtilityLinks, googleBusinessProfileHref, googleMapsHref, indiaMartHref };

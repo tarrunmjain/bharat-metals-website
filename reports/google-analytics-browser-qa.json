@@ -1,0 +1,113 @@
+{
+  "generatedAt": "2026-07-23T19:10:01.423Z",
+  "result": "PASS",
+  "homepage": {
+    "gtagFunctionExists": true,
+    "missingLabels": [],
+    "navigationUnchanged": true,
+    "eventCount": 13,
+    "events": [
+      {
+        "eventName": "click_call",
+        "linkLocation": "topbar",
+        "actionLabel": "topbar_call",
+        "outboundDomain": ""
+      },
+      {
+        "eventName": "click_whatsapp",
+        "linkLocation": "topbar",
+        "actionLabel": "topbar_whatsapp",
+        "outboundDomain": "wa.me"
+      },
+      {
+        "eventName": "click_email",
+        "linkLocation": "topbar",
+        "actionLabel": "topbar_email",
+        "outboundDomain": ""
+      },
+      {
+        "eventName": "click_request_quote",
+        "linkLocation": "header",
+        "actionLabel": "header_quick_quote",
+        "outboundDomain": "wa.me"
+      },
+      {
+        "eventName": "click_call",
+        "linkLocation": "hero",
+        "actionLabel": "hero_call",
+        "outboundDomain": ""
+      },
+      {
+        "eventName": "click_whatsapp",
+        "linkLocation": "hero",
+        "actionLabel": "hero_whatsapp",
+        "outboundDomain": "wa.me"
+      },
+      {
+        "eventName": "click_email",
+        "linkLocation": "hero",
+        "actionLabel": "hero_email",
+        "outboundDomain": ""
+      },
+      {
+        "eventName": "click_request_quote",
+        "linkLocation": "fast_rfq",
+        "actionLabel": "fast_rfq_mail_requirement",
+        "outboundDomain": ""
+      },
+      {
+        "eventName": "click_call",
+        "linkLocation": "final_quote",
+        "actionLabel": "final_quote_call",
+        "outboundDomain": ""
+      },
+      {
+        "eventName": "click_request_quote",
+        "linkLocation": "final_quote",
+        "actionLabel": "final_quote_whatsapp",
+        "outboundDomain": "wa.me"
+      },
+      {
+        "eventName": "click_request_quote",
+        "linkLocation": "final_quote",
+        "actionLabel": "final_quote_email_rfq",
+        "outboundDomain": ""
+      },
+      {
+        "eventName": "click_google_maps",
+        "linkLocation": "footer",
+        "actionLabel": "footer_google_maps",
+        "outboundDomain": "maps.app.goo.gl"
+      },
+      {
+        "eventName": "click_indiamart",
+        "linkLocation": "footer",
+        "actionLabel": "footer_indiamart",
+        "outboundDomain": "www.indiamart.com"
+      }
+    ],
+    "errors": []
+  },
+  "mobile": {
+    "gtagFunctionExists": true,
+    "navOpen": true,
+    "navAriaExpanded": "true",
+    "horizontalOverflow": false,
+    "errors": []
+  },
+  "contact": {
+    "gtagFunctionExists": true,
+    "trackedElements": 23,
+    "hasCall": true,
+    "hasWhatsApp": true,
+    "hasQuote": true,
+    "hasMaps": true,
+    "errors": []
+  },
+  "screenshots": [
+    "qa/screenshots/ga4-home-desktop.png",
+    "qa/screenshots/ga4-home-mobile.png",
+    "qa/screenshots/ga4-contact-page.png"
+  ],
+  "errors": []
+}

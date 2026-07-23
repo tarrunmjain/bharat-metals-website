@@ -1,0 +1,12 @@
+{
+  "auditScope": "Current Bharat Metals source files and generated published HTML before GA4 installation",
+  "existingGoogleTagFound": false,
+  "measurementIdsFound": [],
+  "gtmContainerIdsFound": [],
+  "legacyAnalyticsFound": false,
+  "duplicateTrackingRisk": false,
+  "filesContainingOldTags": [],
+  "rubinoxMeasurementIdPresent": false,
+  "actionTaken": "Install only G-BNQJRR11FD through the global renderer and final static build pass",
+  "googleTagManagerInstalled": false
+}

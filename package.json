@@ -4,14 +4,16 @@
   "private": true,
   "description": "Static GitHub Pages website for Bharat Metals.",
   "scripts": {
-    "build": "node scripts/build-pages.js && node scripts/seo-chennai-competitor-patch.js",
+    "build": "node scripts/build-pages.js && node scripts/seo-chennai-competitor-patch.js && node scripts/apply-google-analytics.js",
     "build:base": "node scripts/build-pages.js",
     "seo:chennai": "node scripts/seo-chennai-competitor-patch.js",
     "audit": "node scripts/audit-pages.js",
     "qa": "node scripts/qa-static.js",
     "qa:browser": "node scripts/qa-browser-cdp.js",
     "qa:core-patch-hard": "node scripts/core-patch-hard-check.js",
-    "qa:core-patch-live": "node scripts/core-patch-live-raw-check.js"
+    "qa:core-patch-live": "node scripts/core-patch-live-raw-check.js",
+    "qa:ga": "node scripts/qa-google-analytics.js",
+    "qa:ga:browser": "node scripts/qa-google-analytics-browser.js"
   },
   "devDependencies": {}
 }

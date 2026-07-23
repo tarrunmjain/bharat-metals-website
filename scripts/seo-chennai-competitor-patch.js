@@ -115,7 +115,7 @@ const products = [
   {
     id: "pipes-chennai", file: "stainless-steel-pipes-chennai/index.html",
     title: "SS Pipe Dealers in Chennai | 304/316 ERW & Seamless",
-    h1: "Stainless Steel Pipe Dealers in Chennai – ERW, EFW, Welded & Seamless",
+    h1: "Stainless Steel Pipe Dealers in Chennai \u2013 ERW, EFW, Welded & Seamless",
     description: "Bharat Metals is a Chennai SS pipe dealer for 304/316 welded, seamless, ERW and EFW enquiries. Share ASTM A312, OD/NB, schedule, wall thickness, length, quantity and MTC needs.",
     keyword: "Stainless steel pipe dealers in Chennai", serviceType: "Stainless steel pipe dealer and supplier in Chennai",
     heading: "SS pipe types, standards and size terminology used by Chennai buyers",
@@ -126,7 +126,7 @@ const products = [
   {
     id: "sheets-chennai", file: "stainless-steel-sheets-chennai/index.html",
     title: "SS Sheet Dealers in Chennai | 304/316, Jindal & Finishes",
-    h1: "Stainless Steel Sheet Dealers in Chennai – SS 304, 316 & Finish Options",
+    h1: "Stainless Steel Sheet Dealers in Chennai \u2013 SS 304, 316 & Finish Options",
     description: "Chennai stainless steel sheet dealer for SS 304/316, Jindal make preference, 2B, BA, No. 4, mirror, matt, hairline, brush and PVC-coated sheet enquiries.",
     keyword: "Stainless steel sheet dealers in Chennai", serviceType: "Stainless steel sheet dealer and supplier in Chennai",
     heading: "Sheet grades, finishes and specification terms for Chennai RFQs",
@@ -137,7 +137,7 @@ const products = [
   {
     id: "plates-chennai", file: "stainless-steel-plates-chennai/index.html",
     title: "Stainless Steel Plate Dealers in Chennai | SS 304/316",
-    h1: "Stainless Steel Plate Dealers in Chennai – SS 304, 316 & Cut Sizes",
+    h1: "Stainless Steel Plate Dealers in Chennai \u2013 SS 304, 316 & Cut Sizes",
     description: "Bharat Metals reviews Chennai stainless steel plate enquiries for SS 304/316, ASTM A240, thickness, size, cutting, finish, quantity, MTC and delivery requirements.",
     keyword: "Stainless steel plate dealers in Chennai", serviceType: "Stainless steel plate dealer and supplier in Chennai",
     heading: "Plate specification and processing terms used in Chennai",
@@ -148,7 +148,7 @@ const products = [
   {
     id: "rods-chennai", file: "stainless-steel-rods-chennai/index.html",
     title: "SS Round Bar & Rod Dealers in Chennai | 304, 316, 310",
-    h1: "Stainless Steel Round Bar & Rod Dealers in Chennai – Bright, Black, Peeled & Ground",
+    h1: "Stainless Steel Round Bar & Rod Dealers in Chennai \u2013 Bright, Black, Peeled & Ground",
     description: "Chennai SS round bar and rod dealer for 304, 316, 310, 410 and specified grades in bright, black, peeled, ground, precision and cut-length enquiries with MTC needs.",
     keyword: "Stainless steel round bar dealers in Chennai", serviceType: "Stainless steel round bar and rod dealer in Chennai",
     heading: "Round bar, rod and machining terminology used by Chennai buyers",
@@ -159,7 +159,7 @@ const products = [
   {
     id: "bars-chennai", file: "stainless-steel-bars-chennai/index.html",
     title: "Stainless Steel Bar Dealers in Chennai | Round, Flat, Hex & Square",
-    h1: "Stainless Steel Bar Dealers in Chennai – Round, Flat, Hex & Square Bars",
+    h1: "Stainless Steel Bar Dealers in Chennai \u2013 Round, Flat, Hex & Square Bars",
     description: "Bharat Metals reviews Chennai stainless steel bar enquiries for round, flat, hex and square bars in SS 304, 316, 310, 410 and specified grades by size, finish and MTC need.",
     keyword: "Stainless steel bar dealers in Chennai", serviceType: "Stainless steel bar dealer and supplier in Chennai",
     heading: "Bar forms and buyer specification terms used in Chennai",
