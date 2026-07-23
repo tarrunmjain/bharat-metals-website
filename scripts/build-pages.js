@@ -1553,15 +1553,22 @@ const topMoneyPages = [
   { name: "Stainless Steel Suppliers Tada", slug: "stainless-steel-suppliers-tada/" }
 ];
 
+const gscPositionPages = [
+  { name: "SS 304 Stainless Steel", slug: "ss-304/" },
+  { name: "Stainless Steel Suppliers Madurai", slug: "stainless-steel-suppliers-madurai/" },
+  { name: "Commercial Kitchen Equipment Stainless Steel", slug: "industries/commercial-kitchen-equipment/" }
+];
+
 const topMoneyHubSlugs = new Set(["stainless-steel/", "products/", "stainless-steel-sheets/", "stainless-steel-pipes/", "ss-304/", "ss-316/", "technical-data/", "locations-we-serve/", "site-map/"]);
 
 function topMoneyHubBlock(slug) {
   if (!topMoneyHubSlugs.has(slug)) return "";
+  const hubPages = uniqueBy([...topMoneyPages, ...gscPositionPages], (page) => page.slug);
   return hubSection(
     "Top money pages",
     "Top Stainless Steel Enquiry Pages",
     "Open high-intent Bharat Metals pages for Chennai, Jindal make preference, SS 304, SS 316, price enquiry and priority city searches.",
-    compactCardGrid(topMoneyPages, (page) => page.slug, (page) => page.name)
+    compactCardGrid(hubPages, (page) => page.slug, (page) => page.name)
   );
 }
 
@@ -1572,6 +1579,280 @@ function relatedMoneySection(extra = []) {
 
 function quickAnswer(text) {
   return pageSection("Quick answer", text);
+}
+
+const gscCtrLocationOverrides = {
+  "Sri Lanka": {
+    title: "Stainless Steel Supply to Sri Lanka from Chennai | Bharat Metals",
+    description:
+      "Sri Lanka stainless steel supply enquiries for SS 304/316 pipes, sheets, plates and fasteners from Chennai. Share destination, export packing and MTC needs for RFQ.",
+    intro:
+      "Sri Lanka stainless steel enquiries are reviewed by Bharat Metals from Chennai as nearby export enquiries, not through a local Sri Lanka branch. Buyers can discuss SS 304 and SS 316 pipes, sheets, plates, fasteners and related fittings for construction, marine maintenance, commercial kitchen, fabrication and project procurement use. For a useful quotation, send product form, grade, exact size or thickness, pipe schedule if applicable, quantity, finish, MTC or documentation need, export packing expectation and destination details. Bharat Metals checks sourceability, packing practicality and logistics feasibility before responding, so the RFQ should be specific rather than only asking for a general stainless steel rate."
+  },
+  Pondicherry: {
+    description:
+      "Pondicherry stainless steel supplier enquiries for SS 304/316 pipes, sheets, polished pipes and plates. Chennai dispatch support; send size, quantity, finish and MTC needs.",
+    intro:
+      "Pondicherry buyers can contact Bharat Metals in Chennai for stainless steel enquiries connected with pharma, food processing, hotels, engineering, fabrication and coastal maintenance work. Common requests include SS 304 and SS 316 pipes, sheets, polished pipes, plates, rods, fittings and related stainless steel forms where finish, corrosion exposure, packing and transport planning matter. Bharat Metals does not claim a Pondicherry branch; the page is for Chennai-led supply review and RFQ support. Send product form, grade, size, thickness or pipe details, quantity, finish, certificate or MTC requirement and delivery location so availability and dispatch feasibility can be checked clearly before quotation."
+  },
+  Ambattur: {
+    description:
+      "Ambattur stainless steel supplier enquiries for SS 202/304/316 rods, bars, flats, sheets and pipes. Source from Chennai; send grade, size, quantity and finish for RFQ.",
+    intro:
+      "Ambattur stainless steel enquiries often come from industrial fabricators, auto-component suppliers, engineering workshops, panel builders, traders and maintenance teams. Bharat Metals reviews SS 202, SS 304 and SS 316 requirements from Chennai for rods, bars, flats, sheets, pipes, tubes, fasteners and related forms when the buyer shares a clear RFQ. This page does not claim a separate Ambattur branch; it supports Chennai-source stainless steel supply conversations for Ambattur Industrial Estate and nearby buyer requirements. Send grade, diameter or section, sheet thickness, pipe size, finish, quantity, certificate need and delivery location so Bharat Metals can review availability, sourceability and transport options."
+  },
+  Guindy: {
+    description:
+      "Guindy stainless steel supplier enquiries for SS 304/316 sheets, pipes, rods and fasteners. Bharat Metals reviews Chennai dispatch; send size, quantity, finish and MTC needs.",
+    intro:
+      "Guindy buyers may need stainless steel for industrial estate fabrication, maintenance, commercial kitchen equipment, engineering jobs, institutional repair and contractor work. Bharat Metals reviews SS 304 and SS 316 sheets, pipes, rods, bars, fasteners, fittings and related stainless steel forms from Chennai when product form, size, finish and quantity are clear. The page is written for Guindy procurement searches without claiming a local Guindy branch. Share grade, sheet thickness, pipe OD or NB, rod diameter, finish, MTC or mill certificate requirement, quantity and delivery details so Bharat Metals can check current sourceability and dispatch practicality before quotation."
+  },
+  Kozhikode: {
+    description:
+      "Kozhikode stainless steel enquiries for SS 304/316/316L pipes, sheets, plates, fasteners and fittings. Chennai source support; send grade, size, quantity and packing needs.",
+    intro:
+      "Kozhikode stainless steel enquiries can involve coastal, commercial, hotel, marine maintenance, fabrication and construction requirements where grade and packing details matter. Bharat Metals is Chennai-based and can review SS 304, SS 316 and SS 316L pipes, sheets, plates, fasteners, fittings and related stainless steel forms for Kozhikode buyers when the RFQ is complete. This is Chennai source and dispatch support, not a Kerala branch claim. Buyers should send product form, grade, size or thickness, pipe schedule if relevant, quantity, finish, certificate requirement, packing need and delivery destination so Bharat Metals can respond with a practical review."
+  },
+  Thrissur: {
+    description:
+      "Thrissur stainless steel supplier enquiries for SS 202/304/316 pipes, sheets, plates, rods and bars. Chennai source support; send size, quantity, finish and transport details.",
+    intro:
+      "Thrissur stainless steel buyers may include fabricators, contractors, traders, builders, hotel equipment makers and maintenance teams that need clear product and grade discussion before purchase. Bharat Metals reviews enquiries from Chennai for SS 202, SS 304 and SS 316 pipes, sheets, plates, rods, bars and related stainless steel forms, subject to availability, quantity and logistics feasibility. The page supports Thrissur searches without claiming a local branch. Send grade, product form, exact dimension, finish, quantity, certificate or MTC need, packing expectation and delivery location so Bharat Metals can check sourceability and dispatch options before quotation."
+  },
+  Erode: {
+    description:
+      "Erode stainless steel supplier enquiries for SS 304/316 pipes, sheets, plates and coils. Chennai dispatch support; send grade, size, quantity, finish and RFQ details.",
+    intro:
+      "Erode stainless steel enquiries often come from textile, agro-processing, trading, fabrication, utility and maintenance buyers who need pipes, sheets, plates, coils and related stainless steel forms. Bharat Metals reviews SS 304 and SS 316 requirements from Chennai with attention to product form, grade, size, finish, quantity, certificate expectation and transport planning. This page does not claim an Erode branch; it helps Erode buyers prepare clearer Chennai-source RFQs. Share pipe size, sheet or plate thickness, coil width where relevant, finish, quantity, MTC or mill certificate need and delivery location so availability and dispatch feasibility can be reviewed."
+  },
+  Tirunelveli: {
+    description:
+      "Tirunelveli stainless steel supplier enquiries for SS 202/304/316 sheets, rods, pipes and angles. Chennai dispatch support; send size, quantity, finish and certificate needs.",
+    intro:
+      "Tirunelveli stainless steel enquiries may come from fabrication, wind energy support, food and agro-processing, repair workshops, traders and project buyers. Bharat Metals reviews SS 202, SS 304 and SS 316 sheets, rods, pipes, angles and related stainless steel forms from Chennai when dimensions, finish and quantity are clearly shared. The page is for Tirunelveli RFQ support and does not claim a local branch outside Chennai. Send product form, grade, sheet thickness, rod diameter, pipe size, angle size, quantity, finish, certificate need and delivery location so Bharat Metals can check sourceability, packing and dispatch feasibility before quotation."
+  }
+};
+
+const gscCtrLocationNames = new Set(Object.keys(gscCtrLocationOverrides));
+
+function cityPageTitle(city) {
+  return gscCtrLocationOverrides[city.name]?.title || `Stainless Steel Suppliers in ${city.name} | Bharat Metals`;
+}
+
+function cityPageDescription(city) {
+  return (
+    gscCtrLocationOverrides[city.name]?.description ||
+    `Stainless steel suppliers for ${city.name}. Bharat Metals Chennai supports enquiries for ${city.products.slice(0, 5).join(", ")} and grades such as ${city.grades.join(", ")}.`
+  );
+}
+
+function cityPageIntro(city) {
+  const intro = gscCtrLocationOverrides[city.name]?.intro || cityIntro(city);
+  if (!gscCtrLocationNames.has(city.name)) return intro;
+  const close =
+    city.region === "Nearby export"
+      ? "For export enquiry review, buyers should also confirm destination city, packing expectation, documentation format, inspection requirement, delivery timeline and contact person so the enquiry can be assessed before any dispatch discussion."
+      : "For Chennai-source dispatch review, buyers can also mention cutting, polishing, PVC coating, packing, transport booking, courier scope, door-delivery expectations, preferred billing contact and required date where relevant to the order.";
+  return `${intro} ${close}`;
+}
+
+function gscLocationQuickAnswer(city) {
+  if (!gscCtrLocationNames.has(city.name)) return "";
+  const titleId = `quick-answer-${slugify(city.name)}`;
+  const products = city.products.slice(0, 5).join(", ");
+  const gradesText = city.grades.join(", ");
+  const sourceText =
+    city.region === "Nearby export"
+      ? "Nearby export enquiry reviewed from Chennai with packing, documentation, MTC and destination details."
+      : "Chennai source and dispatch review; no local branch is claimed outside Chennai.";
+  return `<section class="section-pad compact-section gsc-quick-answer-section" aria-labelledby="${titleId}"><div class="container"><div class="info-panel gsc-quick-answer"><h2 id="${titleId}">Quick answer for ${escapeHtml(city.name)} buyers</h2><ul><li><strong>What Bharat Metals supplies:</strong> ${escapeHtml(products)} and related stainless steel forms.</li><li><strong>Common grades:</strong> ${escapeHtml(gradesText)}.</li><li><strong>Dispatch/source:</strong> ${escapeHtml(sourceText)}</li><li><strong>For quote:</strong> Send product form, grade, size or thickness, quantity, finish, certificate need and delivery or destination details.</li></ul></div></div></section>`;
+}
+
+const gscCityContextLinkMap = {
+  Pondicherry: [
+    { name: "SS 316 Sheets Chennai", slug: "ss-316-sheets-chennai/" },
+    { name: "Stainless Steel Pipes", slug: "stainless-steel-pipes/" },
+    { name: "SS 316 Stainless Steel", slug: "ss-316/" },
+    { name: "MTC and Mill Certificate Guide", slug: "blog/stainless-steel-material-test-certificate/" }
+  ],
+  Ambattur: [
+    { name: "SS 304 Sheets Chennai", slug: "ss-304-sheets-chennai/" },
+    { name: "Jindal Make Stainless Steel Pipes Chennai", slug: "jindal-stainless-steel-pipes-chennai/" },
+    { name: "Commercial Kitchen Equipment Stainless Steel", slug: "industries/commercial-kitchen-equipment/" },
+    { name: "SS 304 Stainless Steel", slug: "ss-304/" }
+  ],
+  Guindy: [
+    { name: "SS 304 Sheets Chennai", slug: "ss-304-sheets-chennai/" },
+    { name: "Stainless Steel Pipes Chennai", slug: "stainless-steel-pipes-chennai/" },
+    { name: "Commercial Kitchen Equipment Stainless Steel", slug: "industries/commercial-kitchen-equipment/" },
+    { name: "SS 316 Stainless Steel", slug: "ss-316/" }
+  ],
+  Kozhikode: [
+    { name: "SS 316 Stainless Steel", slug: "ss-316/" },
+    { name: "Stainless Steel Pipes", slug: "stainless-steel-pipes/" },
+    { name: "Stainless Steel Sheets", slug: "stainless-steel-sheets/" },
+    { name: "Coastal and Marine Buyer Guide", slug: "blog/stainless-steel-for-coastal-and-marine-use/" }
+  ],
+  Thrissur: [
+    { name: "SS 304 Stainless Steel", slug: "ss-304/" },
+    { name: "Stainless Steel Sheets", slug: "stainless-steel-sheets/" },
+    { name: "Stainless Steel Rods", slug: "stainless-steel-rods/" },
+    { name: "Request Quote", slug: "request-quote/" }
+  ],
+  Erode: [
+    { name: "SS 304 Sheets Chennai", slug: "ss-304-sheets-chennai/" },
+    { name: "Stainless Steel Coils", slug: "stainless-steel-coils/" },
+    { name: "Stainless Steel Suppliers Coimbatore", slug: "stainless-steel-suppliers-coimbatore/" },
+    { name: "Tamil Nadu Supply Buyer Guide", slug: "blog/stainless-steel-supply-tamil-nadu-cities/" }
+  ],
+  Tirunelveli: [
+    { name: "SS 304 Stainless Steel", slug: "ss-304/" },
+    { name: "Stainless Steel Rods", slug: "stainless-steel-rods/" },
+    { name: "Stainless Steel Pipes", slug: "stainless-steel-pipes/" },
+    { name: "Request Quote", slug: "request-quote/" }
+  ],
+  "Sri Lanka": [
+    { name: "SS 316 Stainless Steel", slug: "ss-316/" },
+    { name: "Stainless Steel Pipes", slug: "stainless-steel-pipes/" },
+    { name: "Stainless Steel Sheets", slug: "stainless-steel-sheets/" },
+    { name: "MTC and Mill Certificate Guide", slug: "blog/stainless-steel-material-test-certificate/" }
+  ],
+  Coimbatore: [
+    { name: "SS 304 Sheets Chennai", slug: "ss-304-sheets-chennai/" },
+    { name: "SS 304 Stainless Steel", slug: "ss-304/" },
+    { name: "Stainless Steel Suppliers Madurai", slug: "stainless-steel-suppliers-madurai/" },
+    { name: "Commercial Kitchen Equipment Stainless Steel", slug: "industries/commercial-kitchen-equipment/" }
+  ],
+  Madurai: [
+    { name: "SS 304 Sheets Chennai", slug: "ss-304-sheets-chennai/" },
+    { name: "SS 304 Stainless Steel", slug: "ss-304/" },
+    { name: "Commercial Kitchen Equipment Stainless Steel", slug: "industries/commercial-kitchen-equipment/" },
+    { name: "Stainless Steel Suppliers Coimbatore", slug: "stainless-steel-suppliers-coimbatore/" }
+  ]
+};
+
+function cityGscContextLinks(city) {
+  const links = gscCityContextLinkMap[city.name];
+  if (!links) return "";
+  return pageSection(
+    "Related RFQ pages from Chennai",
+    `These Bharat Metals pages help ${city.name} buyers move from a city search to product, grade, documentation or industry-specific stainless steel enquiry details.`,
+    chips(links, (item) => item.slug, (item) => item.name)
+  );
+}
+
+function gradeGscLinks(grade) {
+  if (grade.id !== "304") return "";
+  return pageSection(
+    "SS 304 enquiry pages buyers often use",
+    "Use these pages when an SS 304 RFQ needs sheet-specific, city-specific, industry-specific or make-preference context before contacting Bharat Metals.",
+    chips(
+      [
+        { name: "SS 304 Sheets Chennai", slug: "ss-304-sheets-chennai/" },
+        { name: "SS 304 Sheet Price Chennai", slug: "ss-304-sheet-price-chennai/" },
+        { name: "Stainless Steel Sheets", slug: "stainless-steel-sheets/" },
+        { name: "Stainless Steel Suppliers Coimbatore", slug: "stainless-steel-suppliers-coimbatore/" },
+        { name: "Stainless Steel Suppliers Madurai", slug: "stainless-steel-suppliers-madurai/" },
+        { name: "Commercial Kitchen Equipment Stainless Steel", slug: "industries/commercial-kitchen-equipment/" }
+      ],
+      (item) => item.slug,
+      (item) => item.name
+    )
+  );
+}
+
+function industryGscLinks(industry) {
+  if (industry.slug !== "commercial-kitchen-equipment") return "";
+  return pageSection(
+    "Commercial kitchen stainless steel RFQ links",
+    "Commercial kitchen buyers often compare SS 304 sheets, SS 316 sheets, pipes, grades and finish notes before sending fabrication or hotel equipment RFQs.",
+    chips(
+      [
+        { name: "SS 304 Sheets Chennai", slug: "ss-304-sheets-chennai/" },
+        { name: "SS 316 Sheets Chennai", slug: "ss-316-sheets-chennai/" },
+        { name: "Stainless Steel Sheets", slug: "stainless-steel-sheets/" },
+        { name: "Stainless Steel Pipes", slug: "stainless-steel-pipes/" },
+        { name: "SS 304 Stainless Steel", slug: "ss-304/" },
+        { name: "SS 316 Stainless Steel", slug: "ss-316/" }
+      ],
+      (item) => item.slug,
+      (item) => item.name
+    )
+  );
+}
+
+function jindalGscLinks(page) {
+  if (page.slug !== "jindal-stainless-steel-pipes-chennai/") return "";
+  return pageSection(
+    "Jindal pipe enquiry support links",
+    "Use these links to connect a Jindal make pipe preference with pipe form, SS 304, SS 316, ASTM A312 and quotation details.",
+    chips(
+      [
+        { name: "Stainless Steel Pipes", slug: "stainless-steel-pipes/" },
+        { name: "SS 304 Stainless Steel", slug: "ss-304/" },
+        { name: "SS 316 Stainless Steel", slug: "ss-316/" },
+        { name: "ASTM A312 Stainless Steel Pipes", slug: "astm-a312-stainless-steel-pipes-chennai/" },
+        { name: "Request Quote", slug: "request-quote/" }
+      ],
+      (item) => item.slug,
+      (item) => item.name
+    )
+  );
+}
+
+function blogUsefulLinks(post) {
+  const map = {
+    "stainless-steel-for-commercial-kitchens": [
+      "request-quote/",
+      "industries/commercial-kitchen-equipment/",
+      "ss-304-sheets-chennai/",
+      "stainless-steel-sheets/",
+      "ss-316/"
+    ],
+    "stainless-steel-supply-tamil-nadu-cities": [
+      "request-quote/",
+      "stainless-steel-suppliers-coimbatore/",
+      "stainless-steel-suppliers-madurai/",
+      "ss-304/",
+      "ss-304-sheets-chennai/"
+    ],
+    "jindal-ss-304-sheet-chennai-buyer-guide": [
+      "request-quote/",
+      "ss-304-sheets-chennai/",
+      "jindal-stainless-steel-pipes-chennai/",
+      "jindal-stainless-steel-sheets-chennai/",
+      "ss-304/"
+    ],
+    "how-to-send-stainless-steel-rfq": [
+      "request-quote/",
+      "ss-304-sheets-chennai/",
+      "stainless-steel-suppliers-coimbatore/",
+      "stainless-steel-suppliers-madurai/",
+      "jindal-stainless-steel-pipes-chennai/"
+    ]
+  };
+  const labels = {
+    "request-quote/": "Request Quote",
+    "stainless-steel/": "Stainless Steel Hub",
+    "ss-304/": "SS 304 Stainless Steel",
+    "ss-316/": "SS 316 Stainless Steel",
+    "industries/commercial-kitchen-equipment/": "Commercial Kitchen Equipment",
+    "ss-304-sheets-chennai/": "SS 304 Sheets Chennai",
+    "stainless-steel-sheets/": "Stainless Steel Sheets",
+    "stainless-steel-suppliers-coimbatore/": "Stainless Steel Suppliers Coimbatore",
+    "stainless-steel-suppliers-madurai/": "Stainless Steel Suppliers Madurai",
+    "jindal-stainless-steel-pipes-chennai/": "Jindal Stainless Steel Pipes Chennai",
+    "jindal-stainless-steel-sheets-chennai/": "Jindal Stainless Steel Sheets Chennai"
+  };
+  const defaultLinks = [
+    { slug: "request-quote/", name: "request quote" },
+    { slug: "stainless-steel/", name: "stainless steel" },
+    { slug: "ss-304/", name: "ss 304" },
+    { slug: "ss-316/", name: "ss 316" }
+  ];
+  const slugs = map[post.slug];
+  if (!slugs) return defaultLinks;
+  return slugs.map((slug) => ({ slug, name: labels[slug] || labelOf(slug) }));
 }
 
 function commonIntentFaq(subject, extra = []) {
@@ -1746,6 +2027,7 @@ function buildJindalPages() {
           "Bharat Metals is based in Chennai and can review enquiries for Chennai city buyers, George Town, Parrys, Mookernallamuthu Street, Ambattur, Guindy, Sriperumbudur, Oragadam, Coimbatore, Hosur, Sricity, Tada and other Tamil Nadu or nearby South India locations. This does not mean a branch office exists in those places.",
           isPrice ? priceSafetyNote : "For make-sensitive requirements, buyers should avoid sending only a brand keyword. Mention the product, grade, finish, size and quantity so Bharat Metals can review whether the required make preference is workable or whether equivalent reputed mill material should be discussed."
         ]) +
+        jindalGscLinks(page) +
         rfqBlock(page.product.toLowerCase()) +
         relatedMoneySection([{ name: "Stainless Steel Sheets", slug: "stainless-steel-sheets/" }, { name: "Stainless Steel Pipes", slug: "stainless-steel-pipes/" }, { name: "SS 304", slug: "ss-304/" }, { name: "SS 316", slug: "ss-316/" }, { name: "Request Quote", slug: "request-quote/" }]) +
         searchSection(`Popular ${page.h1} searches`, "Use these linked search-style chips to move to closely related Bharat Metals pages before sending an RFQ.", [
@@ -2682,6 +2964,7 @@ function buildGradePages() {
         proseSection("Available product forms", [
           `${grade.name} requirements can be reviewed across welded pipes, seamless pipe enquiries, polished pipes, tubes, sheets, plates, coils, flats, angles, rods, bars, channels, fittings, flanges, fasteners, wire mesh and perforated sheets. Buyers should share exact size, thickness, schedule, diameter, finish and quantity for accurate quotation support.`
         ]) +
+        gradeGscLinks(grade) +
         pageSection("Popular industries", `${grade.name} enquiries are common from fabricators, railing contractors, commercial kitchen fabricators, food processing equipment makers, pharma equipment buyers, engineering workshops, traders, interior contractors, maintenance teams and project procurement teams depending on application and specification.`) +
         pageSection("Common finishes and processing", "Surface finish, cutting, polishing, PVC coating, bending, drilling, packing, MTC, mill certificate and third-party inspection requirements should be mentioned at RFQ stage so they can be checked against the product form and order size.") +
         hubSection("Available forms", `${grade.name} Product Forms`, `${grade.name} enquiries can be narrowed by product form before sending size, finish, quantity and certificate details.`, cardGrid(forms, (form) => `${grade.slug}-${form.formSlug}/`, (form) => gradeFormCardText(grade, form))) +
@@ -2757,15 +3040,16 @@ function buildLocationPages() {
     addGeneratedPage({
       slug,
       type: "city",
-      title: `Stainless Steel Suppliers in ${city.name} | Bharat Metals`,
-      description: `Stainless steel suppliers for ${city.name}. Bharat Metals Chennai supports enquiries for ${city.products.slice(0, 5).join(", ")} and grades such as ${city.grades.join(", ")}.`,
+      title: cityPageTitle(city),
+      description: cityPageDescription(city),
       h1: `Stainless Steel Suppliers in ${city.name}`,
       eyebrow: `${city.region} supply support`,
-      intro: cityIntro(city),
+      intro: cityPageIntro(city),
       image: cityImage(city),
       imageAlt: `Stainless steel supply and dispatch support for ${city.name}`,
       breadcrumbs: [{ name: "Locations", slug: "locations-we-serve/" }],
       body:
+        gscLocationQuickAnswer(city) +
         proseSection("Industrial and buyer profile", [
           `${city.name} has ${city.profile}. Buyers commonly ask for stainless steel by form, grade, size and finish rather than only by generic material name.`,
           `Typical enquiries may come from fabricators, traders, contractors, maintenance teams, project buyers, engineering workshops and industry users who need product availability, certificate expectations and dispatch feasibility reviewed from Chennai.`
@@ -2774,6 +3058,7 @@ function buildLocationPages() {
         pageSection(`Grades commonly discussed for ${city.name}`, `Grades often discussed for ${city.name} include ${city.grades.join(", ")}. Grade choice should be based on corrosion exposure, fabrication method, finish, hygiene requirement, drawing specification and buyer application.`, `<h3>Grade pages</h3>${chips(grades.slice(0, 6), (grade) => `${grade.slug}/`, (grade) => grade.name)}`) +
         pageSection("Delivery and transport guidance", exportNote) +
         hubSection("Nearby cities", `Nearby ${city.region} Pages`, nearbyCityIntro(city), chips(relatedCities(city), citySlug, (item) => item.name)) +
+        cityGscContextLinks(city) +
         rfqBlock(`stainless steel for ${city.name}`) +
         searchSection(`Popular stainless steel enquiries for ${city.name}`, `Use these search chips to describe ${city.name} enquiries by product, grade, make, certificate need and dispatch location.`, citySearches(city)) +
         ctaBlock(`stainless steel for ${city.name}`),
@@ -2801,6 +3086,7 @@ function buildIndustryPages() {
           "Bharat Metals helps buyers describe stainless steel requirements clearly before checking availability. Exact grade, form, size, finish, quantity, drawing or sample reference, certificate expectation and delivery location make the RFQ easier to review."
         ]) +
         pageSection("Specific stainless steel product relevance", industryProductRelevance(industry), `<h3>Related product forms</h3>${chips(relatedProductFormsForIndustry(industry), (form) => `${form.slug}/`, (form) => form.short)}`) +
+        industryGscLinks(industry) +
         pageSection("Common grades", `Common grades for ${industry.name} include ${industry.grades.join(", ")}. Grade suitability should be confirmed by application, exposure, fabrication method, hygiene requirement, operating environment and project specification.`, `<h3>Grade pages</h3>${chips(grades.slice(0, 6), (grade) => `${grade.slug}/`, (grade) => grade.name)}`) +
         pageSection("Finishes, services and documentation", `Finish and processing details for ${industry.name} should match the product form. Sheets, coils and perforated sheets may involve 2B, No. 1, BA, mirror, hairline, brush or PVC-coated options where suitable; rods and bars are normally discussed with bright, polished, machined or cut-length expectations; flanges and fittings need machined, mill, pickled/passivated or certificate-led details where applicable. Cutting, polishing, drilling, packing, MTC, mill certificate and inspection requirements should be shared before quotation.`) +
         hubSection("City relevance", "Relevant Supply Regions", "Open common city pages for Chennai-led supply discussions.", chips(["Chennai", "Ambattur", "Sriperumbudur", "Oragadam", "Coimbatore", "Hosur", "Pondicherry", "Tiruppur"].map(cityByName), citySlug, (city) => city.name)) +
@@ -3076,7 +3362,7 @@ function buildBlogPages() {
           `Before sending the enquiry, convert the requirement into a short checklist: product form, grade, size, finish, quantity, delivery city, certificate requirement, packing need and required date. For ${focus.products}, even one missing dimension can change availability review, transport planning or processing discussion.`,
           "A clear first message helps Bharat Metals respond with fewer clarification calls. It also helps buyers compare quotations responsibly because grade, finish, certificate and delivery assumptions are visible from the beginning."
         ]) +
-        pageSection("How to use this guide", "Use the article as a checklist before contacting a supplier. The better the RFQ details, the easier it is to review availability, packing, transport and documentation.", `<h3>Useful links</h3>${chips(["request-quote/", "stainless-steel/", "ss-304/", "ss-316/"], (item) => item)}`) +
+        pageSection("How to use this guide", "Use the article as a checklist before contacting a supplier. The better the RFQ details, the easier it is to review availability, packing, transport and documentation.", `<h3>Useful links</h3>${chips(blogUsefulLinks(post), (item) => item.slug, (item) => item.name)}`) +
         rfqBlock("stainless steel") +
         ctaBlock("stainless steel"),
       faq
